@@ -260,4 +260,11 @@ test('Architectural Design System Integrity', async (t) => {
     const aboutJsx = fs.readFileSync(path.resolve('src/components/AboutSection.jsx'), 'utf8');
     assert.ok(aboutJsx.includes('lg:whitespace-nowrap'));
   });
+
+  await t.test('navbar is boxy rounded and spans container width on desktop', () => {
+    const indexCss = fs.readFileSync(path.resolve('src/index.css'), 'utf8');
+    assert.ok(indexCss.includes('border-radius: 18px'));
+    assert.ok(indexCss.includes('max-width: 1240px'));
+    assert.ok(indexCss.includes('justify-content: space-between'));
+  });
 });

@@ -3,15 +3,20 @@ import { studentProfile } from '../data/projectsData';
 
 export default function Hero({ onOpenSheetReview }) {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-24 pb-16 md:pt-32 md:pb-20 overflow-hidden border-b border-studio-200 dark:border-studio-800">
-      
-      {/* Background Architectural Photo of Faysal at Department of Architecture — 100% Crisp, ZERO Blur */}
-      <div className="absolute inset-0 z-0 select-none pointer-events-none">
-        <img
-          src="./images/faysal-hero.jpg"
-          alt="Faysal Ahmed - Department of Architecture"
-          className="w-full h-full object-cover object-[25%_center] sm:object-[22%_center] md:object-[20%_center] lg:object-left"
-        />
+    <section className="relative min-h-screen flex items-center pt-20 pb-16 md:pt-24 md:pb-20 overflow-hidden border-b border-studio-200 dark:border-studio-800">
+
+      {/* High-Resolution Architectural Photo of Faysal at Department of Architecture — Top: 0, 100% Crisp, ZERO Blur */}
+      <div className="absolute inset-0 top-0 left-0 w-full h-full z-0 select-none pointer-events-none">
+        <picture>
+          <source srcSet="./images/faysal-hero-2x.jpg 2x, ./images/faysal-hero.jpg 1x" type="image/jpeg" />
+          <img
+            src="./images/faysal-hero.jpg"
+            alt="Faysal Ahmed - Department of Architecture"
+            fetchPriority="high"
+            decoding="async"
+            className="w-full h-full object-cover object-[25%_0px] sm:object-[20%_0px] md:object-[15%_0px] lg:object-[left_0px]"
+          />
+        </picture>
 
         {/* Clean right-side gradient for text contrast — Crisp, NO Blur */}
         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/25 dark:to-black/60 hidden lg:block"></div>
@@ -20,16 +25,16 @@ export default function Hero({ onOpenSheetReview }) {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          
+
           {/* Left Column: Negative Space allowing Faysal's photograph and Architecture Wall to be prominently showcased */}
           <div className="hidden lg:block lg:col-span-5 xl:col-span-5 min-h-[440px] pointer-events-none"></div>
 
           {/* Right Column: Profile Intro Details */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">
-            
+
             {/* Crisp Solid Card — NO Blur on Background */}
             <div className="p-6 sm:p-8 md:p-10 rounded-2xl bg-white/95 dark:bg-studio-950/95 border border-studio-200 dark:border-studio-800 shadow-2xl">
-              
+
               {/* Category / Department Eyebrow */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
                 <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-studio-950 text-white dark:bg-white dark:text-studio-950 shadow-xs">

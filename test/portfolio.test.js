@@ -269,4 +269,12 @@ test('Architectural Design System Integrity', async (t) => {
     assert.ok(indexCss.includes('max-width: 1240px'));
     assert.ok(indexCss.includes('justify-content: space-between'));
   });
+
+  await t.test('custom architectural FA logo favicon and professional page title are configured', () => {
+    assert.ok(fs.existsSync(path.resolve('public/favicon.svg')), 'Favicon SVG missing');
+    assert.ok(fs.existsSync(path.resolve('public/favicon.png')), 'Favicon PNG missing');
+    const indexHtml = fs.readFileSync(path.resolve('index.html'), 'utf8');
+    assert.ok(indexHtml.includes('/favicon.svg'));
+    assert.ok(indexHtml.includes('Faysal Ahmed — Architectural Designer'));
+  });
 });

@@ -10,7 +10,10 @@ import Footer from './components/Footer';
 import ProjectDetailModal from './components/ProjectDetailModal';
 import SheetPresentationModal from './components/SheetPresentationModal';
 import LightboxViewer from './components/LightboxViewer';
+import ThemeStudioModal from './components/ThemeStudioModal';
+import ThemeSwitcherFloatingPill from './components/ThemeSwitcherFloatingPill';
 import { allSheets } from './data/projectsData';
+import { UI_THEMES } from './themes/themeConfig';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -19,12 +22,23 @@ export default function App() {
     return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
 
+  // 57 UI Design System Themes State
+  const [activeTheme, setActiveTheme] = useState(() => {
+    const savedThemeId = localStorage.getItem('faysal_ui_theme');
+    if (savedThemeId) {
+      return UI_THEMES.find(t => t.id === savedThemeId) || null;
+    }
+    return null;
+  });
+  const [themeStudioOpen, setThemeStudioOpen] = useState(false);
+
   // Modals state
   const [selectedProject, setSelectedProject] = useState(null);
   const [lightboxSheet, setLightboxSheet] = useState(null);
   const [sheetReviewOpen, setSheetReviewOpen] = useState(false);
   const [initialSheetIndex, setInitialSheetIndex] = useState(0);
 
+  // Sync Dark Mode
   useEffect(() => {
     localStorage.setItem('faysal_arch_theme', darkMode ? 'dark' : 'light');
     if (darkMode) {
@@ -33,6 +47,29 @@ export default function App() {
       document.documentElement.classList.remove('dark');
     }
   }, [darkMode]);
+
+  // Sync 57 UI Themes
+  useEffect(() => {
+    if (activeTheme) {
+      localStorage.setItem('faysal_ui_theme', activeTheme.id);
+      document.documentElement.setAttribute('data-ui-theme', activeTheme.id);
+      
+      // Inject theme colors as CSS variables
+      if (activeTheme.colors) {
+        document.documentElement.style.setProperty('--theme-primary', activeTheme.colors.primary);
+        document.documentElement.style.setProperty('--theme-secondary', activeTheme.colors.secondary);
+        document.documentElement.style.setProperty('--theme-surface', activeTheme.colors.surface);
+        document.documentElement.style.setProperty('--theme-text', activeTheme.colors.text);
+      }
+    } else {
+      localStorage.removeItem('faysal_ui_theme');
+      document.documentElement.removeAttribute('data-ui-theme');
+      document.documentElement.style.removeProperty('--theme-primary');
+      document.documentElement.style.removeProperty('--theme-secondary');
+      document.documentElement.style.removeProperty('--theme-surface');
+      document.documentElement.style.removeProperty('--theme-text');
+    }
+  }, [activeTheme]);
 
   const handleOpenSheetReview = (index = 0) => {
     setInitialSheetIndex(index);
@@ -64,6 +101,8 @@ export default function App() {
         darkMode={darkMode}
         setDarkMode={setDarkMode}
         onOpenSheetReview={handleOpenSheetReview}
+        activeTheme={activeTheme}
+        onOpenThemeStudio={() => setThemeStudioOpen(true)}
       />
 
       {/* Main Portfolio Sections */}
@@ -104,6 +143,20 @@ export default function App() {
       {/* Footer */}
       <Footer 
         onOpenSheetReview={handleOpenSheetReview}
+      />
+
+      {/* Floating 57 UI Design System Switcher Pill */}
+      <ThemeSwitcherFloatingPill 
+        activeTheme={activeTheme}
+        onOpenStudio={() => setThemeStudioOpen(true)}
+      />
+
+      {/* 57 UI Design System Theme Studio Modal */}
+      <ThemeStudioModal 
+        isOpen={themeStudioOpen}
+        onClose={() => setThemeStudioOpen(false)}
+        activeThemeId={activeTheme?.id || null}
+        onSelectTheme={(theme) => setActiveTheme(theme)}
       />
 
       {/* Project Detail Modal */}

@@ -245,47 +245,6 @@ export default function AboutSection() {
               </div>
             </div>
 
-            {/* Studio Action / Collaboration Card */}
-            <div className="p-6 rounded-2xl bg-studio-950 dark:bg-[#181b1e] border border-studio-800 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-              <div>
-                <h4 className="font-display font-bold text-base text-white">
-                  Interested in Architectural Collaboration?
-                </h4>
-                <p className="text-xs text-studio-300 dark:text-[#8e959d] mt-1 font-sans">
-                  Open for studio internships, thesis partnerships, and research collaborations.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-3 shrink-0">
-                <a
-                  href="#contact"
-                  className="inline-flex items-center justify-center h-11 px-5 rounded-full bg-[#ffb81c] text-[#101214] font-semibold text-xs transition-transform hover:-translate-y-0.5 cursor-pointer shadow-sm"
-                >
-                  Contact Architect
-                </a>
-                <a
-                  href={studentProfile.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/20 hover:border-[#ffb81c] text-white hover:text-[#ffb81c] flex items-center justify-center transition-colors"
-                  aria-label="LinkedIn"
-                  title="LinkedIn"
-                >
-                  <i className="bx bxl-linkedin text-lg"></i>
-                </a>
-                <a
-                  href={studentProfile.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/20 hover:border-[#ffb81c] text-white hover:text-[#ffb81c] flex items-center justify-center transition-colors"
-                  aria-label="Facebook"
-                  title="Facebook"
-                >
-                  <i className="bx bxl-facebook text-lg"></i>
-                </a>
-              </div>
-            </div>
-
           </div>
 
         </div>

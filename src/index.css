@@ -336,8 +336,8 @@
   display: grid;
   grid-template-columns: 1.25fr 0.75fr;
   gap: 0 40px;
-  align-items: end;
-  padding: 120px clamp(20px, 5vw, 72px) 48px;
+  align-items: center;
+  padding: 100px clamp(20px, 5vw, 72px) 60px;
   overflow: hidden;
   isolation: isolate;
   background: var(--arch-bg);
@@ -357,9 +357,9 @@
 .hero-cut {
   position: absolute;
   right: 0;
-  top: 12%;
+  top: 6%;
   width: 70%;
-  height: 62%;
+  height: 66%;
   z-index: -2;
 }
 
@@ -528,7 +528,8 @@
   .hero-architect {
     grid-template-columns: 1fr;
     gap: 36px;
-    padding-top: 108px;
+    padding-top: 96px;
+    padding-bottom: 48px;
   }
 
   .hero-side {
@@ -540,8 +541,8 @@
 
   .hero-cut {
     width: 100%;
-    top: 8%;
-    height: 40%;
+    top: 5%;
+    height: 42%;
     opacity: 0.9;
   }
 

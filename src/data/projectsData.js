@@ -504,5 +504,31 @@ export const recentAchievements = [
       "Celebrated during the official Department of Architecture ceremony on stage",
       "Winning project exhibited as part of the DIU Department of Architecture design showcase"
     ]
+  },
+  {
+    id: "paraa-korail-shortlisted",
+    title: "Shortlisted by Paraa Presents – Open Call: Re-Imagining Collective Futures from Korail",
+    shortTitle: "SHORTLISTED — PARAA PRESENTS",
+    category: "Open Call: Re-Imagining Collective Futures",
+    event: "Paraa Presents",
+    competition: "Open Call: Re-Imagining Collective Futures from Korail",
+    organizer: "Paraa",
+    department: "Community Architecture & Urban Research",
+    awardType: "Shortlisted Proposal",
+    citation: "Shortlisted proposal recognized for socio-spatial research and incremental tactical kit-of-parts in Korail informal settlement",
+    year: "2024",
+    winningProject: "Commons Module: Learning from the Lanes of Korail",
+    projectId: "commons-module-korail",
+    images: {
+      poster: "./images/achievements/paraa-korail-poster.jpg",
+      modules: "./images/achievements/paraa-korail-modules.jpg"
+    },
+    summary: "Shortlisted by Paraa Presents in the Open Call: Re-Imagining Collective Futures from Korail. The submission 'Commons Module: Learning from the Lanes of Korail' proposes low-cost tactical community modules—such as a child activity learning board, sitting spaces, and stall units—deployed strategically to counter spatial exclusion.",
+    highlights: [
+      "Shortlisted by Paraa Presents in Open Call: Re-Imagining Collective Futures from Korail",
+      "Tactical multi-functional modules: Child Activity Learning Board, Stall & Sitting Modules",
+      "Socio-spatial analysis mapping contrasting Korail lanes with neighboring formal developments",
+      "Incremental participatory design rooted in community knowledge and collective well-being"
+    ]
   }
 ];

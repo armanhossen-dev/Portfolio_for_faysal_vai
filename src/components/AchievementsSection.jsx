@@ -48,6 +48,59 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
     tag: item.tag
   }));
 
+  // Paraa Presents — Open Call: Re-Imagining Collective Futures from Korail
+  const paraaAchievement = recentAchievements[1];
+  const paraaGalleryItems = [
+    {
+      id: "paraa-poster-board",
+      src: paraaAchievement?.images?.poster || "./images/achievements/paraa-korail-poster.jpg",
+      title: "Commons Module: Learning from the Lanes of Korail",
+      caption: "Shortlisted competition poster board featuring base map of Korail, socio-spatial inequality analysis, and tactical module drawings.",
+      tag: "Shortlisted Board",
+      sheetNumber: "PARAA 01/02",
+      category: "Shortlisted Competition"
+    },
+    {
+      id: "paraa-modules-axon",
+      src: paraaAchievement?.images?.modules || "./images/achievements/paraa-korail-modules.jpg",
+      title: "Tactical Modules & Spatial Insertion Axonometric",
+      caption: "Detail design of Children Activity Module, Stall & Sitting Modules, and axonometric distribution along the informal lanes of Korail.",
+      tag: "Kit-of-Parts & Axon",
+      sheetNumber: "PARAA 02/02",
+      category: "Shortlisted Competition"
+    }
+  ];
+
+  const paraaSheets = paraaGalleryItems.map((item, idx) => ({
+    id: item.id,
+    title: item.title,
+    projectTitle: "Paraa Presents – Open Call: Re-Imagining Collective Futures from Korail",
+    sheetNumber: item.sheetNumber || `PARAA 0${idx + 1}/02`,
+    category: "Shortlisted Competition",
+    full: item.src,
+    optimized: item.src,
+    src: item.src,
+    description: item.caption,
+    tag: item.tag
+  }));
+
+  const handleParaaPhotoClick = (photo, idx = 0) => {
+    if (onOpenLightbox) {
+      const targetSheet = paraaSheets[idx] || {
+        id: photo.id || `paraa-doc-${idx + 1}`,
+        title: photo.title,
+        projectTitle: "Paraa Presents – Open Call: Re-Imagining Collective Futures from Korail",
+        sheetNumber: photo.sheetNumber || `PARAA 0${idx + 1}/02`,
+        category: "Shortlisted Competition",
+        full: photo.src,
+        optimized: photo.src,
+        src: photo.src,
+        description: photo.caption
+      };
+      onOpenLightbox(targetSheet, paraaSheets);
+    }
+  };
+
   const handlePhotoClick = (photo, idx = 0) => {
     if (onOpenLightbox) {
       const targetSheet = achievementSheets[idx] || {
@@ -266,6 +319,117 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                 )}
               </div>
 
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Shortlisted by Paraa Presents Showcase Card */}
+        <div className="mt-12 bg-[#FAFAF8] dark:bg-[#181b1e] rounded-2xl border border-studio-300 dark:border-white/10 overflow-hidden shadow-2xl">
+          
+          {/* Header */}
+          <div className="bg-studio-950 dark:bg-black text-white px-6 sm:px-8 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/20 dark:bg-[#ffb81c]/20 flex items-center justify-center shrink-0 border border-amber-500/40 dark:border-[#ffb81c]/40 text-2xl text-amber-400 dark:text-[#ffb81c] shadow-inner">
+                <i className="bx bx-award"></i>
+              </div>
+              <div>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-500/20 dark:bg-[#ffb81c]/20 text-amber-300 dark:text-[#ffb81c] uppercase tracking-wider border border-amber-500/30 dark:border-[#ffb81c]/30">
+                    SHORTLISTED
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-white/15 text-white uppercase tracking-wider">
+                    PARAA PRESENTS
+                  </span>
+                </div>
+                <h3 className="text-xl sm:text-2xl lg:text-3xl font-display font-extrabold uppercase tracking-tight mt-1 text-white">
+                  Shortlisted by Paraa Presents – Open Call: Re-Imagining Collective Futures from Korail
+                </h3>
+              </div>
+            </div>
+
+            <div className="flex items-center md:justify-end gap-3.5">
+              <div className="text-left md:text-right">
+                <div className="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400 dark:text-[#ffb81c]">
+                  Open Call • 2024
+                </div>
+                <div className="text-sm font-semibold text-studio-200 mt-0.5">
+                  Paraa Architecture &amp; Research
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Card Body with 2 Photos */}
+          <div className="p-6 sm:p-8 space-y-6">
+            
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono text-studio-500 dark:text-[#9aa1a8] uppercase tracking-wider flex items-center gap-1.5">
+                <i className="bx bx-images text-base text-amber-500 dark:text-[#ffb81c]"></i>
+                Shortlisted Competition Submissions (Click to Inspect High-Res)
+              </span>
+              <span className="text-[11px] font-mono text-studio-400 dark:text-[#9aa1a8]">
+                2 Drawings
+              </span>
+            </div>
+
+            {/* 2 Photo Gallery Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {paraaGalleryItems.map((item, idx) => (
+                <div
+                  key={idx}
+                  onClick={() => handleParaaPhotoClick(item, idx)}
+                  className="group relative bg-white dark:bg-[#101214] rounded-xl overflow-hidden border border-studio-200 dark:border-white/10 hover:border-amber-400 dark:hover:border-[#ffb81c] transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between"
+                >
+                  <div 
+                    className="relative aspect-[1/1.414] max-h-[540px] overflow-hidden bg-studio-100 dark:bg-[#101214] flex items-center justify-center p-3"
+                    onContextMenu={(e) => e.preventDefault()}
+                  >
+                    <img
+                      src={item.src}
+                      alt={item.title}
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                      draggable="false"
+                      onContextMenu={(e) => e.preventDefault()}
+                      onDragStart={(e) => e.preventDefault()}
+                    />
+                    <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-black/75 text-white backdrop-blur-xs">
+                      {item.tag}
+                    </div>
+                    <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-[#ffb81c] text-[#101214]">
+                      {item.sheetNumber}
+                    </div>
+                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white gap-1.5 text-xs font-mono">
+                      <i className="bx bx-fullscreen text-lg"></i>
+                      <span>Inspect Drawing</span>
+                    </div>
+                  </div>
+
+                  <div className="p-4 border-t border-studio-100 dark:border-white/10">
+                    <div className="font-display font-bold text-sm sm:text-base text-studio-900 dark:text-white mb-1">
+                      {item.title}
+                    </div>
+                    <p className="text-xs text-studio-500 dark:text-[#9aa1a8] leading-relaxed line-clamp-2 font-sans">
+                      {item.caption}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Bottom summary note */}
+            <div className="pt-4 border-t border-studio-200 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 text-xs">
+              <p className="text-studio-600 dark:text-[#9aa1a8] max-w-3xl font-sans leading-relaxed">
+                <span className="font-semibold text-studio-900 dark:text-white">Citation &amp; Significance:</span> Shortlisted in the open call by Paraa for reimagining collective urban futures in Korail informal settlement through decentralized tactical modularity, child learning environments, and participatory public space.
+              </p>
+              <a
+                href="#research"
+                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-studio-900 text-white dark:bg-[#ffb81c] dark:text-[#101214] font-mono font-semibold hover:bg-amber-600 transition-colors whitespace-nowrap"
+              >
+                <span>Read Full Research</span>
+                <i className="bx bx-right-arrow-alt text-base"></i>
+              </a>
             </div>
 
           </div>

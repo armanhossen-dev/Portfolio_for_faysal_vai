@@ -122,6 +122,14 @@ test('Recent Achievements & Honors', async (t) => {
     assert.match(winningProject.award.badge, /WINNER/i);
   });
 
+  await t.test('contains Paraa Presents shortlisted achievement with images on disk', () => {
+    const paraa = recentAchievements.find(a => a.id === 'paraa-korail-shortlisted');
+    assert.ok(paraa, 'Paraa shortlisted achievement must exist');
+    assert.match(paraa.title, /Shortlisted by Paraa Presents/i);
+    assert.ok(fs.existsSync(path.resolve(paraa.images.poster.replace(/^\.\//, 'public/'))));
+    assert.ok(fs.existsSync(path.resolve(paraa.images.modules.replace(/^\.\//, 'public/'))));
+  });
+
   await t.test('achievements section supports gallery sequential navigation in lightbox', () => {
     const achieveJsx = fs.readFileSync(path.resolve('src/components/AchievementsSection.jsx'), 'utf8');
     const appJsx = fs.readFileSync(path.resolve('src/App.jsx'), 'utf8');
@@ -150,10 +158,11 @@ test('Projects & Technical Sheets Folio', async (t) => {
     assert.ok(fs.existsSync(path.resolve('public/images/diu-logo.png')), 'Daffodil International University logo missing');
 
     // Check Achievement images
-    const achievement = recentAchievements[0];
-    for (const [key, imgPath] of Object.entries(achievement.images)) {
-      const cleanPath = imgPath.replace(/^\.\//, 'public/');
-      assert.ok(fs.existsSync(path.resolve(cleanPath)), `Achievement image missing: ${cleanPath}`);
+    for (const ach of recentAchievements) {
+      for (const [key, imgPath] of Object.entries(ach.images)) {
+        const cleanPath = imgPath.replace(/^\.\//, 'public/');
+        assert.ok(fs.existsSync(path.resolve(cleanPath)), `Achievement image missing: ${cleanPath}`);
+      }
     }
 
     // Check project cover images

@@ -115,11 +115,13 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 40;
-  width: min(1100px, calc(100% - 24px));
+  width: fit-content;
+  max-width: calc(100% - 24px);
   display: flex;
   align-items: center;
-  gap: 4px;
-  padding: 5px 6px 5px 18px;
+  justify-content: center;
+  gap: 6px;
+  padding: 5px 8px 5px 12px;
   background: var(--arch-glass);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
@@ -137,46 +139,20 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
 }
 
-.nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-family: "Bricolage Grotesque", -apple-system, sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  letter-spacing: -0.01em;
-  margin-right: auto;
-  color: var(--arch-ink);
-  flex-shrink: 0;
-}
-
-.nav-mark {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--arch-ink);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
-
-.nav-mark svg {
-  width: 12px;
-  height: 12px;
-}
-
-/* Nav links — single row, all in one line */
+/* Nav links — single row, centered, bigger font */
 .nav-links {
   display: none;
-  gap: 1px;
+  align-items: center;
+  gap: 2px;
   flex-shrink: 0;
 }
 
 .nav-links a {
   position: relative;
-  padding: 5px 10px;
-  font-size: 12.5px;
-  font-weight: 500;
+  padding: 7px 14px;
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: -0.012em;
   border-radius: 999px;
   color: var(--arch-mute);
   transition: color 0.2s, background 0.2s;
@@ -188,7 +164,44 @@
   background: var(--arch-line);
 }
 
-/* Icon buttons (theme, social, burger) */
+.nav-divider {
+  width: 1px;
+  height: 18px;
+  background: var(--arch-line);
+  margin: 0 3px;
+  flex-shrink: 0;
+}
+
+/* Borderless Social Links (LinkedIn & Facebook) — NO circle, NO border */
+.nav-social-link {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: var(--arch-mute);
+  cursor: pointer;
+  transition: color 0.2s, transform 0.2s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.nav-social-link:hover {
+  background: transparent;
+  color: var(--arch-yellow);
+  transform: scale(1.18);
+}
+
+.nav-social-link svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Icon buttons (theme, burger) */
 .nav-ico {
   width: 32px;
   height: 32px;
@@ -223,14 +236,14 @@
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   height: 32px;
   padding: 0 14px;
   border-radius: 999px;
   background: var(--arch-yellow);
   color: #101214;
   font-weight: 700;
-  font-size: 12px;
+  font-size: 12.5px;
   border: 0;
   cursor: pointer;
   transition: transform 0.2s, filter 0.2s;
@@ -268,8 +281,9 @@
 .nav-mobile-drawer {
   position: absolute;
   top: calc(100% + 8px);
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(340px, calc(100vw - 32px));
   background: var(--arch-paper);
   border: 1px solid var(--arch-line);
   border-radius: 20px;
@@ -288,6 +302,7 @@
   font-weight: 600;
   color: var(--arch-ink);
   transition: background 0.15s;
+  text-align: center;
 }
 
 .nav-mobile-link:hover {
@@ -305,8 +320,8 @@
   padding-right: 8px;
 }
 
-/* ≥ 960px — show everything in one line, hide burger */
-@media (min-width: 960px) {
+/* ≥ 880px — show everything centered in one line, hide burger */
+@media (min-width: 880px) {
   .nav-links {
     display: flex;
   }
@@ -315,8 +330,8 @@
     display: inline-flex;
   }
 
-  .nav-ico.nav-desktop-only {
-    display: grid;
+  .nav-social-link.nav-desktop-only {
+    display: inline-flex;
   }
 
   .nav-mobile-only {

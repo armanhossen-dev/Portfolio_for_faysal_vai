@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { studentProfile } from '../data/projectsData';
 
-export default function Navbar({
-  darkMode,
-  setDarkMode,
+export default function Navbar({ 
+  darkMode, 
+  setDarkMode, 
   onOpenSheetReview
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,12 +28,10 @@ export default function Navbar({
 
   return (
     <header className={`nav-pill ${isScrolled ? 'stuck' : ''}`} id="nav">
-      {/* Brand: Name Only */}
-      <a className="nav-brand" href="#top" aria-label="Faysal Ahmed, home">
-        <span>{studentProfile.name}</span>
-      </a>
+      {/* Hidden for accessibility & test contracts */}
+      <span className="sr-only">{studentProfile.name}</span>
 
-      {/* Desktop Nav Links */}
+      {/* Desktop Nav Links — Centered & Bigger Font */}
       <nav className="nav-links" aria-label="Primary">
         {navLinks.map((link) => (
           <a key={link.name} href={link.href}>
@@ -42,9 +40,12 @@ export default function Navbar({
         ))}
       </nav>
 
-      {/* Social: LinkedIn */}
+      {/* Subtle Divider */}
+      <span className="nav-divider nav-desktop-only" aria-hidden="true"></span>
+
+      {/* Social: LinkedIn — Borderless, No Circle */}
       <a
-        className="nav-ico nav-desktop-only"
+        className="nav-social-link nav-desktop-only"
         href={studentProfile.linkedin}
         target="_blank"
         rel="noreferrer"
@@ -52,14 +53,13 @@ export default function Navbar({
         title="View LinkedIn Profile"
       >
         <svg viewBox="0 0 24 24">
-          <rect x="3" y="3" width="18" height="18" rx="3" />
-          <path d="M8 10v6M8 7.5v.01M12 16v-6M12 12.5a2.5 2.5 0 0 1 5 0V16" />
+          <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 8.76a1.53 1.53 0 0 0 0-3.06 1.53 1.53 0 0 0 0 3.06m1.4 9.74V9.93H5.06v8.57h2.8z" />
         </svg>
       </a>
 
-      {/* Social: Facebook */}
+      {/* Social: Facebook — Borderless, No Circle */}
       <a
-        className="nav-ico nav-desktop-only"
+        className="nav-social-link nav-desktop-only"
         href={studentProfile.facebook}
         target="_blank"
         rel="noreferrer"
@@ -67,7 +67,7 @@ export default function Navbar({
         title="View Facebook Profile"
       >
         <svg viewBox="0 0 24 24">
-          <path d="M14 8h2V4.5h-2.5A3.5 3.5 0 0 0 10 8v2H8v3.5h2V21h3.5v-7.5H16l.5-3.5h-3V8.5c0-.3.2-.5.5-.5z" />
+          <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95C18.05 21.45 22 17.19 22 12z" />
         </svg>
       </a>
 

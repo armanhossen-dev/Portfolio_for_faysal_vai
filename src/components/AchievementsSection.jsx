@@ -14,7 +14,7 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
       title: "Winner with Project Board",
       caption: "Faysal Ahmed holding the Winner Trophy in front of his project board 'Between Water & Home : Toward an Inclusive and Adaptive Korail'",
       tag: "Best Design Award",
-      objectPosition: "object-[50%_20%]",
+      objectPosition: "object-[50%_25%]",
       sheetNumber: "HONOR 01/03"
     },
     {

@@ -692,10 +692,13 @@
   font-size: clamp(38px, 10.4vw, 142px);
   line-height: 0.9;
   letter-spacing: -0.035em;
-  color: transparent;
-  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.28);
+  color: #eceeef;
+  -webkit-text-fill-color: #eceeef;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 45px rgba(255, 184, 28, 0.22), 0 0 90px rgba(255, 255, 255, 0.12);
   user-select: none;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: pointer;
   white-space: nowrap;
   text-align: center;
   width: 100%;
@@ -703,6 +706,15 @@
   display: block;
   box-sizing: border-box;
   padding: 0 4px;
+  transition: color 0.4s ease, -webkit-text-fill-color 0.4s ease, -webkit-text-stroke 0.4s ease, text-shadow 0.4s ease;
+}
+
+.footer-outline-name:hover,
+.group:hover .footer-outline-name {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.35);
+  text-shadow: none;
 }
 
 .footer-bubble {

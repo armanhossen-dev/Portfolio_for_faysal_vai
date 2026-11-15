@@ -179,7 +179,7 @@ export default function Footer() {
         </div>
 
         {/* Monumental Outlined Architectural Name & Dashed Grid Extension */}
-        <div className="relative mt-8 pt-6 pb-2 select-none pointer-events-none flex items-center justify-center text-center w-full px-2 sm:px-4">
+        <div className="group relative mt-8 pt-6 pb-2 select-none flex items-center justify-center text-center w-full px-2 sm:px-4 cursor-pointer">
           {/* Subtle continuation of dashed vertical lines */}
           <div className="hidden md:grid grid-cols-3 absolute inset-0 z-0 opacity-40">
             <div className="border-l border-dashed border-white/20"></div>

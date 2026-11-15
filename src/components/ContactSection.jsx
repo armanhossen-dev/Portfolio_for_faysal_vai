@@ -68,11 +68,13 @@ export default function ContactSection({ onOpenSheetReview }) {
                     <i className="bx bxs-map text-base"></i>
                   </div>
                   <div>
-                    <div className="text-[10px] text-studio-400 uppercase">LOCATION</div>
+                    <div className="text-[10px] text-studio-400 uppercase">LOCATION & RESIDENCE</div>
                     <div className="font-medium text-studio-900 dark:text-white mt-0.5">
-                      Dhaka, Bangladesh
+                      Lives in {studentProfile.livesIn}
                     </div>
-                    <div className="text-studio-500">Available for local & international projects</div>
+                    <div className="text-xs text-studio-500 dark:text-studio-400 mt-0.5">
+                      Hometown: From {studentProfile.hometown}
+                    </div>
                   </div>
                 </div>
 

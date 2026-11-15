@@ -70,6 +70,29 @@ export default function AboutSection() {
                 <span className="font-bold text-studio-900 dark:text-white">{studentProfile.university}</span>
               </div>
 
+              {/* Personal Details */}
+              <div className="py-3 border-b border-studio-200 dark:border-studio-800">
+                <div className="text-[10px] font-mono text-studio-400 uppercase mb-2 tracking-wider">
+                  PERSONAL DETAILS
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
+                  <div className="flex items-center gap-2.5 text-studio-700 dark:text-studio-200 bg-white dark:bg-studio-950 p-2.5 rounded-lg border border-studio-200/80 dark:border-studio-800">
+                    <i className="bx bx-map-pin text-lg text-rose-500 shrink-0"></i>
+                    <div>
+                      <div className="text-[10px] text-studio-400 font-mono uppercase">Current City</div>
+                      <div className="font-medium">Lives in {studentProfile.livesIn}</div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-2.5 text-studio-700 dark:text-studio-200 bg-white dark:bg-studio-950 p-2.5 rounded-lg border border-studio-200/80 dark:border-studio-800">
+                    <i className="bx bx-home-alt text-lg text-blueprint-500 shrink-0"></i>
+                    <div>
+                      <div className="text-[10px] text-studio-400 font-mono uppercase">Hometown</div>
+                      <div className="font-medium">From {studentProfile.hometown}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div className="pt-2">
                 <h3 className="font-display font-bold text-sm uppercase tracking-wider text-studio-900 dark:text-white mb-2">
                   Architectural Philosophy

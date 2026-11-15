@@ -5,6 +5,8 @@ export const studentProfile = {
   university: "Daffodil International University",
   academicPeriod: "Spring 2025 – Spring 2026",
   location: "Dhaka, Bangladesh",
+  livesIn: "Dhaka, Bangladesh",
+  hometown: "Chandpur, Chittagong, Bangladesh",
   email: "faysal934ahmed@gmail.com",
   phone: "+880 1700-000000",
   linkedin: "https://www.linkedin.com/in/faysalahmed934",

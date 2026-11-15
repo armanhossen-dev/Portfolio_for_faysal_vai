@@ -68,8 +68,20 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
                 {studentProfile.name}
               </h1>
 
-              <div className="text-base sm:text-lg font-display text-blueprint-600 dark:text-blueprint-400 font-semibold mb-4 tracking-wide">
+              <div className="text-base sm:text-lg font-display text-blueprint-600 dark:text-blueprint-400 font-semibold mb-2 tracking-wide">
                 Architectural Designer & Urban Researcher • Final Year B.Arch
+              </div>
+
+              {/* Personal Details: Location & Origin */}
+              <div className="flex flex-wrap items-center gap-3 text-xs text-studio-600 dark:text-studio-300 mb-4 font-sans">
+                <span className="inline-flex items-center gap-1 bg-studio-100 dark:bg-studio-800/80 px-2.5 py-1 rounded-md border border-studio-200/80 dark:border-studio-700">
+                  <i className="bx bx-map-pin text-rose-500 text-sm"></i>
+                  <span>Lives in {studentProfile.livesIn}</span>
+                </span>
+                <span className="inline-flex items-center gap-1 bg-studio-100 dark:bg-studio-800/80 px-2.5 py-1 rounded-md border border-studio-200/80 dark:border-studio-700">
+                  <i className="bx bx-home-alt text-blueprint-500 text-sm"></i>
+                  <span>From {studentProfile.hometown}</span>
+                </span>
               </div>
 
               <p className="text-sm sm:text-base text-studio-700 dark:text-studio-300 leading-relaxed mb-6 font-normal">

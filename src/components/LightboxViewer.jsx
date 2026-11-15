@@ -5,12 +5,20 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
+  const [magnifierActive, setMagnifierActive] = useState(true);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0, inside: false });
+  const [imgDimensions, setImgDimensions] = useState({ width: 0, height: 0 });
   const containerRef = useRef(null);
+  const imgRef = useRef(null);
+
+  const LOUPE_SIZE = 190;
+  const ZOOM_FACTOR = 2.6;
 
   useEffect(() => {
-    // Reset zoom and position when sheet changes
+    // Reset zoom, position, and loupe when sheet changes
     setZoom(1);
     setPosition({ x: 0, y: 0 });
+    setMousePos({ x: 0, y: 0, inside: false });
   }, [sheet]);
 
   useEffect(() => {
@@ -20,6 +28,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
       if (e.key === '+' || e.key === '=') handleZoomIn();
       if (e.key === '-' || e.key === '_') handleZoomOut();
       if (e.key === '0') handleReset();
+      if (e.key === 'm' || e.key === 'M') setMagnifierActive((prev) => !prev);
       if (e.key === 'ArrowRight' && onNavigateNext) onNavigateNext();
       if (e.key === 'ArrowLeft' && onNavigatePrev) onNavigatePrev();
     };
@@ -42,9 +51,10 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
   const handleReset = () => {
     setZoom(1);
     setPosition({ x: 0, y: 0 });
+    setMousePos({ x: 0, y: 0, inside: false });
   };
 
-  // Mouse drag handlers for panning
+  // Mouse drag handlers for panning (when zoom > 1)
   const handleMouseDown = (e) => {
     if (zoom > 1) {
       setIsDragging(true);
@@ -63,6 +73,35 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
 
   const handleMouseUp = () => {
     setIsDragging(false);
+  };
+
+  // Circle magnifier handlers (when zoom === 1)
+  const handleImgMouseMove = (e) => {
+    if (!imgRef.current) return;
+    const rect = imgRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+      setMousePos({ x, y, inside: true });
+      setImgDimensions({ width: rect.width, height: rect.height });
+    } else {
+      setMousePos((prev) => ({ ...prev, inside: false }));
+    }
+  };
+
+  const handleImgMouseEnter = (e) => {
+    if (!imgRef.current) return;
+    const rect = imgRef.current.getBoundingClientRect();
+    setImgDimensions({ width: rect.width, height: rect.height });
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+      inside: true
+    });
+  };
+
+  const handleImgMouseLeave = () => {
+    setMousePos((prev) => ({ ...prev, inside: false }));
   };
 
   return (
@@ -88,6 +127,19 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
 
         {/* Toolbar */}
         <div className="flex items-center gap-2">
+          {/* Toggle Loupe Magnifier */}
+          <button
+            onClick={() => setMagnifierActive(!magnifierActive)}
+            className={`p-1.5 rounded border transition-colors flex items-center justify-center cursor-pointer ${
+              magnifierActive 
+                ? 'bg-[#ffb81c] text-[#101214] border-[#ffb81c] shadow-xs' 
+                : 'text-studio-300 hover:text-white bg-studio-800 hover:bg-studio-700 border-studio-700'
+            }`}
+            title={magnifierActive ? "Circle Magnifier Active (Press M to toggle)" : "Enable Circle Magnifier (Press M)"}
+          >
+            <i className="bx bx-search-alt text-base"></i>
+          </button>
+
           {/* Zoom controls */}
           <div className="flex items-center bg-studio-800 rounded border border-studio-700 p-0.5 font-mono text-xs">
             <button 
@@ -180,20 +232,55 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
           </div>
         )}
 
-        {/* The Technical Image */}
+        {/* The Technical Image with Circle Magnifier Loupe */}
         <div
-          className="transition-transform duration-75 ease-out select-none"
+          className="relative transition-transform duration-75 ease-out select-none flex items-center justify-center shadow-2xl rounded-sm bg-white border border-studio-800"
           style={{
             transform: `translate(${position.x}px, ${position.y}px) scale(${zoom})`,
             transformOrigin: 'center center'
           }}
+          onMouseMove={zoom === 1 ? handleImgMouseMove : undefined}
+          onMouseEnter={zoom === 1 ? handleImgMouseEnter : undefined}
+          onMouseLeave={zoom === 1 ? handleImgMouseLeave : undefined}
         >
           <img
+            ref={imgRef}
             src={sheet.full || sheet.optimized}
             alt={sheet.title}
-            className="max-h-[85vh] max-w-[92vw] object-contain shadow-2xl rounded-sm bg-white"
+            className={`max-h-[85vh] max-w-[92vw] object-contain select-none shadow-2xl rounded-sm ${
+              magnifierActive && zoom === 1 ? 'cursor-crosshair' : ''
+            }`}
             draggable="false"
           />
+
+          {/* Precision Architectural Circle Magnifier Loupe */}
+          {magnifierActive && mousePos.inside && zoom === 1 && (
+            <div
+              className="pointer-events-none absolute rounded-full border-2 border-[#ffb81c] shadow-[0_0_35px_rgba(0,0,0,0.85)] z-30 transition-transform duration-75 ease-out"
+              style={{
+                width: `${LOUPE_SIZE}px`,
+                height: `${LOUPE_SIZE}px`,
+                left: `${mousePos.x - LOUPE_SIZE / 2}px`,
+                top: `${mousePos.y - LOUPE_SIZE / 2}px`,
+                backgroundImage: `url(${sheet.full || sheet.optimized})`,
+                backgroundRepeat: 'no-repeat',
+                backgroundSize: `${imgDimensions.width * ZOOM_FACTOR}px ${imgDimensions.height * ZOOM_FACTOR}px`,
+                backgroundPosition: `${-(mousePos.x * ZOOM_FACTOR - LOUPE_SIZE / 2)}px ${-(mousePos.y * ZOOM_FACTOR - LOUPE_SIZE / 2)}px`,
+                backgroundColor: '#ffffff'
+              }}
+            >
+              {/* Precision Crosshair Center Point */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div className="w-2 h-2 rounded-full border border-black/70 bg-[#ffb81c] shadow-xs"></div>
+              </div>
+              {/* Glass Optical Glare */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/10 to-white/20 pointer-events-none"></div>
+              {/* Loupe HUD Tag */}
+              <span className="absolute bottom-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-black/85 text-[10px] font-mono font-bold text-[#ffb81c] border border-white/20 shadow-md">
+                2.6×
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -203,6 +290,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
           ARCHITECTURAL INSPECTION MODE // {sheet.sheetNumber}
         </div>
         <div className="hidden sm:flex items-center gap-4">
+          <span className="text-[#ffb81c]">[M] MAGNIFIER {magnifierActive ? 'ON' : 'OFF'}</span>
           <span>ZOOM: {Math.round(zoom * 100)}%</span>
           <span>KEYBOARD: [+][-] ZOOM • [ESC] CLOSE</span>
         </div>

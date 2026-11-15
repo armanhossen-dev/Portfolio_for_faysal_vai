@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="fa-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#14171a"/>
+      <stop offset="100%" stop-color="#08090a"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect width="100" height="100" rx="22" fill="url(#fa-bg)"/>
+  <rect x="2" y="2" width="96" height="96" rx="20" fill="none" stroke="#25292e" stroke-width="1.5"/>
+
+  <!-- F Letterform -->
+  <path d="M16 28 H41 V38 H27 V47 H39 V56 H27 V72 H16 Z" fill="#FFFFFF"/>
+
+  <!-- A Letterform -->
+  <path d="M62 28 L45 72 H56 L59.5 63 H70.5 L74 72 H85 L68 28 H62 Z M65 43.5 L68.2 54 H61.8 Z" fill="#FFFFFF"/>
+
+  <!-- Architectural Amber Datum Accent on A crossbar -->
+  <rect x="58.5" y="53" width="13" height="4.5" rx="1" fill="#FFB81C"/>
+
+  <!-- Small architectural grid dot in top right -->
+  <circle cx="84" cy="18" r="2.2" fill="#FFB81C" opacity="0.9"/>
+</svg>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { allSheets } from '../data/projectsData';
-import CommunityCommonsIllustration from './illustrations/CommunityCommonsIllustration';
 
 export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
   const commonsSheet1 = allSheets.find(s => s.id === 'commons-1');
@@ -136,11 +135,6 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                   Tactical Kit-of-Parts Modules
                 </h3>
 
-                {/* Community Modular Illustration */}
-                <div className="mb-4 bg-studio-50 dark:bg-[#101214] p-2 rounded-lg border border-studio-200 dark:border-white/10">
-                  <CommunityCommonsIllustration className="w-full h-auto max-w-[280px] mx-auto" />
-                </div>
-
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-sans">
                   <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded-lg border border-studio-200 dark:border-white/10 flex flex-col justify-between hover:border-[#ffb81c]/50 transition-colors">
                     <div>
@@ -186,48 +180,86 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
         {/* ========================================================
             PART 2: HERITAGE EXPLORATION - TEOTA JOMIDAR BARI
         ======================================================== */}
-        <div className="pt-12 border-t border-studio-200 dark:border-white/10">
+        <div
+          className="relative rounded-3xl p-6 sm:p-10 lg:p-12 overflow-hidden border shadow-2xl transition-all"
+          style={{
+            background: 'radial-gradient(circle at 85% 15%, rgba(144, 62, 22, 0.45) 0%, transparent 60%), radial-gradient(circle at 15% 85%, rgba(220, 90, 54, 0.25) 0%, transparent 50%), linear-gradient(145deg, #18080c 0%, #290f15 45%, #42161b 80%, #5e2413 100%)',
+            borderColor: 'rgba(163, 70, 26, 0.45)',
+            boxShadow: '0 25px 60px -15px rgba(24, 8, 12, 0.7), 0 0 40px -10px rgba(144, 62, 22, 0.3)'
+          }}
+        >
+          {/* Subtle architectural grid watermark lines */}
+          <div 
+            className="absolute inset-0 pointer-events-none opacity-[0.06]"
+            style={{
+              backgroundImage: 'linear-gradient(to right, #ffffff 1px, transparent 1px), linear-gradient(to bottom, #ffffff 1px, transparent 1px)',
+              backgroundSize: '40px 40px'
+            }}
+            aria-hidden="true"
+          />
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
             {/* Left: Text & Phenomenological Manifesto */}
             <div className="lg:col-span-5 space-y-5">
-              <div className="flex items-center gap-2 font-mono text-xs text-blueprint-600 dark:text-[#ffb81c] font-semibold">
-                <span className="w-2 h-2 bg-blueprint-500 dark:bg-[#ffb81c] rounded-xs"></span>
+              <div className="flex items-center gap-2 font-mono text-xs font-semibold" style={{ color: '#e8958c' }}>
+                <span className="w-2 h-2 rounded-xs" style={{ backgroundColor: '#dc5a36' }}></span>
                 HISTORICAL RE-IMAGINATION // PHENOMENOLOGY
               </div>
 
-              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-studio-950 dark:text-white uppercase tracking-tight">
-                Time Transitions & Contrasts
+              <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-[#FAF3EB] uppercase tracking-tight">
+                Time Transitions &amp; Contrasts
               </h2>
 
-              <div className="text-sm font-mono text-ochre-600 dark:text-[#ffb81c]">
+              <div className="text-sm font-mono font-medium" style={{ color: '#e27a56' }}>
                 Manikganj Teota Jomidar Bari • Heritage Studio
               </div>
 
-              <p className="text-sm sm:text-base text-studio-600 dark:text-studio-300 leading-relaxed font-sans">
-                "In this spatial inquiry, we want to feel a space that moves seamlessly between <strong className="text-studio-900 dark:text-white">Present, Past, and Future</strong>. Navigating an axial hallway, the visitor experiences an embodied journey—from the tactile weight of historic Bengal masonry to soaring contemporary light volumes."
+              <p className="text-sm sm:text-base leading-relaxed font-sans" style={{ color: '#e5d5cf' }}>
+                "In this spatial inquiry, we want to feel a space that moves seamlessly between <strong className="text-white font-semibold">Present, Past, and Future</strong>. Navigating an axial hallway, the visitor experiences an embodied journey—from the tactile weight of historic Bengal masonry to soaring contemporary light volumes."
               </p>
 
               <div className="space-y-2.5 font-mono text-xs">
-                <div className="p-3 bg-white dark:bg-[#181b1e] rounded border border-studio-200 dark:border-white/10 flex items-center justify-between">
-                  <span className="text-studio-500 dark:text-[#9aa1a8]">EXPERIENTIAL AXIS:</span>
-                  <span className="font-semibold text-studio-900 dark:text-white">Past → Present → Future Promenade</span>
+                <div 
+                  className="p-3.5 rounded-xl border flex items-center justify-between transition-colors backdrop-blur-md"
+                  style={{
+                    backgroundColor: 'rgba(36, 14, 19, 0.75)',
+                    borderColor: 'rgba(163, 70, 26, 0.35)'
+                  }}
+                >
+                  <span style={{ color: '#d9857e' }}>EXPERIENTIAL AXIS:</span>
+                  <span className="font-semibold text-[#FAF3EB]">Past → Present → Future Promenade</span>
                 </div>
-                <div className="p-3 bg-white dark:bg-[#181b1e] rounded border border-studio-200 dark:border-white/10 flex items-center justify-between">
-                  <span className="text-studio-500 dark:text-[#9aa1a8]">VERTICAL DEVICE:</span>
-                  <span className="font-semibold text-studio-900 dark:text-white">Ascension Stairs Framing Skyward Vistas</span>
+                <div 
+                  className="p-3.5 rounded-xl border flex items-center justify-between transition-colors backdrop-blur-md"
+                  style={{
+                    backgroundColor: 'rgba(36, 14, 19, 0.75)',
+                    borderColor: 'rgba(163, 70, 26, 0.35)'
+                  }}
+                >
+                  <span style={{ color: '#d9857e' }}>VERTICAL DEVICE:</span>
+                  <span className="font-semibold text-[#FAF3EB]">Ascension Stairs Framing Skyward Vistas</span>
                 </div>
-                <div className="p-3 bg-white dark:bg-[#181b1e] rounded border border-studio-200 dark:border-white/10 flex items-center justify-between">
-                  <span className="text-studio-500 dark:text-[#9aa1a8]">ARCHITECTURAL BOARD:</span>
-                  <span className="font-semibold text-blueprint-600 dark:text-[#ffb81c]">Board BUC074 (High-Res 6496 × 9449 px)</span>
+                <div 
+                  className="p-3.5 rounded-xl border flex items-center justify-between transition-colors backdrop-blur-md"
+                  style={{
+                    backgroundColor: 'rgba(36, 14, 19, 0.75)',
+                    borderColor: 'rgba(163, 70, 26, 0.35)'
+                  }}
+                >
+                  <span style={{ color: '#d9857e' }}>ARCHITECTURAL BOARD:</span>
+                  <span className="font-semibold" style={{ color: '#e8958c' }}>Board BUC074 (High-Res 6496 × 9449 px)</span>
                 </div>
               </div>
 
               {heritageSheet && (
                 <button
                   onClick={() => onOpenSheetLightbox(heritageSheet)}
-                  className="inline-flex items-center gap-2 px-5 py-3 text-xs font-mono font-bold bg-studio-900 text-white dark:bg-[#ffb81c] dark:text-[#101214] rounded hover:bg-blueprint-600 dark:hover:bg-white transition-colors shadow-md"
+                  className="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-mono font-bold text-white rounded-xl transition-all shadow-xl hover:brightness-110 active:scale-95 cursor-pointer"
+                  style={{
+                    background: 'linear-gradient(135deg, #a3461a 0%, #dc5a36 100%)',
+                    boxShadow: '0 8px 24px -4px rgba(163, 70, 26, 0.6)'
+                  }}
                 >
                   <i className="bx bx-fullscreen text-base"></i>
                   <span>Inspect High-Res Heritage Drawing Board</span>
@@ -239,10 +271,14 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
             <div className="lg:col-span-7">
               {heritageSheet && (
                 <div
-                  className="group relative bg-white dark:bg-[#181b1e] p-3 rounded-xl border border-studio-300 dark:border-white/10 shadow-xl cursor-pointer"
+                  className="group relative p-3 sm:p-4 rounded-2xl border shadow-2xl cursor-pointer transition-all duration-300 hover:border-[#dc5a36]/60 backdrop-blur-md"
+                  style={{
+                    backgroundColor: 'rgba(25, 9, 13, 0.85)',
+                    borderColor: 'rgba(163, 70, 26, 0.4)'
+                  }}
                   onClick={() => onOpenSheetLightbox(heritageSheet)}
                 >
-                  <div className="relative aspect-[1/1.45] max-h-[580px] w-full overflow-hidden rounded-lg bg-studio-950 flex items-center justify-center">
+                  <div className="relative aspect-[1/1.45] max-h-[580px] w-full overflow-hidden rounded-xl bg-[#140609] flex items-center justify-center border border-[#903e16]/20">
                     <img
                       src={heritageSheet.optimized}
                       alt="Manikganj Teota Jomidar Bari Architectural Board"
@@ -252,24 +288,33 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                       onDragStart={(e) => e.preventDefault()}
                     />
 
-                    <div className="absolute inset-0 bg-studio-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white">
-                      <span className="p-3 bg-blueprint-600 dark:bg-[#ffb81c] dark:text-[#101214] rounded-full shadow-lg mb-2 flex items-center justify-center">
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white backdrop-blur-[2px]"
+                      style={{ backgroundColor: 'rgba(20, 7, 10, 0.65)' }}
+                    >
+                      <span 
+                        className="p-3.5 rounded-full shadow-2xl mb-2.5 flex items-center justify-center text-white"
+                        style={{ background: 'linear-gradient(135deg, #a3461a, #dc5a36)' }}
+                      >
                         <i className="bx bx-fullscreen text-2xl"></i>
                       </span>
-                      <span className="font-mono text-xs font-bold uppercase tracking-wider">
+                      <span className="font-mono text-xs font-bold uppercase tracking-wider text-[#FAF3EB]">
                         Click to Zoom Technical Board
                       </span>
-                      <span className="font-mono text-[10px] text-studio-300">
+                      <span className="font-mono text-[10px] text-[#e8958c]">
                         Resolution: 6496 × 9449 px
                       </span>
                     </div>
                   </div>
 
-                  <div className="mt-3 flex items-center justify-between text-xs font-mono px-2">
-                    <span className="font-bold text-studio-900 dark:text-white">
+                  <div className="mt-3.5 flex items-center justify-between text-xs font-mono px-2">
+                    <span className="font-bold text-[#FAF3EB] tracking-wide">
                       BOARD BUC074 // MANIKGANJ TEOTA JOMIDAR BARI
                     </span>
-                    <span className="text-blueprint-600 dark:text-[#ffb81c] flex items-center gap-1 font-semibold">
+                    <span 
+                      className="flex items-center gap-1.5 font-semibold transition-colors"
+                      style={{ color: '#e8958c' }}
+                    >
                       <span>Inspect Board</span>
                       <i className="bx bx-link-external text-xs"></i>
                     </span>

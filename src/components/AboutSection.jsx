@@ -32,11 +32,11 @@ export default function AboutSection() {
       accent: "#0073CF"
     },
     "Lumion": {
-      cardBg: "bg-[#ebf8fc] dark:bg-[#051c27]",
-      border: "border-[#00B4D8]/35 dark:border-[#00B4D8]/30 hover:border-[#00B4D8]",
-      iconBg: "bg-[#0077B6] text-white",
-      tagColor: "text-[#0077B6] dark:text-[#48cae4]",
-      accent: "#00B4D8"
+      cardBg: "bg-[#edf6fa] dark:bg-[#0b1c28]",
+      border: "border-[#24527a]/35 dark:border-[#24527a]/30 hover:border-[#24527a]",
+      iconBg: "bg-[#24527a] text-white",
+      tagColor: "text-[#24527a] dark:text-[#6fa8dc]",
+      accent: "#24527a"
     },
     "Enscape": {
       cardBg: "bg-[#fff4ec] dark:bg-[#231103]",
@@ -46,18 +46,19 @@ export default function AboutSection() {
       accent: "#FF6B00"
     },
     "D5 Render": {
-      cardBg: "bg-[#ebfaf6] dark:bg-[#051f18]",
-      border: "border-[#00C9A7]/35 dark:border-[#00C9A7]/30 hover:border-[#00C9A7]",
-      iconBg: "bg-[#00C9A7] text-[#051f18]",
-      tagColor: "text-[#008f76] dark:text-[#00F2FE]",
-      accent: "#00C9A7"
+      cardBg: "bg-[#f5f3ff] dark:bg-[#1a1333]",
+      border: "border-[#6366f1]/35 dark:border-[#6366f1]/30 hover:border-[#6366f1]",
+      iconBg: "bg-transparent text-[#6366f1]",
+      tagColor: "text-[#5848f5] dark:text-[#a5b4fc]",
+      accent: "#5848f5"
     },
     "Affinity": {
-      cardBg: "bg-[#fef1f8] dark:bg-[#200717]",
-      border: "border-[#FF3366]/35 dark:border-[#FF3366]/30 hover:border-[#FF3366]",
-      iconBg: "bg-[#FF3366] text-white",
-      tagColor: "text-[#d61a4d] dark:text-[#ff80a0]",
-      accent: "#FF3366"
+      cardBg: "bg-[#f4fce8] dark:bg-[#121c0b]",
+      border: "border-[#84cc16]/35 dark:border-[#84cc16]/30 hover:border-[#84cc16]",
+      iconBg: "bg-[#84cc16] text-[#0f172a]",
+      iconBoxBg: "bg-transparent",
+      tagColor: "text-[#4d7c0f] dark:text-[#bef264]",
+      accent: "#84cc16"
     },
     "VS Code": {
       cardBg: "bg-[#edf6fd] dark:bg-[#061827]",
@@ -74,11 +75,12 @@ export default function AboutSection() {
       accent: "#589632"
     },
     "Autodesk Forma": {
-      cardBg: "bg-[#f7effa] dark:bg-[#1a0a22]",
-      border: "border-[#9B59B6]/35 dark:border-[#9B59B6]/30 hover:border-[#9B59B6]",
-      iconBg: "bg-[#8E44AD] text-white",
-      tagColor: "text-[#7d3c98] dark:text-[#c39bd3]",
-      accent: "#9B59B6"
+      cardBg: "bg-[#f8f9fa] dark:bg-[#15181c]",
+      border: "border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white",
+      iconBg: "bg-black text-white",
+      iconBoxBg: "bg-black border border-black/80 dark:border-white/20",
+      tagColor: "text-studio-800 dark:text-studio-200",
+      accent: "#000000"
     },
     "Archimap": {
       cardBg: "bg-[#fff6eb] dark:bg-[#231504]",
@@ -103,7 +105,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl lg:max-w-none mb-16">
           <div className="flex items-center gap-2 font-mono text-xs text-studio-500 dark:text-[#ffb81c] font-semibold mb-3 tracking-wider">
             <span className="w-2 h-2 bg-studio-900 dark:bg-[#ffb81c]"></span>
             05 // CURRICULUM VITAE &amp; ACADEMIC PROFILE
@@ -111,7 +113,7 @@ export default function AboutSection() {
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-studio-950 dark:text-white uppercase tracking-tight leading-[0.95]">
             About Faysal Ahmed
           </h2>
-          <p className="text-base text-studio-600 dark:text-[#8e959d] mt-3 font-sans">
+          <p className="text-base text-studio-600 dark:text-[#8e959d] mt-3 font-sans lg:whitespace-nowrap">
             Architectural designer and urban researcher in the final year of B.Arch at Daffodil International University, Dhaka.
           </p>
         </div>
@@ -241,9 +243,9 @@ export default function AboutSection() {
                   >
                     <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white dark:bg-[#101214] p-1.5 flex items-center justify-center shrink-0 border border-studio-200 dark:border-white/10 overflow-hidden shadow-sm">
                       {edu.logo ? (
-                        <img 
-                          src={edu.logo} 
-                          alt={edu.institution} 
+                        <img
+                          src={edu.logo}
+                          alt={edu.institution}
                           className="w-full h-full object-contain"
                           draggable="false"
                           onContextMenu={(e) => e.preventDefault()}
@@ -259,11 +261,6 @@ export default function AboutSection() {
                           {edu.degree}
                         </span>
                         <div className="flex items-center gap-1.5">
-                          {edu.enrolled && (
-                            <span className="text-[10px] font-semibold text-[#101214] bg-[#ffb81c] px-2 py-0.5 rounded-full font-mono">
-                              {edu.enrolled}
-                            </span>
-                          )}
                           <span className="text-studio-500 dark:text-[#8e959d] bg-studio-200/60 dark:bg-[#101214] px-2 py-0.5 rounded text-[10px] font-mono">
                             {edu.period}
                           </span>
@@ -331,8 +328,19 @@ export default function AboutSection() {
                       className={`p-3.5 rounded-xl ${theme.cardBg} border ${theme.border} transition-all duration-300 hover:-translate-y-1 hover:shadow-md group flex flex-col justify-between relative overflow-hidden`}
                     >
                       <div className="flex items-center justify-between mb-2.5">
-                        <div className={`w-8 h-8 rounded-lg ${theme.iconBg} border border-current/25 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs`}>
-                          <i className={`bx ${tool.icon} text-lg`}></i>
+                        <div className={`w-8 h-8 rounded-lg ${tool.image ? `p-0.5 overflow-hidden flex items-center justify-center ${theme.iconBoxBg || 'bg-white border border-studio-200/80 dark:border-white/20'}` : `${theme.iconBg} border border-current/25 flex items-center justify-center`} group-hover:scale-110 transition-transform shadow-xs`}>
+                          {tool.image ? (
+                            <img
+                              src={tool.image}
+                              alt={tool.name}
+                              className="w-full h-full object-contain select-none pointer-events-none rounded-md"
+                              draggable="false"
+                              onDragStart={(e) => e.preventDefault()}
+                              onContextMenu={(e) => e.preventDefault()}
+                            />
+                          ) : (
+                            <i className={`bx ${tool.icon} text-lg`}></i>
+                          )}
                         </div>
                         <span className={`text-[9px] font-mono uppercase font-semibold ${theme.tagColor}`}>
                           {tool.category}

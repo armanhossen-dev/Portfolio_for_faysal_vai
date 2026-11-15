@@ -2,12 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { 
-  studentProfile, 
-  projects, 
-  allSheets, 
-  recentAchievements, 
-  projectCategories 
+import {
+  studentProfile,
+  projects,
+  allSheets,
+  recentAchievements,
+  projectCategories
 } from '../src/data/projectsData.js';
 
 test('Student Profile - Identity, Credentials & Contacts', async (t) => {
@@ -35,18 +35,18 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
 
   await t.test('education trajectory has all 3 verified institutions with logos', () => {
     assert.equal(studentProfile.education.length, 3);
-    
+
     // 1. DIU
     const diu = studentProfile.education[0];
     assert.equal(diu.institution, 'Daffodil International University');
-    assert.equal(diu.enrolled, 'In January 2022');
+    assert.equal(diu.period, 'January 2022 – Present');
     assert.ok(fs.existsSync(path.resolve(diu.logo.replace(/^\.\//, 'public/'))), 'DIU logo missing');
-    
+
     // 2. College
     const college = studentProfile.education[1];
     assert.equal(college.institution, 'Kachua Bangabondhu Govt Degree college');
     assert.ok(fs.existsSync(path.resolve(college.logo.replace(/^\.\//, 'public/'))), 'College logo missing');
-    
+
     // 3. High School
     const school = studentProfile.education[2];
     assert.equal(school.institution, 'Monpura Batabaria Jafar Ali Memorial High school');
@@ -76,13 +76,52 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
         `Missing daily tool: ${exp}`
       );
     }
+    const d5 = studentProfile.dailyTools.find(t => t.name === 'D5 Render');
+    assert.ok(d5 && d5.image, 'D5 Render should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(d5.image.replace(/^\.\//, 'public/'))), 'D5 Render logo missing on disk');
+
+    const cad = studentProfile.dailyTools.find(t => t.name === 'Autocad');
+    assert.ok(cad && cad.image, 'Autocad should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(cad.image.replace(/^\.\//, 'public/'))), 'Autocad logo missing on disk');
+
+    const forma = studentProfile.dailyTools.find(t => t.name === 'Autodesk Forma');
+    assert.ok(forma && forma.image, 'Autodesk Forma should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(forma.image.replace(/^\.\//, 'public/'))), 'Autodesk Forma logo missing on disk');
+
+    const qgis = studentProfile.dailyTools.find(t => t.name === 'QGIS');
+    assert.ok(qgis && qgis.image, 'QGIS should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(qgis.image.replace(/^\.\//, 'public/'))), 'QGIS logo missing on disk');
+
+    const enscape = studentProfile.dailyTools.find(t => t.name === 'Enscape');
+    assert.ok(enscape && enscape.image, 'Enscape should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(enscape.image.replace(/^\.\//, 'public/'))), 'Enscape logo missing on disk');
+
+    const lumion = studentProfile.dailyTools.find(t => t.name === 'Lumion');
+    assert.ok(lumion && lumion.image, 'Lumion should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(lumion.image.replace(/^\.\//, 'public/'))), 'Lumion logo missing on disk');
+
+    const archicad = studentProfile.dailyTools.find(t => t.name === 'Archicad');
+    assert.ok(archicad && archicad.image, 'Archicad should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(archicad.image.replace(/^\.\//, 'public/'))), 'Archicad logo missing on disk');
+
+    const archimap = studentProfile.dailyTools.find(t => t.name === 'Archimap');
+    assert.ok(archimap && archimap.image, 'Archimap should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(archimap.image.replace(/^\.\//, 'public/'))), 'Archimap logo missing on disk');
+
+    const affinity = studentProfile.dailyTools.find(t => t.name === 'Affinity');
+    assert.ok(affinity && affinity.image, 'Affinity should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(affinity.image.replace(/^\.\//, 'public/'))), 'Affinity logo missing on disk');
+
+    const vscode = studentProfile.dailyTools.find(t => t.name === 'VS Code');
+    assert.ok(vscode && vscode.image, 'VS Code should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(vscode.image.replace(/^\.\//, 'public/'))), 'VS Code logo missing on disk');
   });
 });
 
 test('Privacy & Redaction - No Student ID Leakage', async (t) => {
   await t.test('student ID 221-42-053 must not exist anywhere in src files', () => {
     const srcDir = path.resolve('src');
-    
+
     function scanDir(dir) {
       const files = fs.readdirSync(dir);
       for (const file of files) {
@@ -148,9 +187,10 @@ test('Projects & Technical Sheets Folio', async (t) => {
   });
 
   await t.test('all referenced images exist on disk in public folder', () => {
-    // Check Hero Background
+    // Check Hero Background & Home Photo
     assert.ok(fs.existsSync(path.resolve('public/images/faysal-hero.jpg')), 'Hero background image missing');
-    
+    assert.ok(fs.existsSync(path.resolve('public/images/faysal-home.jpg')), 'Hero home photo missing');
+
     // Check Footer Silhouette
     assert.ok(fs.existsSync(path.resolve('public/images/footer-silhouette.jpg')), 'Footer silhouette missing');
 
@@ -187,12 +227,15 @@ test('Architectural Design System Integrity', async (t) => {
     assert.equal(navbarJsx.includes('FA ARCH'), false);
     assert.equal(navbarJsx.includes('B.Arch Portfolio • Daffodil Int. University'), false);
     assert.ok(navbarJsx.includes('{studentProfile.name}'));
+    assert.ok(navbarJsx.includes('nav-brand'));
   });
 
   await t.test('hero section removed technical floating badges and maintains clean photo background', () => {
     const heroJsx = fs.readFileSync(path.resolve('src/components/Hero.jsx'), 'utf8');
     assert.equal(heroJsx.includes('SCALE: NTS // DEPT_OF_ARCHITECTURE'), false);
     assert.equal(heroJsx.includes('[+] 23°49\'32"N'), false);
+    assert.ok(heroJsx.includes('<h1>Faysal Ahmed</h1>'));
+    assert.equal(heroJsx.includes('Faysal<br'), false);
   });
 
   await t.test('images have drag protection and right-click context menu prevention', () => {
@@ -215,5 +258,25 @@ test('Architectural Design System Integrity', async (t) => {
     assert.ok(navbarJsx.includes('startViewTransition'));
     assert.ok(navbarJsx.includes('circle(${endRadius}px at ${x}px ${y}px)'));
     assert.ok(indexCss.includes('::view-transition-new(root)'));
+  });
+
+  await t.test('about section bio line is on a single line on desktop', () => {
+    const aboutJsx = fs.readFileSync(path.resolve('src/components/AboutSection.jsx'), 'utf8');
+    assert.ok(aboutJsx.includes('lg:whitespace-nowrap'));
+  });
+
+  await t.test('navbar is boxy rounded and spans container width on desktop', () => {
+    const indexCss = fs.readFileSync(path.resolve('src/index.css'), 'utf8');
+    assert.ok(indexCss.includes('border-radius: 18px'));
+    assert.ok(indexCss.includes('max-width: 1240px'));
+    assert.ok(indexCss.includes('justify-content: space-between'));
+  });
+
+  await t.test('custom architectural FA logo favicon and professional page title are configured', () => {
+    assert.ok(fs.existsSync(path.resolve('public/favicon.svg')), 'Favicon SVG missing');
+    assert.ok(fs.existsSync(path.resolve('public/favicon.png')), 'Favicon PNG missing');
+    const indexHtml = fs.readFileSync(path.resolve('index.html'), 'utf8');
+    assert.ok(indexHtml.includes('/favicon.svg'));
+    assert.ok(indexHtml.includes('Faysal Ahmed — Architectural Designer'));
   });
 });

@@ -7,21 +7,21 @@ export default function Footer({ onOpenSheetReview }) {
   };
 
   return (
-    <footer className="relative bg-studio-950 text-white overflow-hidden border-t border-studio-800 font-mono text-xs">
+    <footer className="relative min-h-[640px] md:min-h-[720px] lg:min-h-[768px] flex flex-col justify-between bg-black text-white overflow-hidden border-t border-studio-800 font-mono text-xs">
       
-      {/* Background Silhouette Photo in Water */}
+      {/* Background Silhouette Photo in Water — Full 2048x768 Master Resolution, Actual Photo Height */}
       <div className="absolute inset-0 z-0 select-none pointer-events-none">
         <img
           src="./images/footer-silhouette.jpg"
           alt="Faysal Ahmed Architectural Silhouette"
-          className="w-full h-full object-cover object-center opacity-35 mix-blend-luminosity scale-105 transition-opacity duration-700"
+          className="w-full h-full object-cover object-center opacity-70 sm:opacity-80 transition-opacity duration-700"
         />
-        {/* Architectural Vignette Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-studio-950/90"></div>
-        <div className="absolute inset-0 bg-radial from-transparent via-black/40 to-black/80"></div>
+        {/* Architectural Vignette Gradients ensuring crisp text contrast while showcasing the waterscape */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/35 to-black/75"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 relative z-10 w-full flex-1 flex flex-col justify-between">
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-white/10">
 
@@ -48,7 +48,6 @@ export default function Footer({ onOpenSheetReview }) {
 
             <div className="space-y-1 text-[11px] text-studio-400 font-mono">
               <div>LOCATION: Lives in {studentProfile.livesIn} • From {studentProfile.hometown}</div>
-              <div>COORDINATES: 23°49'32"N  90°24'48"E // DHAKA</div>
             </div>
           </div>
 

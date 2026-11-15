@@ -1,6 +1,5 @@
 import React from 'react';
 import { allSheets } from '../data/projectsData';
-import CommunityCommonsIllustration from './illustrations/CommunityCommonsIllustration';
 
 export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
   const commonsSheet1 = allSheets.find(s => s.id === 'commons-1');
@@ -135,11 +134,6 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                   <i className="bx bx-layer text-blueprint-500 dark:text-[#ffb81c] text-base"></i>
                   Tactical Kit-of-Parts Modules
                 </h3>
-
-                {/* Community Modular Illustration */}
-                <div className="mb-4 bg-studio-50 dark:bg-[#101214] p-2 rounded-lg border border-studio-200 dark:border-white/10">
-                  <CommunityCommonsIllustration className="w-full h-auto max-w-[280px] mx-auto" />
-                </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-sans">
                   <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded-lg border border-studio-200 dark:border-white/10 flex flex-col justify-between hover:border-[#ffb81c]/50 transition-colors">

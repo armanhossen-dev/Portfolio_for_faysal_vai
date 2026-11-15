@@ -689,9 +689,9 @@
 .footer-outline-name {
   font-family: "Bricolage Grotesque", -apple-system, sans-serif;
   font-weight: 800;
-  font-size: clamp(72px, 16.5vw, 220px);
-  line-height: 0.85;
-  letter-spacing: -0.04em;
+  font-size: clamp(38px, 10.4vw, 142px);
+  line-height: 0.9;
+  letter-spacing: -0.035em;
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(255, 255, 255, 0.28);
   user-select: none;
@@ -699,7 +699,10 @@
   white-space: nowrap;
   text-align: center;
   width: 100%;
+  max-width: 100%;
   display: block;
+  box-sizing: border-box;
+  padding: 0 4px;
 }
 
 .footer-bubble {

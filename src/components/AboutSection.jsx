@@ -76,7 +76,8 @@ export default function AboutSection() {
     "Autodesk Forma": {
       cardBg: "bg-[#f8f9fa] dark:bg-[#15181c]",
       border: "border-black/15 dark:border-white/15 hover:border-black dark:hover:border-white",
-      iconBg: "bg-white text-black",
+      iconBg: "bg-black text-white",
+      iconBoxBg: "bg-black border border-black/80 dark:border-white/20",
       tagColor: "text-studio-800 dark:text-studio-200",
       accent: "#000000"
     },
@@ -331,7 +332,7 @@ export default function AboutSection() {
                       className={`p-3.5 rounded-xl ${theme.cardBg} border ${theme.border} transition-all duration-300 hover:-translate-y-1 hover:shadow-md group flex flex-col justify-between relative overflow-hidden`}
                     >
                       <div className="flex items-center justify-between mb-2.5">
-                        <div className={`w-8 h-8 rounded-lg ${tool.image ? 'p-0.5 overflow-hidden flex items-center justify-center bg-white border border-studio-200/80 dark:border-white/20' : `${theme.iconBg} border border-current/25 flex items-center justify-center`} group-hover:scale-110 transition-transform shadow-xs`}>
+                        <div className={`w-8 h-8 rounded-lg ${tool.image ? `p-0.5 overflow-hidden flex items-center justify-center ${theme.iconBoxBg || 'bg-white border border-studio-200/80 dark:border-white/20'}` : `${theme.iconBg} border border-current/25 flex items-center justify-center`} group-hover:scale-110 transition-transform shadow-xs`}>
                           {tool.image ? (
                             <img
                               src={tool.image}

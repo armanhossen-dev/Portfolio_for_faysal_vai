@@ -29,8 +29,8 @@ export default function Navbar({
   return (
     <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/90 dark:bg-studio-950/90 backdrop-blur-md shadow-sm border-b border-studio-200 dark:border-studio-800 py-3' 
-        : 'bg-transparent py-5'
+        ? 'bg-white/95 dark:bg-studio-950/95 backdrop-blur-md shadow-sm border-b border-studio-200 dark:border-studio-800 py-3' 
+        : 'bg-white/85 dark:bg-studio-950/85 backdrop-blur-md border-b border-studio-200/80 dark:border-studio-800/80 shadow-2xs py-4'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
@@ -42,13 +42,13 @@ export default function Navbar({
             </span>
           </a>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden lg:flex items-center gap-6 text-sm font-medium">
+          {/* Desktop Nav Links — Architectural Frosted Capsule for Maximum Contrast in White & Dark Mode */}
+          <nav className="hidden lg:flex items-center gap-1 bg-studio-100/90 dark:bg-studio-900/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-studio-200 dark:border-studio-700 shadow-2xs">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-studio-600 dark:text-studio-300 hover:text-blueprint-600 dark:hover:text-blueprint-400 transition-colors py-1 relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-blueprint-500 hover:after:w-full after:transition-all"
+                className="px-3.5 py-1 rounded-full text-xs font-bold text-studio-950 dark:text-studio-100 hover:text-white hover:bg-studio-950 dark:hover:bg-white dark:hover:text-studio-950 transition-all tracking-tight"
               >
                 {link.name}
               </a>
@@ -63,7 +63,7 @@ export default function Navbar({
               href={studentProfile.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="w-11 h-11 rounded-lg text-studio-700 dark:text-studio-200 hover:text-[#0A66C2] dark:hover:text-[#0A66C2] hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-700 transition-colors flex items-center justify-center"
+              className="w-11 h-11 rounded-lg text-studio-900 dark:text-studio-100 bg-white/80 dark:bg-studio-900/80 hover:text-[#0A66C2] dark:hover:text-[#0A66C2] hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-300 dark:border-studio-700 transition-colors flex items-center justify-center shadow-2xs"
               title="View Faysal Ahmed on LinkedIn"
               aria-label="LinkedIn Profile"
             >
@@ -74,7 +74,7 @@ export default function Navbar({
               href={studentProfile.facebook}
               target="_blank"
               rel="noreferrer"
-              className="w-11 h-11 rounded-lg text-studio-700 dark:text-studio-200 hover:text-[#1877F2] dark:hover:text-[#1877F2] hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-700 transition-colors flex items-center justify-center"
+              className="w-11 h-11 rounded-lg text-studio-900 dark:text-studio-100 bg-white/80 dark:bg-studio-900/80 hover:text-[#1877F2] dark:hover:text-[#1877F2] hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-300 dark:border-studio-700 transition-colors flex items-center justify-center shadow-2xs"
               title="View Faysal Ahmed on Facebook"
               aria-label="Facebook Profile"
             >
@@ -94,14 +94,14 @@ export default function Navbar({
             {/* Dark / Light Toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="w-11 h-11 rounded-lg text-studio-700 dark:text-studio-200 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-700 transition-colors flex items-center justify-center"
+              className="w-11 h-11 rounded-lg text-studio-900 dark:text-studio-100 bg-white/80 dark:bg-studio-900/80 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-300 dark:border-studio-700 transition-colors flex items-center justify-center shadow-2xs"
               aria-label="Toggle theme"
               title={darkMode ? "Switch to Architectural White" : "Switch to Studio Graphite"}
             >
               {darkMode ? (
                 <i className="bx bx-sun text-amber-400 text-lg leading-none"></i>
               ) : (
-                <i className="bx bx-moon text-studio-800 text-lg leading-none"></i>
+                <i className="bx bx-moon text-studio-950 text-lg leading-none"></i>
               )}
             </button>
 
@@ -130,7 +130,7 @@ export default function Navbar({
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base text-studio-700 dark:text-studio-200 hover:text-blueprint-600 dark:hover:text-blueprint-400 py-1 border-b border-studio-100 dark:border-studio-800"
+                className="text-base font-bold text-studio-950 dark:text-studio-100 hover:text-blueprint-600 dark:hover:text-blueprint-400 py-1 border-b border-studio-100 dark:border-studio-800"
               >
                 {link.name}
               </a>

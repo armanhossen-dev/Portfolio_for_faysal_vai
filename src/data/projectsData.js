@@ -77,7 +77,7 @@ export const studentProfile = {
   dailyTools: [
     { name: "Adobe Photoshop", category: "Post-Production", icon: "bxl-adobe", desc: "Digital architectural visualization, post-processing & collage" },
     { name: "Sketchup", category: "3D Modeling", icon: "bx-cube", desc: "Rapid 3D massing, conceptual form & spatial volume development" },
-    { name: "Autocad", category: "2D Drafting", icon: "bx-compass", desc: "Technical working drawings, precise floor plans & structural detailing" },
+    { name: "Autocad", category: "2D Drafting", icon: "bx-compass", image: "./images/tools/autocad-logo.png", desc: "Technical working drawings, precise floor plans & structural detailing" },
     { name: "Archicad", category: "BIM", icon: "bxs-building-house", desc: "Building Information Modeling & coordinated construction documents" },
     { name: "Lumion", category: "Rendering", icon: "bx-sun", desc: "Atmospheric architectural visualization & cinematic walkthroughs" },
     { name: "Enscape", category: "Real-Time 3D", icon: "bx-camera", desc: "Live viewport ray-tracing & interactive client presentations" },

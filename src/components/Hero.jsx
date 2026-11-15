@@ -3,7 +3,7 @@ import { studentProfile } from '../data/projectsData';
 
 export default function Hero({ onOpenSheetReview }) {
   return (
-    <section className="relative min-h-screen flex items-center pt-20 pb-16 md:pt-24 md:pb-20 overflow-hidden border-b border-studio-200 dark:border-studio-800">
+    <section className="relative min-h-screen flex items-center pt-16 sm:pt-20 pb-12 sm:pb-16 md:pt-24 md:pb-20 overflow-hidden border-b border-studio-200 dark:border-studio-800">
 
       {/* High-Resolution Architectural Photo of Faysal at Department of Architecture — Top: 0, 100% Crisp, ZERO Blur */}
       <div className="absolute inset-0 top-0 left-0 w-full h-full z-0 select-none pointer-events-none">
@@ -33,17 +33,17 @@ export default function Hero({ onOpenSheetReview }) {
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">
 
             {/* True Transparent Glassmorphism Card in Both Light & Dark Mode */}
-            <div className="p-6 sm:p-8 md:p-10 rounded-2xl bg-white/75 dark:bg-white/[0.12] backdrop-blur-xl md:backdrop-blur-2xl border border-white/60 dark:border-white/25 shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition-all">
+            <div className="p-5 sm:p-8 md:p-10 rounded-2xl bg-white/75 dark:bg-white/[0.12] backdrop-blur-xl md:backdrop-blur-2xl border border-white/60 dark:border-white/25 shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition-all">
 
               {/* Category / Department Eyebrow */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-studio-950/90 text-white dark:bg-white/20 dark:text-white backdrop-blur-md shadow-xs border border-white/20">
+                <span className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-studio-950/90 text-white dark:bg-white/20 dark:text-white backdrop-blur-md shadow-xs border border-white/20">
                   <img src="./images/diu-logo.png" alt="DIU Crest" className="w-4 h-4 object-contain shrink-0" />
                   <span>Department of Architecture • DIU</span>
                 </span>
                 <a
                   href="#achievements"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-600/90 hover:bg-amber-600 text-white backdrop-blur-md transition-all shadow-xs border border-amber-400/30"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-amber-600/90 hover:bg-amber-600 text-white backdrop-blur-md transition-all shadow-xs border border-amber-400/30"
                   title="View ARCHFEST 2026 Winner Best Design Award"
                 >
                   <i className="bx bxs-trophy text-sm text-amber-200"></i>
@@ -52,35 +52,35 @@ export default function Hero({ onOpenSheetReview }) {
               </div>
 
               {/* Main Name & Title */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-studio-950 dark:text-white uppercase leading-[1.04] mb-3 drop-shadow-sm">
+              <h1 className="text-3xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-studio-950 dark:text-white uppercase leading-[1.04] mb-3 drop-shadow-sm">
                 {studentProfile.name}
               </h1>
 
-              <div className="text-lg sm:text-xl font-display text-blueprint-600 dark:text-blueprint-300 font-bold mb-3 tracking-tight drop-shadow-xs">
+              <div className="text-base sm:text-xl font-display text-blueprint-600 dark:text-blueprint-300 font-bold mb-3 tracking-tight drop-shadow-xs">
                 Architectural Designer & Urban Researcher • Final Year B.Arch
               </div>
 
               {/* Personal Details: Location & Origin with Frosted Glass Badges */}
-              <div className="flex flex-wrap items-center gap-2.5 text-xs text-studio-800 dark:text-white mb-5 font-semibold">
-                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/60 dark:border-white/20 shadow-2xs">
-                  <i className="bx bx-map-pin text-rose-500 text-base"></i>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 text-xs text-studio-800 dark:text-white mb-5 font-semibold">
+                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/15 backdrop-blur-md px-2.5 sm:px-3 py-1.5 rounded-md border border-white/60 dark:border-white/20 shadow-2xs">
+                  <i className="bx bx-map-pin text-rose-500 text-base shrink-0"></i>
                   <span>Lives in {studentProfile.livesIn}</span>
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/60 dark:border-white/20 shadow-2xs">
-                  <i className="bx bx-home-alt text-blueprint-600 dark:text-blueprint-300 text-base"></i>
+                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/15 backdrop-blur-md px-2.5 sm:px-3 py-1.5 rounded-md border border-white/60 dark:border-white/20 shadow-2xs">
+                  <i className="bx bx-home-alt text-blueprint-600 dark:text-blueprint-300 text-base shrink-0"></i>
                   <span>From {studentProfile.hometown}</span>
                 </span>
               </div>
 
-              <p className="text-base text-studio-800 dark:text-white leading-relaxed mb-8 font-normal max-w-2xl drop-shadow-xs">
+              <p className="text-sm sm:text-base text-studio-800 dark:text-white leading-relaxed mb-6 sm:mb-8 font-normal max-w-2xl drop-shadow-xs">
                 Exploring the confluence of <strong className="text-studio-950 dark:text-white font-bold underline decoration-blueprint-400/50 underline-offset-2">ecological urbanism</strong>, high-density residential community frameworks, and circular industrial facilities. Bridging socio-spatial realities with resilient, sustainable architectural interventions.
               </p>
 
               {/* CTAs with strict 44px touch targets */}
-              <div className="flex flex-wrap items-center gap-3">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <a
                   href="#projects"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] text-sm font-bold bg-studio-950 text-white dark:bg-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white rounded-lg transition-all shadow-md group whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] text-sm font-bold bg-studio-950 text-white dark:bg-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white rounded-lg transition-all shadow-md group whitespace-nowrap text-center"
                 >
                   <span>Explore Projects</span>
                   <i className="bx bx-right-arrow-alt text-lg group-hover:translate-x-1 transition-transform"></i>
@@ -88,7 +88,7 @@ export default function Hero({ onOpenSheetReview }) {
 
                 <button
                   onClick={() => onOpenSheetReview(0)}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] text-sm font-bold bg-white/80 dark:bg-white/15 backdrop-blur-md text-studio-900 dark:text-white border border-studio-300/80 dark:border-white/25 hover:border-blueprint-500 hover:bg-white dark:hover:bg-white/25 rounded-lg transition-colors shadow-xs whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] text-sm font-bold bg-white/80 dark:bg-white/15 backdrop-blur-md text-studio-900 dark:text-white border border-studio-300/80 dark:border-white/25 hover:border-blueprint-500 hover:bg-white dark:hover:bg-white/25 rounded-lg transition-colors shadow-xs whitespace-nowrap text-center"
                 >
                   <i className="bx bx-book-open text-base text-blueprint-600 dark:text-blueprint-300"></i>
                   <span>Review Portfolio Sheets</span>

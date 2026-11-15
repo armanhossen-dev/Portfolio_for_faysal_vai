@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import Lenis from 'lenis';
+import 'lenis/dist/lenis.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProjectsSection from './components/ProjectsSection';
@@ -26,6 +28,68 @@ export default function App() {
   const [lightboxSheet, setLightboxSheet] = useState(null);
   const [sheetReviewOpen, setSheetReviewOpen] = useState(false);
   const [initialSheetIndex, setInitialSheetIndex] = useState(0);
+
+  // Initialize Lenis High-Performance Smooth Scroll Engine
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.1,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1.0,
+      touchMultiplier: 1.3,
+      infinite: false,
+    });
+
+    window.__lenis = lenis;
+
+    let rafId;
+    function raf(time) {
+      lenis.raf(time);
+      rafId = requestAnimationFrame(raf);
+    }
+    rafId = requestAnimationFrame(raf);
+
+    // Global smooth intercept for hash anchor links
+    const handleAnchorClick = (e) => {
+      const anchor = e.target.closest('a[href^="#"]');
+      if (!anchor) return;
+      const href = anchor.getAttribute('href');
+      if (!href) return;
+
+      if (href === '#' || href === '#top') {
+        e.preventDefault();
+        lenis.scrollTo(0, { duration: 1.1 });
+        return;
+      }
+
+      const targetEl = document.querySelector(href);
+      if (targetEl) {
+        e.preventDefault();
+        lenis.scrollTo(targetEl, { offset: -56, duration: 1.1 });
+      }
+    };
+
+    document.addEventListener('click', handleAnchorClick);
+
+    return () => {
+      document.removeEventListener('click', handleAnchorClick);
+      cancelAnimationFrame(rafId);
+      lenis.destroy();
+      delete window.__lenis;
+    };
+  }, []);
+
+  // Pause Lenis background scrolling when any modal/lightbox is active
+  useEffect(() => {
+    const isModalOpen = Boolean(selectedProject || sheetReviewOpen || lightboxSheet);
+    if (isModalOpen) {
+      window.__lenis?.stop();
+    } else {
+      window.__lenis?.start();
+    }
+  }, [selectedProject, sheetReviewOpen, lightboxSheet]);
 
   // Sync Dark Mode
   useEffect(() => {

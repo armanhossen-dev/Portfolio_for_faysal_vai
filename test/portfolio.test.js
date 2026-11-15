@@ -83,6 +83,10 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     const cad = studentProfile.dailyTools.find(t => t.name === 'Autocad');
     assert.ok(cad && cad.image, 'Autocad should have custom logo image');
     assert.ok(fs.existsSync(path.resolve(cad.image.replace(/^\.\//, 'public/'))), 'Autocad logo missing on disk');
+
+    const forma = studentProfile.dailyTools.find(t => t.name === 'Autodesk Forma');
+    assert.ok(forma && forma.image, 'Autodesk Forma should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(forma.image.replace(/^\.\//, 'public/'))), 'Autodesk Forma logo missing on disk');
   });
 });
 

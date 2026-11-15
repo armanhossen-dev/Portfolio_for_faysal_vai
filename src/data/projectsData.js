@@ -96,18 +96,6 @@ export const studentProfile = {
 
 export const allSheets = [
   {
-    id: "cover",
-    sheetNumber: "COVER",
-    title: "Portfolio Title Sheet",
-    projectTitle: "Architectural Portfolio",
-    year: "Spring 2025 – Spring 2026",
-    category: "Overview",
-    thumb: "./images/thumb/cover.jpg",
-    optimized: "./images/optimized/cover.jpg",
-    full: "./images/full/cover.jpg",
-    description: "Academic Portfolio Cover Sheet — Faysal Ahmed, Daffodil International University."
-  },
-  {
     id: "content",
     sheetNumber: "INDEX",
     title: "Table of Contents & Project Index",

@@ -126,7 +126,7 @@ test('Projects & Technical Sheets Folio', async (t) => {
     assert.equal(projects.length, 6);
   });
 
-  await t.test('technical sheets collection has 12 technical drawings + cover', () => {
+  await t.test('technical sheets collection has 12 technical drawings', () => {
     assert.ok(allSheets.length >= 12);
   });
 

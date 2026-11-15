@@ -43,6 +43,20 @@ export default function Navbar({
       {/* Subtle Divider */}
       <span className="nav-divider nav-desktop-only" aria-hidden="true"></span>
 
+      {/* Social: Behance — Borderless, No Circle */}
+      <a
+        className="nav-social-link nav-desktop-only"
+        href={studentProfile.behance}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Behance"
+        title="View Behance Portfolio"
+      >
+        <svg viewBox="0 0 24 24">
+          <path d="M7.6 11.2c.9-.4 1.4-1.2 1.4-2.1 0-1.8-1.4-2.6-3.3-2.6H1.5v11h4.4c2.2 0 3.6-1.1 3.6-2.9 0-1.5-.7-2.7-1.9-3.4zm-3.6-2.6h1.6c.9 0 1.5.3 1.5 1.1s-.6 1.1-1.5 1.1H4V8.6zm1.9 6.8H4v-2.6h1.9c1 0 1.7.4 1.7 1.3 0 1-.7 1.3-1.7 1.3zm13.3-2.2c0-2.3-1.6-4.2-4.1-4.2s-4.3 1.9-4.3 4.4c0 2.6 1.8 4.4 4.4 4.4 1.9 0 3.3-.9 3.9-2.5h-2.1c-.3.6-.9.9-1.8.9-1.2 0-2-.7-2.1-1.8h6c.1-.4.1-.8.1-1.2zm-6.1-.7c.2-1 .9-1.7 2-1.7s1.8.7 1.9 1.7h-3.9zM14.4 6h4.5v1.4h-4.5V6z" />
+        </svg>
+      </a>
+
       {/* Social: LinkedIn — Borderless, No Circle */}
       <a
         className="nav-social-link nav-desktop-only"
@@ -144,6 +158,15 @@ export default function Navbar({
           ))}
           <div className="nav-mobile-footer">
             <div className="flex items-center gap-2">
+              <a
+                href={studentProfile.behance}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 text-[var(--arch-mute)] hover:text-[#ffb81c] transition-colors"
+                aria-label="Behance"
+              >
+                <i className="bx bxl-behance text-xl"></i>
+              </a>
               <a
                 href={studentProfile.linkedin}
                 target="_blank"

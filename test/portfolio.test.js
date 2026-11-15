@@ -24,6 +24,8 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     assert.equal(studentProfile.linkedinHandle, 'faysalahmed934');
     assert.equal(studentProfile.facebook, 'https://www.facebook.com/faysal.ahmed.576645');
     assert.equal(studentProfile.facebookHandle, 'faysal.ahmed.576645');
+    assert.equal(studentProfile.behance, 'https://www.behance.net/faysalahmed89');
+    assert.equal(studentProfile.behanceHandle, 'faysalahmed89');
   });
 
   await t.test('personal details reflect residence and origin', () => {

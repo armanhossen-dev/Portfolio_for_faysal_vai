@@ -88,6 +88,24 @@ export default function ContactSection({ onOpenSheetReview }) {
                 </div>
 
                 <div className="flex items-start gap-3 text-studio-600 dark:text-[#eceeef]">
+                  <div className="p-2 rounded bg-studio-100 dark:bg-[#101214] text-[#0057ff] dark:text-[#ffb81c] flex items-center justify-center">
+                    <i className="bx bxl-behance text-base"></i>
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-studio-400 dark:text-[#9aa1a8] uppercase">BEHANCE PORTFOLIO</div>
+                    <a
+                      href={studentProfile.behance}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-blueprint-600 dark:text-[#eceeef] hover:dark:text-[#ffb81c] hover:underline mt-0.5 flex items-center gap-1"
+                    >
+                      <span>behance.net/{studentProfile.behanceHandle}</span>
+                      <i className="bx bx-link-external text-xs"></i>
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-studio-600 dark:text-[#eceeef]">
                   <div className="p-2 rounded bg-studio-100 dark:bg-[#101214] text-[#0A66C2] dark:text-[#ffb81c] flex items-center justify-center">
                     <i className="bx bxl-linkedin text-base"></i>
                   </div>

@@ -130,6 +130,14 @@ export default function Footer() {
                   Get in touch
                 </a>
                 <a
+                  href={studentProfile.behance}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-studio-200 hover:text-[#ffb81c] transition-colors"
+                >
+                  Behance
+                </a>
+                <a
                   href={studentProfile.linkedin}
                   target="_blank"
                   rel="noreferrer"

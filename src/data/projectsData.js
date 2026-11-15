@@ -14,6 +14,8 @@ export const studentProfile = {
   linkedinHandle: "faysalahmed934",
   facebook: "https://www.facebook.com/faysal.ahmed.576645",
   facebookHandle: "faysal.ahmed.576645",
+  behance: "https://www.behance.net/faysalahmed89",
+  behanceHandle: "faysalahmed89",
   education: [
     {
       degree: "Bachelor of Architecture (B.Arch)",

@@ -1,0 +1,123 @@
+import React from 'react';
+import { 
+  FileText, 
+  Eye, 
+  Maximize2, 
+  BookOpen, 
+  ArrowRight, 
+  Download 
+} from 'lucide-react';
+import { allSheets } from '../data/projectsData';
+
+export default function TechnicalSheetsSection({ onSelectSheet, onOpenSheetReview }) {
+  return (
+    <section id="sheets" className="py-20 border-b border-studio-200 dark:border-studio-800 bg-white dark:bg-studio-900/60 bg-grid-pattern">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-studio-200 dark:border-studio-800">
+          <div>
+            <div className="flex items-center gap-2 font-mono text-xs text-blueprint-600 dark:text-blueprint-400 font-semibold mb-2">
+              <span className="w-2 h-2 bg-blueprint-500 rounded-xs"></span>
+              PORTFOLIO ATLAS // DRAWINGS ARCHIVE
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-studio-950 dark:text-white uppercase tracking-tight">
+              Technical Drawing Sheets
+            </h2>
+            <p className="text-sm sm:text-base text-studio-600 dark:text-studio-400 mt-2 max-w-2xl">
+              Complete folio of masterplans, unit layouts, building sections, environmental zoning diagrams, and large-format concept boards.
+            </p>
+          </div>
+
+          <div className="mt-4 md:mt-0 flex items-center gap-3">
+            <button
+              onClick={() => onOpenSheetReview(0)}
+              className="inline-flex items-center gap-2 px-4 py-2.5 bg-blueprint-600 hover:bg-blueprint-700 text-white font-mono text-xs font-semibold rounded-md shadow-sm transition-colors"
+            >
+              <BookOpen className="w-4 h-4" />
+              <span>Full Portfolio Presentation Mode</span>
+            </button>
+          </div>
+        </div>
+
+        {/* Sheets Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          {allSheets.map((sheet, index) => (
+            <div
+              key={sheet.id}
+              className="group bg-[#FAFAF8] dark:bg-studio-950 rounded-lg border border-studio-200 dark:border-studio-800 overflow-hidden hover:border-blueprint-400 dark:hover:border-blueprint-500 transition-all duration-300 flex flex-col justify-between shadow-xs hover:shadow-lg"
+            >
+              <div>
+                {/* Thumbnail */}
+                <div 
+                  className="relative aspect-[1.414/1] overflow-hidden bg-studio-100 dark:bg-studio-900 cursor-pointer"
+                  onClick={() => onSelectSheet(sheet)}
+                >
+                  <img
+                    src={sheet.thumb}
+                    alt={sheet.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    loading="lazy"
+                  />
+                  
+                  {/* Sheet Number Badge */}
+                  <div className="absolute top-2 left-2 font-mono text-[10px] font-bold px-2 py-0.5 bg-studio-900/90 text-white rounded border border-studio-700 backdrop-blur-xs">
+                    {sheet.sheetNumber}
+                  </div>
+
+                  {/* Category Stamp */}
+                  <div className="absolute top-2 right-2 font-mono text-[9px] px-1.5 py-0.5 bg-blueprint-600/80 text-white rounded">
+                    {sheet.category}
+                  </div>
+
+                  {/* Hover Inspect Icon */}
+                  <div className="absolute inset-0 bg-studio-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span className="p-2 bg-studio-900 text-white rounded-full shadow-lg border border-studio-700">
+                      <Maximize2 className="w-4 h-4 text-blueprint-400" />
+                    </span>
+                  </div>
+                </div>
+
+                {/* Content */}
+                <div className="p-4">
+                  <div className="text-[11px] font-mono text-blueprint-600 dark:text-blueprint-400 font-semibold mb-1 truncate">
+                    {sheet.projectTitle}
+                  </div>
+                  <h4 
+                    onClick={() => onSelectSheet(sheet)}
+                    className="font-display font-bold text-sm text-studio-900 dark:text-white line-clamp-1 group-hover:text-blueprint-600 dark:group-hover:text-blueprint-400 cursor-pointer transition-colors"
+                  >
+                    {sheet.title}
+                  </h4>
+                  <p className="text-[11px] text-studio-500 dark:text-studio-400 line-clamp-2 mt-1 leading-relaxed">
+                    {sheet.description}
+                  </p>
+                </div>
+              </div>
+
+              {/* Card Footer Actions */}
+              <div className="px-4 py-2.5 bg-studio-100/60 dark:bg-studio-900/80 border-t border-studio-200 dark:border-studio-800 flex items-center justify-between text-xs font-mono">
+                <button
+                  onClick={() => onSelectSheet(sheet)}
+                  className="text-studio-700 dark:text-studio-300 hover:text-blueprint-600 dark:hover:text-blueprint-400 flex items-center gap-1"
+                >
+                  <Eye className="w-3.5 h-3.5 text-blueprint-500" />
+                  <span>Inspect Drawing</span>
+                </button>
+
+                <button
+                  onClick={() => onOpenSheetReview(index)}
+                  className="text-studio-500 hover:text-studio-900 dark:hover:text-white"
+                  title="View in sequence"
+                >
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}

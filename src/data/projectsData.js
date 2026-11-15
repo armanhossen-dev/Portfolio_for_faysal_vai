@@ -3,7 +3,7 @@ export const studentProfile = {
   title: "Architectural Designer & Urban Researcher",
   degree: "Bachelor of Architecture (B.Arch) — Final Year Candidate",
   university: "Daffodil International University",
-  academicPeriod: "Spring 2025 – Spring 2026",
+  academicPeriod: "January 2022 – Present (Final Year)",
   location: "Dhaka, Bangladesh",
   livesIn: "Dhaka, Bangladesh",
   hometown: "Chandpur, Chittagong, Bangladesh",
@@ -17,12 +17,14 @@ export const studentProfile = {
     {
       degree: "Bachelor of Architecture (B.Arch)",
       level: "Undergraduate / Final Year Candidate",
-      institution: "Daffodil International University (DIU)",
+      institution: "Daffodil International University",
       department: "Department of Architecture",
-      period: "Spring 2025 – Spring 2026",
+      enrolled: "In January 2022",
+      period: "January 2022 – Present",
       status: "Currently in Final Year",
       location: "Dhaka, Bangladesh",
-      icon: "bxs-graduation"
+      icon: "bxs-graduation",
+      logo: "./images/diu-logo.png"
     },
     {
       degree: "Higher Secondary Certificate (HSC)",

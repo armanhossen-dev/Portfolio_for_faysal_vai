@@ -114,21 +114,37 @@ export default function AboutSection() {
                 {studentProfile.education?.map((edu, idx) => (
                   <div 
                     key={idx}
-                    className="p-4 rounded-lg bg-[#FAFAF8] dark:bg-studio-900 border border-studio-200 dark:border-studio-800"
+                    className="p-4 rounded-xl bg-white dark:bg-studio-950 border border-studio-200/80 dark:border-studio-800 shadow-2xs hover:border-blueprint-400 dark:hover:border-blueprint-500 transition-all flex items-start gap-3.5"
                   >
-                    <div className="flex flex-wrap items-center justify-between gap-1 mb-1 font-mono text-xs">
-                      <span className="font-bold text-blueprint-600 dark:text-blueprint-400">
-                        {edu.degree}
-                      </span>
-                      <span className="text-studio-500 bg-studio-100 dark:bg-studio-800 px-2 py-0.5 rounded text-[10px]">
-                        {edu.period}
-                      </span>
+                    <div className="w-10 h-10 rounded-full bg-studio-100 dark:bg-studio-800 flex items-center justify-center shrink-0 border border-studio-200 dark:border-studio-700 overflow-hidden">
+                      {edu.logo ? (
+                        <img src={edu.logo} alt={edu.institution} className="w-full h-full object-cover" />
+                      ) : (
+                        <i className={`bx ${edu.icon || 'bx-school'} text-xl text-blueprint-600 dark:text-blueprint-400`}></i>
+                      )}
                     </div>
-                    <div className="font-display font-semibold text-sm text-studio-900 dark:text-white mb-0.5">
-                      {edu.institution}
-                    </div>
-                    <div className="text-xs text-studio-500 dark:text-studio-400 font-mono">
-                      {edu.level} • {edu.location}
+                    <div className="flex-1 min-w-0">
+                      <div className="flex flex-wrap items-center justify-between gap-1 mb-0.5">
+                        <span className="font-bold text-xs sm:text-sm text-blueprint-600 dark:text-blueprint-400">
+                          {edu.degree}
+                        </span>
+                        <div className="flex items-center gap-1.5">
+                          {edu.enrolled && (
+                            <span className="text-[11px] font-semibold text-amber-800 dark:text-amber-300 bg-amber-500/15 border border-amber-500/30 px-2 py-0.5 rounded-full">
+                              {edu.enrolled}
+                            </span>
+                          )}
+                          <span className="text-studio-500 bg-studio-100 dark:bg-studio-850 px-2 py-0.5 rounded text-[10px] font-mono">
+                            {edu.period}
+                          </span>
+                        </div>
+                      </div>
+                      <div className="font-display font-semibold text-sm text-studio-900 dark:text-white mb-0.5">
+                        {edu.institution}
+                      </div>
+                      <div className="text-xs text-studio-500 dark:text-studio-400">
+                        {edu.department ? `${edu.department} • ` : ''}{edu.level} • {edu.location}
+                      </div>
                     </div>
                   </div>
                 ))}

@@ -9,7 +9,6 @@ import {
   recentAchievements, 
   projectCategories 
 } from '../src/data/projectsData.js';
-import { UI_THEMES } from '../src/themes/themeConfig.js';
 
 test('Student Profile - Identity, Credentials & Contacts', async (t) => {
   await t.test('profile has correct name and academic standing', () => {
@@ -150,16 +149,18 @@ test('Projects & Technical Sheets Folio', async (t) => {
   });
 });
 
-test('UI Design System - 57 Themes Collection', async (t) => {
-  await t.test('contains all 57 design system themes', () => {
-    assert.equal(UI_THEMES.length, 57);
+test('Architectural Design System Integrity', async (t) => {
+  await t.test('no theme studio modal or theme switcher pill in source code', () => {
+    const appJsx = fs.readFileSync(path.resolve('src/App.jsx'), 'utf8');
+    const navbarJsx = fs.readFileSync(path.resolve('src/components/Navbar.jsx'), 'utf8');
+    assert.equal(appJsx.includes('ThemeStudioModal'), false);
+    assert.equal(appJsx.includes('ThemeSwitcherFloatingPill'), false);
+    assert.equal(navbarJsx.includes('57 UI Styles'), false);
   });
 
-  await t.test('each theme has id, name, and description', () => {
-    for (const theme of UI_THEMES) {
-      assert.ok(theme.id, 'Theme must have id');
-      assert.ok(theme.name, 'Theme must have name');
-      assert.ok(theme.description, 'Theme must have description');
-    }
+  await t.test('design system uses Apple SF Pro font stack with bold architectural weights', () => {
+    const css = fs.readFileSync(path.resolve('src/index.css'), 'utf8');
+    assert.ok(css.includes('SF Pro Display'));
+    assert.ok(css.includes('font-weight: 800'));
   });
 });

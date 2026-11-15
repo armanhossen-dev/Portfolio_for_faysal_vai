@@ -4,9 +4,7 @@ import { studentProfile } from '../data/projectsData';
 export default function Navbar({ 
   darkMode, 
   setDarkMode, 
-  onOpenSheetReview, 
-  activeTheme,
-  onOpenThemeStudio
+  onOpenSheetReview
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -71,17 +69,6 @@ export default function Navbar({
 
           {/* Actions & Toggles */}
           <div className="flex items-center gap-2 sm:gap-3">
-            
-            {/* 57 UI Design System Themes Switcher Button */}
-            <button
-              onClick={onOpenThemeStudio}
-              className="flex items-center gap-1.5 px-3 py-2 min-h-[44px] text-xs font-bold bg-studio-100 dark:bg-studio-800 text-studio-800 dark:text-studio-100 border border-studio-200 dark:border-studio-700 rounded-lg hover:border-blueprint-500 transition-colors shadow-2xs"
-              title="Switch UI Style (Choose from 57 UI Design System Styles)"
-            >
-              <i className="bx bx-palette text-base leading-none text-blueprint-600 dark:text-blueprint-400"></i>
-              <span className="hidden md:inline">{activeTheme ? activeTheme.name : '57 UI Styles'}</span>
-              <span className="md:hidden">57 Styles</span>
-            </button>
 
             {/* Social Links: LinkedIn & Facebook with accessible 44x44px touch targets */}
             <a
@@ -160,27 +147,16 @@ export default function Navbar({
                 {link.name}
               </a>
             ))}
-            <div className="pt-2 flex flex-col gap-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenThemeStudio();
-                }}
-                className="w-full flex items-center justify-center gap-2 py-2.5 text-sm font-mono font-medium bg-amber-500 text-white rounded-md shadow"
-              >
-                <i className="bx bx-palette text-base leading-none"></i>
-                Choose UI Style ({activeTheme ? activeTheme.name : '57 Themes'})
-              </button>
-              
+            <div className="pt-2">
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   onOpenSheetReview(0);
                 }}
-                className="w-full flex items-center justify-center gap-2 py-2.5 text-sm font-mono font-medium bg-blueprint-600 text-white rounded-md shadow"
+                className="w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-bold bg-studio-950 dark:bg-white text-white dark:text-studio-950 rounded-lg shadow-sm"
               >
                 <i className="bx bx-book-open text-base leading-none"></i>
-                Open Portfolio Sheet Review
+                <span>Open Portfolio Sheet Review</span>
               </button>
             </div>
           </div>

@@ -169,7 +169,7 @@ export default function Footer() {
         </div>
 
         {/* Monumental Outlined Architectural Name & Dashed Grid Extension */}
-        <div className="relative mt-8 pt-4 overflow-hidden select-none pointer-events-none">
+        <div className="relative mt-10 pt-6 pb-2 overflow-hidden select-none pointer-events-none flex items-center justify-center text-center w-full">
           {/* Subtle continuation of dashed vertical lines */}
           <div className="hidden md:grid grid-cols-3 absolute inset-0 z-0 opacity-40">
             <div className="border-l border-dashed border-white/20"></div>
@@ -177,7 +177,7 @@ export default function Footer() {
             <div className="border-l border-r border-dashed border-white/20"></div>
           </div>
 
-          <div className="relative z-10 footer-outline-name">
+          <div className="relative z-10 footer-outline-name text-center w-full">
             Faysal Ahmed
           </div>
         </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ProjectsSection from './components/ProjectsSection';
+import AchievementsSection from './components/AchievementsSection';
 import TechnicalSheetsSection from './components/TechnicalSheetsSection';
 import ResearchHeritageSection from './components/ResearchHeritageSection';
 import AboutSection from './components/AboutSection';
@@ -118,6 +119,12 @@ export default function App() {
           onSelectProject={setSelectedProject}
           onOpenSheetLightbox={handleOpenLightbox}
           onOpenSheetReview={handleOpenSheetReview}
+        />
+
+        {/* Recent Architectural Achievements (ARCHFEST 2026 Winner) */}
+        <AchievementsSection 
+          onSelectProject={setSelectedProject}
+          onOpenLightbox={handleOpenLightbox}
         />
 
         {/* Technical Drawing Sheets Archive */}

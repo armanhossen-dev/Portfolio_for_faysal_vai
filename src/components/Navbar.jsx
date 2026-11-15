@@ -21,6 +21,7 @@ export default function Navbar({
 
   const navLinks = [
     { name: 'Projects', href: '#projects' },
+    { name: 'Achievements', href: '#achievements' },
     { name: 'Technical Sheets', href: '#sheets' },
     { name: 'Research & Heritage', href: '#research' },
     { name: 'About', href: '#about' },

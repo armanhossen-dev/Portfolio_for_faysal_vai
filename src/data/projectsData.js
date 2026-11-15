@@ -294,6 +294,14 @@ export const projects = [
     subtitle: "Toward an Inclusive and Adaptive Korail",
     category: "Urban & Ecological",
     typology: "Waterfront Bio-Filtration & Circular Economy",
+    award: {
+      badge: "WINNER — Best Design Award",
+      competition: "ARCHFEST 2026",
+      category: "Category 08",
+      organizer: "Daffodil International University • Department of Architecture",
+      honor: "Award of Excellence for Outstanding Achievement in Architectural Design Competition (Conceptual to Execution)",
+      year: "2026"
+    },
     location: "Korail Lake Edge, Dhaka",
     year: "Spring 2025",
     sheets: ["p2-s1", "p2-s2"],
@@ -465,4 +473,43 @@ export const projectCategories = [
   "Industrial & Sustainable",
   "Research & Urbanism",
   "Heritage & Spatial"
+];
+
+export const recentAchievements = [
+  {
+    id: "archfest-2026-winner",
+    title: "WINNER — BEST DESIGN AWARD",
+    category: "Category 08",
+    event: "ARCHFEST 2026",
+    competition: "ARCHFEST 2026 Architectural Design Competition",
+    organizer: "Daffodil International University",
+    department: "Department of Architecture",
+    awardType: "Award of Excellence",
+    citation: "Award of Excellence for Outstanding Achievement in Architectural Design Competition (Duration: Conceptual to Execution)",
+    year: "2026",
+    winningProject: "Between Water & Home: Toward an Inclusive and Adaptive Korail",
+    projectId: "between-water-and-home",
+    trophyText: {
+      institution: "Daffodil International University",
+      dept: "Department of Architecture",
+      event: "ARCHFEST 2026",
+      status: "WINNER",
+      category: "Best Design Award (Category 08)",
+      citation: "Award of Excellence for Outstanding Achievement in Architectural Design Competition",
+      scope: "Duration: Conceptual to Execution",
+      year: "2026"
+    },
+    images: {
+      trophy: "./images/achievements/archfest-trophy.jpg",
+      winnerWithBoard: "./images/achievements/archfest-winner-board.jpg",
+      ceremony: "./images/achievements/archfest-ceremony.jpg"
+    },
+    summary: "Awarded 1st Place / Winner of the prestigious Best Design Award (Category 08) at the Daffodil International University Department of Architecture ARCHFEST 2026. The winning design 'Between Water & Home' was recognized for its breakthrough community-driven circular waste management and living bio-filtration wetland ecology in the informal settlement of Korail.",
+    highlights: [
+      "1st Place / Winner in Best Design Competition (Category 08)",
+      "Award of Excellence for design rigour from conceptual ideation to architectural execution",
+      "Celebrated during the official Department of Architecture ceremony on stage",
+      "Winning project exhibited as part of the DIU Department of Architecture design showcase"
+    ]
+  }
 ];

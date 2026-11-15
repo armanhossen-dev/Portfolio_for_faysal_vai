@@ -74,8 +74,16 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                     />
 
                     {/* Architectural Sheet Stamp */}
-                    <div className="absolute top-3 left-3 font-mono text-[10px] font-bold px-2 py-1 bg-studio-950/80 text-white rounded backdrop-blur-xs border border-white/10">
-                      PROJECT {project.projectNumber}
+                    <div className="absolute top-3 left-3 flex items-center gap-1.5">
+                      <div className="font-mono text-[10px] font-bold px-2 py-1 bg-studio-950/80 text-white rounded backdrop-blur-xs border border-white/10">
+                        PROJECT {project.projectNumber}
+                      </div>
+                      {project.award && (
+                        <div className="font-mono text-[10px] font-bold px-2 py-1 bg-amber-500 text-white rounded backdrop-blur-xs flex items-center gap-1 shadow-md">
+                          <i className="bx bxs-trophy"></i>
+                          <span>WINNER</span>
+                        </div>
+                      )}
                     </div>
 
                     <div className="absolute top-3 right-3 font-mono text-[10px] px-2 py-1 bg-blueprint-600/90 text-white rounded backdrop-blur-xs">

@@ -58,9 +58,14 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
                   <i className="bx bxs-school text-sm"></i>
                   <span>Department of Architecture</span>
                 </span>
-                <span className="text-xs text-studio-500 dark:text-studio-400 font-medium">
-                  Daffodil International University
-                </span>
+                <a
+                  href="#achievements"
+                  className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500 text-white hover:bg-amber-600 transition-colors shadow-xs"
+                  title="View ARCHFEST 2026 Award Documentation"
+                >
+                  <i className="bx bxs-trophy text-sm"></i>
+                  <span>Winner: Best Design Award (ARCHFEST 2026)</span>
+                </a>
               </div>
 
               {/* Main Name & Title */}

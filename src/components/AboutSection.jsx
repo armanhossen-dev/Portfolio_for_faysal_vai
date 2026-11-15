@@ -93,6 +93,26 @@ export default function AboutSection() {
                 </div>
               </div>
 
+              {/* Competition Victory / Honors Callout */}
+              <div className="p-4 rounded-xl bg-gradient-to-r from-amber-500/10 via-amber-500/5 to-transparent border border-amber-500/30 flex items-start gap-3.5">
+                <div className="w-10 h-10 rounded-lg bg-amber-500 text-white flex items-center justify-center shrink-0 text-xl shadow-xs">
+                  <i className="bx bxs-trophy"></i>
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="font-mono text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500 text-white uppercase">
+                      ARCHFEST 2026 WINNER
+                    </span>
+                    <span className="text-xs text-amber-700 dark:text-amber-400 font-semibold">
+                      Best Design Award (Category 08)
+                    </span>
+                  </div>
+                  <p className="text-xs text-studio-600 dark:text-studio-300 mt-1 font-sans">
+                    Award of Excellence for <em>"Between Water & Home: Toward an Inclusive and Adaptive Korail"</em>, Department of Architecture, Daffodil International University.
+                  </p>
+                </div>
+              </div>
+
               <div className="pt-2">
                 <h3 className="font-display font-bold text-sm uppercase tracking-wider text-studio-900 dark:text-white mb-2">
                   Architectural Philosophy

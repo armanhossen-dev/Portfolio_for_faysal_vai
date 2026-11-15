@@ -26,6 +26,7 @@ export default function App() {
   // Modals state
   const [selectedProject, setSelectedProject] = useState(null);
   const [lightboxSheet, setLightboxSheet] = useState(null);
+  const [lightboxGallery, setLightboxGallery] = useState(null);
   const [sheetReviewOpen, setSheetReviewOpen] = useState(false);
   const [initialSheetIndex, setInitialSheetIndex] = useState(0);
 
@@ -109,23 +110,48 @@ export default function App() {
     setSheetReviewOpen(true);
   };
 
-  const handleOpenLightbox = (sheet) => {
+  const handleOpenLightbox = (sheet, customGallery = null) => {
     setLightboxSheet(sheet);
+    setLightboxGallery(customGallery || sheet?.gallery || null);
   };
 
   const handleLightboxNext = () => {
     if (!lightboxSheet) return;
-    const currentIndex = allSheets.findIndex(s => s.id === lightboxSheet.id);
-    if (currentIndex !== -1 && currentIndex < allSheets.length - 1) {
-      setLightboxSheet(allSheets[currentIndex + 1]);
+    const activeList = lightboxGallery || lightboxSheet.gallery || allSheets;
+    const currentIndex = activeList.findIndex(
+      (s) =>
+        (s.id && lightboxSheet.id && s.id === lightboxSheet.id) ||
+        (s.full && (s.full === lightboxSheet.full || s.full === lightboxSheet.src)) ||
+        (s.src && (s.src === lightboxSheet.full || s.src === lightboxSheet.src)) ||
+        s.title === lightboxSheet.title
+    );
+    if (currentIndex !== -1 && activeList.length > 1) {
+      const nextIndex = (currentIndex + 1) % activeList.length;
+      const nextItem = activeList[nextIndex];
+      setLightboxSheet({
+        ...nextItem,
+        gallery: activeList
+      });
     }
   };
 
   const handleLightboxPrev = () => {
     if (!lightboxSheet) return;
-    const currentIndex = allSheets.findIndex(s => s.id === lightboxSheet.id);
-    if (currentIndex > 0) {
-      setLightboxSheet(allSheets[currentIndex - 1]);
+    const activeList = lightboxGallery || lightboxSheet.gallery || allSheets;
+    const currentIndex = activeList.findIndex(
+      (s) =>
+        (s.id && lightboxSheet.id && s.id === lightboxSheet.id) ||
+        (s.full && (s.full === lightboxSheet.full || s.full === lightboxSheet.src)) ||
+        (s.src && (s.src === lightboxSheet.full || s.src === lightboxSheet.src)) ||
+        s.title === lightboxSheet.title
+    );
+    if (currentIndex !== -1 && activeList.length > 1) {
+      const prevIndex = (currentIndex - 1 + activeList.length) % activeList.length;
+      const prevItem = activeList[prevIndex];
+      setLightboxSheet({
+        ...prevItem,
+        gallery: activeList
+      });
     }
   };
 
@@ -206,7 +232,10 @@ export default function App() {
       {lightboxSheet && (
         <LightboxViewer 
           sheet={lightboxSheet}
-          onClose={() => setLightboxSheet(null)}
+          onClose={() => {
+            setLightboxSheet(null);
+            setLightboxGallery(null);
+          }}
           onNavigateNext={handleLightboxNext}
           onNavigatePrev={handleLightboxPrev}
         />

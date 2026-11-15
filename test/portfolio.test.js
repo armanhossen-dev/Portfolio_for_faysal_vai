@@ -121,6 +121,13 @@ test('Recent Achievements & Honors', async (t) => {
     assert.ok(winningProject.award, 'Project 02 must have award object');
     assert.match(winningProject.award.badge, /WINNER/i);
   });
+
+  await t.test('achievements section supports gallery sequential navigation in lightbox', () => {
+    const achieveJsx = fs.readFileSync(path.resolve('src/components/AchievementsSection.jsx'), 'utf8');
+    const appJsx = fs.readFileSync(path.resolve('src/App.jsx'), 'utf8');
+    assert.ok(achieveJsx.includes('onOpenLightbox(targetSheet, achievementSheets)'));
+    assert.ok(appJsx.includes('lightboxGallery || lightboxSheet.gallery || allSheets'));
+  });
 });
 
 test('Projects & Technical Sheets Folio', async (t) => {

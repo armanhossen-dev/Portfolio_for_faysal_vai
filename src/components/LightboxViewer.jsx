@@ -172,7 +172,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
 
           {/* Download Original Sheet */}
           <a
-            href={sheet.full}
+            href={sheet.full || sheet.src || sheet.optimized}
             download
             target="_blank"
             rel="noreferrer"
@@ -206,9 +206,15 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
         {/* Navigation Arrows */}
         {onNavigatePrev && (
           <button
-            onClick={onNavigatePrev}
+            type="button"
+            onMouseDown={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              onNavigatePrev();
+            }}
             className="absolute left-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-[#ffb81c] hover:text-[#101214] text-white border border-studio-700 shadow-xl transition-all flex items-center justify-center cursor-pointer"
-            title="Previous Sheet"
+            title="Previous Sheet / Photo (←)"
+            aria-label="Previous Sheet"
           >
             <i className="bx bx-chevron-left text-2xl"></i>
           </button>
@@ -216,9 +222,15 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
 
         {onNavigateNext && (
           <button
-            onClick={onNavigateNext}
+            type="button"
+            onMouseDown={(e) => e.stopPropagation()}
+            onClick={(e) => {
+              e.stopPropagation();
+              onNavigateNext();
+            }}
             className="absolute right-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-[#ffb81c] hover:text-[#101214] text-white border border-studio-700 shadow-xl transition-all flex items-center justify-center cursor-pointer"
-            title="Next Sheet"
+            title="Next Sheet / Photo (→)"
+            aria-label="Next Sheet"
           >
             <i className="bx bx-chevron-right text-2xl"></i>
           </button>

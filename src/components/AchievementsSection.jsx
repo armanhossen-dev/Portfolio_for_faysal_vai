@@ -9,36 +9,59 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
 
   const galleryItems = [
     {
+      id: "archfest-winner-board",
       src: achievement.images.winnerWithBoard,
       title: "Winner with Project Board",
       caption: "Faysal Ahmed holding the Winner Trophy in front of his project board 'Between Water & Home : Toward an Inclusive and Adaptive Korail'",
       tag: "Best Design Award",
-      objectPosition: "object-[50%_20%]"
+      objectPosition: "object-[50%_20%]",
+      sheetNumber: "HONOR 01/03"
     },
     {
+      id: "archfest-trophy",
       src: achievement.images.trophy,
       title: "ARCHFEST 2026 Trophy & Inscription",
       caption: "Award of Excellence for Outstanding Achievement in Architectural Design Competition (Conceptual to Execution)",
-      tag: "Trophy Closeup"
+      tag: "Trophy Closeup",
+      sheetNumber: "HONOR 02/03"
     },
     {
+      id: "archfest-ceremony",
       src: achievement.images.ceremony,
       title: "Official Award Ceremony on Stage",
       caption: "Presented on stage by Department of Architecture faculty members and university dignitaries at Daffodil International University",
-      tag: "Stage Ceremony"
+      tag: "Stage Ceremony",
+      sheetNumber: "HONOR 03/03"
     }
   ];
 
-  const handlePhotoClick = (photo) => {
+  const achievementSheets = galleryItems.map((item, idx) => ({
+    id: item.id || `achievement-doc-${idx + 1}`,
+    title: item.title,
+    projectTitle: `${achievement.competition} (${achievement.year})`,
+    sheetNumber: item.sheetNumber || `HONOR 0${idx + 1}/03`,
+    category: "Achievement",
+    full: item.src,
+    optimized: item.src,
+    src: item.src,
+    description: item.caption,
+    tag: item.tag
+  }));
+
+  const handlePhotoClick = (photo, idx = 0) => {
     if (onOpenLightbox) {
-      onOpenLightbox({
+      const targetSheet = achievementSheets[idx] || {
+        id: photo.id || `achievement-doc-${idx + 1}`,
         title: photo.title,
         projectTitle: `${achievement.competition} (${achievement.year})`,
-        sheetNumber: "HONOR",
+        sheetNumber: photo.sheetNumber || `HONOR 0${idx + 1}/03`,
         category: "Achievement",
         full: photo.src,
+        optimized: photo.src,
+        src: photo.src,
         description: photo.caption
-      });
+      };
+      onOpenLightbox(targetSheet, achievementSheets);
     } else {
       setSelectedPhoto(photo);
     }
@@ -122,7 +145,7 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                 {galleryItems.map((item, idx) => (
                   <div
                     key={idx}
-                    onClick={() => handlePhotoClick(item)}
+                    onClick={() => handlePhotoClick(item, idx)}
                     className="group relative bg-white dark:bg-[#101214] rounded-xl overflow-hidden border border-studio-200 dark:border-white/10 hover:border-amber-400 dark:hover:border-[#ffb81c] transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between"
                   >
                     <div className="relative aspect-[4/3] overflow-hidden bg-studio-100 dark:bg-[#101214]">

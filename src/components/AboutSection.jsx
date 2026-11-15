@@ -128,6 +128,9 @@ export default function AboutSection() {
                   src="./images/faysal-profile.jpg"
                   alt="Faysal Ahmed – Architectural Designer"
                   className="w-full h-full object-cover object-center grayscale contrast-110 hover:grayscale-0 transition-all duration-500"
+                  draggable="false"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
                 />
 
                 {/* Floating Architectural Technical Tags */}
@@ -238,7 +241,14 @@ export default function AboutSection() {
                   >
                     <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white dark:bg-[#101214] p-1.5 flex items-center justify-center shrink-0 border border-studio-200 dark:border-white/10 overflow-hidden shadow-sm">
                       {edu.logo ? (
-                        <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain" />
+                        <img 
+                          src={edu.logo} 
+                          alt={edu.institution} 
+                          className="w-full h-full object-contain"
+                          draggable="false"
+                          onContextMenu={(e) => e.preventDefault()}
+                          onDragStart={(e) => e.preventDefault()}
+                        />
                       ) : (
                         <i className={`bx ${edu.icon || 'bx-school'} text-2xl text-studio-900 dark:text-[#ffb81c]`}></i>
                       )}

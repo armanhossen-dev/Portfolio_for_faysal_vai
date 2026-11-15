@@ -74,8 +74,38 @@ export default function App() {
 
     document.addEventListener('click', handleAnchorClick);
 
+    // Global protection: prevent dragging and right-click context menu on all photos/images
+    const handleImageContextMenu = (e) => {
+      const isImage = 
+        e.target.tagName === 'IMG' || 
+        e.target.closest('img') || 
+        e.target.closest('.photo') || 
+        e.target.closest('.stage') ||
+        e.target.closest('[data-photo]');
+      if (isImage) {
+        e.preventDefault();
+      }
+    };
+
+    const handleImageDragStart = (e) => {
+      const isImage = 
+        e.target.tagName === 'IMG' || 
+        e.target.closest('img') || 
+        e.target.closest('.photo') || 
+        e.target.closest('.stage') ||
+        e.target.closest('[data-photo]');
+      if (isImage) {
+        e.preventDefault();
+      }
+    };
+
+    document.addEventListener('contextmenu', handleImageContextMenu);
+    document.addEventListener('dragstart', handleImageDragStart);
+
     return () => {
       document.removeEventListener('click', handleAnchorClick);
+      document.removeEventListener('contextmenu', handleImageContextMenu);
+      document.removeEventListener('dragstart', handleImageDragStart);
       cancelAnimationFrame(rafId);
       lenis.destroy();
       delete window.__lenis;

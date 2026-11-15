@@ -185,4 +185,12 @@ test('Architectural Design System Integrity', async (t) => {
     assert.equal(heroJsx.includes('SCALE: NTS // DEPT_OF_ARCHITECTURE'), false);
     assert.equal(heroJsx.includes('[+] 23°49\'32"N'), false);
   });
+
+  await t.test('images have drag protection and right-click context menu prevention', () => {
+    const appJsx = fs.readFileSync(path.resolve('src/App.jsx'), 'utf8');
+    const indexCss = fs.readFileSync(path.resolve('src/index.css'), 'utf8');
+    assert.ok(appJsx.includes('handleImageContextMenu'));
+    assert.ok(appJsx.includes('handleImageDragStart'));
+    assert.ok(indexCss.includes('-webkit-user-drag: none'));
+  });
 });

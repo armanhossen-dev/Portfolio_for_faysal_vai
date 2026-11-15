@@ -50,6 +50,9 @@ export default function TechnicalSheetsSection({ onSelectSheet, onOpenSheetRevie
                     alt={sheet.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
                   />
                   
                   {/* Sheet Number Badge */}

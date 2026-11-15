@@ -255,6 +255,8 @@ export default function SheetPresentationModal({
                 magnifierActive && zoomLevel === 1 ? 'cursor-crosshair' : 'cursor-default'
               }`}
               draggable="false"
+              onContextMenu={(e) => e.preventDefault()}
+              onDragStart={(e) => e.preventDefault()}
             />
 
             {/* Precision Architectural Circle Magnifier Loupe */}
@@ -349,6 +351,9 @@ export default function SheetPresentationModal({
                   src={sheet.thumb}
                   alt={sheet.title}
                   className="w-full h-full object-cover"
+                  draggable="false"
+                  onContextMenu={(e) => e.preventDefault()}
+                  onDragStart={(e) => e.preventDefault()}
                 />
                 <span className="absolute bottom-0 inset-x-0 bg-studio-950/80 text-[8px] font-mono text-center text-white py-0.5 truncate">
                   {sheet.sheetNumber}

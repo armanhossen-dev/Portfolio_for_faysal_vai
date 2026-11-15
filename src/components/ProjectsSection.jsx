@@ -71,6 +71,9 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                       src={project.coverImage}
                       alt={project.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      draggable="false"
+                      onContextMenu={(e) => e.preventDefault()}
+                      onDragStart={(e) => e.preventDefault()}
                     />
 
                     {/* Architectural Sheet Stamp */}

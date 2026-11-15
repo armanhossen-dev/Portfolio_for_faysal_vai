@@ -254,6 +254,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
           onMouseMove={zoom === 1 ? handleImgMouseMove : undefined}
           onMouseEnter={zoom === 1 ? handleImgMouseEnter : undefined}
           onMouseLeave={zoom === 1 ? handleImgMouseLeave : undefined}
+          onContextMenu={(e) => e.preventDefault()}
         >
           <img
             ref={imgRef}
@@ -263,6 +264,8 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
               magnifierActive && zoom === 1 ? 'cursor-crosshair' : ''
             }`}
             draggable="false"
+            onContextMenu={(e) => e.preventDefault()}
+            onDragStart={(e) => e.preventDefault()}
           />
 
           {/* Precision Architectural Circle Magnifier Loupe */}

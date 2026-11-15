@@ -57,6 +57,9 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                         src={commonsSheet1.optimized}
                         alt="Commons Module Poster 1"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        draggable="false"
+                        onContextMenu={(e) => e.preventDefault()}
+                        onDragStart={(e) => e.preventDefault()}
                       />
                     </div>
                     <div className="p-3 bg-white dark:bg-[#181b1e] border-t border-studio-100 dark:border-white/10 flex items-center justify-between text-xs font-mono">
@@ -77,6 +80,9 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                         src={commonsSheet2.optimized}
                         alt="Commons Module Poster 2"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        draggable="false"
+                        onContextMenu={(e) => e.preventDefault()}
+                        onDragStart={(e) => e.preventDefault()}
                       />
                     </div>
                     <div className="p-3 bg-white dark:bg-[#181b1e] border-t border-studio-100 dark:border-white/10 flex items-center justify-between text-xs font-mono">
@@ -241,6 +247,9 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                       src={heritageSheet.optimized}
                       alt="Manikganj Teota Jomidar Bari Architectural Board"
                       className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
+                      draggable="false"
+                      onContextMenu={(e) => e.preventDefault()}
+                      onDragStart={(e) => e.preventDefault()}
                     />
 
                     <div className="absolute inset-0 bg-studio-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white">

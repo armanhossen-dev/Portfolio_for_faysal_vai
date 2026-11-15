@@ -29,6 +29,20 @@
     padding-right: env(safe-area-inset-right);
   }
 
+  /* Prevent image dragging, ghost ghosting, and selection across all photos */
+  img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-touch-callout: none;
+  }
+
   /* Premium Bold Architectural Headings — Bricolage Grotesque */
   h1,
   h2,

@@ -122,6 +122,9 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                 src="./images/diu-logo.png" 
                 alt="Daffodil International University Crest" 
                 className="w-11 h-11 object-contain shrink-0 p-1 bg-white rounded-lg border border-white/20 shadow-sm hidden sm:block" 
+                draggable="false"
+                onContextMenu={(e) => e.preventDefault()}
+                onDragStart={(e) => e.preventDefault()}
               />
             </div>
           </div>
@@ -148,11 +151,17 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                     onClick={() => handlePhotoClick(item, idx)}
                     className="group relative bg-white dark:bg-[#101214] rounded-xl overflow-hidden border border-studio-200 dark:border-white/10 hover:border-amber-400 dark:hover:border-[#ffb81c] transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between"
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden bg-studio-100 dark:bg-[#101214]">
+                    <div 
+                      className="relative aspect-[4/3] overflow-hidden bg-studio-100 dark:bg-[#101214]"
+                      onContextMenu={(e) => e.preventDefault()}
+                    >
                       <img
                         src={item.src}
                         alt={item.title}
                         className={`w-full h-full object-cover ${item.objectPosition || "object-center"} group-hover:scale-105 transition-transform duration-500`}
+                        draggable="false"
+                        onContextMenu={(e) => e.preventDefault()}
+                        onDragStart={(e) => e.preventDefault()}
                       />
                       <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-black/75 text-white backdrop-blur-xs">
                         {item.tag}
@@ -220,11 +229,17 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                   </span>
                 </div>
 
-                <div className="aspect-[16/9] rounded-lg overflow-hidden bg-studio-100 dark:bg-[#181b1e] border border-studio-200 dark:border-white/10">
+                <div 
+                  className="aspect-[16/9] rounded-lg overflow-hidden bg-studio-100 dark:bg-[#181b1e] border border-studio-200 dark:border-white/10"
+                  onContextMenu={(e) => e.preventDefault()}
+                >
                   <img
                     src="./images/optimized/project2-sheet1.jpg"
                     alt={achievement.winningProject}
                     className="w-full h-full object-cover"
+                    draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
                   />
                 </div>
 

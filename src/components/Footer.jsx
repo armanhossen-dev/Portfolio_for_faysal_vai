@@ -40,6 +40,9 @@ export default function Footer() {
           src="./images/footer-silhouette.jpg"
           alt="Faysal Ahmed Waterscape Silhouette"
           className="w-full h-full object-cover object-bottom opacity-100"
+          draggable="false"
+          onContextMenu={(e) => e.preventDefault()}
+          onDragStart={(e) => e.preventDefault()}
         />
         {/* Scrim overlay: preserves photo silhouette reflections while keeping architectural drafting lines crisp */}
         <div className="absolute inset-0 bg-[#0a0c0e]/85 backdrop-blur-[1px]"></div>

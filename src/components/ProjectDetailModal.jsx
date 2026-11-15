@@ -136,6 +136,8 @@ export default function ProjectDetailModal({ project, onClose, onOpenSheetLightb
                     alt={currentSheet.title}
                     className="w-full h-full object-contain select-none"
                     draggable="false"
+                    onContextMenu={(e) => e.preventDefault()}
+                    onDragStart={(e) => e.preventDefault()}
                   />
 
                   {/* Circular Magnifier Loupe */}

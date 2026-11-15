@@ -91,6 +91,10 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     const qgis = studentProfile.dailyTools.find(t => t.name === 'QGIS');
     assert.ok(qgis && qgis.image, 'QGIS should have custom logo image');
     assert.ok(fs.existsSync(path.resolve(qgis.image.replace(/^\.\//, 'public/'))), 'QGIS logo missing on disk');
+
+    const enscape = studentProfile.dailyTools.find(t => t.name === 'Enscape');
+    assert.ok(enscape && enscape.image, 'Enscape should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(enscape.image.replace(/^\.\//, 'public/'))), 'Enscape logo missing on disk');
   });
 });
 

@@ -158,8 +158,18 @@ export default function Footer() {
                 <div>Final year B.Arch</div>
                 <div>Daffodil International</div>
                 <div>University</div>
-                <div className="text-xs font-mono text-studio-400 mt-4 pt-1">
-                  Dhaka, Bangladesh · 23.81° N 90.41° E
+                <div className="text-xs font-mono text-studio-400 mt-4 pt-1 flex items-center gap-2">
+                  <span>Dhaka, Bangladesh</span>
+                  <span className="inline-flex items-center" title="Bangladesh">
+                    <svg
+                      viewBox="0 0 20 12"
+                      className="w-4 h-2.5 rounded-[2px] overflow-hidden shadow-2xs shrink-0"
+                      aria-label="Bangladesh Flag"
+                    >
+                      <rect width="20" height="12" fill="#006a4e" />
+                      <circle cx="9" cy="6" r="4" fill="#f42a41" />
+                    </svg>
+                  </span>
                 </div>
               </div>
             </div>

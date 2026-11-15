@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { studentProfile } from '../data/projectsData';
-import ArchitectContactIllustration from './illustrations/ArchitectContactIllustration';
 
 export default function ContactSection({ onOpenSheetReview }) {
   const [submitted, setSubmitted] = useState(false);
@@ -38,11 +37,6 @@ export default function ContactSection({ onOpenSheetReview }) {
 
           {/* Left Column: Contact Details & Info Cards */}
           <div className="lg:col-span-5 space-y-6">
-
-            {/* Architectural Messaging Illustration */}
-            <div className="bg-white dark:bg-[#181b1e] p-4 rounded-xl border border-studio-200 dark:border-white/10 text-center">
-              <ArchitectContactIllustration className="w-full h-auto max-w-[260px] mx-auto" />
-            </div>
 
             <div className="bg-white dark:bg-[#181b1e] p-6 rounded-xl border border-studio-200 dark:border-white/10 space-y-4">
               <h3 className="font-display font-bold text-base text-studio-900 dark:text-white uppercase tracking-wider text-xs border-b border-studio-200 dark:border-white/10 pb-2">

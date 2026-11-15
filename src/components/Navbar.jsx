@@ -8,12 +8,25 @@ export default function Navbar({
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState('projects');
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
+
+      const sectionIds = ['projects', 'achievements', 'sheets', 'research', 'about', 'contact'];
+      const scrollPos = window.scrollY + 180;
+
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const el = document.getElementById(sectionIds[i]);
+        if (el && el.offsetTop <= scrollPos) {
+          setActiveSection(sectionIds[i]);
+          break;
+        }
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -86,11 +99,20 @@ export default function Navbar({
 
       {/* Desktop Nav Links */}
       <nav className="nav-links" aria-label="Primary">
-        {navLinks.map((link) => (
-          <a key={link.name} href={link.href}>
-            {link.name}
-          </a>
-        ))}
+        {navLinks.map((link) => {
+          const id = link.href.replace('#', '');
+          const isActive = activeSection === id;
+          return (
+            <a
+              key={link.name}
+              href={link.href}
+              className={isActive ? 'active' : ''}
+              onClick={() => setActiveSection(id)}
+            >
+              {link.name}
+            </a>
+          );
+        })}
       </nav>
 
       {/* Right Controls & Actions Group */}

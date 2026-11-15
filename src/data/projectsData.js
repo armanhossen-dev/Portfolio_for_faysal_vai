@@ -8,6 +8,8 @@ export const studentProfile = {
   location: "Dhaka, Bangladesh",
   email: "faysal.ahmed.arch@gmail.com",
   phone: "+880 1700-000000",
+  linkedin: "https://www.linkedin.com/in/faysalahmed934",
+  linkedinHandle: "faysalahmed934",
   bio: "Final-year Architecture student at Daffodil International University focusing on climate-adaptive urbanism, ecological community infrastructure, and sustainable housing systems. Passionate about translating complex socio-spatial realities into humane, resilient, and environmentally regenerative architectural interventions.",
   skills: {
     architectural: [

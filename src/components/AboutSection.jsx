@@ -171,13 +171,27 @@ export default function AboutSection() {
               <p className="text-xs text-studio-300 leading-relaxed font-sans">
                 Open for architectural internships, junior architect roles, thesis collaboration, and sustainable urban research projects.
               </p>
-              <a
-                href="#contact"
-                className="inline-flex items-center gap-2 px-4 py-2 bg-blueprint-600 hover:bg-blueprint-500 text-white font-mono text-xs font-semibold rounded transition-colors"
-              >
-                <Mail className="w-3.5 h-3.5" />
-                <span>Get in Touch with Faysal</span>
-              </a>
+              <div className="flex flex-wrap items-center gap-2 pt-1">
+                <a
+                  href="#contact"
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-blueprint-600 hover:bg-blueprint-500 text-white font-mono text-xs font-semibold rounded transition-colors"
+                >
+                  <Mail className="w-3.5 h-3.5" />
+                  <span>Get in Touch</span>
+                </a>
+
+                <a
+                  href={studentProfile.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0A66C2] hover:bg-[#084e96] text-white font-mono text-xs font-semibold rounded transition-colors"
+                >
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
+                  </svg>
+                  <span>LinkedIn Profile</span>
+                </a>
+              </div>
             </div>
 
           </div>

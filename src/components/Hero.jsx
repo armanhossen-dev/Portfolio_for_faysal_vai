@@ -32,27 +32,27 @@ export default function Hero({ onOpenSheetReview }) {
           {/* Right Column: Profile Intro Details */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">
 
-            {/* Crisp Solid Card — NO Blur on Background */}
-            <div className="p-6 sm:p-8 md:p-10 rounded-2xl bg-white/95 dark:bg-studio-950/95 border border-studio-200 dark:border-studio-800 shadow-2xl">
+            {/* Glassmorphism Frosted Architectural Card */}
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl bg-white/75 dark:bg-studio-950/70 backdrop-blur-xl md:backdrop-blur-2xl border border-white/60 dark:border-white/15 shadow-[0_20px_60px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.7)] transition-all">
 
               {/* Category / Department Eyebrow */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-studio-950 text-white dark:bg-white dark:text-studio-950 shadow-xs">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-studio-950/90 text-white dark:bg-white/90 dark:text-studio-950 backdrop-blur-md shadow-xs border border-white/20">
                   <img src="./images/diu-logo.png" alt="DIU Crest" className="w-4 h-4 object-contain shrink-0" />
                   <span>Department of Architecture • DIU</span>
                 </span>
                 <a
                   href="#achievements"
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold bg-amber-600 hover:bg-amber-700 text-white transition-all shadow-xs"
+                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-bold bg-amber-600/90 hover:bg-amber-600 text-white backdrop-blur-md transition-all shadow-xs border border-amber-400/30"
                   title="View ARCHFEST 2026 Winner Best Design Award"
                 >
-                  <i className="bx bxs-trophy text-sm"></i>
+                  <i className="bx bxs-trophy text-sm text-amber-200"></i>
                   <span>ARCHFEST 2026 Winner • Best Design</span>
                 </a>
               </div>
 
               {/* Main Name & Title */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-studio-950 dark:text-white uppercase leading-[1.04] mb-3">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-studio-950 dark:text-white uppercase leading-[1.04] mb-3 drop-shadow-xs">
                 {studentProfile.name}
               </h1>
 
@@ -60,19 +60,19 @@ export default function Hero({ onOpenSheetReview }) {
                 Architectural Designer & Urban Researcher • Final Year B.Arch
               </div>
 
-              {/* Personal Details: Location & Origin */}
-              <div className="flex flex-wrap items-center gap-2.5 text-xs text-studio-700 dark:text-studio-200 mb-5 font-medium">
-                <span className="inline-flex items-center gap-1.5 bg-studio-100 dark:bg-studio-900 px-3 py-1.5 rounded-md border border-studio-200 dark:border-studio-800">
+              {/* Personal Details: Location & Origin with Frosted Glass Badges */}
+              <div className="flex flex-wrap items-center gap-2.5 text-xs text-studio-800 dark:text-studio-200 mb-5 font-medium">
+                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/60 dark:border-white/15 shadow-2xs">
                   <i className="bx bx-map-pin text-rose-500 text-base"></i>
                   <span>Lives in {studentProfile.livesIn}</span>
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-studio-100 dark:bg-studio-900 px-3 py-1.5 rounded-md border border-studio-200 dark:border-studio-800">
+                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/60 dark:border-white/15 shadow-2xs">
                   <i className="bx bx-home-alt text-blueprint-600 dark:text-blueprint-400 text-base"></i>
                   <span>From {studentProfile.hometown}</span>
                 </span>
               </div>
 
-              <p className="text-base text-studio-700 dark:text-studio-200 leading-relaxed mb-8 font-normal max-w-2xl">
+              <p className="text-base text-studio-800 dark:text-studio-200 leading-relaxed mb-8 font-normal max-w-2xl">
                 Exploring the confluence of <strong className="text-studio-950 dark:text-white font-bold">ecological urbanism</strong>, high-density residential community frameworks, and circular industrial facilities. Bridging socio-spatial realities with resilient, sustainable architectural interventions.
               </p>
 
@@ -80,7 +80,7 @@ export default function Hero({ onOpenSheetReview }) {
               <div className="flex flex-wrap items-center gap-3">
                 <a
                   href="#projects"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] text-sm font-bold bg-studio-950 dark:bg-white text-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white rounded-lg transition-all shadow-md group whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] text-sm font-bold bg-studio-950 text-white dark:bg-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white rounded-lg transition-all shadow-md group whitespace-nowrap"
                 >
                   <span>Explore Projects</span>
                   <i className="bx bx-right-arrow-alt text-lg group-hover:translate-x-1 transition-transform"></i>
@@ -88,7 +88,7 @@ export default function Hero({ onOpenSheetReview }) {
 
                 <button
                   onClick={() => onOpenSheetReview(0)}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] text-sm font-bold bg-white dark:bg-studio-900 text-studio-900 dark:text-white border border-studio-300 dark:border-studio-700 hover:border-blueprint-500 rounded-lg transition-colors shadow-xs whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] text-sm font-bold bg-white/80 dark:bg-white/10 backdrop-blur-md text-studio-900 dark:text-white border border-studio-300/80 dark:border-white/20 hover:border-blueprint-500 hover:bg-white dark:hover:bg-white/20 rounded-lg transition-colors shadow-xs whitespace-nowrap"
                 >
                   <i className="bx bx-book-open text-base text-blueprint-600 dark:text-blueprint-400"></i>
                   <span>Review Portfolio Sheets</span>
@@ -99,7 +99,7 @@ export default function Hero({ onOpenSheetReview }) {
                   href={studentProfile.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-11 h-11 rounded-lg text-[#0A66C2] dark:text-[#70B5F9] bg-[#0A66C2]/10 dark:bg-[#0A66C2]/20 hover:bg-[#0A66C2]/20 border border-[#0A66C2]/30 transition-colors flex items-center justify-center shadow-2xs"
+                  className="w-11 h-11 rounded-lg text-[#0A66C2] dark:text-[#70B5F9] bg-[#0A66C2]/15 dark:bg-[#0A66C2]/25 backdrop-blur-md hover:bg-[#0A66C2]/25 border border-[#0A66C2]/40 transition-colors flex items-center justify-center shadow-2xs"
                   title="View Faysal Ahmed on LinkedIn"
                   aria-label="LinkedIn Profile"
                 >
@@ -110,7 +110,7 @@ export default function Hero({ onOpenSheetReview }) {
                   href={studentProfile.facebook}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-11 h-11 rounded-lg text-[#1877F2] dark:text-[#6ba7f8] bg-[#1877F2]/10 dark:bg-[#1877F2]/20 hover:bg-[#1877F2]/20 border border-[#1877F2]/30 transition-colors flex items-center justify-center shadow-2xs"
+                  className="w-11 h-11 rounded-lg text-[#1877F2] dark:text-[#6ba7f8] bg-[#1877F2]/15 dark:bg-[#1877F2]/25 backdrop-blur-md hover:bg-[#1877F2]/25 border border-[#1877F2]/40 transition-colors flex items-center justify-center shadow-2xs"
                   title="View Faysal Ahmed on Facebook"
                   aria-label="Facebook Profile"
                 >

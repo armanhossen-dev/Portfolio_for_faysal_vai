@@ -89,28 +89,27 @@ export default function Hero({ onOpenSheetReview }) {
                   <span>Review Portfolio Sheets</span>
                 </button>
 
+                {/* Social Links: Box Icons Only (44x44px Touch Targets) */}
                 <a
                   href={studentProfile.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 min-h-[44px] text-sm font-semibold bg-[#0A66C2]/10 dark:bg-[#0A66C2]/20 text-[#0A66C2] dark:text-[#70B5F9] border border-[#0A66C2]/30 rounded-lg hover:bg-[#0A66C2]/20 transition-colors shadow-2xs whitespace-nowrap"
-                  title="Connect on LinkedIn"
-                  aria-label="Connect with Faysal Ahmed on LinkedIn"
+                  className="w-11 h-11 rounded-lg text-[#0A66C2] dark:text-[#70B5F9] bg-[#0A66C2]/10 dark:bg-[#0A66C2]/20 hover:bg-[#0A66C2]/20 border border-[#0A66C2]/30 transition-colors flex items-center justify-center shadow-2xs"
+                  title="View Faysal Ahmed on LinkedIn"
+                  aria-label="LinkedIn Profile"
                 >
-                  <i className="bx bxl-linkedin-square text-lg"></i>
-                  <span>LinkedIn</span>
+                  <i className="bx bxl-linkedin text-xl leading-none"></i>
                 </a>
 
                 <a
                   href={studentProfile.facebook}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center justify-center gap-1.5 px-4 py-3 min-h-[44px] text-sm font-semibold bg-[#1877F2]/10 dark:bg-[#1877F2]/20 text-[#1877F2] dark:text-[#6ba7f8] border border-[#1877F2]/30 rounded-lg hover:bg-[#1877F2]/20 transition-colors shadow-2xs whitespace-nowrap"
-                  title="Connect on Facebook"
-                  aria-label="Connect with Faysal Ahmed on Facebook"
+                  className="w-11 h-11 rounded-lg text-[#1877F2] dark:text-[#6ba7f8] bg-[#1877F2]/10 dark:bg-[#1877F2]/20 hover:bg-[#1877F2]/20 border border-[#1877F2]/30 transition-colors flex items-center justify-center shadow-2xs"
+                  title="View Faysal Ahmed on Facebook"
+                  aria-label="Facebook Profile"
                 >
-                  <i className="bx bxl-facebook-square text-lg"></i>
-                  <span>Facebook</span>
+                  <i className="bx bxl-facebook text-xl leading-none"></i>
                 </a>
               </div>
 

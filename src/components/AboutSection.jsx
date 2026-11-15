@@ -4,99 +4,99 @@ import { studentProfile } from '../data/projectsData';
 export default function AboutSection() {
   const appBrandThemes = {
     "Adobe Photoshop": {
-      gradient: "from-[#001E36]/90 via-[#001E36]/50 to-[#31A8FF]/20",
-      lightGradient: "from-[#31A8FF]/15 via-[#31A8FF]/5 to-white",
+      gradient: "from-[#051c2f] to-[#010e19]",
+      lightGradient: "from-[#eaf5fe] to-[#d6ebfd]",
       border: "border-[#31A8FF]/40 hover:border-[#31A8FF]",
       iconBg: "bg-[#001E36] text-[#31A8FF]",
-      tagColor: "text-[#31A8FF]",
+      tagColor: "text-[#31A8FF] dark:text-[#6ec1ff]",
       accent: "#31A8FF"
     },
     "Sketchup": {
-      gradient: "from-[#EA2127]/30 via-[#EA2127]/10 to-transparent",
-      lightGradient: "from-[#EA2127]/15 via-[#EA2127]/5 to-white",
+      gradient: "from-[#290809] to-[#170405]",
+      lightGradient: "from-[#fef0f0] to-[#fde2e2]",
       border: "border-[#EA2127]/40 hover:border-[#EA2127]",
-      iconBg: "bg-[#EA2127]/20 text-[#EA2127]",
-      tagColor: "text-[#EA2127]",
+      iconBg: "bg-[#EA2127] text-white",
+      tagColor: "text-[#EA2127] dark:text-[#ff7074]",
       accent: "#EA2127"
     },
     "Autocad": {
-      gradient: "from-[#E51010]/30 via-[#E51010]/10 to-transparent",
-      lightGradient: "from-[#E51010]/15 via-[#E51010]/5 to-white",
+      gradient: "from-[#2b0808] to-[#180404]",
+      lightGradient: "from-[#fff0ef] to-[#fde3e1]",
       border: "border-[#E51010]/40 hover:border-[#E51010]",
-      iconBg: "bg-[#E51010]/20 text-[#E51010]",
-      tagColor: "text-[#E51010]",
+      iconBg: "bg-[#E51010] text-white",
+      tagColor: "text-[#E51010] dark:text-[#ff6a6a]",
       accent: "#E51010"
     },
     "Archicad": {
-      gradient: "from-[#005A9C]/35 via-[#0073CF]/15 to-transparent",
-      lightGradient: "from-[#0073CF]/15 via-[#0073CF]/5 to-white",
+      gradient: "from-[#031d36] to-[#011020]",
+      lightGradient: "from-[#eef5fc] to-[#dceaf8]",
       border: "border-[#0073CF]/40 hover:border-[#0073CF]",
-      iconBg: "bg-[#0073CF]/20 text-[#0073CF]",
-      tagColor: "text-[#0073CF]",
+      iconBg: "bg-[#005A9C] text-white",
+      tagColor: "text-[#0073CF] dark:text-[#5cb5ff]",
       accent: "#0073CF"
     },
     "Lumion": {
-      gradient: "from-[#0077B6]/35 via-[#00B4D8]/15 to-transparent",
-      lightGradient: "from-[#00B4D8]/15 via-[#00B4D8]/5 to-white",
+      gradient: "from-[#022131] to-[#01131c]",
+      lightGradient: "from-[#ebf8fc] to-[#d4f0f8]",
       border: "border-[#00B4D8]/40 hover:border-[#00B4D8]",
-      iconBg: "bg-[#00B4D8]/20 text-[#00B4D8]",
-      tagColor: "text-[#00B4D8]",
+      iconBg: "bg-[#0077B6] text-white",
+      tagColor: "text-[#0077B6] dark:text-[#48cae4]",
       accent: "#00B4D8"
     },
     "Enscape": {
-      gradient: "from-[#FF6B00]/30 via-[#FF8800]/15 to-transparent",
-      lightGradient: "from-[#FF6B00]/15 via-[#FF6B00]/5 to-white",
+      gradient: "from-[#2f1402] to-[#1a0a01]",
+      lightGradient: "from-[#fff3eb] to-[#ffe6d3]",
       border: "border-[#FF6B00]/40 hover:border-[#FF6B00]",
-      iconBg: "bg-[#FF6B00]/20 text-[#FF6B00]",
-      tagColor: "text-[#FF6B00]",
+      iconBg: "bg-[#FF6B00] text-white",
+      tagColor: "text-[#FF6B00] dark:text-[#ffa05c]",
       accent: "#FF6B00"
     },
     "D5 Render": {
-      gradient: "from-[#00C9A7]/30 via-[#00F2FE]/15 to-transparent",
-      lightGradient: "from-[#00C9A7]/15 via-[#00F2FE]/5 to-white",
+      gradient: "from-[#02241d] to-[#011410]",
+      lightGradient: "from-[#e9faf5] to-[#d2f6ed]",
       border: "border-[#00C9A7]/40 hover:border-[#00C9A7]",
-      iconBg: "bg-[#00C9A7]/20 text-[#00C9A7]",
-      tagColor: "text-[#00C9A7]",
+      iconBg: "bg-[#00C9A7] text-[#011410]",
+      tagColor: "text-[#009e83] dark:text-[#00F2FE]",
       accent: "#00C9A7"
     },
     "Affinity": {
-      gradient: "from-[#FF3366]/30 via-[#9933FF]/20 to-transparent",
-      lightGradient: "from-[#FF3366]/15 via-[#9933FF]/10 to-white",
+      gradient: "from-[#2b081e] to-[#180410]",
+      lightGradient: "from-[#fef0f7] to-[#fbe0f0]",
       border: "border-[#FF3366]/40 hover:border-[#FF3366]",
-      iconBg: "bg-[#FF3366]/20 text-[#FF3366]",
-      tagColor: "text-[#FF3366]",
+      iconBg: "bg-[#FF3366] text-white",
+      tagColor: "text-[#FF3366] dark:text-[#ff80a0]",
       accent: "#FF3366"
     },
     "VS Code": {
-      gradient: "from-[#007ACC]/30 via-[#0098FF]/15 to-transparent",
-      lightGradient: "from-[#007ACC]/15 via-[#007ACC]/5 to-white",
+      gradient: "from-[#021f36] to-[#011220]",
+      lightGradient: "from-[#edf6fd] to-[#d8ecfb]",
       border: "border-[#007ACC]/40 hover:border-[#007ACC]",
-      iconBg: "bg-[#007ACC]/20 text-[#007ACC]",
-      tagColor: "text-[#007ACC]",
+      iconBg: "bg-[#007ACC] text-white",
+      tagColor: "text-[#007ACC] dark:text-[#6bc3ff]",
       accent: "#007ACC"
     },
     "QGIS": {
-      gradient: "from-[#589632]/35 via-[#93B023]/15 to-transparent",
-      lightGradient: "from-[#589632]/15 via-[#93B023]/5 to-white",
+      gradient: "from-[#14260a] to-[#0b1605]",
+      lightGradient: "from-[#f2f8ed] to-[#e3f2db]",
       border: "border-[#589632]/40 hover:border-[#589632]",
-      iconBg: "bg-[#589632]/20 text-[#589632]",
-      tagColor: "text-[#589632]",
+      iconBg: "bg-[#589632] text-white",
+      tagColor: "text-[#4a8029] dark:text-[#8cd259]",
       accent: "#589632"
     },
     "Autodesk Forma": {
-      gradient: "from-[#8E44AD]/35 via-[#9B59B6]/15 to-transparent",
-      lightGradient: "from-[#9B59B6]/15 via-[#9B59B6]/5 to-white",
+      gradient: "from-[#220c2c] to-[#14061a]",
+      lightGradient: "from-[#f7effa] to-[#edddf5]",
       border: "border-[#9B59B6]/40 hover:border-[#9B59B6]",
-      iconBg: "bg-[#9B59B6]/20 text-[#9B59B6]",
-      tagColor: "text-[#9B59B6]",
+      iconBg: "bg-[#8E44AD] text-white",
+      tagColor: "text-[#8E44AD] dark:text-[#c39bd3]",
       accent: "#9B59B6"
     },
     "Archimap": {
-      gradient: "from-[#FF9F1C]/35 via-[#FF5722]/15 to-transparent",
-      lightGradient: "from-[#FF9F1C]/15 via-[#FF5722]/5 to-white",
+      gradient: "from-[#2f1b04] to-[#1b0e01]",
+      lightGradient: "from-[#fff6eb] to-[#ffebd5]",
       border: "border-[#FF9F1C]/40 hover:border-[#FF9F1C]",
-      iconBg: "bg-[#FF9F1C]/20 text-[#FF9F1C]",
-      tagColor: "text-[#FF9F1C]",
+      iconBg: "bg-[#FF9F1C] text-[#1b0e01]",
+      tagColor: "text-[#e08300] dark:text-[#ffbe66]",
       accent: "#FF9F1C"
     }
   };
@@ -331,7 +331,7 @@ export default function AboutSection() {
                   return (
                     <div
                       key={idx}
-                      className={`p-3.5 rounded-xl bg-gradient-to-br ${theme.lightGradient} dark:${theme.gradient} border ${theme.border} transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group flex flex-col justify-between relative overflow-hidden`}
+                      className={`p-3.5 rounded-xl bg-white dark:bg-[#101214] bg-gradient-to-br ${theme.lightGradient} dark:${theme.gradient} border ${theme.border} transition-all duration-300 hover:-translate-y-1 hover:shadow-md group flex flex-col justify-between relative overflow-hidden`}
                     >
                       <div className="flex items-center justify-between mb-2.5">
                         <div className={`w-8 h-8 rounded-lg ${theme.iconBg} border border-current/25 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs`}>

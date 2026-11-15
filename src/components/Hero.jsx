@@ -1,14 +1,4 @@
 import React from 'react';
-import { 
-  ArrowRight, 
-  BookOpen, 
-  Compass, 
-  Maximize2, 
-  Layers, 
-  MapPin, 
-  GraduationCap, 
-  Calendar 
-} from 'lucide-react';
 import { studentProfile, allSheets } from '../data/projectsData';
 
 export default function Hero({ onOpenSheetReview, onSelectSheet }) {
@@ -58,14 +48,14 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
                 className="inline-flex items-center gap-2 px-5 py-3 text-sm font-medium bg-studio-900 dark:bg-white text-white dark:text-studio-900 hover:bg-blueprint-600 dark:hover:bg-blueprint-400 dark:hover:text-studio-950 rounded transition-all shadow-md group"
               >
                 <span>Explore Projects</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <i className="bx bx-right-arrow-alt text-lg group-hover:translate-x-1 transition-transform"></i>
               </a>
 
               <button
                 onClick={() => onOpenSheetReview(0)}
                 className="inline-flex items-center gap-2 px-5 py-3 text-sm font-mono font-medium bg-white dark:bg-studio-900 text-studio-800 dark:text-studio-200 border border-studio-300 dark:border-studio-700 hover:border-blueprint-500 rounded transition-colors shadow-sm"
               >
-                <BookOpen className="w-4 h-4 text-blueprint-600 dark:text-blueprint-400" />
+                <i className="bx bx-book-open text-base text-blueprint-600 dark:text-blueprint-400"></i>
                 <span>Review Portfolio Sheets</span>
               </button>
 
@@ -76,9 +66,7 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
                 className="inline-flex items-center gap-2 px-4 py-3 text-sm font-medium bg-[#0A66C2]/10 dark:bg-[#0A66C2]/20 text-[#0A66C2] dark:text-[#70B5F9] border border-[#0A66C2]/30 rounded hover:bg-[#0A66C2]/20 transition-colors shadow-xs"
                 title="Connect on LinkedIn"
               >
-                <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
-                </svg>
+                <i className="bx bxl-linkedin text-base"></i>
                 <span>LinkedIn</span>
               </a>
 
@@ -86,7 +74,7 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
                 href="#about"
                 className="inline-flex items-center gap-1.5 px-4 py-3 text-sm font-medium text-studio-600 dark:text-studio-400 hover:text-studio-950 dark:hover:text-white transition-colors"
               >
-                <GraduationCap className="w-4 h-4" />
+                <i className="bx bxs-graduation text-base"></i>
                 <span>Academic Bio</span>
               </a>
             </div>
@@ -138,7 +126,7 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
                   <div className="font-mono text-xs text-blueprint-300 mb-1 flex items-center justify-between">
                     <span>SHEET 00 // COVER</span>
                     <span className="flex items-center gap-1 text-[11px] bg-studio-900/80 px-2 py-0.5 rounded border border-studio-700">
-                      <Maximize2 className="w-3 h-3" /> Click to Inspect
+                      <i className="bx bx-fullscreen text-xs"></i> Click to Inspect
                     </span>
                   </div>
                   <div className="font-display font-bold text-base sm:text-lg uppercase">
@@ -160,7 +148,7 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
                     onClick={() => onOpenSheetReview(2)}
                     className="text-[11px] font-mono text-blueprint-600 dark:text-blueprint-400 hover:underline flex items-center gap-1"
                   >
-                    Browse All <ArrowRight className="w-3 h-3" />
+                    Browse All <i className="bx bx-right-arrow-alt text-sm"></i>
                   </button>
                 </div>
 

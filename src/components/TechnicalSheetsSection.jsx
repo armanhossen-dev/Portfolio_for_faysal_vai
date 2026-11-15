@@ -1,12 +1,4 @@
 import React from 'react';
-import { 
-  FileText, 
-  Eye, 
-  Maximize2, 
-  BookOpen, 
-  ArrowRight, 
-  Download 
-} from 'lucide-react';
 import { allSheets } from '../data/projectsData';
 
 export default function TechnicalSheetsSection({ onSelectSheet, onOpenSheetReview }) {
@@ -34,7 +26,7 @@ export default function TechnicalSheetsSection({ onSelectSheet, onOpenSheetRevie
               onClick={() => onOpenSheetReview(0)}
               className="inline-flex items-center gap-2 px-4 py-2.5 bg-blueprint-600 hover:bg-blueprint-700 text-white font-mono text-xs font-semibold rounded-md shadow-sm transition-colors"
             >
-              <BookOpen className="w-4 h-4" />
+              <i className="bx bx-book-open text-base"></i>
               <span>Full Portfolio Presentation Mode</span>
             </button>
           </div>
@@ -72,8 +64,8 @@ export default function TechnicalSheetsSection({ onSelectSheet, onOpenSheetRevie
 
                   {/* Hover Inspect Icon */}
                   <div className="absolute inset-0 bg-studio-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <span className="p-2 bg-studio-900 text-white rounded-full shadow-lg border border-studio-700">
-                      <Maximize2 className="w-4 h-4 text-blueprint-400" />
+                    <span className="p-2 bg-studio-900 text-white rounded-full shadow-lg border border-studio-700 flex items-center justify-center">
+                      <i className="bx bx-fullscreen text-blueprint-400 text-base"></i>
                     </span>
                   </div>
                 </div>
@@ -101,16 +93,16 @@ export default function TechnicalSheetsSection({ onSelectSheet, onOpenSheetRevie
                   onClick={() => onSelectSheet(sheet)}
                   className="text-studio-700 dark:text-studio-300 hover:text-blueprint-600 dark:hover:text-blueprint-400 flex items-center gap-1"
                 >
-                  <Eye className="w-3.5 h-3.5 text-blueprint-500" />
+                  <i className="bx bx-show text-blueprint-500 text-sm"></i>
                   <span>Inspect Drawing</span>
                 </button>
 
                 <button
                   onClick={() => onOpenSheetReview(index)}
-                  className="text-studio-500 hover:text-studio-900 dark:hover:text-white"
+                  className="text-studio-500 hover:text-studio-900 dark:hover:text-white flex items-center"
                   title="View in sequence"
                 >
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <i className="bx bx-right-arrow-alt text-base"></i>
                 </button>
               </div>
             </div>

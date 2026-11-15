@@ -1,16 +1,4 @@
 import React, { useState } from 'react';
-import { 
-  X, 
-  Maximize2, 
-  MapPin, 
-  Calendar, 
-  Layers, 
-  CheckCircle2, 
-  ExternalLink, 
-  Table, 
-  Eye, 
-  FileText 
-} from 'lucide-react';
 import { allSheets } from '../data/projectsData';
 
 export default function ProjectDetailModal({ project, onClose, onOpenSheetLightbox }) {
@@ -44,10 +32,10 @@ export default function ProjectDetailModal({ project, onClose, onOpenSheetLightb
 
           <button
             onClick={onClose}
-            className="p-2 rounded-lg text-studio-500 hover:text-studio-900 dark:hover:text-white hover:bg-studio-200 dark:hover:bg-studio-800 transition-colors"
+            className="p-1.5 rounded-lg text-studio-500 hover:text-studio-900 dark:hover:text-white hover:bg-studio-200 dark:hover:bg-studio-800 transition-colors flex items-center justify-center"
             title="Close (Esc)"
           >
-            <X className="w-5 h-5" />
+            <i className="bx bx-x text-2xl leading-none"></i>
           </button>
         </div>
 
@@ -57,15 +45,15 @@ export default function ProjectDetailModal({ project, onClose, onOpenSheetLightb
           {/* Metadata Badges */}
           <div className="flex flex-wrap items-center gap-4 text-xs font-mono text-studio-600 dark:text-studio-300 pb-4 border-b border-studio-100 dark:border-studio-800">
             <span className="flex items-center gap-1.5">
-              <Layers className="w-4 h-4 text-blueprint-500" />
+              <i className="bx bx-layer text-blueprint-500 text-sm"></i>
               <strong>Typology:</strong> {project.typology}
             </span>
             <span className="flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-ochre-500" />
+              <i className="bx bxs-map text-ochre-500 text-sm"></i>
               <strong>Location:</strong> {project.location}
             </span>
             <span className="flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-emerald-500" />
+              <i className="bx bx-calendar text-emerald-500 text-sm"></i>
               <strong>Semester:</strong> {project.year}
             </span>
           </div>
@@ -74,7 +62,7 @@ export default function ProjectDetailModal({ project, onClose, onOpenSheetLightb
           <div>
             <div className="flex items-center justify-between mb-3">
               <h3 className="font-display font-semibold text-sm sm:text-base text-studio-900 dark:text-white flex items-center gap-2">
-                <FileText className="w-4 h-4 text-blueprint-500" />
+                <i className="bx bx-file text-blueprint-500 text-base"></i>
                 Technical Portfolio Sheets ({projectSheets.length})
               </h3>
               
@@ -112,7 +100,7 @@ export default function ProjectDetailModal({ project, onClose, onOpenSheetLightb
                   />
                   <div className="absolute inset-0 bg-studio-950/20 group-hover:bg-studio-950/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
                     <span className="flex items-center gap-2 px-4 py-2 bg-studio-900/90 text-white rounded-md text-xs font-mono shadow-lg border border-studio-700">
-                      <Maximize2 className="w-4 h-4 text-blueprint-400" />
+                      <i className="bx bx-fullscreen text-blueprint-400 text-sm"></i>
                       Click to Pan & Zoom in High Resolution
                     </span>
                   </div>
@@ -132,7 +120,8 @@ export default function ProjectDetailModal({ project, onClose, onOpenSheetLightb
                     onClick={() => onOpenSheetLightbox(currentSheet)}
                     className="inline-flex items-center gap-1 font-mono text-blueprint-600 dark:text-blueprint-400 hover:underline"
                   >
-                    <Eye className="w-3.5 h-3.5" /> Inspect Sheet
+                    <i className="bx bx-show text-sm"></i>
+                    <span>Inspect Sheet</span>
                   </button>
                 </div>
               </div>
@@ -160,7 +149,7 @@ export default function ProjectDetailModal({ project, onClose, onOpenSheetLightb
               <ul className="space-y-2.5">
                 {project.keyStrategies.map((strat, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-studio-600 dark:text-studio-300 leading-relaxed">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <i className="bx bxs-check-circle text-emerald-500 text-sm flex-shrink-0 mt-0.5"></i>
                     <span>{strat}</span>
                   </li>
                 ))}

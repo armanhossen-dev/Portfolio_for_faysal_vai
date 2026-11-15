@@ -1,14 +1,4 @@
 import React from 'react';
-import { 
-  Compass, 
-  MapPin, 
-  FileText, 
-  Eye, 
-  Maximize2, 
-  AlertTriangle, 
-  Sparkles, 
-  ArrowUpRight 
-} from 'lucide-react';
 import { allSheets } from '../data/projectsData';
 
 export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
@@ -70,7 +60,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                     </div>
                     <div className="p-3 bg-white dark:bg-studio-900 border-t border-studio-100 dark:border-studio-800 flex items-center justify-between text-xs font-mono">
                       <span className="font-bold text-blueprint-600 dark:text-blueprint-400">POSTER 01: Socio-Spatial Analysis</span>
-                      <Maximize2 className="w-3.5 h-3.5 text-studio-400 group-hover:text-blueprint-500" />
+                      <i className="bx bx-fullscreen text-sm text-studio-400 group-hover:text-blueprint-500"></i>
                     </div>
                   </div>
                 )}
@@ -90,7 +80,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                     </div>
                     <div className="p-3 bg-white dark:bg-studio-900 border-t border-studio-100 dark:border-studio-800 flex items-center justify-between text-xs font-mono">
                       <span className="font-bold text-blueprint-600 dark:text-blueprint-400">POSTER 02: Kit-of-Parts Modules</span>
-                      <Maximize2 className="w-3.5 h-3.5 text-studio-400 group-hover:text-blueprint-500" />
+                      <i className="bx bx-fullscreen text-sm text-studio-400 group-hover:text-blueprint-500"></i>
                     </div>
                   </div>
                 )}
@@ -112,7 +102,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
               {/* Problem Map */}
               <div className="bg-white dark:bg-studio-900 p-5 rounded-lg border border-studio-200 dark:border-studio-800">
                 <h3 className="font-display font-bold text-sm text-studio-900 dark:text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <AlertTriangle className="w-4 h-4 text-ochre-500" />
+                  <i className="bx bx-error text-ochre-500 text-base"></i>
                   Korail Settlement: 8 Acute Spatial Crises
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
@@ -132,7 +122,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
               {/* Modular Kit-of-Parts Interventions */}
               <div className="bg-white dark:bg-studio-900 p-5 rounded-lg border border-studio-200 dark:border-studio-800">
                 <h3 className="font-display font-bold text-sm text-studio-900 dark:text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-blueprint-500" />
+                  <i className="bx bx-layer text-blueprint-500 text-base"></i>
                   Tactical Kit-of-Parts Modules
                 </h3>
                 
@@ -218,7 +208,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                   onClick={() => onOpenSheetLightbox(heritageSheet)}
                   className="inline-flex items-center gap-2 px-5 py-3 text-xs font-mono font-bold bg-studio-900 dark:bg-white text-white dark:text-studio-900 rounded hover:bg-blueprint-600 dark:hover:bg-blueprint-400 transition-colors shadow-md"
                 >
-                  <Maximize2 className="w-4 h-4" />
+                  <i className="bx bx-fullscreen text-base"></i>
                   <span>Inspect High-Res Heritage Drawing Board</span>
                 </button>
               )}
@@ -239,8 +229,8 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                     />
                     
                     <div className="absolute inset-0 bg-studio-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white">
-                      <span className="p-3 bg-blueprint-600 rounded-full shadow-lg mb-2">
-                        <Maximize2 className="w-5 h-5" />
+                      <span className="p-3 bg-blueprint-600 rounded-full shadow-lg mb-2 flex items-center justify-center">
+                        <i className="bx bx-fullscreen text-2xl"></i>
                       </span>
                       <span className="font-mono text-xs font-bold uppercase tracking-wider">
                         Click to Zoom Technical Board
@@ -256,7 +246,8 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                       BOARD BUC074 // MANIKGANJ TEOTA JOMIDAR BARI
                     </span>
                     <span className="text-blueprint-600 dark:text-blueprint-400 flex items-center gap-1">
-                      Inspect Board <ArrowUpRight className="w-3.5 h-3.5" />
+                      <span>Inspect Board</span>
+                      <i className="bx bx-link-external text-xs"></i>
                     </span>
                   </div>
                 </div>

@@ -1,15 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Sun, 
-  Moon, 
-  BookOpen, 
-  Menu, 
-  X, 
-  Layers, 
-  Compass, 
-  Mail, 
-  FileText 
-} from 'lucide-react';
 import { studentProfile } from '../data/projectsData';
 
 export default function Navbar({ 
@@ -85,13 +74,11 @@ export default function Navbar({
               href={studentProfile.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-md text-studio-600 dark:text-studio-300 hover:text-[#0A66C2] dark:hover:text-[#0A66C2] hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 transition-colors"
+              className="p-2 rounded-md text-studio-600 dark:text-studio-300 hover:text-[#0A66C2] dark:hover:text-[#0A66C2] hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 transition-colors flex items-center justify-center"
               title="View Faysal Ahmed on LinkedIn"
               aria-label="LinkedIn Profile"
             >
-              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
-              </svg>
+              <i className="bx bxl-linkedin text-base leading-none"></i>
             </a>
 
             {/* Sheet Presentation Mode Button */}
@@ -100,7 +87,7 @@ export default function Navbar({
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium bg-blueprint-50 dark:bg-blueprint-950/60 text-blueprint-700 dark:text-blueprint-300 border border-blueprint-200 dark:border-blueprint-800 rounded-md hover:bg-blueprint-100 dark:hover:bg-blueprint-900 transition-colors shadow-sm"
               title="Open Architectural Portfolio Flipbook / Sheet Review"
             >
-              <BookOpen className="w-3.5 h-3.5" />
+              <i className="bx bx-book-open text-sm leading-none"></i>
               <span className="hidden sm:inline">Review Sheets</span>
               <span className="sm:hidden">Sheets</span>
             </button>
@@ -108,20 +95,28 @@ export default function Navbar({
             {/* Dark / Light Toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-md text-studio-600 dark:text-studio-300 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 transition-colors"
+              className="p-2 rounded-md text-studio-600 dark:text-studio-300 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 transition-colors flex items-center justify-center"
               aria-label="Toggle theme"
               title={darkMode ? "Switch to Architectural White" : "Switch to Studio Graphite"}
             >
-              {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-studio-700" />}
+              {darkMode ? (
+                <i className="bx bx-sun text-amber-400 text-base leading-none"></i>
+              ) : (
+                <i className="bx bx-moon text-studio-700 text-base leading-none"></i>
+              )}
             </button>
 
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md lg:hidden text-studio-700 dark:text-studio-300 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800"
+              className="p-2 rounded-md lg:hidden text-studio-700 dark:text-studio-300 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 flex items-center justify-center"
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? (
+                <i className="bx bx-x text-xl leading-none"></i>
+              ) : (
+                <i className="bx bx-menu text-xl leading-none"></i>
+              )}
             </button>
           </div>
         </div>
@@ -149,7 +144,7 @@ export default function Navbar({
                 }}
                 className="w-full flex items-center justify-center gap-2 py-2.5 text-sm font-mono font-medium bg-blueprint-600 text-white rounded-md shadow"
               >
-                <BookOpen className="w-4 h-4" />
+                <i className="bx bx-book-open text-base leading-none"></i>
                 Open Portfolio Sheet Review
               </button>
             </div>

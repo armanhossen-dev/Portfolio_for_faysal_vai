@@ -1,13 +1,4 @@
 import React, { useState } from 'react';
-import { 
-  Mail, 
-  MapPin, 
-  GraduationCap, 
-  Send, 
-  CheckCircle2, 
-  FileText, 
-  ExternalLink 
-} from 'lucide-react';
 import { studentProfile } from '../data/projectsData';
 
 export default function ContactSection({ onOpenSheetReview }) {
@@ -54,8 +45,8 @@ export default function ContactSection({ onOpenSheetReview }) {
 
               <div className="space-y-4 text-xs font-mono">
                 <div className="flex items-start gap-3 text-studio-600 dark:text-studio-300">
-                  <div className="p-2 rounded bg-studio-100 dark:bg-studio-800 text-blueprint-600 dark:text-blueprint-400">
-                    <GraduationCap className="w-4 h-4" />
+                  <div className="p-2 rounded bg-studio-100 dark:bg-studio-800 text-blueprint-600 dark:text-blueprint-400 flex items-center justify-center">
+                    <i className="bx bxs-graduation text-base"></i>
                   </div>
                   <div>
                     <div className="text-[10px] text-studio-400 uppercase">ACADEMIC DEPARTMENT</div>
@@ -67,8 +58,8 @@ export default function ContactSection({ onOpenSheetReview }) {
                 </div>
 
                 <div className="flex items-start gap-3 text-studio-600 dark:text-studio-300">
-                  <div className="p-2 rounded bg-studio-100 dark:bg-studio-800 text-ochre-500">
-                    <MapPin className="w-4 h-4" />
+                  <div className="p-2 rounded bg-studio-100 dark:bg-studio-800 text-ochre-500 flex items-center justify-center">
+                    <i className="bx bxs-map text-base"></i>
                   </div>
                   <div>
                     <div className="text-[10px] text-studio-400 uppercase">LOCATION</div>
@@ -80,8 +71,8 @@ export default function ContactSection({ onOpenSheetReview }) {
                 </div>
 
                 <div className="flex items-start gap-3 text-studio-600 dark:text-studio-300">
-                  <div className="p-2 rounded bg-studio-100 dark:bg-studio-800 text-emerald-500">
-                    <Mail className="w-4 h-4" />
+                  <div className="p-2 rounded bg-studio-100 dark:bg-studio-800 text-emerald-500 flex items-center justify-center">
+                    <i className="bx bxs-envelope text-base"></i>
                   </div>
                   <div>
                     <div className="text-[10px] text-studio-400 uppercase">DIRECT EMAIL</div>
@@ -95,10 +86,8 @@ export default function ContactSection({ onOpenSheetReview }) {
                 </div>
 
                 <div className="flex items-start gap-3 text-studio-600 dark:text-studio-300">
-                  <div className="p-2 rounded bg-studio-100 dark:bg-studio-800 text-[#0A66C2]">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
-                    </svg>
+                  <div className="p-2 rounded bg-studio-100 dark:bg-studio-800 text-[#0A66C2] flex items-center justify-center">
+                    <i className="bx bxl-linkedin text-base"></i>
                   </div>
                   <div>
                     <div className="text-[10px] text-studio-400 uppercase">LINKEDIN PROFILE</div>
@@ -109,7 +98,7 @@ export default function ContactSection({ onOpenSheetReview }) {
                       className="font-medium text-blueprint-600 dark:text-blueprint-400 hover:underline mt-0.5 flex items-center gap-1"
                     >
                       <span>linkedin.com/in/{studentProfile.linkedinHandle}</span>
-                      <ExternalLink className="w-3 h-3" />
+                      <i className="bx bx-link-external text-xs"></i>
                     </a>
                   </div>
                 </div>
@@ -128,7 +117,7 @@ export default function ContactSection({ onOpenSheetReview }) {
                 onClick={() => onOpenSheetReview(0)}
                 className="w-full flex items-center justify-center gap-2 py-2.5 px-4 bg-blueprint-600 hover:bg-blueprint-700 text-white rounded-md text-xs font-mono font-semibold transition-colors shadow-sm"
               >
-                <FileText className="w-4 h-4" />
+                <i className="bx bx-book-open text-base"></i>
                 <span>Open Portfolio Sheet Review</span>
               </button>
             </div>
@@ -147,7 +136,7 @@ export default function ContactSection({ onOpenSheetReview }) {
 
               {submitted ? (
                 <div className="p-6 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200 dark:border-emerald-800 rounded-lg text-center space-y-3 animate-fadeIn">
-                  <CheckCircle2 className="w-10 h-10 text-emerald-500 mx-auto" />
+                  <i className="bx bxs-check-circle text-4xl text-emerald-500 mx-auto"></i>
                   <h4 className="font-display font-bold text-base text-emerald-900 dark:text-emerald-200">
                     Message Successfully Sent!
                   </h4>
@@ -231,7 +220,7 @@ export default function ContactSection({ onOpenSheetReview }) {
                     type="submit"
                     className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-studio-900 dark:bg-white text-white dark:text-studio-900 hover:bg-blueprint-600 dark:hover:bg-blueprint-400 font-mono text-xs font-bold rounded transition-colors shadow-md"
                   >
-                    <Send className="w-3.5 h-3.5" />
+                    <i className="bx bx-send text-sm"></i>
                     <span>Send Message to Faysal</span>
                   </button>
                 </form>

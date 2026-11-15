@@ -1,14 +1,4 @@
 import React, { useState } from 'react';
-import { 
-  ArrowUpRight, 
-  Layers, 
-  MapPin, 
-  Calendar, 
-  Maximize2, 
-  BookOpen, 
-  Eye, 
-  CheckCircle2 
-} from 'lucide-react';
 import { projects, projectCategories, allSheets } from '../data/projectsData';
 
 export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, onOpenSheetReview }) {
@@ -99,10 +89,10 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                           e.stopPropagation();
                           if (projectSheets[0]) onOpenSheetLightbox(projectSheets[0]);
                         }}
-                        className="p-2.5 bg-studio-900/90 text-white rounded-full hover:bg-blueprint-600 transition-colors shadow-lg"
+                        className="p-2.5 bg-studio-900/90 text-white rounded-full hover:bg-blueprint-600 transition-colors shadow-lg flex items-center justify-center"
                         title="Inspect technical drawing in high resolution"
                       >
-                        <Maximize2 className="w-4 h-4" />
+                        <i className="bx bx-fullscreen text-lg text-white"></i>
                       </button>
                       <button
                         onClick={(e) => {
@@ -111,7 +101,7 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                         }}
                         className="px-3 py-2 bg-white text-studio-900 rounded-md font-mono text-xs font-semibold hover:bg-blueprint-50 transition-colors shadow-lg flex items-center gap-1.5"
                       >
-                        <Eye className="w-3.5 h-3.5" /> View Details
+                        <i className="bx bx-show text-base"></i> View Details
                       </button>
                     </div>
                   </div>
@@ -159,7 +149,7 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                 {/* Card Footer */}
                 <div className="px-5 py-3 bg-studio-50/80 dark:bg-studio-950/60 border-t border-studio-100 dark:border-studio-800/80 flex items-center justify-between text-xs font-mono">
                   <span className="text-studio-500 dark:text-studio-400 flex items-center gap-1">
-                    <MapPin className="w-3.5 h-3.5" />
+                    <i className="bx bx-map text-sm text-ochre-500"></i>
                     <span className="truncate max-w-[130px]">{project.location}</span>
                   </span>
                   
@@ -167,7 +157,8 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                     onClick={() => onSelectProject(project)}
                     className="text-blueprint-600 dark:text-blueprint-400 font-semibold hover:underline flex items-center gap-1"
                   >
-                    Explore <ArrowUpRight className="w-3.5 h-3.5" />
+                    <span>Explore</span>
+                    <i className="bx bx-link-external text-xs"></i>
                   </button>
                 </div>
 

@@ -1,15 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  X, 
-  ZoomIn, 
-  ZoomOut, 
-  RotateCcw, 
-  Download, 
-  Move, 
-  ChevronLeft, 
-  ChevronRight,
-  Maximize
-} from 'lucide-react';
 
 export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavigatePrev }) {
   const [zoom, setZoom] = useState(1);
@@ -103,28 +92,28 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
           <div className="flex items-center bg-studio-800 rounded border border-studio-700 p-0.5 font-mono text-xs">
             <button 
               onClick={handleZoomOut} 
-              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors"
+              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors flex items-center justify-center"
               title="Zoom Out (-)"
             >
-              <ZoomOut className="w-4 h-4" />
+              <i className="bx bx-zoom-out text-base"></i>
             </button>
             <span className="px-3 min-w-[50px] text-center text-studio-200">
               {Math.round(zoom * 100)}%
             </span>
             <button 
               onClick={handleZoomIn} 
-              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors"
+              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors flex items-center justify-center"
               title="Zoom In (+)"
             >
-              <ZoomIn className="w-4 h-4" />
+              <i className="bx bx-zoom-in text-base"></i>
             </button>
             {zoom > 1 && (
               <button 
                 onClick={handleReset} 
-                className="p-1.5 text-ochre-400 hover:bg-studio-700 rounded transition-colors border-l border-studio-700 ml-1"
+                className="p-1.5 text-ochre-400 hover:bg-studio-700 rounded transition-colors border-l border-studio-700 ml-1 flex items-center justify-center"
                 title="Reset View"
               >
-                <RotateCcw className="w-3.5 h-3.5" />
+                <i className="bx bx-reset text-base"></i>
               </button>
             )}
           </div>
@@ -138,17 +127,17 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono bg-studio-800 hover:bg-studio-700 border border-studio-700 text-white rounded transition-colors"
             title="Download Full Resolution Sheet"
           >
-            <Download className="w-3.5 h-3.5 text-blueprint-400" />
+            <i className="bx bx-download text-sm text-blueprint-400"></i>
             <span className="hidden sm:inline">Download</span>
           </a>
 
           {/* Close */}
           <button
             onClick={onClose}
-            className="p-2 rounded hover:bg-red-500/20 hover:text-red-400 border border-transparent hover:border-red-500/30 text-studio-400 transition-colors"
+            className="p-1.5 rounded hover:bg-red-500/20 hover:text-red-400 border border-transparent hover:border-red-500/30 text-studio-400 transition-colors flex items-center justify-center"
             title="Close Lightbox (Esc)"
           >
-            <X className="w-5 h-5" />
+            <i className="bx bx-x text-2xl leading-none"></i>
           </button>
         </div>
       </div>
@@ -166,27 +155,27 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
         {onNavigatePrev && (
           <button
             onClick={onNavigatePrev}
-            className="absolute left-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all"
+            className="absolute left-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all flex items-center justify-center"
             title="Previous Sheet"
           >
-            <ChevronLeft className="w-5 h-5" />
+            <i className="bx bx-chevron-left text-2xl"></i>
           </button>
         )}
 
         {onNavigateNext && (
           <button
             onClick={onNavigateNext}
-            className="absolute right-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all"
+            className="absolute right-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all flex items-center justify-center"
             title="Next Sheet"
           >
-            <ChevronRight className="w-5 h-5" />
+            <i className="bx bx-chevron-right text-2xl"></i>
           </button>
         )}
 
         {/* Drag Hint when Zoomed */}
         {zoom > 1 && (
           <div className="absolute top-4 left-4 z-20 font-mono text-xs bg-studio-900/80 px-2.5 py-1 rounded border border-studio-700 text-studio-300 flex items-center gap-1.5 pointer-events-none">
-            <Move className="w-3.5 h-3.5 text-blueprint-400" />
+            <i className="bx bx-move text-blueprint-400 text-sm"></i>
             <span>Click and drag to pan drawing</span>
           </div>
         )}

@@ -1,5 +1,4 @@
 import React from 'react';
-import { ArrowUp, BookOpen, Compass, Layers } from 'lucide-react';
 import { studentProfile } from '../data/projectsData';
 
 export default function Footer({ onOpenSheetReview }) {
@@ -55,11 +54,9 @@ export default function Footer({ onOpenSheetReview }) {
                   href={studentProfile.linkedin} 
                   target="_blank" 
                   rel="noreferrer" 
-                  className="text-blueprint-600 dark:text-blueprint-400 hover:underline flex items-center gap-1 pt-1"
+                  className="text-blueprint-600 dark:text-blueprint-400 hover:underline flex items-center gap-1.5 pt-1"
                 >
-                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
-                  </svg>
+                  <i className="bx bxl-linkedin text-sm"></i>
                   <span>LinkedIn Profile</span>
                 </a>
               </li>
@@ -78,7 +75,7 @@ export default function Footer({ onOpenSheetReview }) {
               onClick={() => onOpenSheetReview(0)}
               className="inline-flex items-center gap-2 px-3.5 py-2 bg-studio-100 dark:bg-studio-800 hover:bg-blueprint-500 hover:text-white text-studio-900 dark:text-white rounded transition-colors text-xs font-semibold"
             >
-              <BookOpen className="w-3.5 h-3.5" />
+              <i className="bx bx-book-open text-sm"></i>
               <span>Launch Sheet Presentation</span>
             </button>
           </div>
@@ -99,7 +96,7 @@ export default function Footer({ onOpenSheetReview }) {
               className="flex items-center gap-1 hover:text-studio-900 dark:hover:text-white transition-colors"
             >
               <span>Back to Top</span>
-              <ArrowUp className="w-3.5 h-3.5" />
+              <i className="bx bx-up-arrow-alt text-sm"></i>
             </button>
           </div>
         </div>

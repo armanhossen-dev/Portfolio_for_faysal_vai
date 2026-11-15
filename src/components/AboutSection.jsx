@@ -1,15 +1,4 @@
 import React from 'react';
-import { 
-  GraduationCap, 
-  Compass, 
-  Layers, 
-  Cpu, 
-  Award, 
-  MapPin, 
-  CheckCircle2, 
-  Mail, 
-  Calendar 
-} from 'lucide-react';
 import { studentProfile } from '../data/projectsData';
 
 export default function AboutSection() {
@@ -93,7 +82,7 @@ export default function AboutSection() {
             {/* Academic Studio Trajectory */}
             <div className="space-y-4">
               <h3 className="font-display font-bold text-base uppercase tracking-wider text-studio-900 dark:text-white flex items-center gap-2">
-                <GraduationCap className="w-5 h-5 text-blueprint-500" />
+                <i className="bx bxs-graduation text-blueprint-500 text-xl"></i>
                 Studio Progression & Design Trajectory
               </h3>
 
@@ -130,14 +119,14 @@ export default function AboutSection() {
             {/* Architectural Competencies */}
             <div className="bg-[#FAFAF8] dark:bg-studio-900 p-6 rounded-xl border border-studio-200 dark:border-studio-800 space-y-4">
               <h3 className="font-display font-bold text-sm uppercase tracking-wider text-studio-900 dark:text-white flex items-center gap-2">
-                <Layers className="w-4 h-4 text-blueprint-500" />
+                <i className="bx bx-layer text-blueprint-500 text-lg"></i>
                 Core Architectural Competencies
               </h3>
 
               <ul className="space-y-2">
                 {studentProfile.skills.architectural.map((skill, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-studio-700 dark:text-studio-300">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
+                    <i className="bx bxs-check-circle text-emerald-500 text-base flex-shrink-0 mt-0.5"></i>
                     <span>{skill}</span>
                   </li>
                 ))}
@@ -147,7 +136,7 @@ export default function AboutSection() {
             {/* Software & Technical Arsenal */}
             <div className="bg-[#FAFAF8] dark:bg-studio-900 p-6 rounded-xl border border-studio-200 dark:border-studio-800 space-y-4">
               <h3 className="font-display font-bold text-sm uppercase tracking-wider text-studio-900 dark:text-white flex items-center gap-2">
-                <Cpu className="w-4 h-4 text-ochre-500" />
+                <i className="bx bx-chip text-ochre-500 text-lg"></i>
                 Technical & Software Proficiency
               </h3>
 
@@ -176,7 +165,7 @@ export default function AboutSection() {
                   href="#contact"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-blueprint-600 hover:bg-blueprint-500 text-white font-mono text-xs font-semibold rounded transition-colors"
                 >
-                  <Mail className="w-3.5 h-3.5" />
+                  <i className="bx bx-envelope text-sm"></i>
                   <span>Get in Touch</span>
                 </a>
 
@@ -186,9 +175,7 @@ export default function AboutSection() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0A66C2] hover:bg-[#084e96] text-white font-mono text-xs font-semibold rounded transition-colors"
                 >
-                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
-                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
-                  </svg>
+                  <i className="bx bxl-linkedin text-base"></i>
                   <span>LinkedIn Profile</span>
                 </a>
               </div>

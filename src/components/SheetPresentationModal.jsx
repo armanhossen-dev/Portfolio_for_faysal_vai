@@ -1,18 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  X, 
-  ChevronLeft, 
-  ChevronRight, 
-  ZoomIn, 
-  ZoomOut, 
-  RotateCcw, 
-  Download, 
-  Maximize2, 
-  Minimize2, 
-  Layers, 
-  Info, 
-  ExternalLink 
-} from 'lucide-react';
 import { allSheets } from '../data/projectsData';
 
 export default function SheetPresentationModal({ 
@@ -103,28 +89,28 @@ export default function SheetPresentationModal({
           <div className="hidden sm:flex items-center bg-studio-800/80 rounded border border-studio-700 p-0.5 font-mono text-xs">
             <button 
               onClick={handleZoomOut} 
-              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors"
+              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors flex items-center justify-center"
               title="Zoom out (-)"
             >
-              <ZoomOut className="w-4 h-4" />
+              <i className="bx bx-zoom-out text-base"></i>
             </button>
             <span className="px-2 text-studio-300 min-w-[48px] text-center">
               {Math.round(zoomLevel * 100)}%
             </span>
             <button 
               onClick={handleZoomIn} 
-              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors"
+              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors flex items-center justify-center"
               title="Zoom in (+)"
             >
-              <ZoomIn className="w-4 h-4" />
+              <i className="bx bx-zoom-in text-base"></i>
             </button>
             {zoomLevel !== 1 && (
               <button 
                 onClick={handleResetZoom} 
-                className="p-1.5 text-ochre-400 hover:bg-studio-700 rounded transition-colors border-l border-studio-700 ml-1"
+                className="p-1.5 text-ochre-400 hover:bg-studio-700 rounded transition-colors border-l border-studio-700 ml-1 flex items-center justify-center"
                 title="Reset zoom"
               >
-                <RotateCcw className="w-3.5 h-3.5" />
+                <i className="bx bx-reset text-base"></i>
               </button>
             )}
           </div>
@@ -132,23 +118,27 @@ export default function SheetPresentationModal({
           {/* Toggle info button */}
           <button
             onClick={() => setShowInfo(!showInfo)}
-            className={`p-2 rounded border transition-colors ${
+            className={`p-1.5 rounded border transition-colors flex items-center justify-center ${
               showInfo 
                 ? 'bg-blueprint-600/30 border-blueprint-500 text-blueprint-300' 
                 : 'border-studio-700 text-studio-400 hover:bg-studio-800'
             }`}
             title="Toggle sheet details"
           >
-            <Info className="w-4 h-4" />
+            <i className="bx bx-info-circle text-lg"></i>
           </button>
 
           {/* Fullscreen button */}
           <button
             onClick={toggleFullscreen}
-            className="p-2 rounded border border-studio-700 text-studio-400 hover:bg-studio-800 transition-colors hidden sm:block"
+            className="p-1.5 rounded border border-studio-700 text-studio-400 hover:bg-studio-800 transition-colors hidden sm:flex items-center justify-center"
             title="Toggle fullscreen"
           >
-            {isFullscreen ? <Minimize2 className="w-4 h-4" /> : <Maximize2 className="w-4 h-4" />}
+            {isFullscreen ? (
+              <i className="bx bx-exit-fullscreen text-lg"></i>
+            ) : (
+              <i className="bx bx-fullscreen text-lg"></i>
+            )}
           </button>
 
           {/* Open in full lightbox */}
@@ -160,17 +150,17 @@ export default function SheetPresentationModal({
             className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono bg-studio-800 hover:bg-studio-700 border border-studio-700 rounded transition-colors"
             title="Deep pan & high-res inspect"
           >
-            <ExternalLink className="w-3.5 h-3.5 text-blueprint-400" />
+            <i className="bx bx-link-external text-blueprint-400 text-xs"></i>
             <span className="hidden md:inline">Inspect High-Res</span>
           </button>
 
           {/* Close button */}
           <button
             onClick={onClose}
-            className="p-2 rounded hover:bg-red-500/20 hover:text-red-400 border border-transparent hover:border-red-500/40 text-studio-400 transition-colors ml-1"
+            className="p-1.5 rounded hover:bg-red-500/20 hover:text-red-400 border border-transparent hover:border-red-500/40 text-studio-400 transition-colors ml-1 flex items-center justify-center"
             title="Close Sheet Review (Esc)"
           >
-            <X className="w-5 h-5" />
+            <i className="bx bx-x text-2xl leading-none"></i>
           </button>
         </div>
       </div>
@@ -181,19 +171,19 @@ export default function SheetPresentationModal({
         {/* Previous Button */}
         <button
           onClick={handlePrev}
-          className="absolute left-2 sm:left-4 z-20 p-3 sm:p-4 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all transform hover:scale-110 focus:outline-hidden"
+          className="absolute left-2 sm:left-4 z-20 p-3 sm:p-4 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all transform hover:scale-110 focus:outline-hidden flex items-center justify-center"
           title="Previous Sheet (Left Arrow)"
         >
-          <ChevronLeft className="w-6 h-6" />
+          <i className="bx bx-chevron-left text-2xl"></i>
         </button>
 
         {/* Next Button */}
         <button
           onClick={handleNext}
-          className="absolute right-2 sm:right-4 z-20 p-3 sm:p-4 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all transform hover:scale-110 focus:outline-hidden"
+          className="absolute right-2 sm:right-4 z-20 p-3 sm:p-4 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all transform hover:scale-110 focus:outline-hidden flex items-center justify-center"
           title="Next Sheet (Right Arrow)"
         >
-          <ChevronRight className="w-6 h-6" />
+          <i className="bx bx-chevron-right text-2xl"></i>
         </button>
 
         {/* Architectural Sheet Display */}
@@ -236,7 +226,7 @@ export default function SheetPresentationModal({
                 rel="noreferrer" 
                 className="text-blueprint-400 hover:underline flex items-center gap-1"
               >
-                <Download className="w-3 h-3" /> Full File
+                <i className="bx bx-download text-xs"></i> Full File
               </a>
             </div>
           </div>

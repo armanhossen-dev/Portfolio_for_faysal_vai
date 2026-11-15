@@ -255,4 +255,9 @@ test('Architectural Design System Integrity', async (t) => {
     assert.ok(navbarJsx.includes('circle(${endRadius}px at ${x}px ${y}px)'));
     assert.ok(indexCss.includes('::view-transition-new(root)'));
   });
+
+  await t.test('about section bio line is on a single line on desktop', () => {
+    const aboutJsx = fs.readFileSync(path.resolve('src/components/AboutSection.jsx'), 'utf8');
+    assert.ok(aboutJsx.includes('lg:whitespace-nowrap'));
+  });
 });

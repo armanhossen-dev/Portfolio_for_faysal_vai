@@ -105,7 +105,7 @@ export default function AboutSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="max-w-3xl mb-16">
+        <div className="max-w-3xl lg:max-w-none mb-16">
           <div className="flex items-center gap-2 font-mono text-xs text-studio-500 dark:text-[#ffb81c] font-semibold mb-3 tracking-wider">
             <span className="w-2 h-2 bg-studio-900 dark:bg-[#ffb81c]"></span>
             05 // CURRICULUM VITAE &amp; ACADEMIC PROFILE
@@ -113,7 +113,7 @@ export default function AboutSection() {
           <h2 className="text-3xl sm:text-5xl font-display font-extrabold text-studio-950 dark:text-white uppercase tracking-tight leading-[0.95]">
             About Faysal Ahmed
           </h2>
-          <p className="text-base text-studio-600 dark:text-[#8e959d] mt-3 font-sans">
+          <p className="text-base text-studio-600 dark:text-[#8e959d] mt-3 font-sans lg:whitespace-nowrap">
             Architectural designer and urban researcher in the final year of B.Arch at Daffodil International University, Dhaka.
           </p>
         </div>

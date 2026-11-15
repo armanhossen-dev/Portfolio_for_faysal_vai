@@ -161,7 +161,7 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                   <div className="text-[10px] font-mono text-amber-600 dark:text-amber-400 uppercase tracking-widest font-semibold mb-1">
                     OFFICIAL JURY CITATION
                   </div>
-                  <blockquote className="p-4 rounded-xl bg-amber-50/60 dark:bg-amber-950/20 border-l-4 border-amber-500 text-xs sm:text-sm text-studio-800 dark:text-studio-200 italic leading-relaxed">
+                  <blockquote className="p-4 rounded-xl bg-amber-50/70 dark:bg-studio-900 border-l-4 border-amber-500 border-y border-r border-studio-200/60 dark:border-studio-800 text-xs sm:text-sm text-studio-900 dark:text-studio-100 italic leading-relaxed shadow-2xs">
                     "{achievement.citation}"
                   </blockquote>
                 </div>

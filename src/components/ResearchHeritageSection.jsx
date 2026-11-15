@@ -88,12 +88,14 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
 
               </div>
 
-              {/* Research Quote Callout */}
-              <div className="p-4 bg-blueprint-50 dark:bg-blueprint-950/40 border-l-4 border-blueprint-500 rounded-r-md text-xs sm:text-sm font-sans text-studio-800 dark:text-studio-200">
-                <span className="font-semibold block text-blueprint-700 dark:text-blueprint-300 mb-1 font-mono uppercase text-xs">
+              {/* Research Quote Callout — High Contrast in Light & Dark Theme */}
+              <div className="p-4 sm:p-5 bg-blueprint-50/90 dark:bg-studio-900 border-l-4 border-blueprint-500 rounded-r-xl border-y border-r border-studio-200/80 dark:border-studio-800 text-xs sm:text-sm font-sans shadow-xs">
+                <span className="font-bold block text-blueprint-700 dark:text-blueprint-400 mb-1.5 font-mono uppercase text-xs tracking-wider">
                   Socio-Spatial Disparity Statement:
                 </span>
-                "Surrounding areas of Korail receive modern municipal services, infrastructure, and high living valuations, while residents of Korail receive almost none. Yet all are equal citizens of Bangladesh. This project poses the critical question: when we design multifunctional urban spaces, who do we build for, and how can tactical architecture rectify this divide?"
+                <p className="leading-relaxed italic text-studio-900 dark:text-studio-100">
+                  "Surrounding areas of Korail receive modern municipal services, infrastructure, and high living valuations, while residents of Korail receive almost none. Yet all are equal citizens of Bangladesh. This project poses the critical question: when we design multifunctional urban spaces, who do we build for, and how can tactical architecture rectify this divide?"
+                </p>
               </div>
             </div>
 

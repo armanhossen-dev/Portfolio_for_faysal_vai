@@ -795,9 +795,9 @@
 .footer-outline-name {
   font-family: "Bricolage Grotesque", -apple-system, sans-serif;
   font-weight: 800;
-  font-size: clamp(38px, 10.4vw, 142px);
+  font-size: clamp(48px, 14vw, 198px);
   line-height: 0.9;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
   color: #eceeef;
   -webkit-text-fill-color: #eceeef;
   -webkit-text-stroke: 0px transparent;

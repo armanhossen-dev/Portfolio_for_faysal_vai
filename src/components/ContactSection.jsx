@@ -234,54 +234,6 @@ export default function ContactSection({ onOpenSheetReview }) {
               )}
 
             </div>
-
-            {/* Architectural Collaboration Banner Under Form */}
-            <div className="p-6 sm:p-7 rounded-2xl bg-studio-950 dark:bg-[#181b1e] border border-studio-800 dark:border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-md">
-              <div>
-                <h4 className="font-display font-bold text-base text-white">
-                  Interested in Architectural Collaboration?
-                </h4>
-                <p className="text-xs text-studio-300 dark:text-[#8e959d] mt-1 font-sans">
-                  Open for studio internships, thesis partnerships, and research collaborations.
-                </p>
-              </div>
-
-              <div className="flex items-center gap-3 shrink-0">
-                <button
-                  type="button"
-                  onClick={() => {
-                    const el = document.getElementById('contact-name');
-                    if (el) {
-                      el.focus();
-                      el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                    }
-                  }}
-                  className="inline-flex items-center justify-center h-11 px-5 rounded-full bg-[#ffb81c] text-[#101214] font-semibold text-xs tracking-tight transition-transform hover:-translate-y-0.5 cursor-pointer shadow-sm whitespace-nowrap"
-                >
-                  Contact Architect
-                </button>
-                <a
-                  href={studentProfile.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/20 hover:border-[#ffb81c] text-white hover:text-[#ffb81c] flex items-center justify-center transition-colors shrink-0"
-                  aria-label="LinkedIn"
-                  title="LinkedIn"
-                >
-                  <i className="bx bxl-linkedin text-lg"></i>
-                </a>
-                <a
-                  href={studentProfile.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-10 h-10 rounded-full border border-white/20 hover:border-[#ffb81c] text-white hover:text-[#ffb81c] flex items-center justify-center transition-colors shrink-0"
-                  aria-label="Facebook"
-                  title="Facebook"
-                >
-                  <i className="bx bxl-facebook text-lg"></i>
-                </a>
-              </div>
-            </div>
           </div>
 
         </div>

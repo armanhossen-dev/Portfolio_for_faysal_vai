@@ -53,11 +53,12 @@ export default function AboutSection() {
       accent: "#5848f5"
     },
     "Affinity": {
-      cardBg: "bg-[#fef1f8] dark:bg-[#200717]",
-      border: "border-[#FF3366]/35 dark:border-[#FF3366]/30 hover:border-[#FF3366]",
-      iconBg: "bg-[#FF3366] text-white",
-      tagColor: "text-[#d61a4d] dark:text-[#ff80a0]",
-      accent: "#FF3366"
+      cardBg: "bg-[#f4fce8] dark:bg-[#121c0b]",
+      border: "border-[#84cc16]/35 dark:border-[#84cc16]/30 hover:border-[#84cc16]",
+      iconBg: "bg-[#84cc16] text-[#0f172a]",
+      iconBoxBg: "bg-transparent",
+      tagColor: "text-[#4d7c0f] dark:text-[#bef264]",
+      accent: "#84cc16"
     },
     "VS Code": {
       cardBg: "bg-[#edf6fd] dark:bg-[#061827]",
@@ -242,9 +243,9 @@ export default function AboutSection() {
                   >
                     <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white dark:bg-[#101214] p-1.5 flex items-center justify-center shrink-0 border border-studio-200 dark:border-white/10 overflow-hidden shadow-sm">
                       {edu.logo ? (
-                        <img 
-                          src={edu.logo} 
-                          alt={edu.institution} 
+                        <img
+                          src={edu.logo}
+                          alt={edu.institution}
                           className="w-full h-full object-contain"
                           draggable="false"
                           onContextMenu={(e) => e.preventDefault()}

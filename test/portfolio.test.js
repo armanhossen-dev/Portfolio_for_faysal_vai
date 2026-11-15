@@ -2,12 +2,12 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
-import { 
-  studentProfile, 
-  projects, 
-  allSheets, 
-  recentAchievements, 
-  projectCategories 
+import {
+  studentProfile,
+  projects,
+  allSheets,
+  recentAchievements,
+  projectCategories
 } from '../src/data/projectsData.js';
 
 test('Student Profile - Identity, Credentials & Contacts', async (t) => {
@@ -35,18 +35,18 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
 
   await t.test('education trajectory has all 3 verified institutions with logos', () => {
     assert.equal(studentProfile.education.length, 3);
-    
+
     // 1. DIU
     const diu = studentProfile.education[0];
     assert.equal(diu.institution, 'Daffodil International University');
     assert.equal(diu.enrolled, 'In January 2022');
     assert.ok(fs.existsSync(path.resolve(diu.logo.replace(/^\.\//, 'public/'))), 'DIU logo missing');
-    
+
     // 2. College
     const college = studentProfile.education[1];
     assert.equal(college.institution, 'Kachua Bangabondhu Govt Degree college');
     assert.ok(fs.existsSync(path.resolve(college.logo.replace(/^\.\//, 'public/'))), 'College logo missing');
-    
+
     // 3. High School
     const school = studentProfile.education[2];
     assert.equal(school.institution, 'Monpura Batabaria Jafar Ali Memorial High school');
@@ -107,13 +107,17 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     const archimap = studentProfile.dailyTools.find(t => t.name === 'Archimap');
     assert.ok(archimap && archimap.image, 'Archimap should have custom logo image');
     assert.ok(fs.existsSync(path.resolve(archimap.image.replace(/^\.\//, 'public/'))), 'Archimap logo missing on disk');
+
+    const affinity = studentProfile.dailyTools.find(t => t.name === 'Affinity');
+    assert.ok(affinity && affinity.image, 'Affinity should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(affinity.image.replace(/^\.\//, 'public/'))), 'Affinity logo missing on disk');
   });
 });
 
 test('Privacy & Redaction - No Student ID Leakage', async (t) => {
   await t.test('student ID 221-42-053 must not exist anywhere in src files', () => {
     const srcDir = path.resolve('src');
-    
+
     function scanDir(dir) {
       const files = fs.readdirSync(dir);
       for (const file of files) {
@@ -181,7 +185,7 @@ test('Projects & Technical Sheets Folio', async (t) => {
   await t.test('all referenced images exist on disk in public folder', () => {
     // Check Hero Background
     assert.ok(fs.existsSync(path.resolve('public/images/faysal-hero.jpg')), 'Hero background image missing');
-    
+
     // Check Footer Silhouette
     assert.ok(fs.existsSync(path.resolve('public/images/footer-silhouette.jpg')), 'Footer silhouette missing');
 

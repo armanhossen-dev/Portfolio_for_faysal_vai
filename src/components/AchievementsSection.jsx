@@ -12,7 +12,8 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
       src: achievement.images.winnerWithBoard,
       title: "Winner with Project Board",
       caption: "Faysal Ahmed holding the Winner Trophy in front of his project board 'Between Water & Home : Toward an Inclusive and Adaptive Korail'",
-      tag: "Best Design Award"
+      tag: "Best Design Award",
+      objectPosition: "object-[50%_20%]"
     },
     {
       src: achievement.images.trophy,
@@ -128,7 +129,7 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                       <img
                         src={item.src}
                         alt={item.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className={`w-full h-full object-cover ${item.objectPosition || "object-center"} group-hover:scale-105 transition-transform duration-500`}
                       />
                       <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-black/75 text-white backdrop-blur-xs">
                         {item.tag}

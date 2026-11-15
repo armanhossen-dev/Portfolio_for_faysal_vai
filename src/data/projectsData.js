@@ -86,7 +86,7 @@ export const studentProfile = {
     { name: "VS Code", category: "Development", icon: "bx-code-alt", desc: "Computational design scripting, web portfolios & data pipelines" },
     { name: "QGIS", category: "GIS & Analysis", icon: "bx-globe", image: "./images/tools/qgis-logo.png", desc: "Geospatial data analysis, regional mapping & terrain modeling" },
     { name: "Autodesk Forma", category: "Site & Climate AI", icon: "bxs-city", image: "./images/tools/autodesk-forma-logo.png", desc: "AI-driven microclimate, wind, sun hours & daylight analysis" },
-    { name: "Archimap", category: "Urban Cartography", icon: "bx-map-alt", desc: "Site context mapping, urban morphology & territorial studies" }
+    { name: "Archimap", category: "Urban Cartography", icon: "bx-map-alt", image: "./images/tools/archimap-logo.png", desc: "Site context mapping, urban morphology & territorial studies" }
   ],
   metrics: [
     { label: "Academic Projects", value: "6+" },

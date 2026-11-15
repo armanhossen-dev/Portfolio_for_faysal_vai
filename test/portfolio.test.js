@@ -103,6 +103,10 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     const archicad = studentProfile.dailyTools.find(t => t.name === 'Archicad');
     assert.ok(archicad && archicad.image, 'Archicad should have custom logo image');
     assert.ok(fs.existsSync(path.resolve(archicad.image.replace(/^\.\//, 'public/'))), 'Archicad logo missing on disk');
+
+    const archimap = studentProfile.dailyTools.find(t => t.name === 'Archimap');
+    assert.ok(archimap && archimap.image, 'Archimap should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(archimap.image.replace(/^\.\//, 'public/'))), 'Archimap logo missing on disk');
   });
 });
 

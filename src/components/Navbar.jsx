@@ -94,8 +94,10 @@ export default function Navbar({
 
   return (
     <header className={`nav-pill ${isScrolled ? 'stuck' : ''}`} id="nav">
-      {/* Hidden for accessibility & test contracts */}
-      <span className="sr-only">{studentProfile.name}</span>
+      {/* Brand: Name Only — Left side, vertically centered */}
+      <a className="nav-brand nav-desktop-only" href="#top" aria-label={`${studentProfile.name}, home`}>
+        <span>{studentProfile.name}</span>
+      </a>
 
       {/* Desktop Nav Links */}
       <nav className="nav-links" aria-label="Primary">

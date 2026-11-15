@@ -226,6 +226,7 @@ test('Architectural Design System Integrity', async (t) => {
     assert.equal(navbarJsx.includes('FA ARCH'), false);
     assert.equal(navbarJsx.includes('B.Arch Portfolio • Daffodil Int. University'), false);
     assert.ok(navbarJsx.includes('{studentProfile.name}'));
+    assert.ok(navbarJsx.includes('nav-brand'));
   });
 
   await t.test('hero section removed technical floating badges and maintains clean photo background', () => {

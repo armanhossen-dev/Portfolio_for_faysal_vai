@@ -168,6 +168,34 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.55);
 }
 
+/* Brand — Name only on the left side, vertically centered */
+.nav-brand {
+  display: none;
+  align-items: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 15.5px;
+  letter-spacing: -0.02em;
+  color: var(--arch-ink);
+  text-decoration: none;
+  padding: 7px 12px;
+  border-radius: 9px;
+  transition: color 0.18s ease, background 0.18s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
+  outline: none;
+}
+
+.nav-brand:hover {
+  color: var(--arch-yellow);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dark .nav-brand:hover {
+  color: var(--arch-yellow);
+  background: rgba(255, 255, 255, 0.08);
+}
+
 /* Nav links — single row, boxy rounded hover, active indicator, sleek typography */
 .nav-links {
   display: none;

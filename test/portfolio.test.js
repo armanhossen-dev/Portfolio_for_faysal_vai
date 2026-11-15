@@ -111,6 +111,10 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     const affinity = studentProfile.dailyTools.find(t => t.name === 'Affinity');
     assert.ok(affinity && affinity.image, 'Affinity should have custom logo image');
     assert.ok(fs.existsSync(path.resolve(affinity.image.replace(/^\.\//, 'public/'))), 'Affinity logo missing on disk');
+
+    const vscode = studentProfile.dailyTools.find(t => t.name === 'VS Code');
+    assert.ok(vscode && vscode.image, 'VS Code should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(vscode.image.replace(/^\.\//, 'public/'))), 'VS Code logo missing on disk');
   });
 });
 

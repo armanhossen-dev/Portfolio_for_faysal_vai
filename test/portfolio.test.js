@@ -158,9 +158,16 @@ test('Architectural Design System Integrity', async (t) => {
     assert.equal(navbarJsx.includes('57 UI Styles'), false);
   });
 
-  await t.test('design system uses Apple SF Pro font stack with bold architectural weights', () => {
-    const css = fs.readFileSync(path.resolve('src/index.css'), 'utf8');
-    assert.ok(css.includes('SF Pro Display'));
-    assert.ok(css.includes('font-weight: 800'));
+  await t.test('navbar contains only name with no logo box and no subtitle text', () => {
+    const navbarJsx = fs.readFileSync(path.resolve('src/components/Navbar.jsx'), 'utf8');
+    assert.equal(navbarJsx.includes('FA ARCH'), false);
+    assert.equal(navbarJsx.includes('B.Arch Portfolio • Daffodil Int. University'), false);
+    assert.ok(navbarJsx.includes('{studentProfile.name}'));
+  });
+
+  await t.test('hero section removed technical floating badges and maintains clean photo background', () => {
+    const heroJsx = fs.readFileSync(path.resolve('src/components/Hero.jsx'), 'utf8');
+    assert.equal(heroJsx.includes('SCALE: NTS // DEPT_OF_ARCHITECTURE'), false);
+    assert.equal(heroJsx.includes('[+] 23°49\'32"N'), false);
   });
 });

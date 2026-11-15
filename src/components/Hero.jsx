@@ -18,28 +18,11 @@ export default function Hero({ onOpenSheetReview }) {
         <div className="absolute inset-0 bg-black/20 dark:bg-black/50 lg:hidden"></div>
       </div>
 
-      {/* Drafting Crosshairs & Technical Registration Marks */}
-      <div className="absolute top-24 left-6 z-10 font-mono text-[10px] text-white/90 select-none hidden sm:block bg-black/65 px-2.5 py-1 rounded-md border border-white/20 shadow-sm">
-        [+] 23°49'32"N  90°24'48"E // DHAKA
-      </div>
-      <div className="absolute top-24 right-6 z-10 font-mono text-[10px] text-white/90 select-none hidden sm:block bg-black/65 px-2.5 py-1 rounded-md border border-white/20 shadow-sm">
-        SCALE: NTS // DEPT_OF_ARCHITECTURE
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Negative Space allowing Faysal's photograph and Architecture Wall to be prominently showcased */}
-          <div className="hidden lg:flex lg:col-span-5 xl:col-span-5 flex-col justify-end min-h-[440px] select-none pointer-events-none">
-            <div className="mt-auto">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-studio-950/85 text-white text-xs border border-white/20 shadow-lg">
-                <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
-                <span className="font-bold tracking-wide">Faysal Ahmed</span>
-                <span className="text-white/60">|</span>
-                <span className="text-white/90">Dept. of Architecture, DIU</span>
-              </div>
-            </div>
-          </div>
+          <div className="hidden lg:block lg:col-span-5 xl:col-span-5 min-h-[440px] pointer-events-none"></div>
 
           {/* Right Column: Profile Intro Details */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">

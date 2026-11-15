@@ -35,23 +35,11 @@ export default function Navbar({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Logo / Architectural Masthead */}
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 border-2 border-studio-900 dark:border-white flex flex-col items-center justify-center font-mono font-bold text-xs leading-none bg-white dark:bg-studio-900 group-hover:border-blueprint-500 transition-colors">
-              <span className="text-blueprint-600 dark:text-blueprint-400">FA</span>
-              <span className="text-[9px] text-studio-500">ARCH</span>
-            </div>
-            <div>
-              <div className="font-display font-bold text-base sm:text-lg tracking-tight uppercase flex items-center gap-2">
-                <span>{studentProfile.name}</span>
-                <span className="hidden sm:inline-block text-[10px] font-mono px-1.5 py-0.5 bg-studio-100 dark:bg-studio-800 text-studio-600 dark:text-studio-300 rounded border border-studio-200 dark:border-studio-700">
-                  B.ARCH
-                </span>
-              </div>
-              <p className="text-[11px] font-mono text-studio-500 dark:text-studio-400 uppercase tracking-widest hidden sm:block">
-                B.Arch Portfolio • Daffodil Int. University
-              </p>
-            </div>
+          {/* Brand Name Only - Clean, Bold Architectural Typographic Masthead */}
+          <a href="#" className="group inline-flex items-center">
+            <span className="font-display font-extrabold text-lg sm:text-xl tracking-tight text-studio-950 dark:text-white uppercase transition-colors group-hover:text-blueprint-600 dark:group-hover:text-blueprint-400">
+              {studentProfile.name}
+            </span>
           </a>
 
           {/* Desktop Nav Links */}

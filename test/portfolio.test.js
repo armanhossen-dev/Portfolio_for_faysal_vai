@@ -99,6 +99,10 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     const lumion = studentProfile.dailyTools.find(t => t.name === 'Lumion');
     assert.ok(lumion && lumion.image, 'Lumion should have custom logo image');
     assert.ok(fs.existsSync(path.resolve(lumion.image.replace(/^\.\//, 'public/'))), 'Lumion logo missing on disk');
+
+    const archicad = studentProfile.dailyTools.find(t => t.name === 'Archicad');
+    assert.ok(archicad && archicad.image, 'Archicad should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(archicad.image.replace(/^\.\//, 'public/'))), 'Archicad logo missing on disk');
   });
 });
 

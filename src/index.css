@@ -345,110 +345,214 @@
   }
 }
 
-/* ---------- Space Grotesk Monumental Hero ---------- */
-.hero {
-  min-height: 100svh;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: clamp(24px, 5vw, 72px);
-  padding-top: calc(88px + env(safe-area-inset-top, 0px));
-  background:
-    linear-gradient(to top, rgb(0 0 0 / .78) 0%, rgb(0 0 0 / .35) 55%, rgb(0 0 0 / .15) 100%),
-    url('/images/faysal-hero.jpg') center / cover no-repeat;
-  font-family: "Space Grotesk", system-ui, sans-serif;
-  color: #fff;
-  position: relative;
-  overflow: hidden;
+/* ---------- Space Grotesk Editorial Hero & Photo Stage ---------- */
+:root {
+  --amber: #f5a623;
+  --amber-ink: #1a1204;
 }
 
-.hero h1 {
-  font-family: "Space Grotesk", system-ui, sans-serif;
-  font-size: clamp(3rem, 11vw, 9rem);
-  font-weight: 700;
-  line-height: .95;
-  letter-spacing: -.03em;
-  color: #fff;
-  margin: 0;
+.hero {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 56px 32px 40px;
+  padding-top: calc(84px + env(safe-area-inset-top, 0px));
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap: 56px;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  position: relative;
 }
 
 .hero .role {
-  margin-top: 1.25rem;
-  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  font-size: 1rem;
+  color: var(--arch-mute);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: "Space Grotesk", sans-serif;
   font-weight: 500;
-  color: #fff;
-  font-family: "Space Grotesk", system-ui, sans-serif;
 }
 
-.hero .tag {
-  margin-top: .4rem;
+.hero .role::before {
+  content: "";
+  width: 36px;
+  height: 2px;
+  background: var(--amber);
+}
+
+.hero h1 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: clamp(3.4rem, 8.4vw, 7.2rem);
+  line-height: .92;
+  letter-spacing: -.045em;
+  color: var(--arch-ink);
+  margin: 0;
+}
+
+.hero .sub {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(1.25rem, 2.2vw, 1.7rem);
+  font-weight: 500;
+  margin-top: 30px;
+  letter-spacing: -.01em;
+  color: var(--arch-ink);
+}
+
+.hero .lede {
+  color: var(--arch-mute);
+  margin-top: 10px;
   max-width: 46ch;
-  opacity: .8;
-  color: #fff;
-  font-family: "Space Grotesk", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.5;
+  font-family: "DM Sans", "Instrument Sans", sans-serif;
 }
 
-.hero .actions {
+.hero .cta {
   display: flex;
   gap: 12px;
-  margin-top: 2rem;
+  margin-top: 34px;
   flex-wrap: wrap;
 }
 
 .hero .btn {
-  padding: .8rem 1.5rem;
+  padding: 15px 26px;
   border-radius: 999px;
-  font: inherit;
-  font-weight: 500;
-  text-decoration: none;
-  border: 1px solid #fff;
-  color: #fff;
+  font-weight: 600;
+  font-size: .98rem;
+  border: 1.5px solid var(--arch-ink);
+  color: var(--arch-ink);
   background: transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: transform 0.2s, background 0.2s, border-color 0.2s, color 0.2s;
+  text-decoration: none;
+  transition: transform .15s, background .15s;
 }
 
 .hero .btn:hover {
-  background: rgba(255, 255, 255, 0.15);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 .hero .btn.primary {
-  background: #ffb11b;
-  border-color: #ffb11b;
-  color: #111;
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--amber-ink);
 }
 
 .hero .btn.primary:hover {
   background: #ffbe3b;
   border-color: #ffbe3b;
-  transform: translateY(-2px);
 }
 
-.hero .btn:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 3px;
+/* PHOTO STAGE */
+.hero .stage {
+  position: relative;
+  aspect-ratio: 4/5;
+  max-height: 78vh;
+  margin-left: auto;
+  width: 100%;
+  max-width: 520px;
 }
 
+.hero .zig {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero .photo {
+  position: absolute;
+  left: 12%;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #d8d3c8;
+  box-shadow: 0 24px 60px -24px rgba(0, 0, 0, 0.4);
+}
+
+.hero .photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  display: block;
+}
+
+.hero .badge {
+  position: absolute;
+  left: 0;
+  bottom: 34px;
+  background: var(--arch-ink);
+  color: var(--arch-bg);
+  padding: 14px 18px;
+  border-radius: 16px;
+  font-size: .88rem;
+  line-height: 1.3;
+  box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.45);
+}
+
+.dark .hero .badge {
+  background: #17181a;
+  color: #f6f4f0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.hero .badge b {
+  display: block;
+  color: var(--amber);
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.05rem;
+}
+
+/* FACTS */
 .hero .facts {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem 2.5rem;
-  margin-top: 3rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgb(255 255 255 / .35);
-  font-size: .95rem;
-  color: #fff;
-  font-family: "Space Grotesk", system-ui, sans-serif;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: start;
+  gap: 12px 56px;
+  border-top: 1px solid var(--arch-line);
+  padding-top: 26px;
+  margin-top: 8px;
 }
 
-.hero .facts b {
-  color: #ffb11b;
-  font-weight: 500;
+.hero .facts dt {
+  font-size: .8rem;
+  color: var(--arch-mute);
+}
+
+.hero .facts dd {
+  font-weight: 600;
+  margin-top: 2px;
+  color: var(--arch-ink);
+}
+
+.hero .facts .win {
+  color: var(--amber);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding: 36px 20px;
+    padding-top: 80px;
+    min-height: 0;
+  }
+  .hero .stage {
+    margin: 0 auto;
+    max-height: none;
+  }
+  .hero .facts {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* ---------- Hero Section Legacy Styles ---------- */

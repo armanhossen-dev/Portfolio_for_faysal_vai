@@ -1,14 +1,48 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { allSheets } from '../data/projectsData';
 
 export default function ProjectDetailModal({ project, onClose, onOpenSheetLightbox }) {
   const [activeSheetTab, setActiveSheetTab] = useState(0);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0, inside: false });
+  const [imgDimensions, setImgDimensions] = useState({ width: 0, height: 0 });
+  const imgRef = useRef(null);
+
+  const LOUPE_SIZE = 180;
+  const ZOOM_FACTOR = 2.5;
 
   if (!project) return null;
 
   // Find sheet objects belonging to this project
   const projectSheets = project.sheets.map(id => allSheets.find(s => s.id === id)).filter(Boolean);
   const currentSheet = projectSheets[activeSheetTab] || projectSheets[0];
+
+  const handleMouseMove = (e) => {
+    if (!imgRef.current) return;
+    const rect = imgRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+      setMousePos({ x, y, inside: true });
+      setImgDimensions({ width: rect.width, height: rect.height });
+    } else {
+      setMousePos((prev) => ({ ...prev, inside: false }));
+    }
+  };
+
+  const handleMouseEnter = (e) => {
+    if (!imgRef.current) return;
+    const rect = imgRef.current.getBoundingClientRect();
+    setImgDimensions({ width: rect.width, height: rect.height });
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+      inside: true
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos((prev) => ({ ...prev, inside: false }));
+  };
 
   return (
     <div className="fixed inset-0 z-50 bg-studio-950/80 backdrop-blur-md overflow-y-auto flex items-center justify-center p-3 sm:p-6 animate-fadeIn">
@@ -90,18 +124,51 @@ export default function ProjectDetailModal({ project, onClose, onOpenSheetLightb
             {currentSheet && (
               <div className="relative group bg-studio-100 dark:bg-[#101214] rounded-lg overflow-hidden border border-studio-200 dark:border-white/10">
                 <div 
-                  className="relative aspect-[1.414/1] max-h-[460px] w-full flex items-center justify-center cursor-pointer overflow-hidden"
+                  className="relative aspect-[1.414/1] max-h-[460px] w-full flex items-center justify-center cursor-crosshair overflow-hidden"
                   onClick={() => onOpenSheetLightbox(currentSheet)}
+                  onMouseMove={handleMouseMove}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
                 >
                   <img
+                    ref={imgRef}
                     src={currentSheet.optimized}
                     alt={currentSheet.title}
-                    className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-300"
+                    className="w-full h-full object-contain select-none"
+                    draggable="false"
                   />
-                  <div className="absolute inset-0 bg-studio-950/20 group-hover:bg-studio-950/40 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                    <span className="flex items-center gap-2 px-4 py-2 bg-studio-900/90 dark:bg-[#101214]/95 text-white rounded-md text-xs font-mono shadow-lg border border-studio-700 dark:border-white/20">
-                      <i className="bx bx-fullscreen text-blueprint-400 dark:text-[#ffb81c] text-sm"></i>
-                      Click to Pan & Zoom in High Resolution
+
+                  {/* Circular Magnifier Loupe */}
+                  {mousePos.inside && (
+                    <div
+                      className="pointer-events-none absolute rounded-full border-2 border-[#ffb81c] shadow-[0_0_30px_rgba(0,0,0,0.85)] z-30 transition-transform duration-75 ease-out"
+                      style={{
+                        width: `${LOUPE_SIZE}px`,
+                        height: `${LOUPE_SIZE}px`,
+                        left: `${mousePos.x - LOUPE_SIZE / 2}px`,
+                        top: `${mousePos.y - LOUPE_SIZE / 2}px`,
+                        backgroundImage: `url(${currentSheet.full || currentSheet.optimized})`,
+                        backgroundRepeat: 'no-repeat',
+                        backgroundSize: `${imgDimensions.width * ZOOM_FACTOR}px ${imgDimensions.height * ZOOM_FACTOR}px`,
+                        backgroundPosition: `${-(mousePos.x * ZOOM_FACTOR - LOUPE_SIZE / 2)}px ${-(mousePos.y * ZOOM_FACTOR - LOUPE_SIZE / 2)}px`,
+                        backgroundColor: '#ffffff'
+                      }}
+                    >
+                      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                        <div className="w-1.5 h-1.5 rounded-full border border-black/70 bg-[#ffb81c]"></div>
+                      </div>
+                      <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/10 to-white/20 pointer-events-none"></div>
+                      <span className="absolute bottom-2 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-black/85 text-[9px] font-mono font-bold text-[#ffb81c] border border-white/20 shadow-md">
+                        2.5×
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Action Hint Overlay */}
+                  <div className="absolute top-3 right-3 pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity">
+                    <span className="flex items-center gap-1.5 px-3 py-1 bg-black/80 text-[11px] font-mono text-[#ffb81c] rounded-full border border-white/15 backdrop-blur-md shadow-md">
+                      <i className="bx bx-search-alt text-xs"></i>
+                      <span>Hover Magnifier • Click to Inspect</span>
                     </span>
                   </div>
                 </div>

@@ -11,12 +11,20 @@ export default function SheetPresentationModal({
   const [zoomLevel, setZoomLevel] = useState(1);
   const [showInfo, setShowInfo] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [magnifierActive, setMagnifierActive] = useState(true);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0, inside: false });
+  const [imgDimensions, setImgDimensions] = useState({ width: 0, height: 0 });
   const containerRef = useRef(null);
+  const imgRef = useRef(null);
+
+  const LOUPE_SIZE = 190;
+  const ZOOM_FACTOR = 2.6;
 
   useEffect(() => {
     if (isOpen) {
       setCurrentIndex(initialSheetIndex);
       setZoomLevel(1);
+      setMousePos({ x: 0, y: 0, inside: false });
     }
   }, [isOpen, initialSheetIndex]);
 
@@ -26,6 +34,7 @@ export default function SheetPresentationModal({
       if (e.key === 'Escape') onClose();
       if (e.key === 'ArrowRight') handleNext();
       if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'm' || e.key === 'M') setMagnifierActive((prev) => !prev);
     };
 
     window.addEventListener('keydown', handleKeyDown);
@@ -38,11 +47,13 @@ export default function SheetPresentationModal({
 
   const handleNext = () => {
     setZoomLevel(1);
+    setMousePos({ x: 0, y: 0, inside: false });
     setCurrentIndex((prev) => (prev < allSheets.length - 1 ? prev + 1 : 0));
   };
 
   const handlePrev = () => {
     setZoomLevel(1);
+    setMousePos({ x: 0, y: 0, inside: false });
     setCurrentIndex((prev) => (prev > 0 ? prev - 1 : allSheets.length - 1));
   };
 
@@ -58,6 +69,34 @@ export default function SheetPresentationModal({
       document.exitFullscreen?.();
       setIsFullscreen(false);
     }
+  };
+
+  const handleMouseMove = (e) => {
+    if (!imgRef.current) return;
+    const rect = imgRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    if (x >= 0 && x <= rect.width && y >= 0 && y <= rect.height) {
+      setMousePos({ x, y, inside: true });
+      setImgDimensions({ width: rect.width, height: rect.height });
+    } else {
+      setMousePos((prev) => ({ ...prev, inside: false }));
+    }
+  };
+
+  const handleMouseEnter = (e) => {
+    if (!imgRef.current) return;
+    const rect = imgRef.current.getBoundingClientRect();
+    setImgDimensions({ width: rect.width, height: rect.height });
+    setMousePos({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+      inside: true
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos((prev) => ({ ...prev, inside: false }));
   };
 
   return (
@@ -115,6 +154,19 @@ export default function SheetPresentationModal({
             )}
           </div>
 
+          {/* Circle Magnifier Tool Toggle */}
+          <button
+            onClick={() => setMagnifierActive(!magnifierActive)}
+            className={`p-1.5 rounded border transition-colors flex items-center justify-center cursor-pointer ${
+              magnifierActive 
+                ? 'bg-[#ffb81c]/20 border-[#ffb81c]/60 text-[#ffb81c]' 
+                : 'border-studio-700 text-studio-400 hover:bg-studio-800'
+            }`}
+            title={magnifierActive ? "Circle Magnifier Active (Press M to toggle)" : "Enable Circle Magnifier (Press M)"}
+          >
+            <i className="bx bx-search-alt text-lg"></i>
+          </button>
+
           {/* Toggle info button */}
           <button
             onClick={() => setShowInfo(!showInfo)}
@@ -171,7 +223,7 @@ export default function SheetPresentationModal({
         {/* Previous Button */}
         <button
           onClick={handlePrev}
-          className="absolute left-2 sm:left-4 z-20 p-3 sm:p-4 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all transform hover:scale-110 focus:outline-hidden flex items-center justify-center"
+          className="absolute left-2 sm:left-4 z-20 p-3 sm:p-4 rounded-full bg-studio-900/80 hover:bg-[#ffb81c] hover:text-[#101214] text-white border border-studio-700 shadow-xl transition-all transform hover:scale-110 focus:outline-hidden flex items-center justify-center cursor-pointer"
           title="Previous Sheet (Left Arrow)"
         >
           <i className="bx bx-chevron-left text-2xl"></i>
@@ -180,24 +232,59 @@ export default function SheetPresentationModal({
         {/* Next Button */}
         <button
           onClick={handleNext}
-          className="absolute right-2 sm:right-4 z-20 p-3 sm:p-4 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all transform hover:scale-110 focus:outline-hidden flex items-center justify-center"
+          className="absolute right-2 sm:right-4 z-20 p-3 sm:p-4 rounded-full bg-studio-900/80 hover:bg-[#ffb81c] hover:text-[#101214] text-white border border-studio-700 shadow-xl transition-all transform hover:scale-110 focus:outline-hidden flex items-center justify-center cursor-pointer"
           title="Next Sheet (Right Arrow)"
         >
           <i className="bx bx-chevron-right text-2xl"></i>
         </button>
 
-        {/* Architectural Sheet Display */}
+        {/* Architectural Sheet Display with Cursor Circle Magnifier */}
         <div className="w-full h-full flex items-center justify-center overflow-auto p-2">
           <div 
-            className="transition-transform duration-200 ease-out max-w-full max-h-full flex items-center justify-center shadow-2xl rounded-sm overflow-hidden border border-studio-800 bg-white"
+            className="relative transition-transform duration-200 ease-out max-w-full max-h-full flex items-center justify-center shadow-2xl rounded-sm bg-white border border-studio-800"
             style={{ transform: `scale(${zoomLevel})` }}
+            onMouseMove={handleMouseMove}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
           >
             <img
+              ref={imgRef}
               src={currentSheet.optimized}
               alt={currentSheet.title}
-              className="max-h-[75vh] w-auto object-contain select-none shadow-2xl"
+              className={`max-h-[75vh] w-auto object-contain select-none shadow-2xl rounded-sm ${
+                magnifierActive && zoomLevel === 1 ? 'cursor-crosshair' : 'cursor-default'
+              }`}
               draggable="false"
             />
+
+            {/* Precision Architectural Circle Magnifier Loupe */}
+            {magnifierActive && mousePos.inside && zoomLevel === 1 && (
+              <div
+                className="pointer-events-none absolute rounded-full border-2 border-[#ffb81c] shadow-[0_0_35px_rgba(0,0,0,0.85)] z-30 transition-transform duration-75 ease-out"
+                style={{
+                  width: `${LOUPE_SIZE}px`,
+                  height: `${LOUPE_SIZE}px`,
+                  left: `${mousePos.x - LOUPE_SIZE / 2}px`,
+                  top: `${mousePos.y - LOUPE_SIZE / 2}px`,
+                  backgroundImage: `url(${currentSheet.full || currentSheet.optimized})`,
+                  backgroundRepeat: 'no-repeat',
+                  backgroundSize: `${imgDimensions.width * ZOOM_FACTOR}px ${imgDimensions.height * ZOOM_FACTOR}px`,
+                  backgroundPosition: `${-(mousePos.x * ZOOM_FACTOR - LOUPE_SIZE / 2)}px ${-(mousePos.y * ZOOM_FACTOR - LOUPE_SIZE / 2)}px`,
+                  backgroundColor: '#ffffff'
+                }}
+              >
+                {/* Precision Crosshair Center Point */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-2 h-2 rounded-full border border-black/70 bg-[#ffb81c] shadow-xs"></div>
+                </div>
+                {/* Glass Optical Glare */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/10 to-white/20 pointer-events-none"></div>
+                {/* Loupe HUD Tag */}
+                <span className="absolute bottom-2.5 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-full bg-black/85 text-[10px] font-mono font-bold text-[#ffb81c] border border-white/20 shadow-md">
+                  2.6×
+                </span>
+              </div>
+            )}
           </div>
         </div>
 
@@ -248,6 +335,7 @@ export default function SheetPresentationModal({
                 key={sheet.id}
                 onClick={() => {
                   setZoomLevel(1);
+                  setMousePos({ x: 0, y: 0, inside: false });
                   setCurrentIndex(idx);
                 }}
                 className={`relative flex-shrink-0 rounded overflow-hidden aspect-[1.414/1] w-14 sm:w-16 border-2 transition-all cursor-pointer ${
@@ -269,7 +357,8 @@ export default function SheetPresentationModal({
             ))}
           </div>
 
-          <div className="flex items-center gap-2 whitespace-nowrap text-xs font-mono text-studio-400">
+          <div className="flex items-center gap-4 whitespace-nowrap text-xs font-mono text-studio-400">
+            <span className="hidden sm:inline">[M] MAGNIFIER {magnifierActive ? 'ON' : 'OFF'}</span>
             <span className="hidden lg:inline">USE [←] [→] KEYS</span>
           </div>
 

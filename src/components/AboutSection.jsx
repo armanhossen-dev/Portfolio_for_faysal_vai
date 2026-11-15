@@ -147,18 +147,18 @@ export default function AboutSection() {
                 {studentProfile.education?.map((edu, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-xl bg-studio-50 dark:bg-[#181b1e] border border-studio-200/80 dark:border-white/10 hover:border-[#ffb81c] transition-all flex items-start gap-4"
+                    className="p-4 sm:p-5 rounded-xl bg-studio-50 dark:bg-[#181b1e] border border-studio-200/80 dark:border-white/10 hover:border-[#ffb81c] transition-all flex items-center gap-4 sm:gap-5"
                   >
-                    <div className="w-12 h-12 rounded-xl bg-white dark:bg-[#101214] p-1 flex items-center justify-center shrink-0 border border-studio-200 dark:border-white/10 overflow-hidden shadow-2xs">
+                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl bg-white dark:bg-[#101214] p-1.5 flex items-center justify-center shrink-0 border border-studio-200 dark:border-white/10 overflow-hidden shadow-sm">
                       {edu.logo ? (
                         <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain" />
                       ) : (
-                        <i className={`bx ${edu.icon || 'bx-school'} text-xl text-studio-900 dark:text-[#ffb81c]`}></i>
+                        <i className={`bx ${edu.icon || 'bx-school'} text-2xl text-studio-900 dark:text-[#ffb81c]`}></i>
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
                       <div className="flex flex-wrap items-center justify-between gap-1 mb-1">
-                        <span className="font-bold text-sm text-studio-950 dark:text-[#ffb81c]">
+                        <span className="font-bold text-sm sm:text-base text-studio-950 dark:text-[#ffb81c]">
                           {edu.degree}
                         </span>
                         <div className="flex items-center gap-1.5">
@@ -172,7 +172,7 @@ export default function AboutSection() {
                           </span>
                         </div>
                       </div>
-                      <div className="font-display font-semibold text-sm text-studio-900 dark:text-white">
+                      <div className="font-display font-semibold text-sm sm:text-base text-studio-900 dark:text-white">
                         {edu.institution}
                       </div>
                       <div className="text-xs text-studio-500 dark:text-[#8e959d] mt-0.5">

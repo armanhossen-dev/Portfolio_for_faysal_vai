@@ -49,15 +49,34 @@ export const studentProfile = {
       "Passive Solar & Wind Ventilation Design"
     ],
     software: [
-      "AutoCAD (2D Drafting & Detailing)",
-      "Revit / BIM Modeling",
-      "Rhinoceros & Grasshopper",
-      "SketchUp 3D",
-      "Lumion & Enscape (Photorealistic Visualization)",
-      "Adobe Photoshop, Illustrator, InDesign",
-      "Solar & Microclimate Simulation"
+      "Adobe Photoshop",
+      "Sketchup",
+      "Autocad",
+      "Archicad",
+      "Lumion",
+      "Enscape",
+      "D5 Render",
+      "Affinity",
+      "VS Code",
+      "QGIS",
+      "Autodesk Forma",
+      "Archimap"
     ]
   },
+  dailyTools: [
+    { name: "Adobe Photoshop", category: "Post-Production", icon: "bxl-adobe", desc: "Digital architectural visualization, post-processing & collage" },
+    { name: "Sketchup", category: "3D Modeling", icon: "bx-cube", desc: "Rapid 3D massing, conceptual form & spatial volume development" },
+    { name: "Autocad", category: "2D Drafting", icon: "bx-compass", desc: "Technical working drawings, precise floor plans & structural detailing" },
+    { name: "Archicad", category: "BIM", icon: "bxs-building-house", desc: "Building Information Modeling & coordinated construction documents" },
+    { name: "Lumion", category: "Rendering", icon: "bx-sun", desc: "Atmospheric architectural visualization & cinematic walkthroughs" },
+    { name: "Enscape", category: "Real-Time 3D", icon: "bx-camera", desc: "Live viewport ray-tracing & interactive client presentations" },
+    { name: "D5 Render", category: "Ray-Tracing", icon: "bx-aperture", desc: "Next-gen real-time ray-tracing & PBR material fidelity" },
+    { name: "Affinity", category: "Publishing", icon: "bx-palette", desc: "Presentation board typography, vector layout & architectural portfolios" },
+    { name: "VS Code", category: "Development", icon: "bx-code-alt", desc: "Computational design scripting, web portfolios & data pipelines" },
+    { name: "QGIS", category: "GIS & Analysis", icon: "bx-globe", desc: "Geospatial data analysis, regional mapping & terrain modeling" },
+    { name: "Autodesk Forma", category: "Site & Climate AI", icon: "bxs-city", desc: "AI-driven microclimate, wind, sun hours & daylight analysis" },
+    { name: "Archimap", category: "Urban Cartography", icon: "bx-map-alt", desc: "Site context mapping, urban morphology & territorial studies" }
+  ],
   metrics: [
     { label: "Academic Projects", value: "6+" },
     { label: "Technical Sheets", value: "12+" },

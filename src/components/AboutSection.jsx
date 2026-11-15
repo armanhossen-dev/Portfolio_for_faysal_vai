@@ -2,6 +2,105 @@ import React from 'react';
 import { studentProfile } from '../data/projectsData';
 
 export default function AboutSection() {
+  const appBrandThemes = {
+    "Adobe Photoshop": {
+      gradient: "from-[#001E36]/90 via-[#001E36]/50 to-[#31A8FF]/20",
+      lightGradient: "from-[#31A8FF]/15 via-[#31A8FF]/5 to-white",
+      border: "border-[#31A8FF]/40 hover:border-[#31A8FF]",
+      iconBg: "bg-[#001E36] text-[#31A8FF]",
+      tagColor: "text-[#31A8FF]",
+      accent: "#31A8FF"
+    },
+    "Sketchup": {
+      gradient: "from-[#EA2127]/30 via-[#EA2127]/10 to-transparent",
+      lightGradient: "from-[#EA2127]/15 via-[#EA2127]/5 to-white",
+      border: "border-[#EA2127]/40 hover:border-[#EA2127]",
+      iconBg: "bg-[#EA2127]/20 text-[#EA2127]",
+      tagColor: "text-[#EA2127]",
+      accent: "#EA2127"
+    },
+    "Autocad": {
+      gradient: "from-[#E51010]/30 via-[#E51010]/10 to-transparent",
+      lightGradient: "from-[#E51010]/15 via-[#E51010]/5 to-white",
+      border: "border-[#E51010]/40 hover:border-[#E51010]",
+      iconBg: "bg-[#E51010]/20 text-[#E51010]",
+      tagColor: "text-[#E51010]",
+      accent: "#E51010"
+    },
+    "Archicad": {
+      gradient: "from-[#005A9C]/35 via-[#0073CF]/15 to-transparent",
+      lightGradient: "from-[#0073CF]/15 via-[#0073CF]/5 to-white",
+      border: "border-[#0073CF]/40 hover:border-[#0073CF]",
+      iconBg: "bg-[#0073CF]/20 text-[#0073CF]",
+      tagColor: "text-[#0073CF]",
+      accent: "#0073CF"
+    },
+    "Lumion": {
+      gradient: "from-[#0077B6]/35 via-[#00B4D8]/15 to-transparent",
+      lightGradient: "from-[#00B4D8]/15 via-[#00B4D8]/5 to-white",
+      border: "border-[#00B4D8]/40 hover:border-[#00B4D8]",
+      iconBg: "bg-[#00B4D8]/20 text-[#00B4D8]",
+      tagColor: "text-[#00B4D8]",
+      accent: "#00B4D8"
+    },
+    "Enscape": {
+      gradient: "from-[#FF6B00]/30 via-[#FF8800]/15 to-transparent",
+      lightGradient: "from-[#FF6B00]/15 via-[#FF6B00]/5 to-white",
+      border: "border-[#FF6B00]/40 hover:border-[#FF6B00]",
+      iconBg: "bg-[#FF6B00]/20 text-[#FF6B00]",
+      tagColor: "text-[#FF6B00]",
+      accent: "#FF6B00"
+    },
+    "D5 Render": {
+      gradient: "from-[#00C9A7]/30 via-[#00F2FE]/15 to-transparent",
+      lightGradient: "from-[#00C9A7]/15 via-[#00F2FE]/5 to-white",
+      border: "border-[#00C9A7]/40 hover:border-[#00C9A7]",
+      iconBg: "bg-[#00C9A7]/20 text-[#00C9A7]",
+      tagColor: "text-[#00C9A7]",
+      accent: "#00C9A7"
+    },
+    "Affinity": {
+      gradient: "from-[#FF3366]/30 via-[#9933FF]/20 to-transparent",
+      lightGradient: "from-[#FF3366]/15 via-[#9933FF]/10 to-white",
+      border: "border-[#FF3366]/40 hover:border-[#FF3366]",
+      iconBg: "bg-[#FF3366]/20 text-[#FF3366]",
+      tagColor: "text-[#FF3366]",
+      accent: "#FF3366"
+    },
+    "VS Code": {
+      gradient: "from-[#007ACC]/30 via-[#0098FF]/15 to-transparent",
+      lightGradient: "from-[#007ACC]/15 via-[#007ACC]/5 to-white",
+      border: "border-[#007ACC]/40 hover:border-[#007ACC]",
+      iconBg: "bg-[#007ACC]/20 text-[#007ACC]",
+      tagColor: "text-[#007ACC]",
+      accent: "#007ACC"
+    },
+    "QGIS": {
+      gradient: "from-[#589632]/35 via-[#93B023]/15 to-transparent",
+      lightGradient: "from-[#589632]/15 via-[#93B023]/5 to-white",
+      border: "border-[#589632]/40 hover:border-[#589632]",
+      iconBg: "bg-[#589632]/20 text-[#589632]",
+      tagColor: "text-[#589632]",
+      accent: "#589632"
+    },
+    "Autodesk Forma": {
+      gradient: "from-[#8E44AD]/35 via-[#9B59B6]/15 to-transparent",
+      lightGradient: "from-[#9B59B6]/15 via-[#9B59B6]/5 to-white",
+      border: "border-[#9B59B6]/40 hover:border-[#9B59B6]",
+      iconBg: "bg-[#9B59B6]/20 text-[#9B59B6]",
+      tagColor: "text-[#9B59B6]",
+      accent: "#9B59B6"
+    },
+    "Archimap": {
+      gradient: "from-[#FF9F1C]/35 via-[#FF5722]/15 to-transparent",
+      lightGradient: "from-[#FF9F1C]/15 via-[#FF5722]/5 to-white",
+      border: "border-[#FF9F1C]/40 hover:border-[#FF9F1C]",
+      iconBg: "bg-[#FF9F1C]/20 text-[#FF9F1C]",
+      tagColor: "text-[#FF9F1C]",
+      accent: "#FF9F1C"
+    }
+  };
+
   const architecturalCompetencies = [
     "Ecological Urbanism & Waterfront Bio-Filtration",
     "High-Density Residential & Clustered Community Housing",
@@ -218,30 +317,41 @@ export default function AboutSection() {
                 </span>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                {studentProfile.dailyTools?.map((tool, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3 rounded-xl bg-studio-50 dark:bg-[#181b1e] border border-studio-200 dark:border-white/10 hover:border-[#ffb81c] transition-all group flex flex-col justify-between"
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="w-7 h-7 rounded-lg bg-white dark:bg-[#101214] border border-studio-200 dark:border-white/10 flex items-center justify-center text-studio-900 dark:text-[#ffb81c] group-hover:scale-105 transition-transform">
-                        <i className={`bx ${tool.icon} text-base`}></i>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {studentProfile.dailyTools?.map((tool, idx) => {
+                  const theme = appBrandThemes[tool.name] || {
+                    gradient: "from-studio-900 to-[#181b1e]",
+                    lightGradient: "from-white to-studio-50",
+                    border: "border-studio-200 dark:border-white/10 hover:border-[#ffb81c]",
+                    iconBg: "bg-white dark:bg-[#101214] text-studio-900 dark:text-[#ffb81c]",
+                    tagColor: "text-studio-500 dark:text-[#8e959d]",
+                    accent: "#ffb81c"
+                  };
+
+                  return (
+                    <div
+                      key={idx}
+                      className={`p-3.5 rounded-xl bg-gradient-to-br ${theme.lightGradient} dark:${theme.gradient} border ${theme.border} transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group flex flex-col justify-between relative overflow-hidden`}
+                    >
+                      <div className="flex items-center justify-between mb-2.5">
+                        <div className={`w-8 h-8 rounded-lg ${theme.iconBg} border border-current/25 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs`}>
+                          <i className={`bx ${tool.icon} text-lg`}></i>
+                        </div>
+                        <span className={`text-[9px] font-mono uppercase font-semibold ${theme.tagColor}`}>
+                          {tool.category}
+                        </span>
                       </div>
-                      <span className="text-[9px] font-mono uppercase text-studio-500 dark:text-[#8e959d]">
-                        {tool.category}
-                      </span>
-                    </div>
-                    <div>
-                      <div className="font-display font-semibold text-xs text-studio-950 dark:text-white">
-                        {tool.name}
+                      <div>
+                        <div className="font-display font-semibold text-xs text-studio-950 dark:text-white">
+                          {tool.name}
+                        </div>
+                        <p className="text-[10px] text-studio-600 dark:text-[#8e959d] line-clamp-1 mt-0.5 font-sans">
+                          {tool.desc}
+                        </p>
                       </div>
-                      <p className="text-[10px] text-studio-500 dark:text-[#8e959d] line-clamp-1 mt-0.5 font-sans">
-                        {tool.desc}
-                      </p>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
 

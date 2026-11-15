@@ -43,12 +43,12 @@ export default function Navbar({
           </a>
 
           {/* Desktop Nav Links — Architectural Frosted Capsule for Maximum Contrast in White & Dark Mode */}
-          <nav className="hidden lg:flex items-center gap-1 bg-studio-100/90 dark:bg-studio-900/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-studio-200 dark:border-studio-700 shadow-2xs">
+          <nav className="hidden lg:flex items-center gap-1 bg-studio-100/95 dark:bg-white/10 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-studio-200 dark:border-white/15 shadow-2xs">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="px-3.5 py-1 rounded-full text-xs font-bold text-studio-950 dark:text-studio-100 hover:text-white hover:bg-studio-950 dark:hover:bg-white dark:hover:text-studio-950 transition-all tracking-tight"
+                className="px-3.5 py-1 rounded-full text-xs font-bold text-studio-950 dark:text-white hover:text-white hover:bg-studio-950 dark:hover:bg-white dark:hover:text-studio-950 transition-all tracking-tight"
               >
                 {link.name}
               </a>
@@ -130,7 +130,7 @@ export default function Navbar({
                 key={link.name}
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-bold text-studio-950 dark:text-studio-100 hover:text-blueprint-600 dark:hover:text-blueprint-400 py-1 border-b border-studio-100 dark:border-studio-800"
+                className="text-base font-bold text-studio-950 dark:text-white hover:text-blueprint-600 dark:hover:text-blueprint-400 py-1 border-b border-studio-100 dark:border-studio-800"
               >
                 {link.name}
               </a>

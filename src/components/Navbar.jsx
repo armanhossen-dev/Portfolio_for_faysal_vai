@@ -82,7 +82,7 @@ export default function Navbar({
               <span className="md:hidden">57 Styles</span>
             </button>
 
-            {/* LinkedIn Profile */}
+            {/* Social Links: LinkedIn & Facebook */}
             <a
               href={studentProfile.linkedin}
               target="_blank"
@@ -92,6 +92,17 @@ export default function Navbar({
               aria-label="LinkedIn Profile"
             >
               <i className="bx bxl-linkedin text-base leading-none"></i>
+            </a>
+
+            <a
+              href={studentProfile.facebook}
+              target="_blank"
+              rel="noreferrer"
+              className="p-2 rounded-md text-studio-600 dark:text-studio-300 hover:text-[#1877F2] dark:hover:text-[#1877F2] hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 transition-colors flex items-center justify-center"
+              title="View Faysal Ahmed on Facebook"
+              aria-label="Facebook Profile"
+            >
+              <i className="bx bxl-facebook text-base leading-none"></i>
             </a>
 
             {/* Sheet Presentation Mode Button */}

@@ -61,6 +61,17 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
               </a>
 
               <a
+                href={studentProfile.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-3 text-sm font-medium bg-[#1877F2]/10 dark:bg-[#1877F2]/20 text-[#1877F2] dark:text-[#6ba7f8] border border-[#1877F2]/30 rounded-lg hover:bg-[#1877F2]/20 transition-colors shadow-xs"
+                title="Connect on Facebook"
+              >
+                <i className="bx bxl-facebook-square text-lg"></i>
+                <span>Facebook</span>
+              </a>
+
+              <a
                 href="#about"
                 className="inline-flex items-center gap-1.5 px-4 py-3 text-sm font-medium text-studio-600 dark:text-studio-400 hover:text-studio-950 dark:hover:text-white transition-colors"
               >

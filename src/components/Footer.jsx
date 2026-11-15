@@ -60,6 +60,17 @@ export default function Footer({ onOpenSheetReview }) {
                   <span>LinkedIn Profile</span>
                 </a>
               </li>
+              <li>
+                <a
+                  href={studentProfile.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-[#1877F2] dark:text-[#6ba7f8] hover:underline flex items-center gap-1.5 pt-0.5"
+                >
+                  <i className="bx bxl-facebook text-sm"></i>
+                  <span>Facebook Profile</span>
+                </a>
+              </li>
             </ul>
           </div>
 

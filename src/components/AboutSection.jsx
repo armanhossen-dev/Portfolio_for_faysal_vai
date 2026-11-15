@@ -238,7 +238,17 @@ export default function AboutSection() {
                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0A66C2] hover:bg-[#084e96] text-white text-xs font-semibold rounded-lg transition-colors"
                 >
                   <i className="bx bxl-linkedin-square text-sm"></i>
-                  <span>LinkedIn Profile</span>
+                  <span>LinkedIn</span>
+                </a>
+
+                <a
+                  href={studentProfile.facebook}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#1877F2] hover:bg-[#125ec4] text-white text-xs font-semibold rounded-lg transition-colors"
+                >
+                  <i className="bx bxl-facebook-square text-sm"></i>
+                  <span>Facebook</span>
                 </a>
               </div>
             </div>

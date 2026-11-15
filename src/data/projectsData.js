@@ -9,6 +9,8 @@ export const studentProfile = {
   phone: "+880 1700-000000",
   linkedin: "https://www.linkedin.com/in/faysalahmed934",
   linkedinHandle: "faysalahmed934",
+  facebook: "https://www.facebook.com/faysal.ahmed.576645",
+  facebookHandle: "faysal.ahmed.576645",
   education: [
     {
       degree: "Bachelor of Architecture (B.Arch)",

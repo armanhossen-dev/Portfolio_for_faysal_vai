@@ -108,6 +108,24 @@ export default function ContactSection({ onOpenSheetReview }) {
                     </a>
                   </div>
                 </div>
+
+                <div className="flex items-start gap-3 text-studio-600 dark:text-studio-300">
+                  <div className="p-2 rounded bg-studio-100 dark:bg-studio-800 text-[#1877F2] flex items-center justify-center">
+                    <i className="bx bxl-facebook text-base"></i>
+                  </div>
+                  <div>
+                    <div className="text-[10px] text-studio-400 uppercase">FACEBOOK PROFILE</div>
+                    <a
+                      href={studentProfile.facebook}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="font-medium text-blueprint-600 dark:text-blueprint-400 hover:underline mt-0.5 flex items-center gap-1"
+                    >
+                      <span>facebook.com/{studentProfile.facebookHandle}</span>
+                      <i className="bx bx-link-external text-xs"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
 

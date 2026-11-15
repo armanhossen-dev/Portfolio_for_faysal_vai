@@ -336,8 +336,24 @@
   padding-right: 8px;
 }
 
-/* ≥ 880px — show everything centered in one line, hide burger */
-@media (min-width: 880px) {
+/* Responsive mobile navbar (< 900px): docked to the right side */
+@media (max-width: 899px) {
+  .nav-pill {
+    left: auto;
+    right: 16px;
+    transform: none;
+  }
+
+  .nav-mobile-drawer {
+    left: auto;
+    right: 0;
+    transform: none;
+    width: min(320px, calc(100vw - 32px));
+  }
+}
+
+/* ≥ 900px — show everything centered in one line, hide burger */
+@media (min-width: 900px) {
   .nav-links {
     display: flex;
   }
@@ -556,15 +572,22 @@
   .hero {
     grid-template-columns: 1fr;
     gap: 36px;
-    padding: 36px 20px;
-    padding-top: 80px;
+    padding: 24px 20px 48px;
+    padding-top: calc(76px + env(safe-area-inset-top, 0px));
     min-height: 0;
   }
   .hero .stage {
+    order: 1;
     margin: 0 auto;
     max-height: none;
+    width: 100%;
+    max-width: 440px;
+  }
+  .hero .hero-content {
+    order: 2;
   }
   .hero .facts {
+    order: 3;
     grid-template-columns: repeat(2, 1fr);
   }
 }

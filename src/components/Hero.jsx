@@ -3,7 +3,7 @@ import React from 'react';
 export default function Hero({ onOpenSheetReview }) {
   return (
     <section className="hero" id="top">
-      <div>
+      <div className="hero-content">
         <p className="role">Architectural Designer &amp; Urban Researcher</p>
         <h1>Faysal<br />Ahmed</h1>
         <p className="sub">Final-year B.Arch at DIU</p>

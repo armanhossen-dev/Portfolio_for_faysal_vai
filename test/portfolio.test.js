@@ -193,4 +193,10 @@ test('Architectural Design System Integrity', async (t) => {
     assert.ok(appJsx.includes('handleImageDragStart'));
     assert.ok(indexCss.includes('-webkit-user-drag: none'));
   });
+
+  await t.test('responsive layout docks navbar right and places hero photo stage at top', () => {
+    const indexCss = fs.readFileSync(path.resolve('src/index.css'), 'utf8');
+    assert.ok(indexCss.includes('.hero .stage {\n    order: 1;'));
+    assert.ok(indexCss.includes('right: 16px;'));
+  });
 });

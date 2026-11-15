@@ -208,4 +208,12 @@ test('Architectural Design System Integrity', async (t) => {
     assert.ok(indexCss.includes('.hero .stage {\n    order: 1;'));
     assert.ok(indexCss.includes('right: 16px;'));
   });
+
+  await t.test('theme switch button uses circular radial View Transition animation', () => {
+    const navbarJsx = fs.readFileSync(path.resolve('src/components/Navbar.jsx'), 'utf8');
+    const indexCss = fs.readFileSync(path.resolve('src/index.css'), 'utf8');
+    assert.ok(navbarJsx.includes('startViewTransition'));
+    assert.ok(navbarJsx.includes('circle(${endRadius}px at ${x}px ${y}px)'));
+    assert.ok(indexCss.includes('::view-transition-new(root)'));
+  });
 });

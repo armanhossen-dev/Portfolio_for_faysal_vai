@@ -26,6 +26,59 @@ export default function Navbar({
     { name: 'Contact', href: '#contact' },
   ];
 
+  // Animated circular radial View Transition from button center
+  const handleThemeToggle = (e) => {
+    const nextDark = !darkMode;
+
+    const applyTheme = () => {
+      setDarkMode(nextDark);
+      try {
+        localStorage.setItem('faysal_arch_theme', nextDark ? 'dark' : 'light');
+      } catch {}
+      if (nextDark) {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    };
+
+    if (
+      typeof document === 'undefined' ||
+      !('startViewTransition' in document) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      applyTheme();
+      return;
+    }
+
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const endRadius = Math.hypot(
+      Math.max(x, window.innerWidth - x),
+      Math.max(y, window.innerHeight - y)
+    );
+
+    const transition = document.startViewTransition(() => {
+      applyTheme();
+    });
+
+    transition.ready.then(() => {
+      const clipPath = [
+        `circle(0px at ${x}px ${y}px)`,
+        `circle(${endRadius}px at ${x}px ${y}px)`
+      ];
+      document.documentElement.animate(
+        { clipPath },
+        {
+          duration: 750,
+          easing: 'cubic-bezier(0.4, 0, 0.2, 1)',
+          pseudoElement: '::view-transition-new(root)'
+        }
+      );
+    });
+  };
+
   return (
     <header className={`nav-pill ${isScrolled ? 'stuck' : ''}`} id="nav">
       {/* Hidden for accessibility & test contracts */}
@@ -100,13 +153,13 @@ export default function Navbar({
 
       {/* Dark / Light Toggle */}
       <button
-        onClick={() => setDarkMode(!darkMode)}
+        onClick={handleThemeToggle}
         className="nav-ico"
         aria-label="Toggle dark mode"
-        title={darkMode ? "Switch to Light" : "Switch to Dark"}
+        title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
       >
         {darkMode ? (
-          <svg viewBox="0 0 24 24">
+          <svg viewBox="0 0 24 24" className="transition-transform duration-300 hover:rotate-45">
             <circle cx="12" cy="12" r="5" />
             <line x1="12" y1="1" x2="12" y2="3" />
             <line x1="12" y1="21" x2="12" y2="23" />
@@ -118,7 +171,7 @@ export default function Navbar({
             <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
           </svg>
         ) : (
-          <svg viewBox="0 0 24 24">
+          <svg viewBox="0 0 24 24" className="transition-transform duration-300 hover:-rotate-12">
             <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" />
           </svg>
         )}

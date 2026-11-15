@@ -122,6 +122,21 @@
   --arch-glass: rgba(24, 27, 30, 0.85);
 }
 
+/* ---------- Circular Radial View Transition for Theme Switching ---------- */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+}
+
 /* ---------- Minimal Floating Capsule Navigation ---------- */
 .nav-pill {
   position: fixed;

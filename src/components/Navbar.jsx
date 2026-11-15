@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { studentProfile } from '../data/projectsData';
 
-export default function Navbar({ 
-  darkMode, 
-  setDarkMode, 
+export default function Navbar({
+  darkMode,
+  setDarkMode,
   onOpenSheetReview
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,13 +28,8 @@ export default function Navbar({
 
   return (
     <header className={`nav-pill ${isScrolled ? 'stuck' : ''}`} id="nav">
-      {/* Brand — Logo Mark + Name */}
+      {/* Brand: Name Only */}
       <a className="nav-brand" href="#top" aria-label="Faysal Ahmed, home">
-        <span className="nav-mark" aria-hidden="true">
-          <svg viewBox="0 0 16 16" fill="none" stroke="#ffb81c" strokeWidth="1.8" strokeLinejoin="round">
-            <path d="M1.5 13.5 5.5 3l3 6 2-3 3.5 7.5z" />
-          </svg>
-        </span>
         <span>{studentProfile.name}</span>
       </a>
 

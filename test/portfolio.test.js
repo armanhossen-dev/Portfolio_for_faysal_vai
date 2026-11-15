@@ -95,6 +95,10 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     const enscape = studentProfile.dailyTools.find(t => t.name === 'Enscape');
     assert.ok(enscape && enscape.image, 'Enscape should have custom logo image');
     assert.ok(fs.existsSync(path.resolve(enscape.image.replace(/^\.\//, 'public/'))), 'Enscape logo missing on disk');
+
+    const lumion = studentProfile.dailyTools.find(t => t.name === 'Lumion');
+    assert.ok(lumion && lumion.image, 'Lumion should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(lumion.image.replace(/^\.\//, 'public/'))), 'Lumion logo missing on disk');
   });
 });
 

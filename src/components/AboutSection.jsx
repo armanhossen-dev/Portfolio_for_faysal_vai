@@ -32,11 +32,11 @@ export default function AboutSection() {
       accent: "#0073CF"
     },
     "Lumion": {
-      cardBg: "bg-[#ebf8fc] dark:bg-[#051c27]",
-      border: "border-[#00B4D8]/35 dark:border-[#00B4D8]/30 hover:border-[#00B4D8]",
-      iconBg: "bg-[#0077B6] text-white",
-      tagColor: "text-[#0077B6] dark:text-[#48cae4]",
-      accent: "#00B4D8"
+      cardBg: "bg-[#edf6fa] dark:bg-[#0b1c28]",
+      border: "border-[#24527a]/35 dark:border-[#24527a]/30 hover:border-[#24527a]",
+      iconBg: "bg-[#24527a] text-white",
+      tagColor: "text-[#24527a] dark:text-[#6fa8dc]",
+      accent: "#24527a"
     },
     "Enscape": {
       cardBg: "bg-[#fff4ec] dark:bg-[#231103]",

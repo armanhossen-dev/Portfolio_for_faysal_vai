@@ -11,6 +11,31 @@
   body {
     @apply bg-[#FAFAF8] text-studio-900 dark:bg-studio-950 dark:text-studio-100;
   }
+
+  /* Soft modern rounded borders for form inputs */
+  input, textarea, select {
+    border-radius: 10px;
+  }
+}
+
+/* Smooth rounded corners for boxes, cards, and containers */
+.rounded-sm {
+  border-radius: 6px;
+}
+.rounded {
+  border-radius: 10px;
+}
+.rounded-md {
+  border-radius: 12px;
+}
+.rounded-lg {
+  border-radius: 16px;
+}
+.rounded-xl {
+  border-radius: 20px;
+}
+.rounded-2xl {
+  border-radius: 26px;
 }
 
 /* Architectural grid pattern */

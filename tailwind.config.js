@@ -38,6 +38,15 @@ export default {
         sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
         display: ['"Space Grotesk"', '"Syne"', 'sans-serif'],
         mono: ['"JetBrains Mono"', '"Space Mono"', 'monospace'],
+      },
+      borderRadius: {
+        DEFAULT: '10px',
+        'sm': '6px',
+        'md': '10px',
+        'lg': '14px',
+        'xl': '18px',
+        '2xl': '22px',
+        '3xl': '28px',
       }
     },
   },

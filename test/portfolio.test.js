@@ -234,6 +234,8 @@ test('Architectural Design System Integrity', async (t) => {
     const heroJsx = fs.readFileSync(path.resolve('src/components/Hero.jsx'), 'utf8');
     assert.equal(heroJsx.includes('SCALE: NTS // DEPT_OF_ARCHITECTURE'), false);
     assert.equal(heroJsx.includes('[+] 23°49\'32"N'), false);
+    assert.ok(heroJsx.includes('<h1>Faysal Ahmed</h1>'));
+    assert.equal(heroJsx.includes('Faysal<br'), false);
   });
 
   await t.test('images have drag protection and right-click context menu prevention', () => {

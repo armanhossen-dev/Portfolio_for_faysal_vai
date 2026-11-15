@@ -524,11 +524,12 @@
 .hero h1 {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: clamp(3.4rem, 8.4vw, 7.2rem);
-  line-height: .92;
-  letter-spacing: -.045em;
+  font-size: clamp(2rem, 5.2vw, 4.4rem);
+  line-height: 1.06;
+  letter-spacing: -.035em;
   color: var(--arch-ink);
   margin: 0;
+  white-space: nowrap;
 }
 
 .hero .sub {

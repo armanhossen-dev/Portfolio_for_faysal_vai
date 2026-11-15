@@ -5,7 +5,7 @@ export default function Hero({ onOpenSheetReview }) {
     <section className="hero" id="top">
       <div className="hero-content">
         <p className="role">Architectural Designer &amp; Urban Researcher</p>
-        <h1>Faysal<br />Ahmed</h1>
+        <h1>Faysal Ahmed</h1>
         <p className="sub">Final-year B.Arch at DIU</p>
         <p className="lede">Exploring ecological urbanism: how cities, climate and everyday life shape each other.</p>
         <div className="cta">

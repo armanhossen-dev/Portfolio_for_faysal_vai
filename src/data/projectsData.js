@@ -22,7 +22,6 @@ export const studentProfile = {
       level: "Undergraduate / Final Year Candidate",
       institution: "Daffodil International University",
       department: "Department of Architecture",
-      enrolled: "In January 2022",
       period: "January 2022 – Present",
       status: "Currently in Final Year",
       location: "Dhaka, Bangladesh",

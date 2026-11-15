@@ -261,11 +261,6 @@ export default function AboutSection() {
                           {edu.degree}
                         </span>
                         <div className="flex items-center gap-1.5">
-                          {edu.enrolled && (
-                            <span className="text-[10px] font-semibold text-[#101214] bg-[#ffb81c] px-2 py-0.5 rounded-full font-mono">
-                              {edu.enrolled}
-                            </span>
-                          )}
                           <span className="text-studio-500 dark:text-[#8e959d] bg-studio-200/60 dark:bg-[#101214] px-2 py-0.5 rounded text-[10px] font-mono">
                             {edu.period}
                           </span>

@@ -39,7 +39,7 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     // 1. DIU
     const diu = studentProfile.education[0];
     assert.equal(diu.institution, 'Daffodil International University');
-    assert.equal(diu.enrolled, 'In January 2022');
+    assert.equal(diu.period, 'January 2022 – Present');
     assert.ok(fs.existsSync(path.resolve(diu.logo.replace(/^\.\//, 'public/'))), 'DIU logo missing');
 
     // 2. College

@@ -125,24 +125,6 @@ export default function ContactSection({ onOpenSheetReview }) {
               </div>
             </div>
 
-            {/* Quick Actions Card — High Contrast in Light & Dark Theme */}
-            <div className="p-6 bg-blueprint-50/90 dark:bg-[#181b1e] rounded-xl border border-blueprint-200/80 dark:border-white/10 shadow-xs space-y-3">
-              <h4 className="font-display font-bold text-sm text-blueprint-900 dark:text-white flex items-center gap-2">
-                <i className="bx bx-book-open text-base text-blueprint-600 dark:text-[#ffb81c]"></i>
-                <span>Portfolio Fast-Review</span>
-              </h4>
-              <p className="text-xs text-studio-700 dark:text-[#9aa1a8] leading-relaxed font-sans">
-                Want to review the full technical board collection in sequential format? Open the built-in sheet review flipbook.
-              </p>
-              <button
-                onClick={() => onOpenSheetReview(0)}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 bg-blueprint-600 hover:bg-blueprint-500 dark:bg-[#ffb81c] dark:text-[#101214] hover:dark:bg-white text-white rounded-lg text-xs font-bold transition-colors shadow-sm"
-              >
-                <i className="bx bx-book-open text-base"></i>
-                <span>Open Portfolio Sheet Review</span>
-              </button>
-            </div>
-
           </div>
 
           {/* Right Column: Interactive Inquiry Form */}

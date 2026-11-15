@@ -24,7 +24,7 @@ export default function TechnicalSheetsSection({ onSelectSheet, onOpenSheetRevie
           <div className="mt-4 md:mt-0 flex items-center gap-3">
             <button
               onClick={() => onOpenSheetReview(0)}
-              className="inline-flex items-center gap-2 px-4 py-2.5 bg-blueprint-600 hover:bg-blueprint-700 text-white font-mono text-xs font-semibold rounded-md shadow-sm transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] bg-studio-950 dark:bg-white text-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white text-xs font-bold rounded-lg shadow-sm transition-colors whitespace-nowrap"
             >
               <i className="bx bx-book-open text-base"></i>
               <span>Full Portfolio Presentation Mode</span>

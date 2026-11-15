@@ -62,34 +62,34 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
         </div>
 
         {/* Featured Main Achievement Showcase Card */}
-        <div className="bg-[#FAFAF8] dark:bg-studio-950 rounded-2xl border border-amber-300/80 dark:border-amber-500/30 overflow-hidden shadow-xl">
+        <div className="bg-[#FAFAF8] dark:bg-studio-950 rounded-2xl border border-studio-300 dark:border-studio-800 overflow-hidden shadow-2xl">
           
-          {/* Golden Header Banner */}
-          <div className="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 text-white px-6 sm:px-8 py-5 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex items-center gap-3.5">
-              <div className="w-12 h-12 rounded-xl bg-white/20 backdrop-blur-md flex items-center justify-center shrink-0 border border-white/30 text-2xl">
-                <i className="bx bxs-trophy text-amber-200"></i>
+          {/* Architectural Deep Slate & Brass Header */}
+          <div className="bg-studio-950 text-white px-6 sm:px-8 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center shrink-0 border border-amber-500/40 text-2xl text-amber-400 shadow-inner">
+                <i className="bx bxs-trophy"></i>
               </div>
               <div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-white/25 uppercase tracking-wider">
+                  <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-white/15 text-white uppercase tracking-wider">
                     {achievement.event}
                   </span>
-                  <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-black/30 uppercase tracking-wider text-amber-200">
+                  <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-500/20 text-amber-300 uppercase tracking-wider border border-amber-500/30">
                     {achievement.category}
                   </span>
                 </div>
-                <h3 className="text-xl sm:text-2xl font-display font-bold uppercase tracking-tight mt-0.5">
+                <h3 className="text-2xl sm:text-3xl font-display font-extrabold uppercase tracking-tight mt-1 text-white">
                   {achievement.title}
                 </h3>
               </div>
             </div>
 
             <div className="text-left md:text-right">
-              <div className="text-xs font-mono uppercase tracking-widest text-amber-100">
+              <div className="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400">
                 {achievement.awardType} • {achievement.year}
               </div>
-              <div className="text-sm font-medium text-white/95">
+              <div className="text-sm font-semibold text-studio-200 mt-0.5">
                 {achievement.organizer}
               </div>
             </div>
@@ -212,10 +212,10 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                 {winningProject && onSelectProject && (
                   <button
                     onClick={() => onSelectProject(winningProject)}
-                    className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-studio-900 dark:bg-white text-white dark:text-studio-900 hover:bg-blueprint-600 dark:hover:bg-blueprint-400 dark:hover:text-studio-950 rounded-lg text-xs font-semibold transition-colors shadow-xs"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] bg-studio-950 dark:bg-white text-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white rounded-lg text-sm font-bold transition-colors shadow-xs"
                   >
                     <span>View Full Winning Project Details</span>
-                    <i className="bx bx-right-arrow-alt text-base"></i>
+                    <i className="bx bx-right-arrow-alt text-lg"></i>
                   </button>
                 )}
               </div>

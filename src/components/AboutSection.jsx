@@ -281,12 +281,12 @@ export default function AboutSection() {
               <p className="text-xs text-studio-300 leading-relaxed font-sans">
                 Open for architectural internships, junior architect roles, thesis collaboration, and sustainable urban research projects.
               </p>
-              <div className="flex flex-wrap items-center gap-2 pt-1">
+              <div className="flex flex-wrap items-center gap-2.5 pt-2">
                 <a
                   href="#contact"
-                  className="inline-flex items-center gap-2 px-4 py-2 bg-blueprint-600 hover:bg-blueprint-500 text-white text-xs font-semibold rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 min-h-[44px] bg-blueprint-600 hover:bg-blueprint-500 text-white text-sm font-bold rounded-lg transition-colors whitespace-nowrap shadow-xs"
                 >
-                  <i className="bx bx-envelope text-sm"></i>
+                  <i className="bx bx-envelope text-base"></i>
                   <span>Get in Touch</span>
                 </a>
 
@@ -294,9 +294,10 @@ export default function AboutSection() {
                   href={studentProfile.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0A66C2] hover:bg-[#084e96] text-white text-xs font-semibold rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 min-h-[44px] bg-[#0A66C2] hover:bg-[#084e96] text-white text-sm font-semibold rounded-lg transition-colors whitespace-nowrap shadow-xs"
+                  aria-label="Connect on LinkedIn"
                 >
-                  <i className="bx bxl-linkedin-square text-sm"></i>
+                  <i className="bx bxl-linkedin-square text-base"></i>
                   <span>LinkedIn</span>
                 </a>
 
@@ -304,9 +305,10 @@ export default function AboutSection() {
                   href={studentProfile.facebook}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#1877F2] hover:bg-[#125ec4] text-white text-xs font-semibold rounded-lg transition-colors"
+                  className="inline-flex items-center justify-center gap-1.5 px-4 py-2.5 min-h-[44px] bg-[#1877F2] hover:bg-[#125ec4] text-white text-sm font-semibold rounded-lg transition-colors whitespace-nowrap shadow-xs"
+                  aria-label="Connect on Facebook"
                 >
-                  <i className="bx bxl-facebook-square text-sm"></i>
+                  <i className="bx bxl-facebook-square text-base"></i>
                   <span>Facebook</span>
                 </a>
               </div>

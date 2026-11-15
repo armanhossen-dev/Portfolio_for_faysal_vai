@@ -183,42 +183,45 @@ export default function ContactSection({ onOpenSheetReview }) {
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-mono text-studio-600 dark:text-studio-300 mb-1">
-                        YOUR NAME / STUDIO *
+                      <label htmlFor="contact-name" className="block text-xs font-semibold text-studio-700 dark:text-studio-200 mb-1.5 uppercase tracking-wide">
+                        Your Name / Studio *
                       </label>
                       <input
+                        id="contact-name"
                         type="text"
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="e.g. Studio Morphogenesis"
-                        className="w-full px-3.5 py-2.5 text-xs bg-studio-50 dark:bg-studio-950 border border-studio-200 dark:border-studio-700 rounded focus:border-blueprint-500 focus:outline-hidden dark:text-white"
+                        className="w-full px-4 py-3 min-h-[44px] text-sm bg-studio-50 dark:bg-studio-950 border border-studio-300 dark:border-studio-700 rounded-lg focus:border-blueprint-500 focus:outline-hidden dark:text-white"
                       />
                     </div>
 
                     <div>
-                      <label className="block text-xs font-mono text-studio-600 dark:text-studio-300 mb-1">
-                        EMAIL ADDRESS *
+                      <label htmlFor="contact-email" className="block text-xs font-semibold text-studio-700 dark:text-studio-200 mb-1.5 uppercase tracking-wide">
+                        Email Address *
                       </label>
                       <input
+                        id="contact-email"
                         type="email"
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="e.g. contact@architecture.com"
-                        className="w-full px-3.5 py-2.5 text-xs bg-studio-50 dark:bg-studio-950 border border-studio-200 dark:border-studio-700 rounded focus:border-blueprint-500 focus:outline-hidden dark:text-white"
+                        className="w-full px-4 py-3 min-h-[44px] text-sm bg-studio-50 dark:bg-studio-950 border border-studio-300 dark:border-studio-700 rounded-lg focus:border-blueprint-500 focus:outline-hidden dark:text-white"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-studio-600 dark:text-studio-300 mb-1">
-                      INQUIRY TYPE
+                    <label htmlFor="contact-subject" className="block text-xs font-semibold text-studio-700 dark:text-studio-200 mb-1.5 uppercase tracking-wide">
+                      Inquiry Type
                     </label>
                     <select
+                      id="contact-subject"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                      className="w-full px-3.5 py-2.5 text-xs bg-studio-50 dark:bg-studio-950 border border-studio-200 dark:border-studio-700 rounded focus:border-blueprint-500 focus:outline-hidden dark:text-white font-mono"
+                      className="w-full px-4 py-3 min-h-[44px] text-sm bg-studio-50 dark:bg-studio-950 border border-studio-300 dark:border-studio-700 rounded-lg focus:border-blueprint-500 focus:outline-hidden dark:text-white font-medium"
                     >
                       <option>Studio Recruitment / Junior Architect Role</option>
                       <option>Academic Review / Jury Discussion</option>
@@ -229,24 +232,25 @@ export default function ContactSection({ onOpenSheetReview }) {
                   </div>
 
                   <div>
-                    <label className="block text-xs font-mono text-studio-600 dark:text-studio-300 mb-1">
-                      MESSAGE / PROJECT BRIEF *
+                    <label htmlFor="contact-message" className="block text-xs font-semibold text-studio-700 dark:text-studio-200 mb-1.5 uppercase tracking-wide">
+                      Message / Project Brief *
                     </label>
                     <textarea
+                      id="contact-message"
                       required
                       rows={4}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Share details regarding your opportunity or inquiry..."
-                      className="w-full px-3.5 py-2.5 text-xs bg-studio-50 dark:bg-studio-950 border border-studio-200 dark:border-studio-700 rounded focus:border-blueprint-500 focus:outline-hidden dark:text-white font-sans"
+                      placeholder="Share details regarding your studio collaboration, jury review, or architectural inquiry..."
+                      className="w-full px-4 py-3 text-sm bg-studio-50 dark:bg-studio-950 border border-studio-300 dark:border-studio-700 rounded-lg focus:border-blueprint-500 focus:outline-hidden dark:text-white font-sans leading-relaxed"
                     ></textarea>
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3 bg-studio-900 dark:bg-white text-white dark:text-studio-900 hover:bg-blueprint-600 dark:hover:bg-blueprint-400 font-mono text-xs font-bold rounded transition-colors shadow-md"
+                    className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 min-h-[44px] bg-studio-950 dark:bg-white text-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white text-sm font-bold rounded-lg transition-colors shadow-md whitespace-nowrap"
                   >
-                    <i className="bx bx-send text-sm"></i>
+                    <i className="bx bx-send text-base"></i>
                     <span>Send Message to Faysal</span>
                   </button>
                 </form>

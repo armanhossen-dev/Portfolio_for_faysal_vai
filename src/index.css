@@ -19,12 +19,26 @@
     letter-spacing: -0.011em;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
   }
 
-  /* Apple-inspired heading typography */
+  /* Premium Bold Architectural Headings — Confident, Heavy, Modern */
   h1, h2, h3, h4, h5, h6, .font-display {
     font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "SF Pro", "Inter", -apple-system, "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.028em;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-weight: 800;
+    line-height: 1.05;
+  }
+
+  h2 {
+    font-weight: 700;
+    line-height: 1.15;
   }
 
   /* Refined Apple-style technical labels with tabular numerals */
@@ -35,9 +49,20 @@
     font-variant-numeric: tabular-nums;
   }
 
+  /* Universal WCAG 2.1/2.2 Focus-Visible State Contract */
+  *:focus-visible {
+    outline: 2px solid #0284C7 !important;
+    outline-offset: 2px !important;
+  }
+
   /* Soft modern rounded borders for form inputs */
   input, textarea, select {
     border-radius: 10px;
+    min-height: 44px;
+  }
+
+  button {
+    text-decoration: none !important;
   }
 }
 

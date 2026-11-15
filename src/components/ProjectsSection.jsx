@@ -32,16 +32,16 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
           </div>
         </div>
 
-        {/* Category Filters */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 text-xs font-medium">
+        {/* Category Filters with accessible 44px touch targets */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 text-xs font-semibold">
           {projectCategories.map((cat) => (
             <button
               key={cat}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full border whitespace-nowrap transition-all ${
+              className={`px-5 py-2.5 min-h-[44px] rounded-full border whitespace-nowrap transition-all flex items-center justify-center ${
                 selectedCategory === cat
-                  ? 'bg-studio-900 text-white dark:bg-blueprint-600 dark:text-white border-studio-900 dark:border-blueprint-600 font-semibold shadow-xs'
-                  : 'bg-white dark:bg-studio-900 text-studio-600 dark:text-studio-400 border-studio-200 dark:border-studio-800 hover:border-blueprint-400 hover:text-studio-900 dark:hover:text-white'
+                  ? 'bg-studio-950 text-white dark:bg-white dark:text-studio-950 border-studio-950 dark:border-white shadow-sm'
+                  : 'bg-white dark:bg-studio-900 text-studio-700 dark:text-studio-300 border-studio-200 dark:border-studio-800 hover:border-blueprint-500 hover:text-studio-950 dark:hover:text-white'
               }`}
             >
               {cat}

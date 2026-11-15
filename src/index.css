@@ -30,7 +30,13 @@
   }
 
   /* Premium Bold Architectural Headings — Bricolage Grotesque */
-  h1, h2, h3, h4, h5, h6, .font-display {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  .font-display {
     font-family: "Bricolage Grotesque", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
     letter-spacing: -0.028em;
     font-weight: 700;
@@ -61,7 +67,9 @@
   }
 
   /* Soft modern rounded borders for form inputs */
-  input, textarea, select {
+  input,
+  textarea,
+  select {
     border-radius: 10px;
     min-height: 44px;
   }
@@ -289,6 +297,7 @@
   from {
     clip-path: inset(0 100% 0 0);
   }
+
   to {
     clip-path: inset(0 0 0 0);
   }
@@ -438,18 +447,21 @@
     gap: 36px;
     padding-top: 108px;
   }
+
   .hero-side {
     justify-self: start;
     width: 100%;
     max-width: 440px;
     margin-left: 28px;
   }
+
   .hero-cut {
     width: 100%;
     top: 8%;
     height: 40%;
     opacity: 0.9;
   }
+
   .hero-name .l2 {
     margin-left: 0.2em;
   }
@@ -459,18 +471,23 @@
 .rounded-sm {
   border-radius: 6px;
 }
+
 .rounded {
   border-radius: 10px;
 }
+
 .rounded-md {
   border-radius: 12px;
 }
+
 .rounded-lg {
   border-radius: 16px;
 }
+
 .rounded-xl {
   border-radius: 20px;
 }
+
 .rounded-2xl {
   border-radius: 26px;
 }
@@ -478,13 +495,13 @@
 /* Architectural grid pattern */
 .bg-grid-pattern {
   background-size: 40px 40px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
 }
 
 .dark .bg-grid-pattern {
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
 }
@@ -503,6 +520,7 @@
 .arch-crosshair {
   position: relative;
 }
+
 .arch-crosshair::before {
   content: "+";
   position: absolute;
@@ -513,6 +531,7 @@
   line-height: 1;
   color: #ffb81c;
 }
+
 .arch-crosshair::after {
   content: "+";
   position: absolute;

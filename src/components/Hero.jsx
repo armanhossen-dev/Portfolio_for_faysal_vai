@@ -21,11 +21,11 @@ export default function Hero({ onOpenSheetReview }) {
         </h1>
 
         <p className="hero-role">
-          Architectural designer and urban researcher in the final year of B.Arch
+          Architectural Designer & Urban Researcher
         </p>
 
         <p className="hero-lede font-sans">
-          Exploring <b>ecological urbanism</b>, high-density residential community frameworks and circular industrial facilities. Bridging socio-spatial realities with resilient, sustainable architectural interventions.
+          Final-year B.Arch at DIU, exploring ecological urbanism.
         </p>
 
         <div className="flex flex-wrap items-center gap-3 pt-2">
@@ -40,7 +40,7 @@ export default function Hero({ onOpenSheetReview }) {
             onClick={() => onOpenSheetReview(0)}
             className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold text-sm cursor-pointer transition-transform duration-200 hover:-translate-y-0.5 border border-studio-950/70 dark:border-white/70 text-studio-950 dark:text-white bg-transparent hover:bg-studio-950/5 dark:hover:bg-white/10"
           >
-            <span>Review portfolio sheets</span>
+            <span>Review sheets</span>
           </button>
         </div>
       </div>

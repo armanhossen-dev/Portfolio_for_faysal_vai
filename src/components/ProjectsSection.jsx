@@ -23,7 +23,7 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
               Featured Architectural Work
             </h2>
             <p className="text-sm sm:text-base text-studio-600 dark:text-[#9aa1a8] mt-2 max-w-2xl font-sans">
-              Curated studio projects addressing urban informal settlements, high-density housing, industrial zoning ecology, and phenomenological heritage.
+              Selected studio projects in ecological urbanism, housing, and industrial facilities.
             </p>
           </div>
 

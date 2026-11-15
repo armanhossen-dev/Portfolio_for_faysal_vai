@@ -30,7 +30,7 @@ export default function ContactSection({ onOpenSheetReview }) {
             Connect with Faysal Ahmed
           </h2>
           <p className="text-sm sm:text-base text-studio-600 dark:text-[#9aa1a8] mt-2">
-            Available for architectural practice roles, research collaborations, thesis jury discussions, and design consultations.
+            Open for architectural roles, research collaborations, and project inquiries.
           </p>
         </div>
 

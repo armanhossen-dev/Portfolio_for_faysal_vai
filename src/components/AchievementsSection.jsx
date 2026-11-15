@@ -57,7 +57,7 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
             Recent Architectural Achievements
           </h2>
           <p className="text-sm sm:text-base text-studio-600 dark:text-[#9aa1a8] mt-2 font-sans">
-            Official design competition victories, jury accolades, and recognized academic excellence at Daffodil International University.
+            Competition victories, jury awards, and academic honors at DIU.
           </p>
         </div>
 

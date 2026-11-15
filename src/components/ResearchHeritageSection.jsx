@@ -36,7 +36,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
               Commons Module: Learning from the Lanes
             </h2>
             <p className="text-sm sm:text-base text-studio-600 dark:text-[#9aa1a8] mt-2 leading-relaxed font-sans">
-              An empirical critique of socio-spatial disparity between affluent Gulshan/Banani and the informal settlement of Korail. Transforming the informal alley from a space of deficit into an architecture of communal intelligence.
+              Urban field research investigating socio-spatial disparity and community tactics in Korail settlement.
             </p>
           </div>
 

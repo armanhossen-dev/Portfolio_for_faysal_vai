@@ -17,7 +17,7 @@ export default function TechnicalSheetsSection({ onSelectSheet, onOpenSheetRevie
               Technical Drawing Sheets
             </h2>
             <p className="text-sm sm:text-base text-studio-600 dark:text-[#9aa1a8] mt-2 max-w-2xl font-sans">
-              Complete folio of masterplans, unit layouts, building sections, environmental zoning diagrams, and large-format concept boards.
+              Complete 12-sheet folio of working drawings, masterplans, and details.
             </p>
           </div>
 

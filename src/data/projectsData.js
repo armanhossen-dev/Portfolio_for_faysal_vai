@@ -84,7 +84,7 @@ export const studentProfile = {
     { name: "D5 Render", category: "Ray-Tracing", icon: "bx-aperture", image: "./images/tools/d5-render-logo.png", desc: "Next-gen real-time ray-tracing & PBR material fidelity" },
     { name: "Affinity", category: "Publishing", icon: "bx-palette", desc: "Presentation board typography, vector layout & architectural portfolios" },
     { name: "VS Code", category: "Development", icon: "bx-code-alt", desc: "Computational design scripting, web portfolios & data pipelines" },
-    { name: "QGIS", category: "GIS & Analysis", icon: "bx-globe", desc: "Geospatial data analysis, regional mapping & terrain modeling" },
+    { name: "QGIS", category: "GIS & Analysis", icon: "bx-globe", image: "./images/tools/qgis-logo.png", desc: "Geospatial data analysis, regional mapping & terrain modeling" },
     { name: "Autodesk Forma", category: "Site & Climate AI", icon: "bxs-city", image: "./images/tools/autodesk-forma-logo.png", desc: "AI-driven microclimate, wind, sun hours & daylight analysis" },
     { name: "Archimap", category: "Urban Cartography", icon: "bx-map-alt", desc: "Site context mapping, urban morphology & territorial studies" }
   ],

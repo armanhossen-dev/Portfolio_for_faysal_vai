@@ -87,6 +87,10 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     const forma = studentProfile.dailyTools.find(t => t.name === 'Autodesk Forma');
     assert.ok(forma && forma.image, 'Autodesk Forma should have custom logo image');
     assert.ok(fs.existsSync(path.resolve(forma.image.replace(/^\.\//, 'public/'))), 'Autodesk Forma logo missing on disk');
+
+    const qgis = studentProfile.dailyTools.find(t => t.name === 'QGIS');
+    assert.ok(qgis && qgis.image, 'QGIS should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(qgis.image.replace(/^\.\//, 'public/'))), 'QGIS logo missing on disk');
   });
 });
 

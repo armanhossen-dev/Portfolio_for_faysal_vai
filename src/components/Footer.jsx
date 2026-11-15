@@ -2,119 +2,148 @@ import React from 'react';
 import { studentProfile } from '../data/projectsData';
 
 export default function Footer({ onOpenSheetReview }) {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
-    <footer className="relative min-h-[640px] md:min-h-[720px] lg:min-h-[768px] flex flex-col justify-between bg-black text-white overflow-hidden border-t border-studio-800 font-mono text-xs">
+    <footer className="relative w-full min-h-[620px] sm:min-h-[700px] lg:min-h-[768px] flex flex-col justify-between bg-[#0a0c0e] text-white overflow-hidden border-t border-white/15 font-mono text-xs">
       
-      {/* Background Silhouette Photo in Water — 100% Visible with Light ~30% Scrim */}
-      <div className="absolute inset-0 z-0 select-none pointer-events-none">
+      {/* Full-Width Panoramic Background Silhouette Photo */}
+      <div className="absolute inset-0 z-0 select-none pointer-events-none w-full h-full">
         <img
           src="./images/footer-silhouette.jpg"
           alt="Faysal Ahmed Architectural Waterscape Silhouette"
-          className="w-full h-full object-cover object-center opacity-100 transition-opacity duration-500"
+          className="w-full h-full object-cover object-bottom opacity-100"
         />
-        {/* Light ~30% black overlay so the photo is clearly visible */}
-        <div className="absolute inset-0 bg-black/30"></div>
+        {/* Subtle architectural gradient scrim: Darker at top for legible text, clear at bottom for silhouette reflections */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0c0e]/90 via-[#0a0c0e]/30 to-[#0a0c0e]/80"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 relative z-10 w-full flex-1 flex flex-col justify-between">
-
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-white/20">
-
-          {/* Col 1: Architectural Stamp */}
-          <div className="md:col-span-5 space-y-4 p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-xl">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 border-2 border-[#ffb81c] flex flex-col items-center justify-center font-bold text-xs leading-none bg-black/70 backdrop-blur-md rounded-md shadow-sm">
-                <span className="text-[#ffb81c]">FA</span>
-                <span className="text-[8px] text-studio-400">ARCH</span>
-              </div>
-              <div>
-                <div className="font-display font-bold text-lg text-white uppercase tracking-tight drop-shadow-md">
-                  {studentProfile.name}
-                </div>
-                <div className="text-[11px] text-studio-200 drop-shadow-sm">
-                  B.Arch Final Year Candidate • Daffodil International University
-                </div>
-              </div>
+      {/* Main Content Area */}
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20 pb-8 flex-1 flex flex-col justify-between">
+        
+        {/* Top Header: Big Signature + Action Bar */}
+        <div className="pb-10 border-b border-white/15 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div>
+            <div className="flex items-center gap-2 font-mono text-xs text-[#ffb81c] font-semibold mb-2 tracking-wider">
+              <span className="w-2 h-2 bg-[#ffb81c] rounded-full"></span>
+              PORTFOLIO ARCHIVE // FINAL YEAR B.ARCH
             </div>
-
-            <p className="text-xs text-studio-100 font-sans leading-relaxed max-w-sm drop-shadow-sm">
-              Department of Architecture, Daffodil International University. Focused on climate-adaptive urbanism, ecological community infrastructure, and circular industrial facilities.
+            <h2 className="font-display font-black text-3xl sm:text-4xl lg:text-5xl uppercase tracking-tight text-white drop-shadow-md">
+              {studentProfile.name}
+            </h2>
+            <p className="text-xs sm:text-sm font-sans text-studio-200 mt-1 max-w-xl leading-relaxed drop-shadow-sm">
+              Architectural designer and urban researcher focused on ecological urbanism, resilient community infrastructure, and circular industrial facilities.
             </p>
+          </div>
 
-            <div className="space-y-1 text-[11px] text-studio-300 font-mono drop-shadow-sm">
-              <div>LOCATION: Lives in {studentProfile.livesIn} • From {studentProfile.hometown}</div>
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <button
+              onClick={() => onOpenSheetReview(0)}
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-[#ffb81c] hover:bg-white text-[#101214] font-bold text-xs tracking-tight transition-all duration-200 shadow-lg hover:-translate-y-0.5 cursor-pointer"
+            >
+              <i className="bx bx-book-open text-base"></i>
+              <span>Review Portfolio Sheets</span>
+            </button>
+
+            <a
+              href={`mailto:${studentProfile.email}`}
+              className="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-black/50 hover:bg-white/15 text-white border border-white/20 font-semibold text-xs transition-colors backdrop-blur-md shadow-sm"
+            >
+              <i className="bx bx-envelope text-base text-[#ffb81c]"></i>
+              <span>Get in Touch</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Middle Details Grid: Airy Hairline Architectural Columns */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 py-10 my-auto">
+          
+          {/* Detail 1: Academic & Studio Affiliation */}
+          <div className="lg:col-span-4 space-y-3 p-4 rounded-xl bg-black/35 backdrop-blur-md border border-white/10 shadow-lg">
+            <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#ffb81c] flex items-center gap-2">
+              <span>01 // ACADEMIC AFFILIATION</span>
+            </div>
+            <div className="text-sm font-display font-semibold text-white">
+              {studentProfile.university}
+            </div>
+            <div className="text-xs text-studio-300 font-sans leading-relaxed">
+              Department of Architecture • Final Year Candidate
+            </div>
+            <div className="text-[11px] font-mono text-studio-400 pt-1 border-t border-white/10 flex items-center gap-1.5">
+              <i className="bx bx-map-pin text-[#ffb81c] text-sm"></i>
+              <span>Lives in {studentProfile.livesIn} • From {studentProfile.hometown}</span>
             </div>
           </div>
 
-          {/* Col 2: Navigation Links */}
-          <div className="md:col-span-3 space-y-2 p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-xl">
-            <div className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2 drop-shadow-md">
-              <span className="w-1.5 h-1.5 bg-[#ffb81c] rounded-full"></span>
-              Portfolio Navigation
+          {/* Detail 2: Portfolio Navigation Index */}
+          <div className="lg:col-span-5 space-y-3 p-4 rounded-xl bg-black/35 backdrop-blur-md border border-white/10 shadow-lg">
+            <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#ffb81c] flex items-center gap-2">
+              <span>02 // PORTFOLIO INDEX</span>
             </div>
-            <ul className="space-y-1.5 text-xs text-studio-100">
-              <li><a href="#projects" className="hover:text-[#ffb81c] transition-colors">Featured Projects</a></li>
-              <li><a href="#sheets" className="hover:text-[#ffb81c] transition-colors">Technical Drawing Sheets</a></li>
-              <li><a href="#research" className="hover:text-[#ffb81c] transition-colors">Commons Module & Teota Heritage</a></li>
-              <li><a href="#about" className="hover:text-[#ffb81c] transition-colors">Academic CV & Studios</a></li>
-              <li><a href="#contact" className="hover:text-[#ffb81c] transition-colors">Contact & Inquiries</a></li>
-              <li className="pt-1 flex items-center gap-3">
-                <a
-                  href={studentProfile.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[#ffb81c] hover:text-white transition-colors flex items-center gap-1 font-semibold"
-                >
-                  <i className="bx bxl-linkedin text-sm"></i>
-                  <span>LinkedIn</span>
-                </a>
-                <span className="text-white/40">•</span>
-                <a
-                  href={studentProfile.facebook}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-[#ffb81c] hover:text-white transition-colors flex items-center gap-1 font-semibold"
-                >
-                  <i className="bx bxl-facebook text-sm"></i>
-                  <span>Facebook</span>
-                </a>
-              </li>
-            </ul>
+            <div className="grid grid-cols-2 gap-2 text-xs">
+              <a href="#projects" className="text-studio-200 hover:text-[#ffb81c] transition-colors flex items-center gap-1.5">
+                <span className="text-[#ffb81c] text-[10px]">→</span> Featured Projects
+              </a>
+              <a href="#achievements" className="text-studio-200 hover:text-[#ffb81c] transition-colors flex items-center gap-1.5">
+                <span className="text-[#ffb81c] text-[10px]">→</span> ARCHFEST Award
+              </a>
+              <a href="#sheets" className="text-studio-200 hover:text-[#ffb81c] transition-colors flex items-center gap-1.5">
+                <span className="text-[#ffb81c] text-[10px]">→</span> Technical Sheets
+              </a>
+              <a href="#research" className="text-studio-200 hover:text-[#ffb81c] transition-colors flex items-center gap-1.5">
+                <span className="text-[#ffb81c] text-[10px]">→</span> Urban Research
+              </a>
+              <a href="#about" className="text-studio-200 hover:text-[#ffb81c] transition-colors flex items-center gap-1.5">
+                <span className="text-[#ffb81c] text-[10px]">→</span> Academic CV
+              </a>
+              <a href="#contact" className="text-studio-200 hover:text-[#ffb81c] transition-colors flex items-center gap-1.5">
+                <span className="text-[#ffb81c] text-[10px]">→</span> Direct Contact
+              </a>
+            </div>
           </div>
 
-          {/* Col 3: Quick Mode Action */}
-          <div className="md:col-span-4 space-y-3">
-            <div className="p-5 rounded-2xl bg-black/40 border border-white/15 backdrop-blur-md space-y-3 shadow-xl">
-              <div className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2 drop-shadow-md">
-                <i className="bx bx-book-open text-[#ffb81c] text-sm"></i>
-                Jury / Presentation View
-              </div>
-              <p className="text-xs font-sans text-studio-100 leading-relaxed drop-shadow-sm">
-                Launch the full-screen sequential portfolio sheet review for academic juries, crits, or studio interviews.
-              </p>
-              <button
-                onClick={() => onOpenSheetReview(0)}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#ffb81c] hover:bg-white text-[#101214] rounded-lg transition-colors text-xs font-bold shadow-md cursor-pointer"
+          {/* Detail 3: Social & Transmission */}
+          <div className="lg:col-span-3 space-y-3 p-4 rounded-xl bg-black/35 backdrop-blur-md border border-white/10 shadow-lg">
+            <div className="text-[11px] font-mono font-bold uppercase tracking-wider text-[#ffb81c] flex items-center gap-2">
+              <span>03 // NETWORK</span>
+            </div>
+            <div className="space-y-2 text-xs font-mono">
+              <a
+                href={studentProfile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between p-2 rounded-lg bg-white/5 hover:bg-white/10 text-studio-200 hover:text-white transition-colors border border-white/10"
               >
-                <i className="bx bx-book-open text-sm"></i>
-                <span>Launch Sheet Presentation</span>
-              </button>
+                <span className="flex items-center gap-2">
+                  <i className="bx bxl-linkedin text-base text-[#ffb81c]"></i>
+                  <span>LinkedIn</span>
+                </span>
+                <i className="bx bx-right-arrow-alt text-studio-400"></i>
+              </a>
+
+              <a
+                href={studentProfile.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center justify-between p-2 rounded-lg bg-white/5 hover:bg-white/10 text-studio-200 hover:text-white transition-colors border border-white/10"
+              >
+                <span className="flex items-center gap-2">
+                  <i className="bx bxl-facebook text-base text-[#ffb81c]"></i>
+                  <span>Facebook</span>
+                </span>
+                <i className="bx bx-right-arrow-alt text-studio-400"></i>
+              </a>
             </div>
           </div>
 
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-white/90 drop-shadow-md px-3 py-2 rounded-lg bg-black/30 backdrop-blur-sm">
-          <div>
-            © {new Date().getFullYear()} {studentProfile.name}. All Architectural Rights Reserved.
+        {/* Bottom Bar: Clean Architectural Rights & Stamp */}
+        <div className="pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-studio-300 drop-shadow-md">
+          <div className="flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#ffb81c]"></span>
+            <span>© {new Date().getFullYear()} {studentProfile.name}. All Architectural Rights Reserved.</span>
           </div>
-          <div>
-            Dhaka, Bangladesh • Daffodil International University
+          <div className="text-studio-400 font-mono">
+            Dhaka, Bangladesh • Department of Architecture, DIU
           </div>
         </div>
 

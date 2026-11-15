@@ -70,7 +70,7 @@ export default function SheetPresentationModal({
         
         {/* Left: Sheet Title and Number */}
         <div className="flex items-center gap-3">
-          <div className="px-2.5 py-1 bg-blueprint-600/30 border border-blueprint-500/40 text-blueprint-400 font-mono text-xs font-bold rounded">
+          <div className="px-2.5 py-1 bg-[#ffb81c]/20 border border-[#ffb81c]/40 text-[#ffb81c] font-mono text-xs font-bold rounded">
             {currentSheet.sheetNumber}
           </div>
           <div>
@@ -89,7 +89,7 @@ export default function SheetPresentationModal({
           <div className="hidden sm:flex items-center bg-studio-800/80 rounded border border-studio-700 p-0.5 font-mono text-xs">
             <button 
               onClick={handleZoomOut} 
-              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors flex items-center justify-center"
+              className="p-1.5 hover:text-[#ffb81c] hover:bg-studio-700 rounded transition-colors flex items-center justify-center cursor-pointer"
               title="Zoom out (-)"
             >
               <i className="bx bx-zoom-out text-base"></i>
@@ -99,7 +99,7 @@ export default function SheetPresentationModal({
             </span>
             <button 
               onClick={handleZoomIn} 
-              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors flex items-center justify-center"
+              className="p-1.5 hover:text-[#ffb81c] hover:bg-studio-700 rounded transition-colors flex items-center justify-center cursor-pointer"
               title="Zoom in (+)"
             >
               <i className="bx bx-zoom-in text-base"></i>
@@ -107,7 +107,7 @@ export default function SheetPresentationModal({
             {zoomLevel !== 1 && (
               <button 
                 onClick={handleResetZoom} 
-                className="p-1.5 text-ochre-400 hover:bg-studio-700 rounded transition-colors border-l border-studio-700 ml-1 flex items-center justify-center"
+                className="p-1.5 text-[#ffb81c] hover:bg-studio-700 rounded transition-colors border-l border-studio-700 ml-1 flex items-center justify-center cursor-pointer"
                 title="Reset zoom"
               >
                 <i className="bx bx-reset text-base"></i>
@@ -118,9 +118,9 @@ export default function SheetPresentationModal({
           {/* Toggle info button */}
           <button
             onClick={() => setShowInfo(!showInfo)}
-            className={`p-1.5 rounded border transition-colors flex items-center justify-center ${
+            className={`p-1.5 rounded border transition-colors flex items-center justify-center cursor-pointer ${
               showInfo 
-                ? 'bg-blueprint-600/30 border-blueprint-500 text-blueprint-300' 
+                ? 'bg-[#ffb81c]/20 border-[#ffb81c]/50 text-[#ffb81c]' 
                 : 'border-studio-700 text-studio-400 hover:bg-studio-800'
             }`}
             title="Toggle sheet details"
@@ -131,7 +131,7 @@ export default function SheetPresentationModal({
           {/* Fullscreen button */}
           <button
             onClick={toggleFullscreen}
-            className="p-1.5 rounded border border-studio-700 text-studio-400 hover:bg-studio-800 transition-colors hidden sm:flex items-center justify-center"
+            className="p-1.5 rounded border border-studio-700 text-studio-400 hover:bg-studio-800 transition-colors hidden sm:flex items-center justify-center cursor-pointer"
             title="Toggle fullscreen"
           >
             {isFullscreen ? (
@@ -147,17 +147,17 @@ export default function SheetPresentationModal({
               onClose();
               onOpenLightbox(currentSheet);
             }}
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono bg-studio-800 hover:bg-studio-700 border border-studio-700 rounded transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono bg-studio-800 hover:bg-studio-700 border border-studio-700 rounded transition-colors cursor-pointer text-white hover:text-[#ffb81c]"
             title="Deep pan & high-res inspect"
           >
-            <i className="bx bx-link-external text-blueprint-400 text-xs"></i>
+            <i className="bx bx-link-external text-[#ffb81c] text-xs"></i>
             <span className="hidden md:inline">Inspect High-Res</span>
           </button>
 
           {/* Close button */}
           <button
             onClick={onClose}
-            className="p-1.5 rounded hover:bg-red-500/20 hover:text-red-400 border border-transparent hover:border-red-500/40 text-studio-400 transition-colors ml-1 flex items-center justify-center"
+            className="p-1.5 rounded hover:bg-red-500/20 hover:text-red-400 border border-transparent hover:border-red-500/40 text-studio-400 transition-colors ml-1 flex items-center justify-center cursor-pointer"
             title="Close Sheet Review (Esc)"
           >
             <i className="bx bx-x text-2xl leading-none"></i>
@@ -205,7 +205,7 @@ export default function SheetPresentationModal({
         {showInfo && (
           <div className="absolute bottom-24 left-4 right-4 sm:left-auto sm:right-6 sm:w-96 z-20 bg-studio-900/90 backdrop-blur-md border border-studio-700 p-4 rounded-lg shadow-2xl animate-fadeIn">
             <div className="flex items-center justify-between mb-2 pb-2 border-b border-studio-800">
-              <span className="font-mono text-xs text-blueprint-400 font-semibold">
+              <span className="font-mono text-xs text-[#ffb81c] font-semibold">
                 ARCHITECTURAL BRIEF
               </span>
               <span className="font-mono text-[11px] text-studio-400">
@@ -224,7 +224,7 @@ export default function SheetPresentationModal({
                 href={currentSheet.full} 
                 target="_blank" 
                 rel="noreferrer" 
-                className="text-blueprint-400 hover:underline flex items-center gap-1"
+                className="text-[#ffb81c] hover:underline flex items-center gap-1"
               >
                 <i className="bx bx-download text-xs"></i> Full File
               </a>
@@ -250,9 +250,9 @@ export default function SheetPresentationModal({
                   setZoomLevel(1);
                   setCurrentIndex(idx);
                 }}
-                className={`relative flex-shrink-0 rounded overflow-hidden aspect-[1.414/1] w-14 sm:w-16 border-2 transition-all ${
+                className={`relative flex-shrink-0 rounded overflow-hidden aspect-[1.414/1] w-14 sm:w-16 border-2 transition-all cursor-pointer ${
                   currentIndex === idx 
-                    ? 'border-blueprint-400 scale-105 shadow-md ring-2 ring-blueprint-500/40' 
+                    ? 'border-[#ffb81c] scale-105 shadow-md ring-2 ring-[#ffb81c]/40' 
                     : 'border-studio-700 opacity-60 hover:opacity-100 hover:border-studio-500'
                 }`}
                 title={`${sheet.sheetNumber}: ${sheet.title}`}

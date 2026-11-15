@@ -38,7 +38,7 @@ export default function Navbar({
         <span>{studentProfile.name}</span>
       </a>
 
-      {/* Desktop Navigation Links */}
+      {/* Desktop Navigation Links — Minimal & Clean */}
       <nav className="nav-links hidden lg:flex" aria-label="Primary">
         {navLinks.map((link) => (
           <a
@@ -50,7 +50,7 @@ export default function Navbar({
         ))}
       </nav>
 
-      {/* Social Links: LinkedIn & Facebook — Clean Icons without round borders */}
+      {/* Social Links: LinkedIn & Facebook — Clean standalone SVGs */}
       <a
         className="nav-ico hidden sm:grid"
         href={studentProfile.linkedin}
@@ -78,7 +78,7 @@ export default function Navbar({
         </svg>
       </a>
 
-      {/* Review Sheets Signature Yellow CTA */}
+      {/* Review Sheets Signature Yellow Pill CTA */}
       <button
         onClick={() => onOpenSheetReview(0)}
         className="nav-cta"
@@ -91,12 +91,12 @@ export default function Navbar({
         <span className="hidden sm:inline">Review sheets</span>
       </button>
 
-      {/* Dark / Light Mode Toggle */}
+      {/* Minimal Dark / Light Mode Toggle */}
       <button
         onClick={() => setDarkMode(!darkMode)}
         className="nav-ico"
         aria-label="Toggle dark mode"
-        title={darkMode ? "Switch to Architectural White" : "Switch to Studio Graphite"}
+        title={darkMode ? "Switch to Architectural Light" : "Switch to Architectural Dark"}
       >
         {darkMode ? (
           <svg viewBox="0 0 24 24">
@@ -117,7 +117,7 @@ export default function Navbar({
         )}
       </button>
 
-      {/* Mobile Burger Toggle */}
+      {/* Minimal Mobile Burger Toggle */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         className="nav-ico lg:hidden"
@@ -138,24 +138,24 @@ export default function Navbar({
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-white/95 dark:bg-studio-900/95 backdrop-blur-xl border border-studio-200 dark:border-studio-800 rounded-2xl p-3 shadow-xl flex flex-col gap-1 lg:hidden animate-fadeIn">
+        <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-white/95 dark:bg-[#181b1e]/95 backdrop-blur-xl border border-black/10 dark:border-white/10 rounded-2xl p-3 shadow-2xl flex flex-col gap-1 lg:hidden animate-fadeIn">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="px-4 py-2.5 rounded-xl text-sm font-semibold text-studio-900 dark:text-white hover:bg-studio-100 dark:hover:bg-studio-800 transition-colors"
+              className="px-4 py-2.5 rounded-xl text-sm font-semibold text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
             >
               {link.name}
             </a>
           ))}
-          <div className="pt-2 border-t border-studio-100 dark:border-studio-800 flex items-center justify-between px-2">
+          <div className="pt-2 border-t border-black/10 dark:border-white/10 flex items-center justify-between px-2">
             <div className="flex items-center gap-2">
               <a
                 href={studentProfile.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 text-studio-700 dark:text-studio-300 hover:text-[#0A66C2]"
+                className="p-2 text-studio-700 dark:text-[#9aa1a8] hover:text-[#ffb81c]"
                 aria-label="LinkedIn"
               >
                 <i className="bx bxl-linkedin text-xl"></i>
@@ -164,7 +164,7 @@ export default function Navbar({
                 href={studentProfile.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 text-studio-700 dark:text-studio-300 hover:text-[#1877F2]"
+                className="p-2 text-studio-700 dark:text-[#9aa1a8] hover:text-[#ffb81c]"
                 aria-label="Facebook"
               >
                 <i className="bx bxl-facebook text-xl"></i>
@@ -175,7 +175,7 @@ export default function Navbar({
                 setMobileMenuOpen(false);
                 onOpenSheetReview(0);
               }}
-              className="px-4 py-2 rounded-full bg-[#ffb81c] text-[#15181b] text-xs font-bold"
+              className="px-4 py-2 rounded-full bg-[#ffb81c] text-[#101214] text-xs font-bold"
             >
               Review sheets
             </button>

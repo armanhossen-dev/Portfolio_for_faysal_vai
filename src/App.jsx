@@ -130,7 +130,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAFAF8] text-studio-900 dark:bg-studio-950 dark:text-studio-100 selection:bg-blueprint-500 selection:text-white transition-colors duration-300">
+    <div className="min-h-screen flex flex-col bg-[#FAFAF8] text-studio-900 dark:bg-[#101214] dark:text-[#eceeef] selection:bg-[#ffb81c] selection:text-[#101214] transition-colors duration-300">
       
       {/* Top Navbar */}
       <Navbar 

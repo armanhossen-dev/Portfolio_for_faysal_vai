@@ -9,25 +9,25 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
     : projects.filter(p => p.category === selectedCategory);
 
   return (
-    <section id="projects" className="py-20 border-b border-studio-200 dark:border-studio-800 bg-[#FAFAF8] dark:bg-studio-950">
+    <section id="projects" className="py-20 border-b border-studio-200 dark:border-white/10 bg-[#FAFAF8] dark:bg-[#101214]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-studio-200 dark:border-studio-800">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-studio-200 dark:border-white/10">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-blueprint-600 dark:text-blueprint-400 font-semibold mb-2">
-              <span className="w-2 h-2 bg-blueprint-500 rounded-xs"></span>
+            <div className="flex items-center gap-2 font-mono text-xs text-blueprint-600 dark:text-[#ffb81c] font-semibold mb-2">
+              <span className="w-2 h-2 bg-blueprint-500 dark:bg-[#ffb81c] rounded-xs"></span>
               PORTFOLIO SELECTION // STUDIO PROJECTS
             </div>
             <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-studio-950 dark:text-white uppercase tracking-tight">
               Featured Architectural Work
             </h2>
-            <p className="text-sm sm:text-base text-studio-600 dark:text-studio-400 mt-2 max-w-2xl">
+            <p className="text-sm sm:text-base text-studio-600 dark:text-[#9aa1a8] mt-2 max-w-2xl font-sans">
               Curated studio projects addressing urban informal settlements, high-density housing, industrial zoning ecology, and phenomenological heritage.
             </p>
           </div>
 
-          <div className="mt-4 md:mt-0 font-mono text-xs text-studio-500">
+          <div className="mt-4 md:mt-0 font-mono text-xs text-studio-500 dark:text-[#9aa1a8]">
             SHOWING {filteredProjects.length} OF {projects.length} PROJECTS
           </div>
         </div>
@@ -40,8 +40,8 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
               onClick={() => setSelectedCategory(cat)}
               className={`px-5 py-2.5 min-h-[44px] rounded-full border whitespace-nowrap transition-all flex items-center justify-center ${
                 selectedCategory === cat
-                  ? 'bg-studio-950 text-white dark:bg-white dark:text-studio-950 border-studio-950 dark:border-white shadow-sm'
-                  : 'bg-white dark:bg-studio-900 text-studio-700 dark:text-studio-300 border-studio-200 dark:border-studio-800 hover:border-blueprint-500 hover:text-studio-950 dark:hover:text-white'
+                  ? 'bg-studio-950 text-white dark:bg-[#ffb81c] dark:text-[#101214] border-studio-950 dark:border-[#ffb81c] shadow-sm font-bold'
+                  : 'bg-white dark:bg-[#181b1e] text-studio-700 dark:text-[#9aa1a8] border-studio-200 dark:border-white/10 hover:border-blueprint-500 hover:text-studio-950 dark:hover:border-[#ffb81c] dark:hover:text-white'
               }`}
             >
               {cat}
@@ -59,12 +59,12 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
             return (
               <div
                 key={project.id}
-                className="group bg-white dark:bg-studio-900 rounded-lg border border-studio-200 dark:border-studio-800 overflow-hidden shadow-xs hover:shadow-xl hover:border-blueprint-400/60 dark:hover:border-blueprint-500/60 transition-all duration-300 flex flex-col justify-between"
+                className="group bg-white dark:bg-[#181b1e] rounded-lg border border-studio-200 dark:border-white/10 overflow-hidden shadow-xs hover:shadow-xl hover:border-blueprint-400/60 dark:hover:border-[#ffb81c]/60 transition-all duration-300 flex flex-col justify-between"
               >
                 <div>
                   {/* Card Image Thumbnail */}
                   <div 
-                    className="relative aspect-[1.414/1] overflow-hidden bg-studio-100 dark:bg-studio-800 cursor-pointer"
+                    className="relative aspect-[1.414/1] overflow-hidden bg-studio-100 dark:bg-[#101214] cursor-pointer"
                     onClick={() => onSelectProject(project)}
                   >
                     <img
@@ -75,18 +75,18 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
 
                     {/* Architectural Sheet Stamp */}
                     <div className="absolute top-3 left-3 flex items-center gap-1.5">
-                      <div className="font-mono text-[10px] font-bold px-2 py-1 bg-studio-950/80 text-white rounded backdrop-blur-xs border border-white/10">
+                      <div className="font-mono text-[10px] font-bold px-2 py-1 bg-studio-950/80 dark:bg-black/80 text-white rounded backdrop-blur-xs border border-white/10">
                         PROJECT {project.projectNumber}
                       </div>
                       {project.award && (
-                        <div className="font-mono text-[10px] font-bold px-2 py-1 bg-amber-500 text-white rounded backdrop-blur-xs flex items-center gap-1 shadow-md">
+                        <div className="font-mono text-[10px] font-bold px-2 py-1 bg-amber-500 dark:bg-[#ffb81c] text-white dark:text-[#101214] rounded backdrop-blur-xs flex items-center gap-1 shadow-md">
                           <i className="bx bxs-trophy"></i>
                           <span>WINNER</span>
                         </div>
                       )}
                     </div>
 
-                    <div className="absolute top-3 right-3 font-mono text-[10px] px-2 py-1 bg-blueprint-600/90 text-white rounded backdrop-blur-xs">
+                    <div className="absolute top-3 right-3 font-mono text-[10px] px-2 py-1 bg-blueprint-600/90 dark:bg-[#101214]/90 text-white dark:border dark:border-white/20 rounded backdrop-blur-xs">
                       {project.sheets.length} SHEETS
                     </div>
 
@@ -97,17 +97,17 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                           e.stopPropagation();
                           if (projectSheets[0]) onOpenSheetLightbox(projectSheets[0]);
                         }}
-                        className="p-2.5 bg-studio-900/90 text-white rounded-full hover:bg-blueprint-600 transition-colors shadow-lg flex items-center justify-center"
+                        className="p-2.5 bg-studio-900/90 text-white rounded-full hover:bg-blueprint-600 dark:hover:bg-[#ffb81c] dark:hover:text-[#101214] transition-colors shadow-lg flex items-center justify-center"
                         title="Inspect technical drawing in high resolution"
                       >
-                        <i className="bx bx-fullscreen text-lg text-white"></i>
+                        <i className="bx bx-fullscreen text-lg text-white dark:hover:text-[#101214]"></i>
                       </button>
                       <button
                         onClick={(e) => {
                           e.stopPropagation();
                           onSelectProject(project);
                         }}
-                        className="px-3 py-2 bg-white text-studio-900 rounded-md font-mono text-xs font-semibold hover:bg-blueprint-50 transition-colors shadow-lg flex items-center gap-1.5"
+                        className="px-3 py-2 bg-white dark:bg-[#101214] text-studio-900 dark:text-white rounded-md font-mono text-xs font-semibold hover:bg-blueprint-50 dark:hover:bg-[#ffb81c] dark:hover:text-[#101214] transition-colors shadow-lg flex items-center gap-1.5 border dark:border-white/20"
                       >
                         <i className="bx bx-show text-base"></i> View Details
                       </button>
@@ -117,7 +117,7 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                   {/* Card Content */}
                   <div className="p-5">
                     {/* Typology and Location */}
-                    <div className="flex items-center justify-between text-[11px] font-mono text-studio-500 dark:text-studio-400 mb-2">
+                    <div className="flex items-center justify-between text-[11px] font-mono text-studio-500 dark:text-[#9aa1a8] mb-2">
                       <span className="truncate max-w-[65%]">{project.typology}</span>
                       <span>{project.year}</span>
                     </div>
@@ -125,26 +125,26 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                     {/* Title */}
                     <h3 
                       onClick={() => onSelectProject(project)}
-                      className="font-display font-bold text-lg text-studio-950 dark:text-white group-hover:text-blueprint-600 dark:group-hover:text-blueprint-400 transition-colors cursor-pointer leading-snug mb-1"
+                      className="font-display font-bold text-lg text-studio-950 dark:text-white group-hover:text-blueprint-600 dark:group-hover:text-[#ffb81c] transition-colors cursor-pointer leading-snug mb-1"
                     >
                       {project.title}
                     </h3>
-                    <div className="text-xs font-medium text-ochre-600 dark:text-ochre-400 mb-3">
+                    <div className="text-xs font-medium text-ochre-600 dark:text-[#ffb81c] mb-3">
                       {project.subtitle}
                     </div>
 
                     {/* Description */}
-                    <p className="text-xs text-studio-600 dark:text-studio-400 line-clamp-3 leading-relaxed mb-4">
+                    <p className="text-xs text-studio-600 dark:text-[#9aa1a8] line-clamp-3 leading-relaxed mb-4 font-sans">
                       {project.shortDescription}
                     </p>
 
                     {/* Sheet Badges */}
-                    <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-studio-100 dark:border-studio-800">
+                    <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-studio-100 dark:border-white/10">
                       {projectSheets.map((sh, idx) => (
                         <button
                           key={sh.id}
                           onClick={() => onOpenSheetLightbox(sh)}
-                          className="px-2 py-0.5 rounded text-[10px] font-mono bg-studio-100 dark:bg-studio-800 text-studio-700 dark:text-studio-300 hover:bg-blueprint-100 dark:hover:bg-blueprint-900/60 hover:text-blueprint-600 transition-colors border border-studio-200 dark:border-studio-700"
+                          className="px-2 py-0.5 rounded text-[10px] font-mono bg-studio-100 dark:bg-[#101214] text-studio-700 dark:text-[#9aa1a8] hover:bg-blueprint-100 dark:hover:bg-[#ffb81c]/20 hover:text-blueprint-600 dark:hover:text-[#ffb81c] transition-colors border border-studio-200 dark:border-white/10"
                           title={`Inspect ${sh.sheetNumber}`}
                         >
                           {sh.sheetNumber}
@@ -155,15 +155,15 @@ export default function ProjectsSection({ onSelectProject, onOpenSheetLightbox, 
                 </div>
 
                 {/* Card Footer */}
-                <div className="px-5 py-3 bg-studio-50/80 dark:bg-studio-950/60 border-t border-studio-100 dark:border-studio-800/80 flex items-center justify-between text-xs font-mono">
-                  <span className="text-studio-500 dark:text-studio-400 flex items-center gap-1">
-                    <i className="bx bx-map text-sm text-ochre-500"></i>
+                <div className="px-5 py-3 bg-studio-50/80 dark:bg-[#101214]/60 border-t border-studio-100 dark:border-white/10 flex items-center justify-between text-xs font-mono">
+                  <span className="text-studio-500 dark:text-[#9aa1a8] flex items-center gap-1">
+                    <i className="bx bx-map text-sm text-ochre-500 dark:text-[#ffb81c]"></i>
                     <span className="truncate max-w-[130px]">{project.location}</span>
                   </span>
                   
                   <button
                     onClick={() => onSelectProject(project)}
-                    className="text-blueprint-600 dark:text-blueprint-400 font-semibold hover:underline flex items-center gap-1"
+                    className="text-blueprint-600 dark:text-[#ffb81c] font-semibold hover:underline flex items-center gap-1"
                   >
                     <span>Explore</span>
                     <i className="bx bx-link-external text-xs"></i>

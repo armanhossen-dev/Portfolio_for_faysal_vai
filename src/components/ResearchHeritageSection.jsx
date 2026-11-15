@@ -19,7 +19,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
   ];
 
   return (
-    <section id="research" className="py-20 border-b border-studio-200 dark:border-studio-800 bg-[#FAFAF8] dark:bg-studio-950">
+    <section id="research" className="py-20 border-b border-studio-200 dark:border-white/10 bg-[#FAFAF8] dark:bg-[#101214]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
 
         {/* ========================================================
@@ -28,14 +28,14 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
         <div>
           {/* Header */}
           <div className="max-w-3xl mb-12">
-            <div className="flex items-center gap-2 font-mono text-xs text-ochre-600 dark:text-ochre-400 font-semibold mb-2">
-              <span className="w-2 h-2 bg-ochre-500 rounded-xs"></span>
+            <div className="flex items-center gap-2 font-mono text-xs text-ochre-600 dark:text-[#ffb81c] font-semibold mb-2">
+              <span className="w-2 h-2 bg-ochre-500 dark:bg-[#ffb81c] rounded-xs"></span>
               URBAN RESEARCH & ETHNOGRAPHY // KORAIL LANES
             </div>
             <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-studio-950 dark:text-white uppercase tracking-tight">
               Commons Module: Learning from the Lanes
             </h2>
-            <p className="text-sm sm:text-base text-studio-600 dark:text-studio-400 mt-2 leading-relaxed">
+            <p className="text-sm sm:text-base text-studio-600 dark:text-[#9aa1a8] mt-2 leading-relaxed font-sans">
               An empirical critique of socio-spatial disparity between affluent Gulshan/Banani and the informal settlement of Korail. Transforming the informal alley from a space of deficit into an architecture of communal intelligence.
             </p>
           </div>
@@ -49,19 +49,19 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                 {/* Poster 1 */}
                 {commonsSheet1 && (
                   <div
-                    className="group relative bg-white dark:bg-studio-900 rounded-lg border border-studio-200 dark:border-studio-800 overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all"
+                    className="group relative bg-white dark:bg-[#181b1e] rounded-lg border border-studio-200 dark:border-white/10 overflow-hidden cursor-pointer shadow-sm hover:shadow-lg hover:border-blueprint-400 dark:hover:border-[#ffb81c] transition-all"
                     onClick={() => onOpenSheetLightbox(commonsSheet1)}
                   >
-                    <div className="aspect-[1/1.414] overflow-hidden bg-studio-100 dark:bg-studio-800">
+                    <div className="aspect-[1/1.414] overflow-hidden bg-studio-100 dark:bg-[#101214]">
                       <img
                         src={commonsSheet1.optimized}
                         alt="Commons Module Poster 1"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <div className="p-3 bg-white dark:bg-studio-900 border-t border-studio-100 dark:border-studio-800 flex items-center justify-between text-xs font-mono">
-                      <span className="font-bold text-blueprint-600 dark:text-blueprint-400">POSTER 01: Socio-Spatial Analysis</span>
-                      <i className="bx bx-fullscreen text-sm text-studio-400 group-hover:text-blueprint-500"></i>
+                    <div className="p-3 bg-white dark:bg-[#181b1e] border-t border-studio-100 dark:border-white/10 flex items-center justify-between text-xs font-mono">
+                      <span className="font-bold text-blueprint-600 dark:text-[#ffb81c]">POSTER 01: Socio-Spatial Analysis</span>
+                      <i className="bx bx-fullscreen text-sm text-studio-400 group-hover:text-blueprint-500 dark:group-hover:text-[#ffb81c]"></i>
                     </div>
                   </div>
                 )}
@@ -69,19 +69,19 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                 {/* Poster 2 */}
                 {commonsSheet2 && (
                   <div
-                    className="group relative bg-white dark:bg-studio-900 rounded-lg border border-studio-200 dark:border-studio-800 overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all"
+                    className="group relative bg-white dark:bg-[#181b1e] rounded-lg border border-studio-200 dark:border-white/10 overflow-hidden cursor-pointer shadow-sm hover:shadow-lg hover:border-blueprint-400 dark:hover:border-[#ffb81c] transition-all"
                     onClick={() => onOpenSheetLightbox(commonsSheet2)}
                   >
-                    <div className="aspect-[1/1.414] overflow-hidden bg-studio-100 dark:bg-studio-800">
+                    <div className="aspect-[1/1.414] overflow-hidden bg-studio-100 dark:bg-[#101214]">
                       <img
                         src={commonsSheet2.optimized}
                         alt="Commons Module Poster 2"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <div className="p-3 bg-white dark:bg-studio-900 border-t border-studio-100 dark:border-studio-800 flex items-center justify-between text-xs font-mono">
-                      <span className="font-bold text-blueprint-600 dark:text-blueprint-400">POSTER 02: Kit-of-Parts Modules</span>
-                      <i className="bx bx-fullscreen text-sm text-studio-400 group-hover:text-blueprint-500"></i>
+                    <div className="p-3 bg-white dark:bg-[#181b1e] border-t border-studio-100 dark:border-white/10 flex items-center justify-between text-xs font-mono">
+                      <span className="font-bold text-blueprint-600 dark:text-[#ffb81c]">POSTER 02: Kit-of-Parts Modules</span>
+                      <i className="bx bx-fullscreen text-sm text-studio-400 group-hover:text-blueprint-500 dark:group-hover:text-[#ffb81c]"></i>
                     </div>
                   </div>
                 )}
@@ -89,11 +89,11 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
               </div>
 
               {/* Research Quote Callout — High Contrast in Light & Dark Theme */}
-              <div className="p-4 sm:p-5 bg-blueprint-50/90 dark:bg-studio-900 border-l-4 border-blueprint-500 rounded-r-xl border-y border-r border-studio-200/80 dark:border-studio-800 text-xs sm:text-sm font-sans shadow-xs">
-                <span className="font-bold block text-blueprint-700 dark:text-blueprint-400 mb-1.5 font-mono uppercase text-xs tracking-wider">
+              <div className="p-4 sm:p-5 bg-blueprint-50/90 dark:bg-[#181b1e] border-l-4 border-blueprint-500 dark:border-l-[#ffb81c] rounded-r-xl border-y border-r border-studio-200/80 dark:border-white/10 text-xs sm:text-sm font-sans shadow-xs">
+                <span className="font-bold block text-blueprint-700 dark:text-[#ffb81c] mb-1.5 font-mono uppercase text-xs tracking-wider">
                   Socio-Spatial Disparity Statement:
                 </span>
-                <p className="leading-relaxed italic text-studio-900 dark:text-studio-100">
+                <p className="leading-relaxed italic text-studio-900 dark:text-[#eceeef]">
                   "Surrounding areas of Korail receive modern municipal services, infrastructure, and high living valuations, while residents of Korail receive almost none. Yet all are equal citizens of Bangladesh. This project poses the critical question: when we design multifunctional urban spaces, who do we build for, and how can tactical architecture rectify this divide?"
                 </p>
               </div>
@@ -103,18 +103,19 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
             <div className="lg:col-span-5 space-y-6">
 
               {/* Problem Map */}
-              <div className="bg-white dark:bg-studio-900 p-5 rounded-lg border border-studio-200 dark:border-studio-800">
+              <div className="bg-white dark:bg-[#181b1e] p-5 rounded-lg border border-studio-200 dark:border-white/10">
                 <h3 className="font-display font-bold text-sm text-studio-900 dark:text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <i className="bx bx-error text-ochre-500 text-base"></i>
+                  <i className="bx bx-error text-ochre-500 dark:text-[#ffb81c] text-base"></i>
                   Korail Settlement: 8 Acute Spatial Crises
                 </h3>
+
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   {urbanProblems.map((prob) => (
-                    <div key={prob.num} className="p-2 rounded bg-studio-50 dark:bg-studio-950 border border-studio-100 dark:border-studio-800/80">
-                      <div className="font-mono text-[10px] font-bold text-ochre-600 dark:text-ochre-400">
+                    <div key={prob.num} className="p-2.5 rounded bg-studio-50 dark:bg-[#101214] border border-studio-100 dark:border-white/10">
+                      <div className="font-mono text-[10px] font-bold text-ochre-600 dark:text-[#ffb81c]">
                         {prob.num}. {prob.title}
                       </div>
-                      <div className="text-[11px] text-studio-600 dark:text-studio-400 leading-snug mt-0.5">
+                      <div className="text-[11px] text-studio-600 dark:text-[#9aa1a8] leading-snug mt-0.5 font-sans">
                         {prob.desc}
                       </div>
                     </div>
@@ -123,41 +124,41 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
               </div>
 
               {/* Modular Kit-of-Parts Interventions */}
-              <div className="bg-white dark:bg-studio-900 p-5 rounded-lg border border-studio-200 dark:border-studio-800">
+              <div className="bg-white dark:bg-[#181b1e] p-5 rounded-lg border border-studio-200 dark:border-white/10">
                 <h3 className="font-display font-bold text-sm text-studio-900 dark:text-white uppercase tracking-wider mb-3 flex items-center gap-2">
-                  <i className="bx bx-layer text-blueprint-500 text-base"></i>
+                  <i className="bx bx-layer text-blueprint-500 dark:text-[#ffb81c] text-base"></i>
                   Tactical Kit-of-Parts Modules
                 </h3>
 
                 {/* Community Modular Illustration */}
-                <div className="mb-4 bg-studio-50 dark:bg-studio-950 p-2 rounded-lg border border-studio-200 dark:border-studio-800/80">
+                <div className="mb-4 bg-studio-50 dark:bg-[#101214] p-2 rounded-lg border border-studio-200 dark:border-white/10">
                   <CommunityCommonsIllustration className="w-full h-auto max-w-[280px] mx-auto" />
                 </div>
 
-                <div className="space-y-3 text-xs">
-                  <div className="p-3 bg-studio-50 dark:bg-studio-950 rounded border border-studio-200 dark:border-studio-800">
+                <div className="space-y-3 text-xs font-sans">
+                  <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded border border-studio-200 dark:border-white/10">
                     <span className="font-mono font-bold text-studio-900 dark:text-white block mb-0.5">
                       01. CHILD ACTIVITY MODULE
                     </span>
-                    <span className="text-studio-600 dark:text-studio-400">
+                    <span className="text-studio-600 dark:text-[#9aa1a8]">
                       Collapsible learning boards, tactile chalk surfaces, and child-safe play perches designed to slip safely into dense alleys.
                     </span>
                   </div>
 
-                  <div className="p-3 bg-studio-50 dark:bg-studio-950 rounded border border-studio-200 dark:border-studio-800">
+                  <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded border border-studio-200 dark:border-white/10">
                     <span className="font-mono font-bold text-studio-900 dark:text-white block mb-0.5">
                       02. STALL & SITTING MODULE
                     </span>
-                    <span className="text-studio-600 dark:text-studio-400">
+                    <span className="text-studio-600 dark:text-[#9aa1a8]">
                       Fold-out tea counter, dry goods shelf, and foldaway communal bench supporting informal livelihoods and social cohesion.
                     </span>
                   </div>
 
-                  <div className="p-3 bg-studio-50 dark:bg-studio-950 rounded border border-studio-200 dark:border-studio-800">
+                  <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded border border-studio-200 dark:border-white/10">
                     <span className="font-mono font-bold text-studio-900 dark:text-white block mb-0.5">
                       03. COMMUNITY LEARNING BOARD
                     </span>
-                    <span className="text-studio-600 dark:text-studio-400">
+                    <span className="text-studio-600 dark:text-[#9aa1a8]">
                       Public notice surface communicating disaster flood warnings, hygiene protocols, and literacy schedules.
                     </span>
                   </div>
@@ -173,14 +174,14 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
         {/* ========================================================
             PART 2: HERITAGE EXPLORATION - TEOTA JOMIDAR BARI
         ======================================================== */}
-        <div className="pt-12 border-t border-studio-200 dark:border-studio-800">
+        <div className="pt-12 border-t border-studio-200 dark:border-white/10">
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
 
             {/* Left: Text & Phenomenological Manifesto */}
             <div className="lg:col-span-5 space-y-5">
-              <div className="flex items-center gap-2 font-mono text-xs text-blueprint-600 dark:text-blueprint-400 font-semibold">
-                <span className="w-2 h-2 bg-blueprint-500 rounded-xs"></span>
+              <div className="flex items-center gap-2 font-mono text-xs text-blueprint-600 dark:text-[#ffb81c] font-semibold">
+                <span className="w-2 h-2 bg-blueprint-500 dark:bg-[#ffb81c] rounded-xs"></span>
                 HISTORICAL RE-IMAGINATION // PHENOMENOLOGY
               </div>
 
@@ -188,7 +189,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                 Time Transitions & Contrasts
               </h2>
 
-              <div className="text-sm font-mono text-ochre-600 dark:text-ochre-400">
+              <div className="text-sm font-mono text-ochre-600 dark:text-[#ffb81c]">
                 Manikganj Teota Jomidar Bari • Heritage Studio
               </div>
 
@@ -197,24 +198,24 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
               </p>
 
               <div className="space-y-2.5 font-mono text-xs">
-                <div className="p-3 bg-white dark:bg-studio-900 rounded border border-studio-200 dark:border-studio-800 flex items-center justify-between">
-                  <span className="text-studio-500">EXPERIENTIAL AXIS:</span>
+                <div className="p-3 bg-white dark:bg-[#181b1e] rounded border border-studio-200 dark:border-white/10 flex items-center justify-between">
+                  <span className="text-studio-500 dark:text-[#9aa1a8]">EXPERIENTIAL AXIS:</span>
                   <span className="font-semibold text-studio-900 dark:text-white">Past → Present → Future Promenade</span>
                 </div>
-                <div className="p-3 bg-white dark:bg-studio-900 rounded border border-studio-200 dark:border-studio-800 flex items-center justify-between">
-                  <span className="text-studio-500">VERTICAL DEVICE:</span>
+                <div className="p-3 bg-white dark:bg-[#181b1e] rounded border border-studio-200 dark:border-white/10 flex items-center justify-between">
+                  <span className="text-studio-500 dark:text-[#9aa1a8]">VERTICAL DEVICE:</span>
                   <span className="font-semibold text-studio-900 dark:text-white">Ascension Stairs Framing Skyward Vistas</span>
                 </div>
-                <div className="p-3 bg-white dark:bg-studio-900 rounded border border-studio-200 dark:border-studio-800 flex items-center justify-between">
-                  <span className="text-studio-500">ARCHITECTURAL BOARD:</span>
-                  <span className="font-semibold text-blueprint-600 dark:text-blueprint-400">Board BUC074 (High-Res 6496 × 9449 px)</span>
+                <div className="p-3 bg-white dark:bg-[#181b1e] rounded border border-studio-200 dark:border-white/10 flex items-center justify-between">
+                  <span className="text-studio-500 dark:text-[#9aa1a8]">ARCHITECTURAL BOARD:</span>
+                  <span className="font-semibold text-blueprint-600 dark:text-[#ffb81c]">Board BUC074 (High-Res 6496 × 9449 px)</span>
                 </div>
               </div>
 
               {heritageSheet && (
                 <button
                   onClick={() => onOpenSheetLightbox(heritageSheet)}
-                  className="inline-flex items-center gap-2 px-5 py-3 text-xs font-mono font-bold bg-studio-900 dark:bg-white text-white dark:text-studio-900 rounded hover:bg-blueprint-600 dark:hover:bg-blueprint-400 transition-colors shadow-md"
+                  className="inline-flex items-center gap-2 px-5 py-3 text-xs font-mono font-bold bg-studio-900 text-white dark:bg-[#ffb81c] dark:text-[#101214] rounded hover:bg-blueprint-600 dark:hover:bg-white transition-colors shadow-md"
                 >
                   <i className="bx bx-fullscreen text-base"></i>
                   <span>Inspect High-Res Heritage Drawing Board</span>
@@ -226,7 +227,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
             <div className="lg:col-span-7">
               {heritageSheet && (
                 <div
-                  className="group relative bg-white dark:bg-studio-900 p-3 rounded-xl border border-studio-300 dark:border-studio-700 shadow-xl cursor-pointer"
+                  className="group relative bg-white dark:bg-[#181b1e] p-3 rounded-xl border border-studio-300 dark:border-white/10 shadow-xl cursor-pointer"
                   onClick={() => onOpenSheetLightbox(heritageSheet)}
                 >
                   <div className="relative aspect-[1/1.45] max-h-[580px] w-full overflow-hidden rounded-lg bg-studio-950 flex items-center justify-center">
@@ -237,7 +238,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                     />
 
                     <div className="absolute inset-0 bg-studio-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white">
-                      <span className="p-3 bg-blueprint-600 rounded-full shadow-lg mb-2 flex items-center justify-center">
+                      <span className="p-3 bg-blueprint-600 dark:bg-[#ffb81c] dark:text-[#101214] rounded-full shadow-lg mb-2 flex items-center justify-center">
                         <i className="bx bx-fullscreen text-2xl"></i>
                       </span>
                       <span className="font-mono text-xs font-bold uppercase tracking-wider">
@@ -253,7 +254,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                     <span className="font-bold text-studio-900 dark:text-white">
                       BOARD BUC074 // MANIKGANJ TEOTA JOMIDAR BARI
                     </span>
-                    <span className="text-blueprint-600 dark:text-blueprint-400 flex items-center gap-1">
+                    <span className="text-blueprint-600 dark:text-[#ffb81c] flex items-center gap-1 font-semibold">
                       <span>Inspect Board</span>
                       <i className="bx bx-link-external text-xs"></i>
                     </span>

@@ -73,7 +73,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
       {/* Top Bar */}
       <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-studio-800 bg-studio-900/90 z-20">
         <div className="flex items-center gap-3">
-          <span className="px-2 py-0.5 font-mono text-xs font-bold bg-blueprint-600 text-white rounded">
+          <span className="px-2 py-0.5 font-mono text-xs font-bold bg-[#ffb81c] text-[#101214] rounded">
             {sheet.sheetNumber}
           </span>
           <div>
@@ -92,7 +92,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
           <div className="flex items-center bg-studio-800 rounded border border-studio-700 p-0.5 font-mono text-xs">
             <button 
               onClick={handleZoomOut} 
-              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors flex items-center justify-center"
+              className="p-1.5 hover:text-[#ffb81c] hover:bg-studio-700 rounded transition-colors flex items-center justify-center cursor-pointer"
               title="Zoom Out (-)"
             >
               <i className="bx bx-zoom-out text-base"></i>
@@ -102,7 +102,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
             </span>
             <button 
               onClick={handleZoomIn} 
-              className="p-1.5 hover:text-blueprint-400 hover:bg-studio-700 rounded transition-colors flex items-center justify-center"
+              className="p-1.5 hover:text-[#ffb81c] hover:bg-studio-700 rounded transition-colors flex items-center justify-center cursor-pointer"
               title="Zoom In (+)"
             >
               <i className="bx bx-zoom-in text-base"></i>
@@ -110,7 +110,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
             {zoom > 1 && (
               <button 
                 onClick={handleReset} 
-                className="p-1.5 text-ochre-400 hover:bg-studio-700 rounded transition-colors border-l border-studio-700 ml-1 flex items-center justify-center"
+                className="p-1.5 text-[#ffb81c] hover:bg-studio-700 rounded transition-colors border-l border-studio-700 ml-1 flex items-center justify-center cursor-pointer"
                 title="Reset View"
               >
                 <i className="bx bx-reset text-base"></i>
@@ -124,17 +124,17 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
             download
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono bg-studio-800 hover:bg-studio-700 border border-studio-700 text-white rounded transition-colors"
+            className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono bg-studio-800 hover:bg-studio-700 border border-studio-700 text-white hover:text-[#ffb81c] rounded transition-colors"
             title="Download Full Resolution Sheet"
           >
-            <i className="bx bx-download text-sm text-blueprint-400"></i>
+            <i className="bx bx-download text-sm text-[#ffb81c]"></i>
             <span className="hidden sm:inline">Download</span>
           </a>
 
           {/* Close */}
           <button
             onClick={onClose}
-            className="p-1.5 rounded hover:bg-red-500/20 hover:text-red-400 border border-transparent hover:border-red-500/30 text-studio-400 transition-colors flex items-center justify-center"
+            className="p-1.5 rounded hover:bg-red-500/20 hover:text-red-400 border border-transparent hover:border-red-500/30 text-studio-400 transition-colors flex items-center justify-center cursor-pointer"
             title="Close Lightbox (Esc)"
           >
             <i className="bx bx-x text-2xl leading-none"></i>
@@ -155,7 +155,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
         {onNavigatePrev && (
           <button
             onClick={onNavigatePrev}
-            className="absolute left-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all flex items-center justify-center"
+            className="absolute left-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-[#ffb81c] hover:text-[#101214] text-white border border-studio-700 shadow-xl transition-all flex items-center justify-center cursor-pointer"
             title="Previous Sheet"
           >
             <i className="bx bx-chevron-left text-2xl"></i>
@@ -165,7 +165,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
         {onNavigateNext && (
           <button
             onClick={onNavigateNext}
-            className="absolute right-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-blueprint-600 text-white border border-studio-700 shadow-xl transition-all flex items-center justify-center"
+            className="absolute right-4 z-20 p-3 rounded-full bg-studio-900/80 hover:bg-[#ffb81c] hover:text-[#101214] text-white border border-studio-700 shadow-xl transition-all flex items-center justify-center cursor-pointer"
             title="Next Sheet"
           >
             <i className="bx bx-chevron-right text-2xl"></i>
@@ -175,7 +175,7 @@ export default function LightboxViewer({ sheet, onClose, onNavigateNext, onNavig
         {/* Drag Hint when Zoomed */}
         {zoom > 1 && (
           <div className="absolute top-4 left-4 z-20 font-mono text-xs bg-studio-900/80 px-2.5 py-1 rounded border border-studio-700 text-studio-300 flex items-center gap-1.5 pointer-events-none">
-            <i className="bx bx-move text-blueprint-400 text-sm"></i>
+            <i className="bx bx-move text-[#ffb81c] text-sm"></i>
             <span>Click and drag to pan drawing</span>
           </div>
         )}

@@ -27,8 +27,8 @@ export default function Footer({ onOpenSheetReview }) {
           {/* Col 1: Architectural Stamp */}
           <div className="md:col-span-5 space-y-4 p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-xl">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 border-2 border-white flex flex-col items-center justify-center font-bold text-xs leading-none bg-black/70 backdrop-blur-md rounded-md shadow-sm">
-                <span className="text-blueprint-400">FA</span>
+              <div className="w-10 h-10 border-2 border-[#ffb81c] flex flex-col items-center justify-center font-bold text-xs leading-none bg-black/70 backdrop-blur-md rounded-md shadow-sm">
+                <span className="text-[#ffb81c]">FA</span>
                 <span className="text-[8px] text-studio-400">ARCH</span>
               </div>
               <div>
@@ -53,21 +53,21 @@ export default function Footer({ onOpenSheetReview }) {
           {/* Col 2: Navigation Links */}
           <div className="md:col-span-3 space-y-2 p-5 rounded-2xl bg-black/40 backdrop-blur-md border border-white/15 shadow-xl">
             <div className="text-xs font-bold text-white uppercase tracking-wider mb-2 flex items-center gap-2 drop-shadow-md">
-              <span className="w-1.5 h-1.5 bg-blueprint-400 rounded-full"></span>
+              <span className="w-1.5 h-1.5 bg-[#ffb81c] rounded-full"></span>
               Portfolio Navigation
             </div>
             <ul className="space-y-1.5 text-xs text-studio-100">
-              <li><a href="#projects" className="hover:text-blueprint-400 transition-colors">Featured Projects</a></li>
-              <li><a href="#sheets" className="hover:text-blueprint-400 transition-colors">Technical Drawing Sheets</a></li>
-              <li><a href="#research" className="hover:text-blueprint-400 transition-colors">Commons Module & Teota Heritage</a></li>
-              <li><a href="#about" className="hover:text-blueprint-400 transition-colors">Academic CV & Studios</a></li>
-              <li><a href="#contact" className="hover:text-blueprint-400 transition-colors">Contact & Inquiries</a></li>
+              <li><a href="#projects" className="hover:text-[#ffb81c] transition-colors">Featured Projects</a></li>
+              <li><a href="#sheets" className="hover:text-[#ffb81c] transition-colors">Technical Drawing Sheets</a></li>
+              <li><a href="#research" className="hover:text-[#ffb81c] transition-colors">Commons Module & Teota Heritage</a></li>
+              <li><a href="#about" className="hover:text-[#ffb81c] transition-colors">Academic CV & Studios</a></li>
+              <li><a href="#contact" className="hover:text-[#ffb81c] transition-colors">Contact & Inquiries</a></li>
               <li className="pt-1 flex items-center gap-3">
                 <a
                   href={studentProfile.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-blueprint-300 hover:text-white transition-colors flex items-center gap-1 font-semibold"
+                  className="text-[#ffb81c] hover:text-white transition-colors flex items-center gap-1 font-semibold"
                 >
                   <i className="bx bxl-linkedin text-sm"></i>
                   <span>LinkedIn</span>
@@ -77,7 +77,7 @@ export default function Footer({ onOpenSheetReview }) {
                   href={studentProfile.facebook}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-blueprint-300 hover:text-white transition-colors flex items-center gap-1 font-semibold"
+                  className="text-[#ffb81c] hover:text-white transition-colors flex items-center gap-1 font-semibold"
                 >
                   <i className="bx bxl-facebook text-sm"></i>
                   <span>Facebook</span>
@@ -90,7 +90,7 @@ export default function Footer({ onOpenSheetReview }) {
           <div className="md:col-span-4 space-y-3">
             <div className="p-5 rounded-2xl bg-black/40 border border-white/15 backdrop-blur-md space-y-3 shadow-xl">
               <div className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2 drop-shadow-md">
-                <i className="bx bx-book-open text-blueprint-400 text-sm"></i>
+                <i className="bx bx-book-open text-[#ffb81c] text-sm"></i>
                 Jury / Presentation View
               </div>
               <p className="text-xs font-sans text-studio-100 leading-relaxed drop-shadow-sm">
@@ -98,7 +98,7 @@ export default function Footer({ onOpenSheetReview }) {
               </p>
               <button
                 onClick={() => onOpenSheetReview(0)}
-                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-blueprint-600 hover:bg-blueprint-500 text-white rounded-lg transition-colors text-xs font-semibold shadow-md"
+                className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-[#ffb81c] hover:bg-white text-[#101214] rounded-lg transition-colors text-xs font-bold shadow-md cursor-pointer"
               >
                 <i className="bx bx-book-open text-sm"></i>
                 <span>Launch Sheet Presentation</span>

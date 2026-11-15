@@ -44,30 +44,30 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
   };
 
   return (
-    <section id="achievements" className="py-20 border-b border-studio-200 dark:border-studio-800 bg-white dark:bg-studio-900/60 bg-grid-pattern">
+    <section id="achievements" className="py-20 border-b border-studio-200 dark:border-white/10 bg-white dark:bg-[#101214] bg-grid-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
-          <div className="flex items-center gap-2 font-mono text-xs text-amber-600 dark:text-amber-400 font-semibold mb-2">
-            <span className="w-2.5 h-2.5 bg-amber-500 rounded-full animate-pulse"></span>
+          <div className="flex items-center gap-2 font-mono text-xs text-amber-600 dark:text-[#ffb81c] font-semibold mb-2">
+            <span className="w-2.5 h-2.5 bg-amber-500 dark:bg-[#ffb81c] rounded-full animate-pulse"></span>
             HONORS & RECENT ACHIEVEMENTS // COMPETITION VICTORIES
           </div>
           <h2 className="text-3xl sm:text-4xl font-display font-extrabold text-studio-950 dark:text-white uppercase tracking-tight">
             Recent Architectural Achievements
           </h2>
-          <p className="text-sm sm:text-base text-studio-600 dark:text-studio-400 mt-2">
+          <p className="text-sm sm:text-base text-studio-600 dark:text-[#9aa1a8] mt-2 font-sans">
             Official design competition victories, jury accolades, and recognized academic excellence at Daffodil International University.
           </p>
         </div>
 
         {/* Featured Main Achievement Showcase Card */}
-        <div className="bg-[#FAFAF8] dark:bg-studio-950 rounded-2xl border border-studio-300 dark:border-studio-800 overflow-hidden shadow-2xl">
+        <div className="bg-[#FAFAF8] dark:bg-[#181b1e] rounded-2xl border border-studio-300 dark:border-white/10 overflow-hidden shadow-2xl">
           
           {/* Architectural Deep Slate & Brass Header */}
-          <div className="bg-studio-950 text-white px-6 sm:px-8 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10">
+          <div className="bg-studio-950 dark:bg-black text-white px-6 sm:px-8 py-6 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/10">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center shrink-0 border border-amber-500/40 text-2xl text-amber-400 shadow-inner">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/20 dark:bg-[#ffb81c]/20 flex items-center justify-center shrink-0 border border-amber-500/40 dark:border-[#ffb81c]/40 text-2xl text-amber-400 dark:text-[#ffb81c] shadow-inner">
                 <i className="bx bxs-trophy"></i>
               </div>
               <div>
@@ -75,7 +75,7 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                   <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-white/15 text-white uppercase tracking-wider">
                     {achievement.event}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-500/20 text-amber-300 uppercase tracking-wider border border-amber-500/30">
+                  <span className="px-2.5 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-500/20 dark:bg-[#ffb81c]/20 text-amber-300 dark:text-[#ffb81c] uppercase tracking-wider border border-amber-500/30 dark:border-[#ffb81c]/30">
                     {achievement.category}
                   </span>
                 </div>
@@ -87,7 +87,7 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
 
             <div className="flex items-center md:justify-end gap-3.5">
               <div className="text-left md:text-right">
-                <div className="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400">
+                <div className="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400 dark:text-[#ffb81c]">
                   {achievement.awardType} • {achievement.year}
                 </div>
                 <div className="text-sm font-semibold text-studio-200 mt-0.5">
@@ -108,11 +108,11 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
             {/* 3 Interactive Photo Gallery Cards */}
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="text-xs font-mono text-studio-500 dark:text-studio-400 uppercase tracking-wider flex items-center gap-1.5">
-                  <i className="bx bx-images text-base text-amber-500"></i>
+                <span className="text-xs font-mono text-studio-500 dark:text-[#9aa1a8] uppercase tracking-wider flex items-center gap-1.5">
+                  <i className="bx bx-images text-base text-amber-500 dark:text-[#ffb81c]"></i>
                   Ceremony & Exhibition Documentation (Click to Inspect)
                 </span>
-                <span className="text-[11px] font-mono text-studio-400">
+                <span className="text-[11px] font-mono text-studio-400 dark:text-[#9aa1a8]">
                   3 Photos
                 </span>
               </div>
@@ -122,9 +122,9 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                   <div
                     key={idx}
                     onClick={() => handlePhotoClick(item)}
-                    className="group relative bg-white dark:bg-studio-900 rounded-xl overflow-hidden border border-studio-200 dark:border-studio-800 hover:border-amber-400 dark:hover:border-amber-500 transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between"
+                    className="group relative bg-white dark:bg-[#101214] rounded-xl overflow-hidden border border-studio-200 dark:border-white/10 hover:border-amber-400 dark:hover:border-[#ffb81c] transition-all duration-300 shadow-sm hover:shadow-lg cursor-pointer flex flex-col justify-between"
                   >
-                    <div className="relative aspect-[4/3] overflow-hidden bg-studio-100 dark:bg-studio-900">
+                    <div className="relative aspect-[4/3] overflow-hidden bg-studio-100 dark:bg-[#101214]">
                       <img
                         src={item.src}
                         alt={item.title}
@@ -143,7 +143,7 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                       <div className="font-display font-bold text-xs sm:text-sm text-studio-900 dark:text-white mb-1">
                         {item.title}
                       </div>
-                      <p className="text-[11px] text-studio-500 dark:text-studio-400 leading-snug line-clamp-2 font-sans">
+                      <p className="text-[11px] text-studio-500 dark:text-[#9aa1a8] leading-snug line-clamp-2 font-sans">
                         {item.caption}
                       </p>
                     </div>
@@ -153,20 +153,20 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
             </div>
 
             {/* Inscription & Recognition Details */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start pt-4 border-t border-studio-200 dark:border-studio-800">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start pt-4 border-t border-studio-200 dark:border-white/10">
               
               {/* Left Side: Summary & Citation */}
               <div className="lg:col-span-7 space-y-4">
                 <div>
-                  <div className="text-[10px] font-mono text-amber-600 dark:text-amber-400 uppercase tracking-widest font-semibold mb-1">
+                  <div className="text-[10px] font-mono text-amber-600 dark:text-[#ffb81c] uppercase tracking-widest font-semibold mb-1">
                     OFFICIAL JURY CITATION
                   </div>
-                  <blockquote className="p-4 rounded-xl bg-amber-50/70 dark:bg-studio-900 border-l-4 border-amber-500 border-y border-r border-studio-200/60 dark:border-studio-800 text-xs sm:text-sm text-studio-900 dark:text-studio-100 italic leading-relaxed shadow-2xs">
+                  <blockquote className="p-4 rounded-xl bg-amber-50/70 dark:bg-[#101214] border-l-4 border-amber-500 dark:border-l-[#ffb81c] border-y border-r border-studio-200/60 dark:border-white/10 text-xs sm:text-sm text-studio-900 dark:text-[#eceeef] italic leading-relaxed shadow-2xs font-sans">
                     "{achievement.citation}"
                   </blockquote>
                 </div>
 
-                <p className="text-xs sm:text-sm text-studio-600 dark:text-studio-300 leading-relaxed font-sans">
+                <p className="text-xs sm:text-sm text-studio-600 dark:text-[#9aa1a8] leading-relaxed font-sans">
                   {achievement.summary}
                 </p>
 
@@ -174,10 +174,10 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                   <div className="text-xs font-mono font-semibold text-studio-900 dark:text-white uppercase tracking-wider">
                     Key Highlights:
                   </div>
-                  <ul className="space-y-1.5 text-xs text-studio-600 dark:text-studio-300 font-sans">
+                  <ul className="space-y-1.5 text-xs text-studio-600 dark:text-[#9aa1a8] font-sans">
                     {achievement.highlights.map((h, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <i className="bx bx-check-double text-base text-emerald-500 shrink-0 mt-0.5"></i>
+                        <i className="bx bx-check-double text-base text-emerald-500 dark:text-[#ffb81c] shrink-0 mt-0.5"></i>
                         <span>{h}</span>
                       </li>
                     ))}
@@ -186,17 +186,17 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
               </div>
 
               {/* Right Side: Winning Project Card */}
-              <div className="lg:col-span-5 bg-white dark:bg-studio-900 p-5 rounded-xl border border-studio-200 dark:border-studio-800 space-y-3.5 shadow-sm">
+              <div className="lg:col-span-5 bg-white dark:bg-[#101214] p-5 rounded-xl border border-studio-200 dark:border-white/10 space-y-3.5 shadow-sm">
                 <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-mono text-blueprint-600 dark:text-blueprint-400 uppercase tracking-wider font-semibold">
+                  <span className="text-[10px] font-mono text-blueprint-600 dark:text-[#ffb81c] uppercase tracking-wider font-semibold">
                     WINNING PROJECT
                   </span>
-                  <span className="text-[10px] font-mono px-2 py-0.5 bg-amber-100 dark:bg-amber-950/80 text-amber-800 dark:text-amber-300 rounded font-semibold">
+                  <span className="text-[10px] font-mono px-2 py-0.5 bg-amber-100 dark:bg-[#ffb81c]/20 text-amber-800 dark:text-[#ffb81c] rounded font-semibold border dark:border-[#ffb81c]/30">
                     Project 02
                   </span>
                 </div>
 
-                <div className="aspect-[16/9] rounded-lg overflow-hidden bg-studio-100 dark:bg-studio-800 border border-studio-200 dark:border-studio-700">
+                <div className="aspect-[16/9] rounded-lg overflow-hidden bg-studio-100 dark:bg-[#181b1e] border border-studio-200 dark:border-white/10">
                   <img
                     src="./images/optimized/project2-sheet1.jpg"
                     alt={achievement.winningProject}
@@ -208,10 +208,10 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                   <div className="font-display font-bold text-sm sm:text-base text-studio-950 dark:text-white">
                     Between Water & Home
                   </div>
-                  <div className="text-xs text-blueprint-600 dark:text-blueprint-400 font-medium">
+                  <div className="text-xs text-blueprint-600 dark:text-[#ffb81c] font-medium">
                     Toward an Inclusive and Adaptive Korail
                   </div>
-                  <p className="text-xs text-studio-500 dark:text-studio-400 mt-1 line-clamp-2">
+                  <p className="text-xs text-studio-500 dark:text-[#9aa1a8] mt-1 line-clamp-2 font-sans">
                     Circular waste-to-craft cooperative and engineered bio-filtration wetland island mitigating lake eutrophication.
                   </p>
                 </div>
@@ -219,7 +219,7 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
                 {winningProject && onSelectProject && (
                   <button
                     onClick={() => onSelectProject(winningProject)}
-                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] bg-studio-950 dark:bg-white text-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white rounded-lg text-sm font-bold transition-colors shadow-xs"
+                    className="w-full inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] bg-studio-950 text-white dark:bg-[#ffb81c] dark:text-[#101214] hover:bg-blueprint-600 dark:hover:bg-white rounded-lg text-sm font-bold transition-colors shadow-xs"
                   >
                     <span>View Full Winning Project Details</span>
                     <i className="bx bx-right-arrow-alt text-lg"></i>

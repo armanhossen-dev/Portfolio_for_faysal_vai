@@ -31,21 +31,24 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
     assert.equal(studentProfile.hometown, 'Chandpur, Chittagong, Bangladesh');
   });
 
-  await t.test('education trajectory has all 3 verified institutions', () => {
+  await t.test('education trajectory has all 3 verified institutions with logos', () => {
     assert.equal(studentProfile.education.length, 3);
     
     // 1. DIU
     const diu = studentProfile.education[0];
     assert.equal(diu.institution, 'Daffodil International University');
     assert.equal(diu.enrolled, 'In January 2022');
+    assert.ok(fs.existsSync(path.resolve(diu.logo.replace(/^\.\//, 'public/'))), 'DIU logo missing');
     
     // 2. College
     const college = studentProfile.education[1];
     assert.equal(college.institution, 'Kachua Bangabondhu Govt Degree college');
+    assert.ok(fs.existsSync(path.resolve(college.logo.replace(/^\.\//, 'public/'))), 'College logo missing');
     
     // 3. High School
     const school = studentProfile.education[2];
     assert.equal(school.institution, 'Monpura Batabaria Jafar Ali Memorial High school');
+    assert.ok(fs.existsSync(path.resolve(school.logo.replace(/^\.\//, 'public/'))), 'High school logo missing');
   });
 
   await t.test('daily apps & tools list contains all 12 specified software', () => {

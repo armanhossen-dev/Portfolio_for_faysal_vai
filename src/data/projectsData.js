@@ -33,7 +33,8 @@ export const studentProfile = {
       institution: "Kachua Bangabondhu Govt Degree college",
       period: "Completed",
       location: "Kachua, Chandpur, Bangladesh",
-      icon: "bx-book-reader"
+      icon: "bx-book-reader",
+      logo: "./images/kachua-college-logo.png"
     },
     {
       degree: "Secondary School Certificate (SSC)",
@@ -41,7 +42,8 @@ export const studentProfile = {
       institution: "Monpura Batabaria Jafar Ali Memorial High school",
       period: "Completed",
       location: "Bangladesh",
-      icon: "bx-school"
+      icon: "bx-school",
+      logo: "./images/monpura-school-logo.png"
     }
   ],
   bio: "Final-year Architecture student at Daffodil International University focusing on climate-adaptive urbanism, ecological community infrastructure, and sustainable housing systems. Passionate about translating complex socio-spatial realities into humane, resilient, and environmentally regenerative architectural interventions.",

@@ -187,8 +187,9 @@ test('Projects & Technical Sheets Folio', async (t) => {
   });
 
   await t.test('all referenced images exist on disk in public folder', () => {
-    // Check Hero Background
+    // Check Hero Background & Home Photo
     assert.ok(fs.existsSync(path.resolve('public/images/faysal-hero.jpg')), 'Hero background image missing');
+    assert.ok(fs.existsSync(path.resolve('public/images/faysal-home.jpg')), 'Hero home photo missing');
 
     // Check Footer Silhouette
     assert.ok(fs.existsSync(path.resolve('public/images/footer-silhouette.jpg')), 'Footer silhouette missing');

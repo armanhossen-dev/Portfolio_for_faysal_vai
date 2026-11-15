@@ -67,7 +67,10 @@ export default function AboutSection() {
 
               <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-studio-200 dark:border-studio-800 font-mono text-xs">
                 <span className="text-studio-500">INSTITUTION:</span>
-                <span className="font-bold text-studio-900 dark:text-white">{studentProfile.university}</span>
+                <span className="font-bold text-studio-900 dark:text-white flex items-center gap-2">
+                  <img src={studentProfile.universityLogo} alt="DIU Crest" className="w-5 h-5 object-contain shrink-0" />
+                  <span>{studentProfile.university}</span>
+                </span>
               </div>
 
               {/* Personal Details */}
@@ -136,9 +139,9 @@ export default function AboutSection() {
                     key={idx}
                     className="p-4 rounded-xl bg-white dark:bg-studio-950 border border-studio-200/80 dark:border-studio-800 shadow-2xs hover:border-blueprint-400 dark:hover:border-blueprint-500 transition-all flex items-start gap-3.5"
                   >
-                    <div className="w-10 h-10 rounded-full bg-studio-100 dark:bg-studio-800 flex items-center justify-center shrink-0 border border-studio-200 dark:border-studio-700 overflow-hidden">
+                    <div className="w-12 h-12 rounded-xl bg-white p-1 flex items-center justify-center shrink-0 border border-studio-200 dark:border-studio-700 shadow-2xs overflow-hidden">
                       {edu.logo ? (
-                        <img src={edu.logo} alt={edu.institution} className="w-full h-full object-cover" />
+                        <img src={edu.logo} alt={edu.institution} className="w-full h-full object-contain" />
                       ) : (
                         <i className={`bx ${edu.icon || 'bx-school'} text-xl text-blueprint-600 dark:text-blueprint-400`}></i>
                       )}

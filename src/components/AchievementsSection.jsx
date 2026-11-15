@@ -85,13 +85,20 @@ export default function AchievementsSection({ onSelectProject, onOpenLightbox })
               </div>
             </div>
 
-            <div className="text-left md:text-right">
-              <div className="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400">
-                {achievement.awardType} • {achievement.year}
+            <div className="flex items-center md:justify-end gap-3.5">
+              <div className="text-left md:text-right">
+                <div className="text-xs font-mono font-semibold uppercase tracking-widest text-amber-400">
+                  {achievement.awardType} • {achievement.year}
+                </div>
+                <div className="text-sm font-semibold text-studio-200 mt-0.5">
+                  {achievement.organizer}
+                </div>
               </div>
-              <div className="text-sm font-semibold text-studio-200 mt-0.5">
-                {achievement.organizer}
-              </div>
+              <img 
+                src="./images/diu-logo.png" 
+                alt="Daffodil International University Crest" 
+                className="w-11 h-11 object-contain shrink-0 p-1 bg-white rounded-lg border border-white/20 shadow-sm hidden sm:block" 
+              />
             </div>
           </div>
 

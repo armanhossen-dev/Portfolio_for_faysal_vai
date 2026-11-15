@@ -117,7 +117,10 @@ export default function Footer({ onOpenSheetReview }) {
           </div>
 
           <div className="flex items-center gap-4">
-            <span>Daffodil International University</span>
+            <span className="flex items-center gap-1.5">
+              <img src="./images/diu-logo.png" alt="DIU Crest" className="w-4 h-4 object-contain inline-block" />
+              <span>Daffodil International University</span>
+            </span>
             <span>•</span>
             <button
               onClick={scrollToTop}

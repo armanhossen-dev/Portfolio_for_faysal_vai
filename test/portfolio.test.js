@@ -134,6 +134,9 @@ test('Projects & Technical Sheets Folio', async (t) => {
     // Check Footer Silhouette
     assert.ok(fs.existsSync(path.resolve('public/images/footer-silhouette.jpg')), 'Footer silhouette missing');
 
+    // Check DIU Logo
+    assert.ok(fs.existsSync(path.resolve('public/images/diu-logo.png')), 'Daffodil International University logo missing');
+
     // Check Achievement images
     const achievement = recentAchievements[0];
     for (const [key, imgPath] of Object.entries(achievement.images)) {

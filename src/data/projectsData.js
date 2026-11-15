@@ -3,6 +3,7 @@ export const studentProfile = {
   title: "Architectural Designer & Urban Researcher",
   degree: "Bachelor of Architecture (B.Arch) — Final Year Candidate",
   university: "Daffodil International University",
+  universityLogo: "./images/diu-logo.png",
   academicPeriod: "January 2022 – Present (Final Year)",
   location: "Dhaka, Bangladesh",
   livesIn: "Dhaka, Bangladesh",

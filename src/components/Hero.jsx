@@ -32,9 +32,9 @@ export default function Hero({ onOpenSheetReview }) {
               
               {/* Category / Department Eyebrow */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold bg-studio-950 text-white dark:bg-white dark:text-studio-950 shadow-xs">
-                  <i className="bx bxs-school text-sm"></i>
-                  <span>Department of Architecture</span>
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-studio-950 text-white dark:bg-white dark:text-studio-950 shadow-xs">
+                  <img src="./images/diu-logo.png" alt="DIU Crest" className="w-4 h-4 object-contain shrink-0" />
+                  <span>Department of Architecture • DIU</span>
                 </span>
                 <a
                   href="#achievements"

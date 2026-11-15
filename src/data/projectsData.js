@@ -81,7 +81,7 @@ export const studentProfile = {
     { name: "Archicad", category: "BIM", icon: "bxs-building-house", desc: "Building Information Modeling & coordinated construction documents" },
     { name: "Lumion", category: "Rendering", icon: "bx-sun", desc: "Atmospheric architectural visualization & cinematic walkthroughs" },
     { name: "Enscape", category: "Real-Time 3D", icon: "bx-camera", desc: "Live viewport ray-tracing & interactive client presentations" },
-    { name: "D5 Render", category: "Ray-Tracing", icon: "bx-aperture", desc: "Next-gen real-time ray-tracing & PBR material fidelity" },
+    { name: "D5 Render", category: "Ray-Tracing", icon: "bx-aperture", image: "./images/tools/d5-render-logo.png", desc: "Next-gen real-time ray-tracing & PBR material fidelity" },
     { name: "Affinity", category: "Publishing", icon: "bx-palette", desc: "Presentation board typography, vector layout & architectural portfolios" },
     { name: "VS Code", category: "Development", icon: "bx-code-alt", desc: "Computational design scripting, web portfolios & data pipelines" },
     { name: "QGIS", category: "GIS & Analysis", icon: "bx-globe", desc: "Geospatial data analysis, regional mapping & terrain modeling" },

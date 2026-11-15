@@ -46,11 +46,11 @@ export default function AboutSection() {
       accent: "#FF6B00"
     },
     "D5 Render": {
-      cardBg: "bg-[#ebfaf6] dark:bg-[#051f18]",
-      border: "border-[#00C9A7]/35 dark:border-[#00C9A7]/30 hover:border-[#00C9A7]",
-      iconBg: "bg-[#00C9A7] text-[#051f18]",
-      tagColor: "text-[#008f76] dark:text-[#00F2FE]",
-      accent: "#00C9A7"
+      cardBg: "bg-[#f5f3ff] dark:bg-[#1a1333]",
+      border: "border-[#6366f1]/35 dark:border-[#6366f1]/30 hover:border-[#6366f1]",
+      iconBg: "bg-transparent text-[#6366f1]",
+      tagColor: "text-[#5848f5] dark:text-[#a5b4fc]",
+      accent: "#5848f5"
     },
     "Affinity": {
       cardBg: "bg-[#fef1f8] dark:bg-[#200717]",
@@ -331,8 +331,19 @@ export default function AboutSection() {
                       className={`p-3.5 rounded-xl ${theme.cardBg} border ${theme.border} transition-all duration-300 hover:-translate-y-1 hover:shadow-md group flex flex-col justify-between relative overflow-hidden`}
                     >
                       <div className="flex items-center justify-between mb-2.5">
-                        <div className={`w-8 h-8 rounded-lg ${theme.iconBg} border border-current/25 flex items-center justify-center group-hover:scale-110 transition-transform shadow-xs`}>
-                          <i className={`bx ${tool.icon} text-lg`}></i>
+                        <div className={`w-8 h-8 rounded-lg ${tool.image ? 'p-0.5 overflow-hidden flex items-center justify-center' : `${theme.iconBg} border border-current/25 flex items-center justify-center`} group-hover:scale-110 transition-transform shadow-xs`}>
+                          {tool.image ? (
+                            <img
+                              src={tool.image}
+                              alt={tool.name}
+                              className="w-full h-full object-contain select-none pointer-events-none rounded-md"
+                              draggable="false"
+                              onDragStart={(e) => e.preventDefault()}
+                              onContextMenu={(e) => e.preventDefault()}
+                            />
+                          ) : (
+                            <i className={`bx ${tool.icon} text-lg`}></i>
+                          )}
                         </div>
                         <span className={`text-[9px] font-mono uppercase font-semibold ${theme.tagColor}`}>
                           {tool.category}

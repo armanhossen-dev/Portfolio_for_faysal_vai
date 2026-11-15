@@ -591,6 +591,7 @@
     padding-top: calc(76px + env(safe-area-inset-top, 0px));
     min-height: 0;
   }
+
   .hero .stage {
     order: 1;
     margin: 0 auto;
@@ -598,9 +599,11 @@
     width: 100%;
     max-width: 440px;
   }
+
   .hero .hero-content {
     order: 2;
   }
+
   .hero .facts {
     order: 3;
     grid-template-columns: repeat(2, 1fr);

@@ -76,6 +76,9 @@ test('Student Profile - Identity, Credentials & Contacts', async (t) => {
         `Missing daily tool: ${exp}`
       );
     }
+    const d5 = studentProfile.dailyTools.find(t => t.name === 'D5 Render');
+    assert.ok(d5 && d5.image, 'D5 Render should have custom logo image');
+    assert.ok(fs.existsSync(path.resolve(d5.image.replace(/^\.\//, 'public/'))), 'D5 Render logo missing on disk');
   });
 });
 

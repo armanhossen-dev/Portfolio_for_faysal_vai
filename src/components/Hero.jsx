@@ -18,16 +18,6 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
           {/* Left Column: Academic & Design Manifesto */}
           <div className="lg:col-span-7 flex flex-col justify-center">
 
-            {/* Academic Status Stamp */}
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white dark:bg-studio-900 border border-studio-300 dark:border-studio-700 rounded text-xs font-mono text-studio-700 dark:text-studio-300 mb-6 shadow-sm w-fit">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="font-semibold text-blueprint-600 dark:text-blueprint-400">B.ARCH CANDIDATE</span>
-              <span className="text-studio-400">|</span>
-              <span>FINAL YEAR</span>
-              <span className="hidden sm:inline text-studio-400">|</span>
-              <span className="hidden sm:inline text-ochre-600 dark:text-ochre-500 font-medium">SPRING 2025 – 2026</span>
-            </div>
-
             {/* Main Name & Title */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-studio-950 dark:text-white uppercase leading-[1.08] mb-4">
               {studentProfile.name}

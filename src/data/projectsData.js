@@ -3,7 +3,6 @@ export const studentProfile = {
   title: "Architectural Designer & Urban Researcher",
   degree: "Bachelor of Architecture (B.Arch) — Final Year Candidate",
   university: "Daffodil International University",
-  studentId: "221-42-053",
   academicPeriod: "Spring 2025 – Spring 2026",
   location: "Dhaka, Bangladesh",
   email: "faysal.ahmed.arch@gmail.com",
@@ -16,7 +15,6 @@ export const studentProfile = {
       level: "Undergraduate / Final Year Candidate",
       institution: "Daffodil International University (DIU)",
       department: "Department of Architecture",
-      studentId: "221-42-053",
       period: "Spring 2025 – Spring 2026",
       status: "Currently in Final Year",
       location: "Dhaka, Bangladesh",
@@ -79,7 +77,7 @@ export const allSheets = [
     thumb: "./images/thumb/cover.jpg",
     optimized: "./images/optimized/cover.jpg",
     full: "./images/full/cover.jpg",
-    description: "Academic Portfolio Cover Sheet — Faysal Ahmed (ID: 221-42-053), Daffodil International University."
+    description: "Academic Portfolio Cover Sheet — Faysal Ahmed, Daffodil International University."
   },
   {
     id: "content",

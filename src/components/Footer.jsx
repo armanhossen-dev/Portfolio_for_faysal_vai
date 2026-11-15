@@ -24,7 +24,7 @@ export default function Footer({ onOpenSheetReview }) {
                   {studentProfile.name}
                 </div>
                 <div className="text-[11px] text-studio-500 dark:text-studio-400">
-                  ID: {studentProfile.studentId} • B.Arch Final Year Candidate
+                  B.Arch Final Year Candidate • Daffodil Int. University
                 </div>
               </div>
             </div>

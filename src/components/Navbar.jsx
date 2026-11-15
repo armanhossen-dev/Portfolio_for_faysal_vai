@@ -44,7 +44,7 @@ export default function Navbar({
               <div className="font-display font-bold text-base sm:text-lg tracking-tight uppercase flex items-center gap-2">
                 <span>{studentProfile.name}</span>
                 <span className="hidden sm:inline-block text-[10px] font-mono px-1.5 py-0.5 bg-studio-100 dark:bg-studio-800 text-studio-600 dark:text-studio-300 rounded border border-studio-200 dark:border-studio-700">
-                  {studentProfile.studentId}
+                  B.ARCH
                 </span>
               </div>
               <p className="text-[11px] font-mono text-studio-500 dark:text-studio-400 uppercase tracking-widest hidden sm:block">

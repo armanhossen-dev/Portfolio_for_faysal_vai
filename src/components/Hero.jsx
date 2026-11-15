@@ -23,7 +23,7 @@ export default function Hero({ onOpenSheetReview, onSelectSheet }) {
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               <span className="font-semibold text-blueprint-600 dark:text-blueprint-400">B.ARCH CANDIDATE</span>
               <span className="text-studio-400">|</span>
-              <span>ID: {studentProfile.studentId}</span>
+              <span>FINAL YEAR</span>
               <span className="hidden sm:inline text-studio-400">|</span>
               <span className="hidden sm:inline text-ochre-600 dark:text-ochre-500 font-medium">SPRING 2025 – 2026</span>
             </div>

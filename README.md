@@ -1,7 +1,6 @@
 # Faysal Ahmed | Architecture Portfolio
 
 > **Bachelor of Architecture (B.Arch) — Final Year Candidate**  
-> **Student ID:** 221-42-053  
 > **Institution:** Department of Architecture, Daffodil International University (DIU), Dhaka, Bangladesh  
 > **Academic Cycle:** Spring 2025 • Fall 2025 • Spring 2026
 
@@ -120,6 +119,6 @@ npm run preview
 
 ## 📐 Credits & Academic Affiliation
 
-- **Architect:** Faysal Ahmed (ID: 221-42-053)
+- **Architect:** Faysal Ahmed (B.Arch Final Year Candidate)
 - **University:** Daffodil International University, Department of Architecture
 - **Location:** Dhaka, Bangladesh

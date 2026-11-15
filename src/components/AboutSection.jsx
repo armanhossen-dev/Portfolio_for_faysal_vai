@@ -61,8 +61,8 @@ export default function AboutSection() {
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-studio-200 dark:border-studio-800 font-mono text-xs">
-                <span className="text-studio-500">STUDENT IDENTIFICATION:</span>
-                <span className="font-bold text-blueprint-600 dark:text-blueprint-400">{studentProfile.studentId}</span>
+                <span className="text-studio-500">ACADEMIC FOCUS:</span>
+                <span className="font-bold text-blueprint-600 dark:text-blueprint-400">Ecological Urbanism & Resilient Architecture</span>
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-studio-200 dark:border-studio-800 font-mono text-xs">

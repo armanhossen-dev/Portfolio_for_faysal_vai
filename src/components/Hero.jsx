@@ -3,104 +3,95 @@ import { studentProfile } from '../data/projectsData';
 
 export default function Hero({ onOpenSheetReview }) {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 sm:pt-20 pb-12 sm:pb-16 md:pt-24 md:pb-20 overflow-hidden border-b border-studio-200 dark:border-studio-800">
+    <section id="top" className="hero-architect">
+      {/* Background Architectural Drafting Grid Mask */}
+      <div className="hero-grid-mask" aria-hidden="true"></div>
 
-      {/* High-Resolution Architectural Photo of Faysal at Department of Architecture — Top: 0, 100% Crisp, ZERO Blur */}
-      <div className="absolute inset-0 top-0 left-0 w-full h-full z-0 select-none pointer-events-none">
-        <picture>
-          <source srcSet="./images/faysal-hero-2x.jpg 2x, ./images/faysal-hero.jpg 1x" type="image/jpeg" />
-          <img
-            src="./images/faysal-hero.jpg"
-            alt="Faysal Ahmed - Department of Architecture"
-            fetchPriority="high"
-            decoding="async"
-            className="w-full h-full object-cover object-[25%_0px] sm:object-[20%_0px] md:object-[15%_0px] lg:object-[left_0px]"
-          />
-        </picture>
+      {/* Signature Architectural Yellow Polygon Cut & Dashed Projection Line */}
+      <svg className="hero-cut" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <polygon points="0,62 38,12 62,52 100,8 100,100 0,100" />
+        <path d="M0,62 L38,12 L62,52 L100,8" />
+      </svg>
 
-        {/* Clean subtle gradient for contrast without darkening the glass */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/15 dark:to-transparent hidden lg:block"></div>
-        <div className="absolute inset-0 bg-black/10 dark:bg-transparent lg:hidden"></div>
-      </div>
+      {/* Left Column: Bold Typographic Identity */}
+      <div className="relative z-10">
+        <h1 className="hero-name">
+          <span>Faysal</span>
+          <span className="l2">Ahmed</span>
+        </h1>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <p className="hero-role">
+          Architectural designer and urban researcher in the final year of B.Arch
+        </p>
 
-          {/* Left Column: Negative Space allowing Faysal's photograph and Architecture Wall to be prominently showcased */}
-          <div className="hidden lg:block lg:col-span-5 xl:col-span-5 min-h-[440px] pointer-events-none"></div>
+        <p className="hero-lede font-sans">
+          Exploring <b>ecological urbanism</b>, high-density residential community frameworks and circular industrial facilities. Bridging socio-spatial realities with resilient, sustainable architectural interventions.
+        </p>
 
-          {/* Right Column: Profile Intro Details */}
-          <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">
+        <div className="flex flex-wrap items-center gap-3 pt-2">
+          <a
+            href="#projects"
+            className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold text-sm cursor-pointer transition-transform duration-200 hover:-translate-y-0.5 bg-studio-950 text-white dark:bg-white dark:text-studio-950 shadow-md"
+          >
+            <span>Explore projects</span>
+          </a>
 
-            {/* True Transparent Glassmorphism Card in Both Light & Dark Mode */}
-            <div className="p-5 sm:p-8 md:p-10 rounded-2xl bg-white/75 dark:bg-white/[0.12] backdrop-blur-xl md:backdrop-blur-2xl border border-white/60 dark:border-white/25 shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition-all">
-
-              {/* Category / Department Eyebrow */}
-              <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-flex items-center gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-studio-950/90 text-white dark:bg-white/20 dark:text-white backdrop-blur-md shadow-xs border border-white/20">
-                  <img src="./images/diu-logo.png" alt="DIU Crest" className="w-4 h-4 object-contain shrink-0" />
-                  <span>Department of Architecture • DIU</span>
-                </span>
-                <a
-                  href="#achievements"
-                  className="inline-flex items-center gap-1.5 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-bold bg-amber-600/90 hover:bg-amber-600 text-white backdrop-blur-md transition-all shadow-xs border border-amber-400/30"
-                  title="View ARCHFEST 2026 Winner Best Design Award"
-                >
-                  <i className="bx bxs-trophy text-sm text-amber-200"></i>
-                  <span>ARCHFEST 2026 Winner • Best Design</span>
-                </a>
-              </div>
-
-              {/* Main Name & Title */}
-              <h1 className="text-3xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-studio-950 dark:text-white uppercase leading-[1.04] mb-3 drop-shadow-sm">
-                {studentProfile.name}
-              </h1>
-
-              <div className="text-base sm:text-xl font-display text-blueprint-600 dark:text-blueprint-300 font-bold mb-3 tracking-tight drop-shadow-xs">
-                Architectural Designer & Urban Researcher • Final Year B.Arch
-              </div>
-
-              {/* Personal Details: Location & Origin with Frosted Glass Badges */}
-              <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 text-xs text-studio-800 dark:text-white mb-5 font-semibold">
-                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/15 backdrop-blur-md px-2.5 sm:px-3 py-1.5 rounded-md border border-white/60 dark:border-white/20 shadow-2xs">
-                  <i className="bx bx-map-pin text-rose-500 text-base shrink-0"></i>
-                  <span>Lives in {studentProfile.livesIn}</span>
-                </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/15 backdrop-blur-md px-2.5 sm:px-3 py-1.5 rounded-md border border-white/60 dark:border-white/20 shadow-2xs">
-                  <i className="bx bx-home-alt text-blueprint-600 dark:text-blueprint-300 text-base shrink-0"></i>
-                  <span>From {studentProfile.hometown}</span>
-                </span>
-              </div>
-
-              <p className="text-sm sm:text-base text-studio-800 dark:text-white leading-relaxed mb-6 sm:mb-8 font-normal max-w-2xl drop-shadow-xs">
-                Exploring the confluence of <strong className="text-studio-950 dark:text-white font-bold underline decoration-blueprint-400/50 underline-offset-2">ecological urbanism</strong>, high-density residential community frameworks, and circular industrial facilities. Bridging socio-spatial realities with resilient, sustainable architectural interventions.
-              </p>
-
-              {/* CTAs with strict 44px touch targets */}
-              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <a
-                  href="#projects"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-3 min-h-[44px] text-sm font-bold bg-studio-950 text-white dark:bg-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white rounded-lg transition-all shadow-md group whitespace-nowrap text-center"
-                >
-                  <span>Explore Projects</span>
-                  <i className="bx bx-right-arrow-alt text-lg group-hover:translate-x-1 transition-transform"></i>
-                </a>
-
-                <button
-                  onClick={() => onOpenSheetReview(0)}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] text-sm font-bold bg-white/80 dark:bg-white/15 backdrop-blur-md text-studio-900 dark:text-white border border-studio-300/80 dark:border-white/25 hover:border-blueprint-500 hover:bg-white dark:hover:bg-white/25 rounded-lg transition-colors shadow-xs whitespace-nowrap text-center"
-                >
-                  <i className="bx bx-book-open text-base text-blueprint-600 dark:text-blueprint-300"></i>
-                  <span>Review Portfolio Sheets</span>
-                </button>
-              </div>
-
-            </div>
-
-          </div>
-
+          <button
+            onClick={() => onOpenSheetReview(0)}
+            className="inline-flex items-center justify-center h-12 px-7 rounded-full font-semibold text-sm cursor-pointer transition-transform duration-200 hover:-translate-y-0.5 border border-studio-950/70 dark:border-white/70 text-studio-950 dark:text-white bg-transparent hover:bg-studio-950/5 dark:hover:bg-white/10"
+          >
+            <span>Review portfolio sheets</span>
+          </button>
         </div>
       </div>
+
+      {/* Right Column: Architectural Drawing Plate & Title Block */}
+      <aside className="hero-side relative z-10" aria-label="Profile summary">
+        {/* Dimension Callout & Vector Silhouette Portrait Plate */}
+        <div className="relative">
+          <div className="hero-dim" aria-hidden="true"></div>
+          <span className="hero-dimlab" aria-hidden="true">1.75 m</span>
+          
+          <div className="hero-portrait shadow-lg">
+            <svg viewBox="0 0 400 500" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+              <rect width="400" height="500" fill="none" />
+              <g stroke="currentColor" strokeOpacity=".12" strokeWidth="2">
+                <path d="M40 0v500M100 0v500M160 0v500M220 0v500M280 0v500M340 0v500" />
+              </g>
+              <path d="M0 330 130 150 230 290 400 110V500H0z" fill="#ffb81c" />
+              <g fill="currentColor" opacity=".92">
+                <circle cx="205" cy="150" r="34" />
+                <path d="M150 500l8-190c2-40 20-62 47-62s45 22 47 62l8 190z" />
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        {/* Technical Title Block Table */}
+        <div className="hero-tb shadow-lg">
+          <div className="award-row">
+            <svg viewBox="0 0 24 24" className="w-5 h-5 shrink-0 fill-none stroke-current stroke-[1.8] stroke-linecap-round stroke-linejoin-round">
+              <path d="M8 4h8v6a4 4 0 0 1-8 0zM8 6H4v1a4 4 0 0 0 4 4M16 6h4v1a4 4 0 0 1-4 4M12 14v4M8 20h8" />
+            </svg>
+            <div>
+              <small>Award</small>
+              <span>ARCHFEST 2026 winner, Best Design</span>
+            </div>
+          </div>
+          <div>
+            <small>Department</small>
+            <span>Architecture, DIU</span>
+          </div>
+          <div>
+            <small>Based in</small>
+            <span>{studentProfile.livesIn}</span>
+          </div>
+          <div style={{ gridColumn: '1 / -1', borderRight: 0 }}>
+            <small>From</small>
+            <span>{studentProfile.hometown}</span>
+          </div>
+        </div>
+      </aside>
     </section>
   );
 }

@@ -41,24 +41,21 @@ export default {
       },
       fontFamily: {
         sans: [
+          '"Instrument Sans"',
           '-apple-system',
           'BlinkMacSystemFont',
           '"SF Pro Text"',
-          '"SF Pro Display"',
           '"Inter"',
           '"Helvetica Neue"',
-          'Helvetica',
           'Arial',
           'sans-serif'
         ],
         display: [
+          '"Bricolage Grotesque"',
           '-apple-system',
           'BlinkMacSystemFont',
           '"SF Pro Display"',
-          '"SF Pro Text"',
-          '"Inter"',
           '"Helvetica Neue"',
-          'Helvetica',
           'Arial',
           'sans-serif'
         ],
@@ -70,9 +67,7 @@ export default {
           '"SF Pro"',
           '"Inter"',
           '"Helvetica Neue"',
-          'Helvetica',
-          'Arial',
-          'sans-serif'
+          'monospace'
         ],
       },
       borderRadius: {

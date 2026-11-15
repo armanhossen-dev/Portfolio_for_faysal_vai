@@ -11,142 +11,174 @@ export default function Navbar({
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 10);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const navLinks = [
     { name: 'Projects', href: '#projects' },
     { name: 'Achievements', href: '#achievements' },
-    { name: 'Technical Sheets', href: '#sheets' },
-    { name: 'Research & Heritage', href: '#research' },
+    { name: 'Technical sheets', href: '#sheets' },
+    { name: 'Research & heritage', href: '#research' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 dark:bg-studio-950/95 backdrop-blur-md shadow-sm border-b border-studio-200 dark:border-studio-800 py-1.5 sm:py-2' 
-        : 'bg-white/85 dark:bg-studio-950/85 backdrop-blur-md border-b border-studio-200/80 dark:border-studio-800/80 shadow-2xs py-2 sm:py-2.5'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between">
-          
-          {/* Brand Name Only - Clean, Bold Architectural Typographic Masthead */}
-          <a href="#" className="group inline-flex items-center">
-            <span className="font-display font-extrabold text-base sm:text-lg tracking-tight text-studio-950 dark:text-white uppercase transition-colors group-hover:text-blueprint-600 dark:group-hover:text-blueprint-400">
-              {studentProfile.name}
-            </span>
+    <header className={`nav-pill ${isScrolled ? 'stuck' : ''}`} id="nav">
+      {/* Brand: Architectural Mark + Name */}
+      <a className="nav-brand" href="#top" aria-label="Faysal Ahmed, home">
+        <span className="nav-mark" aria-hidden="true">
+          <svg viewBox="0 0 16 16" fill="none" stroke="#ffb81c" strokeWidth="1.8" strokeLinejoin="round">
+            <path d="M1.5 13.5 5.5 3l3 6 2-3 3.5 7.5z" />
+          </svg>
+        </span>
+        <span>{studentProfile.name}</span>
+      </a>
+
+      {/* Desktop Navigation Links */}
+      <nav className="nav-links hidden lg:flex" aria-label="Primary">
+        {navLinks.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
+          >
+            {link.name}
           </a>
+        ))}
+      </nav>
 
-          {/* Desktop Nav Links — Architectural Frosted Capsule for Maximum Contrast in White & Dark Mode */}
-          <nav className="hidden lg:flex items-center gap-1 bg-studio-100/95 dark:bg-white/10 backdrop-blur-md px-3 py-1 rounded-full border border-studio-200 dark:border-white/15 shadow-2xs">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-3 py-0.5 rounded-full text-xs font-bold text-studio-950 dark:text-white hover:text-white hover:bg-studio-950 dark:hover:bg-white dark:hover:text-studio-950 transition-all tracking-tight"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
+      {/* Social Links: LinkedIn & Facebook — Clean Icons without round borders */}
+      <a
+        className="nav-ico hidden sm:grid"
+        href={studentProfile.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="LinkedIn"
+        title="View LinkedIn Profile"
+      >
+        <svg viewBox="0 0 24 24">
+          <rect x="3" y="3" width="18" height="18" rx="3" />
+          <path d="M8 10v6M8 7.5v.01M12 16v-6M12 12.5a2.5 2.5 0 0 1 5 0V16" />
+        </svg>
+      </a>
 
-          {/* Actions & Toggles */}
-          <div className="flex items-center gap-2 sm:gap-3">
+      <a
+        className="nav-ico hidden sm:grid"
+        href={studentProfile.facebook}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Facebook"
+        title="View Facebook Profile"
+      >
+        <svg viewBox="0 0 24 24">
+          <path d="M14 8h2V4.5h-2.5A3.5 3.5 0 0 0 10 8v2H8v3.5h2V21h3.5v-7.5H16l.5-3.5h-3V8.5c0-.3.2-.5.5-.5z" />
+        </svg>
+      </a>
 
-            {/* Social Links: LinkedIn & Facebook — Clean Icons without round borders */}
-            <a
-              href={studentProfile.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="p-1.5 text-studio-700 dark:text-studio-300 hover:text-[#0A66C2] dark:hover:text-[#0A66C2] transition-colors flex items-center justify-center"
-              title="View Faysal Ahmed on LinkedIn"
-              aria-label="LinkedIn Profile"
-            >
-              <i className="bx bxl-linkedin text-xl leading-none"></i>
-            </a>
+      {/* Review Sheets Signature Yellow CTA */}
+      <button
+        onClick={() => onOpenSheetReview(0)}
+        className="nav-cta"
+        title="Open Portfolio Sheet Review"
+      >
+        <svg viewBox="0 0 24 24">
+          <path d="M3 5.5C5 4 8 4 12 6c4-2 7-2 9-.5V19c-2-1.5-5-1.5-9 .5-4-2-7-2-9-.5z" />
+          <path d="M12 6v13.5" />
+        </svg>
+        <span className="hidden sm:inline">Review sheets</span>
+      </button>
 
-            <a
-              href={studentProfile.facebook}
-              target="_blank"
-              rel="noreferrer"
-              className="p-1.5 text-studio-700 dark:text-studio-300 hover:text-[#1877F2] dark:hover:text-[#1877F2] transition-colors flex items-center justify-center"
-              title="View Faysal Ahmed on Facebook"
-              aria-label="Facebook Profile"
-            >
-              <i className="bx bxl-facebook text-xl leading-none"></i>
-            </a>
+      {/* Dark / Light Mode Toggle */}
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="nav-ico"
+        aria-label="Toggle dark mode"
+        title={darkMode ? "Switch to Architectural White" : "Switch to Studio Graphite"}
+      >
+        {darkMode ? (
+          <svg viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        ) : (
+          <svg viewBox="0 0 24 24">
+            <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z" />
+          </svg>
+        )}
+      </button>
 
-            {/* Sheet Presentation Mode Button */}
-            <button
-              onClick={() => onOpenSheetReview(0)}
-              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-studio-950 dark:bg-white text-white dark:text-studio-950 hover:bg-blueprint-600 dark:hover:bg-blueprint-500 dark:hover:text-white rounded-md transition-colors shadow-xs"
-              title="Open Architectural Portfolio Flipbook / Sheet Review"
-            >
-              <i className="bx bx-book-open text-sm leading-none"></i>
-              <span>Review Sheets</span>
-            </button>
-
-            {/* Dark / Light Toggle */}
-            <button
-              onClick={() => setDarkMode(!darkMode)}
-              className="w-8 h-8 rounded-md text-studio-800 dark:text-studio-200 bg-studio-100/80 dark:bg-studio-900/80 hover:bg-studio-200 dark:hover:bg-studio-800 border border-studio-300/80 dark:border-studio-700/80 transition-colors flex items-center justify-center"
-              aria-label="Toggle theme"
-              title={darkMode ? "Switch to Architectural White" : "Switch to Studio Graphite"}
-            >
-              {darkMode ? (
-                <i className="bx bx-sun text-amber-400 text-base leading-none"></i>
-              ) : (
-                <i className="bx bx-moon text-studio-950 text-base leading-none"></i>
-              )}
-            </button>
-
-            {/* Mobile menu button */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="w-8 h-8 rounded-md lg:hidden text-studio-800 dark:text-studio-200 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-700 flex items-center justify-center"
-              aria-label="Toggle mobile menu"
-            >
-              {mobileMenuOpen ? (
-                <i className="bx bx-x text-lg leading-none"></i>
-              ) : (
-                <i className="bx bx-menu text-lg leading-none"></i>
-              )}
-            </button>
-          </div>
-        </div>
-      </div>
+      {/* Mobile Burger Toggle */}
+      <button
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        className="nav-ico lg:hidden"
+        aria-label="Open menu"
+        aria-expanded={mobileMenuOpen}
+      >
+        {mobileMenuOpen ? (
+          <svg viewBox="0 0 24 24">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        ) : (
+          <svg viewBox="0 0 24 24">
+            <path d="M4 8h16M4 16h16" />
+          </svg>
+        )}
+      </button>
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white dark:bg-studio-900 border-b border-studio-200 dark:border-studio-800 px-6 py-5 shadow-xl animate-fadeIn">
-          <div className="flex flex-col gap-4 font-medium">
-            {navLinks.map((link) => (
+        <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-white/95 dark:bg-studio-900/95 backdrop-blur-xl border border-studio-200 dark:border-studio-800 rounded-2xl p-3 shadow-xl flex flex-col gap-1 lg:hidden animate-fadeIn">
+          {navLinks.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className="px-4 py-2.5 rounded-xl text-sm font-semibold text-studio-900 dark:text-white hover:bg-studio-100 dark:hover:bg-studio-800 transition-colors"
+            >
+              {link.name}
+            </a>
+          ))}
+          <div className="pt-2 border-t border-studio-100 dark:border-studio-800 flex items-center justify-between px-2">
+            <div className="flex items-center gap-2">
               <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="text-base font-bold text-studio-950 dark:text-white hover:text-blueprint-600 dark:hover:text-blueprint-400 py-1 border-b border-studio-100 dark:border-studio-800"
+                href={studentProfile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 text-studio-700 dark:text-studio-300 hover:text-[#0A66C2]"
+                aria-label="LinkedIn"
               >
-                {link.name}
+                <i className="bx bxl-linkedin text-xl"></i>
               </a>
-            ))}
-            <div className="pt-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenSheetReview(0);
-                }}
-                className="w-full flex items-center justify-center gap-2 py-3 px-4 text-sm font-bold bg-studio-950 dark:bg-white text-white dark:text-studio-950 rounded-lg shadow-sm"
+              <a
+                href={studentProfile.facebook}
+                target="_blank"
+                rel="noreferrer"
+                className="p-2 text-studio-700 dark:text-studio-300 hover:text-[#1877F2]"
+                aria-label="Facebook"
               >
-                <i className="bx bx-book-open text-base leading-none"></i>
-                <span>Open Portfolio Sheet Review</span>
-              </button>
+                <i className="bx bxl-facebook text-xl"></i>
+              </a>
             </div>
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                onOpenSheetReview(0);
+              }}
+              className="px-4 py-2 rounded-full bg-[#ffb81c] text-[#15181b] text-xs font-bold"
+            >
+              Review sheets
+            </button>
           </div>
         </div>
       )}

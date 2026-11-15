@@ -31,7 +31,7 @@ export default function Hero({ onOpenSheetReview }) {
           <polygon points="0,330 130,170 215,290 400,120 400,230 235,400 130,290 0,440" fill="#f5a623" />
         </svg>
         <div className="photo">
-          <img src="./images/faysal-profile.jpg" alt="Portrait of Faysal Ahmed" />
+          <img src="./images/faysal-home.jpg" alt="Faysal Ahmed with ARCHFEST 2026 Best Design Award" />
         </div>
         <div className="badge"><b>ARCHFEST 2026</b>Winner, Best Design</div>
       </div>

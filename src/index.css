@@ -115,17 +115,18 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 40;
-  width: min(1040px, calc(100% - 24px));
+  width: min(1100px, calc(100% - 24px));
   display: flex;
   align-items: center;
-  gap: 12px;
-  padding: 6px 8px 6px 16px;
+  gap: 4px;
+  padding: 5px 6px 5px 14px;
   background: var(--arch-glass);
   backdrop-filter: blur(16px) saturate(1.4);
   -webkit-backdrop-filter: blur(16px) saturate(1.4);
   border: 1px solid var(--arch-line);
   border-radius: 999px;
   transition: box-shadow 0.3s, background 0.3s;
+  white-space: nowrap;
 }
 
 .nav-pill.stuck {
@@ -139,18 +140,19 @@
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 7px;
   font-family: "Bricolage Grotesque", -apple-system, sans-serif;
   font-weight: 800;
-  font-size: 16px;
+  font-size: 15px;
   letter-spacing: -0.01em;
   margin-right: auto;
   color: var(--arch-ink);
+  flex-shrink: 0;
 }
 
 .nav-mark {
-  width: 26px;
-  height: 26px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   background: var(--arch-ink);
   display: grid;
@@ -159,23 +161,26 @@
 }
 
 .nav-mark svg {
-  width: 14px;
-  height: 14px;
+  width: 12px;
+  height: 12px;
 }
 
+/* Nav links — single row, all in one line */
 .nav-links {
-  display: flex;
-  gap: 2px;
+  display: none;
+  gap: 1px;
+  flex-shrink: 0;
 }
 
 .nav-links a {
   position: relative;
-  padding: 7px 12px;
-  font-size: 13px;
+  padding: 5px 10px;
+  font-size: 12.5px;
   font-weight: 500;
   border-radius: 999px;
   color: var(--arch-mute);
   transition: color 0.2s, background 0.2s;
+  white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -183,9 +188,10 @@
   background: var(--arch-line);
 }
 
+/* Icon buttons (theme, social, burger) */
 .nav-ico {
-  width: 34px;
-  height: 34px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -204,8 +210,8 @@
 }
 
 .nav-ico svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
@@ -213,21 +219,24 @@
   stroke-linejoin: round;
 }
 
+/* CTA pill — Review sheets */
 .nav-cta {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  height: 34px;
-  padding: 0 15px;
+  gap: 5px;
+  height: 32px;
+  padding: 0 14px;
   border-radius: 999px;
   background: var(--arch-yellow);
   color: #101214;
-  font-weight: 600;
-  font-size: 13px;
+  font-weight: 700;
+  font-size: 12px;
   border: 0;
   cursor: pointer;
   transition: transform 0.2s, filter 0.2s;
   flex-shrink: 0;
+  white-space: nowrap;
+  letter-spacing: -0.01em;
 }
 
 .nav-cta:hover {
@@ -236,13 +245,87 @@
 }
 
 .nav-cta svg {
-  width: 15px;
-  height: 15px;
+  width: 14px;
+  height: 14px;
   fill: none;
   stroke: currentColor;
   stroke-width: 1.8;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* Show desktop-only items on large screens; hide on mobile */
+.nav-desktop-only {
+  display: none;
+}
+
+/* Mobile burger: show on small, hide on large */
+.nav-mobile-only {
+  display: grid;
+}
+
+/* Mobile dropdown panel */
+.nav-mobile-drawer {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--arch-paper);
+  border: 1px solid var(--arch-line);
+  border-radius: 20px;
+  padding: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  animation: fadeIn 0.2s ease;
+}
+
+.nav-mobile-link {
+  padding: 10px 16px;
+  border-radius: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--arch-ink);
+  transition: background 0.15s;
+}
+
+.nav-mobile-link:hover {
+  background: var(--arch-line);
+}
+
+.nav-mobile-footer {
+  padding-top: 8px;
+  border-top: 1px solid var(--arch-line);
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+
+/* ≥ 960px — show everything in one line, hide burger */
+@media (min-width: 960px) {
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-desktop-only {
+    display: inline-flex;
+  }
+
+  .nav-ico.nav-desktop-only {
+    display: grid;
+  }
+
+  .nav-mobile-only {
+    display: none;
+  }
+
+  .nav-mobile-drawer {
+    display: none;
+  }
 }
 
 /* ---------- Hero Section Styles ---------- */

@@ -20,15 +20,15 @@ export default function Navbar({
   const navLinks = [
     { name: 'Projects', href: '#projects' },
     { name: 'Achievements', href: '#achievements' },
-    { name: 'Technical sheets', href: '#sheets' },
-    { name: 'Research & heritage', href: '#research' },
+    { name: 'Sheets', href: '#sheets' },
+    { name: 'Research', href: '#research' },
     { name: 'About', href: '#about' },
     { name: 'Contact', href: '#contact' },
   ];
 
   return (
     <header className={`nav-pill ${isScrolled ? 'stuck' : ''}`} id="nav">
-      {/* Brand: Architectural Mark + Name */}
+      {/* Brand — Logo Mark + Name */}
       <a className="nav-brand" href="#top" aria-label="Faysal Ahmed, home">
         <span className="nav-mark" aria-hidden="true">
           <svg viewBox="0 0 16 16" fill="none" stroke="#ffb81c" strokeWidth="1.8" strokeLinejoin="round">
@@ -38,21 +38,18 @@ export default function Navbar({
         <span>{studentProfile.name}</span>
       </a>
 
-      {/* Desktop Navigation Links — Minimal & Clean */}
-      <nav className="nav-links hidden lg:flex" aria-label="Primary">
+      {/* Desktop Nav Links */}
+      <nav className="nav-links" aria-label="Primary">
         {navLinks.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-          >
+          <a key={link.name} href={link.href}>
             {link.name}
           </a>
         ))}
       </nav>
 
-      {/* Social Links: LinkedIn & Facebook — Clean standalone SVGs */}
+      {/* Social: LinkedIn */}
       <a
-        className="nav-ico hidden sm:grid"
+        className="nav-ico nav-desktop-only"
         href={studentProfile.linkedin}
         target="_blank"
         rel="noreferrer"
@@ -65,8 +62,9 @@ export default function Navbar({
         </svg>
       </a>
 
+      {/* Social: Facebook */}
       <a
-        className="nav-ico hidden sm:grid"
+        className="nav-ico nav-desktop-only"
         href={studentProfile.facebook}
         target="_blank"
         rel="noreferrer"
@@ -78,25 +76,25 @@ export default function Navbar({
         </svg>
       </a>
 
-      {/* Review Sheets Signature Yellow Pill CTA */}
+      {/* Review Sheets CTA Pill */}
       <button
         onClick={() => onOpenSheetReview(0)}
-        className="nav-cta"
+        className="nav-cta nav-desktop-only"
         title="Open Portfolio Sheet Review"
       >
         <svg viewBox="0 0 24 24">
           <path d="M3 5.5C5 4 8 4 12 6c4-2 7-2 9-.5V19c-2-1.5-5-1.5-9 .5-4-2-7-2-9-.5z" />
           <path d="M12 6v13.5" />
         </svg>
-        <span className="hidden sm:inline">Review sheets</span>
+        <span>Review sheets</span>
       </button>
 
-      {/* Minimal Dark / Light Mode Toggle */}
+      {/* Dark / Light Toggle */}
       <button
         onClick={() => setDarkMode(!darkMode)}
         className="nav-ico"
         aria-label="Toggle dark mode"
-        title={darkMode ? "Switch to Architectural Light" : "Switch to Architectural Dark"}
+        title={darkMode ? "Switch to Light" : "Switch to Dark"}
       >
         {darkMode ? (
           <svg viewBox="0 0 24 24">
@@ -117,10 +115,10 @@ export default function Navbar({
         )}
       </button>
 
-      {/* Minimal Mobile Burger Toggle */}
+      {/* Mobile Burger */}
       <button
         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        className="nav-ico lg:hidden"
+        className="nav-ico nav-mobile-only"
         aria-label="Open menu"
         aria-expanded={mobileMenuOpen}
       >
@@ -136,26 +134,26 @@ export default function Navbar({
         )}
       </button>
 
-      {/* Mobile Menu Dropdown */}
+      {/* Mobile Dropdown */}
       {mobileMenuOpen && (
-        <div className="absolute top-[calc(100%+8px)] left-0 right-0 bg-white/95 dark:bg-[#181b1e]/95 backdrop-blur-xl border border-black/10 dark:border-white/10 rounded-2xl p-3 shadow-2xl flex flex-col gap-1 lg:hidden animate-fadeIn">
+        <div className="nav-mobile-drawer">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="px-4 py-2.5 rounded-xl text-sm font-semibold text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
+              className="nav-mobile-link"
             >
               {link.name}
             </a>
           ))}
-          <div className="pt-2 border-t border-black/10 dark:border-white/10 flex items-center justify-between px-2">
+          <div className="nav-mobile-footer">
             <div className="flex items-center gap-2">
               <a
                 href={studentProfile.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 text-studio-700 dark:text-[#9aa1a8] hover:text-[#ffb81c]"
+                className="p-2 text-[var(--arch-mute)] hover:text-[#ffb81c] transition-colors"
                 aria-label="LinkedIn"
               >
                 <i className="bx bxl-linkedin text-xl"></i>
@@ -164,7 +162,7 @@ export default function Navbar({
                 href={studentProfile.facebook}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2 text-studio-700 dark:text-[#9aa1a8] hover:text-[#ffb81c]"
+                className="p-2 text-[var(--arch-mute)] hover:text-[#ffb81c] transition-colors"
                 aria-label="Facebook"
               >
                 <i className="bx bxl-facebook text-xl"></i>
@@ -175,7 +173,7 @@ export default function Navbar({
                 setMobileMenuOpen(false);
                 onOpenSheetReview(0);
               }}
-              className="px-4 py-2 rounded-full bg-[#ffb81c] text-[#101214] text-xs font-bold"
+              className="px-4 py-2 rounded-full bg-[#ffb81c] text-[#101214] text-xs font-bold cursor-pointer"
             >
               Review sheets
             </button>

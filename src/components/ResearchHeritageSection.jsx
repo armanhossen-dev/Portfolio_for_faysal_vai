@@ -135,32 +135,38 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                   <CommunityCommonsIllustration className="w-full h-auto max-w-[280px] mx-auto" />
                 </div>
 
-                <div className="space-y-3 text-xs font-sans">
-                  <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded border border-studio-200 dark:border-white/10">
-                    <span className="font-mono font-bold text-studio-900 dark:text-white block mb-0.5">
-                      01. CHILD ACTIVITY MODULE
-                    </span>
-                    <span className="text-studio-600 dark:text-[#9aa1a8]">
-                      Collapsible learning boards, tactile chalk surfaces, and child-safe play perches designed to slip safely into dense alleys.
-                    </span>
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 text-xs font-sans">
+                  <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded-lg border border-studio-200 dark:border-white/10 flex flex-col justify-between hover:border-[#ffb81c]/50 transition-colors">
+                    <div>
+                      <span className="font-mono font-bold text-studio-900 dark:text-white block mb-1 text-[11px] leading-snug">
+                        01. CHILD ACTIVITY MODULE
+                      </span>
+                      <span className="text-studio-600 dark:text-[#9aa1a8] text-[11px] leading-relaxed block">
+                        Collapsible learning boards, tactile chalk surfaces, and child-safe play perches designed to slip safely into dense alleys.
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded border border-studio-200 dark:border-white/10">
-                    <span className="font-mono font-bold text-studio-900 dark:text-white block mb-0.5">
-                      02. STALL & SITTING MODULE
-                    </span>
-                    <span className="text-studio-600 dark:text-[#9aa1a8]">
-                      Fold-out tea counter, dry goods shelf, and foldaway communal bench supporting informal livelihoods and social cohesion.
-                    </span>
+                  <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded-lg border border-studio-200 dark:border-white/10 flex flex-col justify-between hover:border-[#ffb81c]/50 transition-colors">
+                    <div>
+                      <span className="font-mono font-bold text-studio-900 dark:text-white block mb-1 text-[11px] leading-snug">
+                        02. STALL & SITTING MODULE
+                      </span>
+                      <span className="text-studio-600 dark:text-[#9aa1a8] text-[11px] leading-relaxed block">
+                        Fold-out tea counter, dry goods shelf, and foldaway communal bench supporting informal livelihoods and social cohesion.
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded border border-studio-200 dark:border-white/10">
-                    <span className="font-mono font-bold text-studio-900 dark:text-white block mb-0.5">
-                      03. COMMUNITY LEARNING BOARD
-                    </span>
-                    <span className="text-studio-600 dark:text-[#9aa1a8]">
-                      Public notice surface communicating disaster flood warnings, hygiene protocols, and literacy schedules.
-                    </span>
+                  <div className="p-3 bg-studio-50 dark:bg-[#101214] rounded-lg border border-studio-200 dark:border-white/10 flex flex-col justify-between hover:border-[#ffb81c]/50 transition-colors">
+                    <div>
+                      <span className="font-mono font-bold text-studio-900 dark:text-white block mb-1 text-[11px] leading-snug">
+                        03. COMMUNITY LEARNING BOARD
+                      </span>
+                      <span className="text-studio-600 dark:text-[#9aa1a8] text-[11px] leading-relaxed block">
+                        Public notice surface communicating disaster flood warnings, hygiene protocols, and literacy schedules.
+                      </span>
+                    </div>
                   </div>
                 </div>
               </div>

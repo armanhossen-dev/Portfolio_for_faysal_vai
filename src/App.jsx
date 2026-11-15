@@ -11,6 +11,7 @@ import Footer from './components/Footer';
 import ProjectDetailModal from './components/ProjectDetailModal';
 import SheetPresentationModal from './components/SheetPresentationModal';
 import LightboxViewer from './components/LightboxViewer';
+import ScrollToTopButton from './components/ScrollToTopButton';
 import { allSheets } from './data/projectsData';
 
 export default function App() {
@@ -146,6 +147,9 @@ export default function App() {
           onNavigatePrev={handleLightboxPrev}
         />
       )}
+
+      {/* Floating Side Right Scroll-to-Top Button */}
+      <ScrollToTopButton />
 
     </div>
   );

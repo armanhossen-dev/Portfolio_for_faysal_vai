@@ -115,20 +115,8 @@ export default function Footer({ onOpenSheetReview }) {
           <div>
             © {new Date().getFullYear()} {studentProfile.name}. All Architectural Rights Reserved.
           </div>
-
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5">
-              <img src="./images/diu-logo.png" alt="DIU Crest" className="w-4 h-4 object-contain inline-block" />
-              <span>Daffodil International University</span>
-            </span>
-            <span>•</span>
-            <button
-              onClick={scrollToTop}
-              className="flex items-center gap-1 hover:text-white transition-colors"
-            >
-              <span>Back to Top</span>
-              <i className="bx bx-up-arrow-alt text-sm"></i>
-            </button>
+          <div>
+            Dhaka, Bangladesh • Daffodil International University
           </div>
         </div>
 

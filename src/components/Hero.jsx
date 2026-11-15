@@ -18,9 +18,9 @@ export default function Hero({ onOpenSheetReview }) {
           />
         </picture>
 
-        {/* Clean right-side gradient for text contrast — Crisp, NO Blur */}
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/25 dark:to-black/60 hidden lg:block"></div>
-        <div className="absolute inset-0 bg-black/20 dark:bg-black/50 lg:hidden"></div>
+        {/* Clean subtle gradient for contrast without darkening the glass */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/15 dark:to-transparent hidden lg:block"></div>
+        <div className="absolute inset-0 bg-black/10 dark:bg-transparent lg:hidden"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -32,12 +32,12 @@ export default function Hero({ onOpenSheetReview }) {
           {/* Right Column: Profile Intro Details */}
           <div className="lg:col-span-7 xl:col-span-7 flex flex-col justify-center">
 
-            {/* Glassmorphism Frosted Architectural Card */}
-            <div className="p-6 sm:p-8 md:p-10 rounded-2xl bg-white/75 dark:bg-studio-950/70 backdrop-blur-xl md:backdrop-blur-2xl border border-white/60 dark:border-white/15 shadow-[0_20px_60px_rgba(0,0,0,0.2)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.7)] transition-all">
+            {/* True Transparent Glassmorphism Card in Both Light & Dark Mode */}
+            <div className="p-6 sm:p-8 md:p-10 rounded-2xl bg-white/75 dark:bg-white/[0.12] backdrop-blur-xl md:backdrop-blur-2xl border border-white/60 dark:border-white/25 shadow-[0_20px_60px_rgba(0,0,0,0.15)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.35)] transition-all">
 
               {/* Category / Department Eyebrow */}
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-studio-950/90 text-white dark:bg-white/90 dark:text-studio-950 backdrop-blur-md shadow-xs border border-white/20">
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold bg-studio-950/90 text-white dark:bg-white/20 dark:text-white backdrop-blur-md shadow-xs border border-white/20">
                   <img src="./images/diu-logo.png" alt="DIU Crest" className="w-4 h-4 object-contain shrink-0" />
                   <span>Department of Architecture • DIU</span>
                 </span>
@@ -52,28 +52,28 @@ export default function Hero({ onOpenSheetReview }) {
               </div>
 
               {/* Main Name & Title */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-studio-950 dark:text-white uppercase leading-[1.04] mb-3 drop-shadow-xs">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-display font-extrabold tracking-tight text-studio-950 dark:text-white uppercase leading-[1.04] mb-3 drop-shadow-sm">
                 {studentProfile.name}
               </h1>
 
-              <div className="text-lg sm:text-xl font-display text-blueprint-600 dark:text-blueprint-400 font-bold mb-3 tracking-tight">
+              <div className="text-lg sm:text-xl font-display text-blueprint-600 dark:text-blueprint-300 font-bold mb-3 tracking-tight drop-shadow-xs">
                 Architectural Designer & Urban Researcher • Final Year B.Arch
               </div>
 
               {/* Personal Details: Location & Origin with Frosted Glass Badges */}
-              <div className="flex flex-wrap items-center gap-2.5 text-xs text-studio-800 dark:text-studio-200 mb-5 font-medium">
-                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/60 dark:border-white/15 shadow-2xs">
+              <div className="flex flex-wrap items-center gap-2.5 text-xs text-studio-800 dark:text-white mb-5 font-semibold">
+                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/60 dark:border-white/20 shadow-2xs">
                   <i className="bx bx-map-pin text-rose-500 text-base"></i>
                   <span>Lives in {studentProfile.livesIn}</span>
                 </span>
-                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/10 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/60 dark:border-white/15 shadow-2xs">
-                  <i className="bx bx-home-alt text-blueprint-600 dark:text-blueprint-400 text-base"></i>
+                <span className="inline-flex items-center gap-1.5 bg-white/70 dark:bg-white/15 backdrop-blur-md px-3 py-1.5 rounded-md border border-white/60 dark:border-white/20 shadow-2xs">
+                  <i className="bx bx-home-alt text-blueprint-600 dark:text-blueprint-300 text-base"></i>
                   <span>From {studentProfile.hometown}</span>
                 </span>
               </div>
 
-              <p className="text-base text-studio-800 dark:text-studio-200 leading-relaxed mb-8 font-normal max-w-2xl">
-                Exploring the confluence of <strong className="text-studio-950 dark:text-white font-bold">ecological urbanism</strong>, high-density residential community frameworks, and circular industrial facilities. Bridging socio-spatial realities with resilient, sustainable architectural interventions.
+              <p className="text-base text-studio-800 dark:text-white leading-relaxed mb-8 font-normal max-w-2xl drop-shadow-xs">
+                Exploring the confluence of <strong className="text-studio-950 dark:text-white font-bold underline decoration-blueprint-400/50 underline-offset-2">ecological urbanism</strong>, high-density residential community frameworks, and circular industrial facilities. Bridging socio-spatial realities with resilient, sustainable architectural interventions.
               </p>
 
               {/* CTAs with strict 44px touch targets */}
@@ -88,9 +88,9 @@ export default function Hero({ onOpenSheetReview }) {
 
                 <button
                   onClick={() => onOpenSheetReview(0)}
-                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] text-sm font-bold bg-white/80 dark:bg-white/10 backdrop-blur-md text-studio-900 dark:text-white border border-studio-300/80 dark:border-white/20 hover:border-blueprint-500 hover:bg-white dark:hover:bg-white/20 rounded-lg transition-colors shadow-xs whitespace-nowrap"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 min-h-[44px] text-sm font-bold bg-white/80 dark:bg-white/15 backdrop-blur-md text-studio-900 dark:text-white border border-studio-300/80 dark:border-white/25 hover:border-blueprint-500 hover:bg-white dark:hover:bg-white/25 rounded-lg transition-colors shadow-xs whitespace-nowrap"
                 >
-                  <i className="bx bx-book-open text-base text-blueprint-600 dark:text-blueprint-400"></i>
+                  <i className="bx bx-book-open text-base text-blueprint-600 dark:text-blueprint-300"></i>
                   <span>Review Portfolio Sheets</span>
                 </button>
               </div>

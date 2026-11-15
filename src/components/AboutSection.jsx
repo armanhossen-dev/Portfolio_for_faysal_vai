@@ -1,5 +1,6 @@
 import React from 'react';
 import { studentProfile } from '../data/projectsData';
+import ArchitectWorkspaceIllustration from './illustrations/ArchitectWorkspaceIllustration';
 
 export default function AboutSection() {
   const academicStudios = [
@@ -32,7 +33,7 @@ export default function AboutSection() {
   return (
     <section id="about" className="py-20 border-b border-studio-200 dark:border-studio-800 bg-white dark:bg-studio-900/40 bg-grid-pattern">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-2 font-mono text-xs text-blueprint-600 dark:text-blueprint-400 font-semibold mb-2">
@@ -48,10 +49,10 @@ export default function AboutSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
+
           {/* Left Column: Academic Credentials & Manifesto */}
           <div className="lg:col-span-7 space-y-8">
-            
+
             {/* Bio Card */}
             <div className="bg-[#FAFAF8] dark:bg-studio-900 p-6 sm:p-8 rounded-xl border border-studio-200 dark:border-studio-800 space-y-4">
               <div className="flex flex-wrap items-center justify-between gap-2 pb-4 border-b border-studio-200 dark:border-studio-800 font-mono text-xs">
@@ -79,16 +80,48 @@ export default function AboutSection() {
               </div>
             </div>
 
+            {/* Educational Background Timeline */}
+            <div className="space-y-4">
+              <h3 className="font-display font-bold text-base uppercase tracking-wider text-studio-900 dark:text-white flex items-center gap-2">
+                <i className="bx bxs-school text-xl text-ochre-500"></i>
+                Educational Background & Academic History
+              </h3>
+
+              <div className="space-y-3 font-sans">
+                {studentProfile.education?.map((edu, idx) => (
+                  <div 
+                    key={idx}
+                    className="p-4 rounded-lg bg-[#FAFAF8] dark:bg-studio-900 border border-studio-200 dark:border-studio-800"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-1 mb-1 font-mono text-xs">
+                      <span className="font-bold text-blueprint-600 dark:text-blueprint-400">
+                        {edu.degree}
+                      </span>
+                      <span className="text-studio-500 bg-studio-100 dark:bg-studio-800 px-2 py-0.5 rounded text-[10px]">
+                        {edu.period}
+                      </span>
+                    </div>
+                    <div className="font-display font-semibold text-sm text-studio-900 dark:text-white mb-0.5">
+                      {edu.institution}
+                    </div>
+                    <div className="text-xs text-studio-500 dark:text-studio-400 font-mono">
+                      {edu.level} • {edu.location}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Academic Studio Trajectory */}
             <div className="space-y-4">
               <h3 className="font-display font-bold text-base uppercase tracking-wider text-studio-900 dark:text-white flex items-center gap-2">
-                <i className="bx bxs-graduation text-blueprint-500 text-xl"></i>
+                <i className="bx bxs-graduation text-xl text-blueprint-500"></i>
                 Studio Progression & Design Trajectory
               </h3>
 
               <div className="space-y-3">
                 {academicStudios.map((stu, idx) => (
-                  <div 
+                  <div
                     key={idx}
                     className="p-4 rounded-lg bg-[#FAFAF8] dark:bg-studio-900 border border-studio-200 dark:border-studio-800 font-sans"
                   >
@@ -115,18 +148,26 @@ export default function AboutSection() {
 
           {/* Right Column: Skills, Software, and Competencies */}
           <div className="lg:col-span-5 space-y-6">
-            
+
+            {/* Architectural Studio Illustration */}
+            <div className="bg-[#FAFAF8] dark:bg-studio-900 p-4 rounded-xl border border-studio-200 dark:border-studio-800 overflow-hidden text-center">
+              <ArchitectWorkspaceIllustration className="w-full h-auto max-w-sm mx-auto" />
+              <div className="font-mono text-[11px] text-studio-500 dark:text-studio-400 mt-2">
+                STUDIO ARCHIVE • DRAFTING WORKSPACE
+              </div>
+            </div>
+
             {/* Architectural Competencies */}
             <div className="bg-[#FAFAF8] dark:bg-studio-900 p-6 rounded-xl border border-studio-200 dark:border-studio-800 space-y-4">
               <h3 className="font-display font-bold text-sm uppercase tracking-wider text-studio-900 dark:text-white flex items-center gap-2">
-                <i className="bx bx-layer text-blueprint-500 text-lg"></i>
+                <Layers className="w-4 h-4 text-blueprint-500" />
                 Core Architectural Competencies
               </h3>
 
               <ul className="space-y-2">
                 {studentProfile.skills.architectural.map((skill, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-studio-700 dark:text-studio-300">
-                    <i className="bx bxs-check-circle text-emerald-500 text-base flex-shrink-0 mt-0.5"></i>
+                    <CheckCircle2 className="w-4 h-4 text-emerald-500 flex-shrink-0 mt-0.5" />
                     <span>{skill}</span>
                   </li>
                 ))}
@@ -136,7 +177,7 @@ export default function AboutSection() {
             {/* Software & Technical Arsenal */}
             <div className="bg-[#FAFAF8] dark:bg-studio-900 p-6 rounded-xl border border-studio-200 dark:border-studio-800 space-y-4">
               <h3 className="font-display font-bold text-sm uppercase tracking-wider text-studio-900 dark:text-white flex items-center gap-2">
-                <i className="bx bx-chip text-ochre-500 text-lg"></i>
+                <Cpu className="w-4 h-4 text-ochre-500" />
                 Technical & Software Proficiency
               </h3>
 
@@ -165,7 +206,7 @@ export default function AboutSection() {
                   href="#contact"
                   className="inline-flex items-center gap-2 px-4 py-2 bg-blueprint-600 hover:bg-blueprint-500 text-white font-mono text-xs font-semibold rounded transition-colors"
                 >
-                  <i className="bx bx-envelope text-sm"></i>
+                  <Mail className="w-3.5 h-3.5" />
                   <span>Get in Touch</span>
                 </a>
 
@@ -175,7 +216,9 @@ export default function AboutSection() {
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-[#0A66C2] hover:bg-[#084e96] text-white font-mono text-xs font-semibold rounded transition-colors"
                 >
-                  <i className="bx bxl-linkedin text-base"></i>
+                  <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
+                  </svg>
                   <span>LinkedIn Profile</span>
                 </a>
               </div>

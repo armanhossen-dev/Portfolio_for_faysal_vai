@@ -9,9 +9,9 @@ export default function Footer({ onOpenSheetReview }) {
   return (
     <footer className="bg-white dark:bg-studio-950 border-t border-studio-200 dark:border-studio-800 text-studio-600 dark:text-studio-400 font-mono text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        
+
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 pb-12 border-b border-studio-200 dark:border-studio-800">
-          
+
           {/* Col 1: Architectural Stamp */}
           <div className="md:col-span-5 space-y-3">
             <div className="flex items-center gap-3">
@@ -50,10 +50,10 @@ export default function Footer({ onOpenSheetReview }) {
               <li><a href="#about" className="hover:text-blueprint-500 transition-colors">Academic CV & Studios</a></li>
               <li><a href="#contact" className="hover:text-blueprint-500 transition-colors">Contact & Inquiries</a></li>
               <li>
-                <a 
-                  href={studentProfile.linkedin} 
-                  target="_blank" 
-                  rel="noreferrer" 
+                <a
+                  href={studentProfile.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
                   className="text-blueprint-600 dark:text-blueprint-400 hover:underline flex items-center gap-1.5 pt-1"
                 >
                   <i className="bx bxl-linkedin text-sm"></i>

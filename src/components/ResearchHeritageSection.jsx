@@ -1,5 +1,6 @@
 import React from 'react';
 import { allSheets } from '../data/projectsData';
+import CommunityCommonsIllustration from './illustrations/CommunityCommonsIllustration';
 
 export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
   const commonsSheet1 = allSheets.find(s => s.id === 'commons-1');
@@ -20,7 +21,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
   return (
     <section id="research" className="py-20 border-b border-studio-200 dark:border-studio-800 bg-[#FAFAF8] dark:bg-studio-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
-        
+
         {/* ========================================================
             PART 1: COMMONS MODULE RESEARCH
         ======================================================== */}
@@ -40,20 +41,20 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-            
+
             {/* Left: Research Visuals & Posters */}
             <div className="lg:col-span-7 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                
+
                 {/* Poster 1 */}
                 {commonsSheet1 && (
-                  <div 
+                  <div
                     className="group relative bg-white dark:bg-studio-900 rounded-lg border border-studio-200 dark:border-studio-800 overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all"
                     onClick={() => onOpenSheetLightbox(commonsSheet1)}
                   >
                     <div className="aspect-[1/1.414] overflow-hidden bg-studio-100 dark:bg-studio-800">
-                      <img 
-                        src={commonsSheet1.optimized} 
+                      <img
+                        src={commonsSheet1.optimized}
                         alt="Commons Module Poster 1"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
@@ -67,13 +68,13 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
 
                 {/* Poster 2 */}
                 {commonsSheet2 && (
-                  <div 
+                  <div
                     className="group relative bg-white dark:bg-studio-900 rounded-lg border border-studio-200 dark:border-studio-800 overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all"
                     onClick={() => onOpenSheetLightbox(commonsSheet2)}
                   >
                     <div className="aspect-[1/1.414] overflow-hidden bg-studio-100 dark:bg-studio-800">
-                      <img 
-                        src={commonsSheet2.optimized} 
+                      <img
+                        src={commonsSheet2.optimized}
                         alt="Commons Module Poster 2"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                       />
@@ -98,7 +99,7 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
 
             {/* Right: 8 Mapped Urban Crises & Modular Solutions */}
             <div className="lg:col-span-5 space-y-6">
-              
+
               {/* Problem Map */}
               <div className="bg-white dark:bg-studio-900 p-5 rounded-lg border border-studio-200 dark:border-studio-800">
                 <h3 className="font-display font-bold text-sm text-studio-900 dark:text-white uppercase tracking-wider mb-3 flex items-center gap-2">
@@ -125,7 +126,12 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
                   <i className="bx bx-layer text-blueprint-500 text-base"></i>
                   Tactical Kit-of-Parts Modules
                 </h3>
-                
+
+                {/* Community Modular Illustration */}
+                <div className="mb-4 bg-studio-50 dark:bg-studio-950 p-2 rounded-lg border border-studio-200 dark:border-studio-800/80">
+                  <CommunityCommonsIllustration className="w-full h-auto max-w-[280px] mx-auto" />
+                </div>
+
                 <div className="space-y-3 text-xs">
                   <div className="p-3 bg-studio-50 dark:bg-studio-950 rounded border border-studio-200 dark:border-studio-800">
                     <span className="font-mono font-bold text-studio-900 dark:text-white block mb-0.5">
@@ -166,9 +172,9 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
             PART 2: HERITAGE EXPLORATION - TEOTA JOMIDAR BARI
         ======================================================== */}
         <div className="pt-12 border-t border-studio-200 dark:border-studio-800">
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            
+
             {/* Left: Text & Phenomenological Manifesto */}
             <div className="lg:col-span-5 space-y-5">
               <div className="flex items-center gap-2 font-mono text-xs text-blueprint-600 dark:text-blueprint-400 font-semibold">
@@ -217,17 +223,17 @@ export default function ResearchHeritageSection({ onOpenSheetLightbox }) {
             {/* Right: Heritage Board Preview */}
             <div className="lg:col-span-7">
               {heritageSheet && (
-                <div 
+                <div
                   className="group relative bg-white dark:bg-studio-900 p-3 rounded-xl border border-studio-300 dark:border-studio-700 shadow-xl cursor-pointer"
                   onClick={() => onOpenSheetLightbox(heritageSheet)}
                 >
                   <div className="relative aspect-[1/1.45] max-h-[580px] w-full overflow-hidden rounded-lg bg-studio-950 flex items-center justify-center">
-                    <img 
+                    <img
                       src={heritageSheet.optimized}
                       alt="Manikganj Teota Jomidar Bari Architectural Board"
                       className="w-full h-full object-contain group-hover:scale-[1.02] transition-transform duration-500"
                     />
-                    
+
                     <div className="absolute inset-0 bg-studio-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white">
                       <span className="p-3 bg-blueprint-600 rounded-full shadow-lg mb-2 flex items-center justify-center">
                         <i className="bx bx-fullscreen text-2xl"></i>

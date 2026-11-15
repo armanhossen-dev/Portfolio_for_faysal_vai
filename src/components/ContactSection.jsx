@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { studentProfile } from '../data/projectsData';
+import ArchitectContactIllustration from './illustrations/ArchitectContactIllustration';
 
 export default function ContactSection({ onOpenSheetReview }) {
   const [submitted, setSubmitted] = useState(false);
@@ -18,7 +19,7 @@ export default function ContactSection({ onOpenSheetReview }) {
   return (
     <section id="contact" className="py-20 border-b border-studio-200 dark:border-studio-800 bg-[#FAFAF8] dark:bg-studio-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="max-w-3xl mb-12">
           <div className="flex items-center gap-2 font-mono text-xs text-blueprint-600 dark:text-blueprint-400 font-semibold mb-2">
@@ -34,10 +35,15 @@ export default function ContactSection({ onOpenSheetReview }) {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
-          
+
           {/* Left Column: Contact Details & Info Cards */}
           <div className="lg:col-span-5 space-y-6">
-            
+
+            {/* Architectural Messaging Illustration */}
+            <div className="bg-white dark:bg-studio-900 p-4 rounded-xl border border-studio-200 dark:border-studio-800 text-center">
+              <ArchitectContactIllustration className="w-full h-auto max-w-[260px] mx-auto" />
+            </div>
+
             <div className="bg-white dark:bg-studio-900 p-6 rounded-xl border border-studio-200 dark:border-studio-800 space-y-4">
               <h3 className="font-display font-bold text-base text-studio-900 dark:text-white uppercase tracking-wider text-xs border-b border-studio-200 dark:border-studio-800 pb-2">
                 Studio & Academic Contact
@@ -76,8 +82,8 @@ export default function ContactSection({ onOpenSheetReview }) {
                   </div>
                   <div>
                     <div className="text-[10px] text-studio-400 uppercase">DIRECT EMAIL</div>
-                    <a 
-                      href={`mailto:${studentProfile.email}`} 
+                    <a
+                      href={`mailto:${studentProfile.email}`}
                       className="font-medium text-blueprint-600 dark:text-blueprint-400 hover:underline mt-0.5 block"
                     >
                       {studentProfile.email}
@@ -91,7 +97,7 @@ export default function ContactSection({ onOpenSheetReview }) {
                   </div>
                   <div>
                     <div className="text-[10px] text-studio-400 uppercase">LINKEDIN PROFILE</div>
-                    <a 
+                    <a
                       href={studentProfile.linkedin}
                       target="_blank"
                       rel="noreferrer"

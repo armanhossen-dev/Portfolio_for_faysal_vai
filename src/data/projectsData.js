@@ -10,6 +10,35 @@ export const studentProfile = {
   phone: "+880 1700-000000",
   linkedin: "https://www.linkedin.com/in/faysalahmed934",
   linkedinHandle: "faysalahmed934",
+  education: [
+    {
+      degree: "Bachelor of Architecture (B.Arch)",
+      level: "Undergraduate / Final Year Candidate",
+      institution: "Daffodil International University (DIU)",
+      department: "Department of Architecture",
+      studentId: "221-42-053",
+      period: "Spring 2025 – Spring 2026",
+      status: "Currently in Final Year",
+      location: "Dhaka, Bangladesh",
+      icon: "bxs-graduation"
+    },
+    {
+      degree: "Higher Secondary Certificate (HSC)",
+      level: "Higher Secondary Education / College",
+      institution: "Kachua Bangabondhu Govt Degree college",
+      period: "Completed",
+      location: "Kachua, Chandpur, Bangladesh",
+      icon: "bx-book-reader"
+    },
+    {
+      degree: "Secondary School Certificate (SSC)",
+      level: "Secondary School Education",
+      institution: "Monpura Batabaria Jafar Ali Memorial High school",
+      period: "Completed",
+      location: "Bangladesh",
+      icon: "bx-school"
+    }
+  ],
   bio: "Final-year Architecture student at Daffodil International University focusing on climate-adaptive urbanism, ecological community infrastructure, and sustainable housing systems. Passionate about translating complex socio-spatial realities into humane, resilient, and environmentally regenerative architectural interventions.",
   skills: {
     architectural: [

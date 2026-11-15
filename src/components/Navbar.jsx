@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { studentProfile } from '../data/projectsData';
 
-export default function Navbar({ 
-  darkMode, 
-  setDarkMode, 
-  onOpenSheetReview, 
-  activeSection 
+export default function Navbar({
+  darkMode,
+  setDarkMode,
+  onOpenSheetReview,
+  activeSection
 }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,14 +27,13 @@ export default function Navbar({
   ];
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/90 dark:bg-studio-950/90 backdrop-blur-md shadow-sm border-b border-studio-200 dark:border-studio-800 py-3' 
-        : 'bg-transparent py-5'
-    }`}>
+    <header className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${isScrolled
+      ? 'bg-white/90 dark:bg-studio-950/90 backdrop-blur-md shadow-sm border-b border-studio-200 dark:border-studio-800 py-3'
+      : 'bg-transparent py-5'
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
+
           {/* Logo / Architectural Masthead */}
           <a href="#" className="flex items-center gap-3 group">
             <div className="w-10 h-10 border-2 border-studio-900 dark:border-white flex flex-col items-center justify-center font-mono font-bold text-xs leading-none bg-white dark:bg-studio-900 group-hover:border-blueprint-500 transition-colors">
@@ -74,11 +73,13 @@ export default function Navbar({
               href={studentProfile.linkedin}
               target="_blank"
               rel="noreferrer"
-              className="p-2 rounded-md text-studio-600 dark:text-studio-300 hover:text-[#0A66C2] dark:hover:text-[#0A66C2] hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 transition-colors flex items-center justify-center"
+              className="p-2 rounded-md text-studio-600 dark:text-studio-300 hover:text-[#0A66C2] dark:hover:text-[#0A66C2] hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 transition-colors"
               title="View Faysal Ahmed on LinkedIn"
               aria-label="LinkedIn Profile"
             >
-              <i className="bx bxl-linkedin text-base leading-none"></i>
+              <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.79v8.37H6.46v-8.37M7.86 6.72a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z" />
+              </svg>
             </a>
 
             {/* Sheet Presentation Mode Button */}
@@ -87,7 +88,7 @@ export default function Navbar({
               className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-mono font-medium bg-blueprint-50 dark:bg-blueprint-950/60 text-blueprint-700 dark:text-blueprint-300 border border-blueprint-200 dark:border-blueprint-800 rounded-md hover:bg-blueprint-100 dark:hover:bg-blueprint-900 transition-colors shadow-sm"
               title="Open Architectural Portfolio Flipbook / Sheet Review"
             >
-              <i className="bx bx-book-open text-sm leading-none"></i>
+              <BookOpen className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">Review Sheets</span>
               <span className="sm:hidden">Sheets</span>
             </button>
@@ -95,28 +96,20 @@ export default function Navbar({
             {/* Dark / Light Toggle */}
             <button
               onClick={() => setDarkMode(!darkMode)}
-              className="p-2 rounded-md text-studio-600 dark:text-studio-300 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 transition-colors flex items-center justify-center"
+              className="p-2 rounded-md text-studio-600 dark:text-studio-300 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 transition-colors"
               aria-label="Toggle theme"
               title={darkMode ? "Switch to Architectural White" : "Switch to Studio Graphite"}
             >
-              {darkMode ? (
-                <i className="bx bx-sun text-amber-400 text-base leading-none"></i>
-              ) : (
-                <i className="bx bx-moon text-studio-700 text-base leading-none"></i>
-              )}
+              {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-studio-700" />}
             </button>
 
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-md lg:hidden text-studio-700 dark:text-studio-300 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800 flex items-center justify-center"
+              className="p-2 rounded-md lg:hidden text-studio-700 dark:text-studio-300 hover:bg-studio-100 dark:hover:bg-studio-800 border border-studio-200 dark:border-studio-800"
               aria-label="Toggle mobile menu"
             >
-              {mobileMenuOpen ? (
-                <i className="bx bx-x text-xl leading-none"></i>
-              ) : (
-                <i className="bx bx-menu text-xl leading-none"></i>
-              )}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -144,7 +137,7 @@ export default function Navbar({
                 }}
                 className="w-full flex items-center justify-center gap-2 py-2.5 text-sm font-mono font-medium bg-blueprint-600 text-white rounded-md shadow"
               >
-                <i className="bx bx-book-open text-base leading-none"></i>
+                <BookOpen className="w-4 h-4" />
                 Open Portfolio Sheet Review
               </button>
             </div>
